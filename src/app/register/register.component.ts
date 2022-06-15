@@ -36,22 +36,26 @@ export class RegisterComponent implements OnInit {
       alert('Password and Repeat password is not the same')
       this.password = '';
       this.repassword = '';
-      return
+    }else{
+      const newUser = {
+        name: this.name,
+        username :this.username,
+        email: this.email,
+        password: this.password
+      };
+
+      this.onAddUser.emit(newUser); 
+
+      this.name = '';
+      this.username = '';
+      this.email = '';
+      this.password = '';
+      this.repassword = '';
+
+      console.log(newUser)
+      console.log(this.users)
+
+      this.userService.addUser(newUser);
     }
-
-    const newUser = {
-      name: this.name,
-      username :this.username,
-      email: this.email,
-      password: this.password
-    };
-
-    this.onAddUser.emit(newUser); 
-
-    this.name = '';
-    this.username = '';
-    this.email = '';
-    this.password = '';
-    this.repassword = '';
   }
 }
