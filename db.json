@@ -1,32 +1,60 @@
 {
-    "users":[
-        {
-            "id": 1,
-            "name":"John Bob",
-            "username":"John",
-            "email":"John123@gmail.com",
-            "password":"abc123"
-        },
-        {
-            "id": 2,
-            "name":"Aysha Ash",
-            "username":"Aysha",
-            "email":"Aysha@gmail.com",
-            "password":"abc123"
-        },
-        {
-            "id": 3,
-            "name":"Jun Ming",
-            "username":"Bob",
-            "email":"Bob321@gmail.com",
-            "password":"abc123"
-        },
-        {
-            "id": 4,
-            "name":"Henry",
-            "username":"Curry",
-            "email":"StfCurry@gmail.com",
-            "password":"abc123"
-        }
-    ]
+  "users": [
+    {
+      "name": "John Bob",
+      "username": "John",
+      "email": "John123@gmail.com",
+      "password": "abc123",
+      "id": 1
+    },
+    {
+      "name": "Aysha Ash",
+      "username": "Aysha",
+      "email": "Aysha@gmail.com",
+      "password": "abc123",
+      "id": 2
+    },
+    {
+      "name": "Jun Ming",
+      "username": "Bob",
+      "email": "Bob321@gmail.com",
+      "password": "abc123",
+      "id": 3
+    },
+    {
+      "name": "Henry",
+      "username": "Curry",
+      "email": "StfCurry@gmail.com",
+      "password": "abc123",
+      "id": 4
+    },
+    {
+      "name": "123",
+      "username": "123",
+      "email": "123",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "name": "wx",
+      "username": "xqw",
+      "email": "qwx",
+      "password": "qw",
+      "id": 6
+    },
+    {
+      "name": "wd",
+      "username": "dwq",
+      "email": "qdw",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "name": "123",
+      "username": "wd",
+      "email": "223",
+      "password": "12",
+      "id": 8
+    }
+  ]
 }

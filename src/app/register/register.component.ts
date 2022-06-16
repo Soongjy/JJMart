@@ -1,3 +1,4 @@
+import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
@@ -23,9 +24,13 @@ export class RegisterComponent implements OnInit {
     this.userService.getTask().subscribe((users)=> (this.users = users))
   }
 
+  
+
   onSubmit() {
     if(!this.name){
       alert('Please fill in your name')
+    }else if(!this.username){
+      alert(this.name + ' Please fill in your username')
     }else if(!this.email){
       alert('Please fill in your email')
     }else if(!this.password){
@@ -36,26 +41,43 @@ export class RegisterComponent implements OnInit {
       alert('Password and Repeat password is not the same')
       this.password = '';
       this.repassword = '';
-    }else{
-      const newUser = {
-        name: this.name,
-        username :this.username,
-        email: this.email,
-        password: this.password
-      };
+    //}else if (this.users.find(x => x.username === this.users)) {
+    }
+    else{
+      var ok = true;
+      for(var user of this.users){
+        if(this.username === user.username){
+          alert('This Username has already been taken')
+          ok = false;
+          break
+        }else if(this.email === user.email){
+          alert('This email Has already been taken')
+          ok = false;
+          break
+        }
+      }
+      if(ok == true){
+        const newUser = {
+          name: this.name,
+          username :this.username,
+          email: this.email,
+          password: this.password
+        };
 
-      this.onAddUser.emit(newUser); 
+        this.onAddUser.emit(newUser); 
 
-      this.name = '';
-      this.username = '';
-      this.email = '';
-      this.password = '';
-      this.repassword = '';
+        this.name = '';
+        this.username = '';
+        this.email = '';
+        this.password = '';
+        this.repassword = '';
+        
+        
+        console.log(newUser)
 
-      console.log(newUser)
-      console.log(this.users)
-
-      this.userService.addUser(newUser);
+        this.userService.addUser(newUser).subscribe((user: User)=>(this.users.push(user)));
+    
+      }
     }
   }
 }
