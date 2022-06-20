@@ -1,3 +1,4 @@
+import { AboutUsComponent } from './about-us/about-us.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
   { path: 'contactus', component:ContactUsComponent},
+  { path: 'about-us', component:AboutUsComponent},
 ];
 
 @NgModule({
