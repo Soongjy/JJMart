@@ -7,10 +7,10 @@ import { RegisterComponent } from './register/register.component';
 import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent },
+  { path: '', redirectTo:'/home', pathMatch:'full'},
+  { path: 'home', component: HomepageComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'signin', component: SigninComponent }
-
+  { path: 'signin', component: SigninComponent },
 ];
 
 @NgModule({

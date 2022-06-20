@@ -63,5 +63,28 @@
       "password": "123",
       "id": 9
     }
+  ],
+
+  "products": [
+    {
+      "id": 1,
+      "name": "Tomato",
+      "price": 30,
+      "quantity": 1200,
+      "image": "https://images.unsplash.com/photo-1584680226833-0d680d0a0794?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "category": "Vegetable",
+      "unit": "100g"
+    },
+    {
+      "id": 2,
+      "name": "Carrot",
+      "price": 30,
+      "quantity": 1200,
+      "image": "https://images.unsplash.com/photo-1584680226833-0d680d0a0794?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "category": "Vegetable",
+      "unit": "packet"
+    }
+
+
   ]
 }
