@@ -55,6 +55,13 @@
       "email": "223",
       "password": "12",
       "id": 8
+    },
+    {
+      "name": "Jessie",
+      "username": "jessielyl",
+      "email": "jessielyl@sunway.com.my",
+      "password": "123",
+      "id": 9
     }
   ]
 }
