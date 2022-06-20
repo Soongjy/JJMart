@@ -103,9 +103,16 @@
       "password": "123",
       "privilege": 0,
       "id": 13
+    },
+    {
+      "name": "cwe",
+      "username": "123",
+      "email": "123",
+      "password": "123",
+      "privilege": 0,
+      "id": 14
     }
   ],
-
   "products": [
     {
       "id": 1,
@@ -143,7 +150,5 @@
       "category": "Meat",
       "unit": "packet"
     }
-
-
   ]
 }
