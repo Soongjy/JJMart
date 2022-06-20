@@ -77,9 +77,9 @@
         <div class="content">
           <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
             <div class="content-overlay"></div>
-            <img class="content-image" src="https://images.unsplash.com/photo-1433360405326-e50f909805b3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=359e8e12304ffa04a38627a157fc3362">
+            <img class="content-image" src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
             <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">This is a title</h3>
+              <h3 class="content-title">Vegetables & Fruits</h3>
             </div>
           </a>
         </div>
@@ -90,9 +90,9 @@
         <div class="content">
           <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
             <div class="content-overlay"></div>
-            <img class="content-image" src="https://images.unsplash.com/photo-1433360405326-e50f909805b3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=359e8e12304ffa04a38627a157fc3362">
+            <img class="content-image" src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
             <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">This is a title</h3>
+              <h3 class="content-title">Meat</h3>
             </div>
           </a>
         </div>
@@ -103,9 +103,9 @@
         <div class="content">
           <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
             <div class="content-overlay"></div>
-            <img class="content-image" src="https://images.unsplash.com/photo-1433360405326-e50f909805b3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=359e8e12304ffa04a38627a157fc3362">
+            <img class="content-image" src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
             <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">This is a title</h3>
+              <h3 class="content-title">Dairy</h3>
             </div>
           </a>
         </div>
@@ -173,7 +173,7 @@
 <!--Featured products-->
 <div class="container my-5">
   <div class="row d-flex justify-content-center">
-    <div class="col-3 text-left my-3" *ngFor="let product of products">
+    <div class="col-3 text-left my-3" *ngFor="let product of featProducts">
       <a routerLink="/product-details/{{ product.id }}">
         <mat-card class="example-card">
           <img
@@ -201,6 +201,20 @@
           </mat-card-actions>
         </mat-card>
       </a>
+    </div>
+  </div>
+</div>
+<div class="newsletter py-5 my-5">
+  <div class="container w-50">
+    <div class="row text-center">
+      <h1>Subscribe</h1>
+    </div>
+    <div class="row text-center pb-2">
+      <p>Subscribe to our newsletter to stay updated every moment</p>
+    </div>
+    <div class="input-group">
+      <input type="text" placeholder="Enter your email address" class="form-control">
+      <button class="btn btn-dark" type="button">Submit</button>
     </div>
   </div>
 </div>

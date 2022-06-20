@@ -10,11 +10,12 @@ import { ProductService } from '../services/product.service';
 export class HomepageComponent implements OnInit {
 
   products: Product[] = [];
+  featProducts: Product[] = [];
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-   this.getProducts();
+   this.getFeaturedProducts();
   }
 
   getProducts(){
@@ -22,5 +23,12 @@ export class HomepageComponent implements OnInit {
       this.products = products;
     });
   }
+
+  getFeaturedProducts(){
+    this.productService.getProducts().subscribe((products)=>{
+      this.featProducts = products.slice(0,4);
+    });
+  }
+
 
 }

@@ -140,3 +140,8 @@ a{
   font-size: 50px;
   line-height: 1.1;
 }
+
+/* Newsletter*/
+.newsletter{
+  background-color: rgb(239, 234, 234);
+}
