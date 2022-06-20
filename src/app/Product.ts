@@ -5,5 +5,8 @@ export interface Product {
   quantity: number,
   image: string,
   category: string,
-  unit: string
+  unit: string,
+  description: string,
+  discount: boolean,
+  discountedPrice: number
 }
