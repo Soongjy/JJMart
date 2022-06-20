@@ -5,6 +5,7 @@
       "username": "John",
       "email": "John123@gmail.com",
       "password": "abc123",
+      "privilege": 0,
       "id": 1
     },
     {
@@ -12,6 +13,7 @@
       "username": "Aysha",
       "email": "Aysha@gmail.com",
       "password": "abc123",
+      "privilege": 0,
       "id": 2
     },
     {
@@ -19,6 +21,7 @@
       "username": "Bob",
       "email": "Bob321@gmail.com",
       "password": "abc123",
+      "privilege": 0,
       "id": 3
     },
     {
@@ -26,6 +29,7 @@
       "username": "Curry",
       "email": "StfCurry@gmail.com",
       "password": "abc123",
+      "privilege": 0,
       "id": 4
     },
     {
@@ -33,6 +37,7 @@
       "username": "123",
       "email": "123",
       "password": "123",
+      "privilege": 0,
       "id": 5
     },
     {
@@ -40,6 +45,7 @@
       "username": "xqw",
       "email": "qwx",
       "password": "qw",
+      "privilege": 0,
       "id": 6
     },
     {
@@ -47,6 +53,7 @@
       "username": "dwq",
       "email": "qdw",
       "password": "123",
+      "privilege": 0,
       "id": 7
     },
     {
@@ -54,14 +61,48 @@
       "username": "wd",
       "email": "223",
       "password": "12",
+      "privilege": 0,
       "id": 8
     },
     {
-      "name": "Jessie",
-      "username": "jessielyl",
-      "email": "jessielyl@sunway.com.my",
+      "name": "123",
+      "username": "dwdqw",
+      "email": "qwq",
       "password": "123",
+      "privilege": 0,
       "id": 9
+    },
+    {
+      "name": "123",
+      "username": "1ve",
+      "email": "wqw",
+      "password": "123",
+      "privilege": 0,
+      "id": 10
+    },
+    {
+      "name": "avs",
+      "username": "vsva",
+      "email": "qwe",
+      "password": "123",
+      "privilege": 0,
+      "id": 11
+    },
+    {
+      "name": "dwq",
+      "username": "dqwd",
+      "email": "dqwqvq",
+      "password": "qwe",
+      "privilege": 0,
+      "id": 12
+    },
+    {
+      "name": "qw",
+      "username": "dqw",
+      "email": "qdwd",
+      "password": "123",
+      "privilege": 0,
+      "id": 13
     }
   ],
 
