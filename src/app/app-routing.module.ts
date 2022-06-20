@@ -1,3 +1,4 @@
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'signin', component: SigninComponent },
+  { path: 'product-details/:id', component: ProductDetailsComponent },
 ];
 
 @NgModule({

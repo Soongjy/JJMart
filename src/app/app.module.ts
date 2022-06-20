@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatIconModule} from '@angular/material/icon';
     HomepageComponent,
     RegisterComponent,
     FooterComponent,
-    SigninComponent
+    SigninComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
