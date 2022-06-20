@@ -12,10 +12,14 @@ import { RegisterComponent } from './register/register.component';
 import { FooterComponent } from './footer/footer.component';
 import { SigninComponent } from './signin/signin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+=======
+import { ContactUsComponent } from './contact-us/contact-us.component';
+>>>>>>> 256481258f84dcec2edbf0561121c7c94784c599
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     RegisterComponent,
     FooterComponent,
     SigninComponent,
+<<<<<<< HEAD
     ProductDetailsComponent
+=======
+    ContactUsComponent
+>>>>>>> 256481258f84dcec2edbf0561121c7c94784c599
   ],
   imports: [
     BrowserModule,

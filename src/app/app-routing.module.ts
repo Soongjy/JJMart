@@ -1,6 +1,7 @@
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 import { HomepageComponent } from './homepage/homepage.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
+  { path: 'contactus', component:ContactUsComponent},
 ];
 
 @NgModule({

@@ -1,0 +1,36 @@
+.background-overlay {
+    background-image: url("../../assets/woman-banner.jpg");
+    height: 40%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 25% 23%;
+  }
+#contactdetailscontainer {
+height: 500px;
+width: 100%;
+padding: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.contactdetails {
+height: 100px;
+width: 100%;
+align-content: center;
+align-items: center;
+padding: 5px;
+display: flex;
+margin: 10px;
+}
+
+.iconcontainer {
+height: 80px;
+width: 80px;
+border-radius: 50%;
+background-color: red;
+padding: 15px;
+text-align: center;
+color: white;
+}
