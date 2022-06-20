@@ -1,9 +1,10 @@
 .background-overlay {
-    background-image: url("../../assets/woman-banner.jpg");
+    background-image: url("../../assets/contactusbg.jpeg");
     height: 40%;
     width: 100%;
     background-repeat: no-repeat;
-    background-position: 25% 23%;
+    background-position: center;
+    background-size: cover
   }
 #contactdetailscontainer {
 height: 500px;
