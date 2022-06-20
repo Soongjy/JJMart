@@ -1,0 +1,7 @@
+.background-overlay {
+    background-image: url("../../assets/woman-banner.jpg");
+    height: 40%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 25% 23%;
+  }
