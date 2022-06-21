@@ -19,12 +19,12 @@
               <h1 class="fw-bold mb-3 pb-3" style="letter-spacing: 1px;">Log in</h1>
   
               <div class="form-outline mb-4">
-                <input type="email" id="emailusername" class="form-control form-control-lg" />
+                <input type="email" id="emailusername" class="form-control form-control-lg" [(ngModel)]="emailusername" [ngModelOptions]="{standalone: true}"/>
                 <label class="form-label" for="emailusername">Email address or Username</label>
               </div>
   
               <div class="form-outline mb-4">
-                <input type="password" id="password" class="form-control form-control-lg" />
+                <input type="password" id="password" class="form-control form-control-lg" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"/>
                 <label class="form-label" for="password">Password</label>
               </div>
   

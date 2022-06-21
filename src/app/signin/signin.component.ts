@@ -20,22 +20,39 @@ export class SigninComponent implements OnInit {
   }
 
   onSubmit(){
+    var found = 0;
     if(!this.emailusername){
       alert('Please fill in your email or username')
     }else if(!this.password){
       alert('Please fill in your password')
     }else{
       for(var user of this.users){
-        if(this.emailusername === user.username || this.emailusername === user.email){
-          if(this.password === user.password){
+        if(this.emailusername === user.username||this.emailusername === user.email){
+          found = 1; 
+        }
+        if(this.emailusername === user.username&&this.password === user.password || this.emailusername === user.email &&this.password === user.password){
+            console.log(user)
             var userid = user.id;
             var userName = user.name;
             var username = user.username;
             var useremail = user.email;
             var userprivilege = user.privilege;
-          }
+            found = 2;
+            break;
+        }else{
+            continue;
         }
+      }
+      if(found == 1){
+        alert("Your Password is incorrect")
+      }else if(found == 0){
+        alert("The Username doesn't exist")
+      }else if(found == 2){
+        alert("Login Successfully")
+        this.emailusername = '';
+        this.password = '';
       }
     }
   }
+  
 }

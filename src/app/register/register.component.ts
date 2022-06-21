@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
           ok = false;
           break
         }else if(this.email === user.email){
-          alert('This email Has already been taken')
+          alert('This Email Has already been taken')
           ok = false;
           break
         }
@@ -70,12 +70,11 @@ export class RegisterComponent implements OnInit {
         this.email = '';
         this.password = '';
         this.repassword = '';
-        
-        
-        console.log(newUser)
 
         this.userService.addUser(newUser).subscribe((user: User)=>(this.users.push(user)));
     
+        alert("You had Signed Up Successfully, Redirecting You to Sign Up")
+        window.location.href = "/signin";
       }
     }
   }
