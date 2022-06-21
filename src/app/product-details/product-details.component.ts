@@ -24,4 +24,12 @@ export class ProductDetailsComponent implements OnInit {
       .subscribe(product => this.product = product);
   }
 
+
+  addFunction(){
+    (document.getElementById("quantity") as HTMLInputElement).value;
+
+    console.log("xxx");
+  }
+
+
 }

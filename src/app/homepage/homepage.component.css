@@ -11,22 +11,18 @@ a{
 
 .w-100 {
   width: 100% !important;
-  height: 95vh;
+  height: 90vh;
 }
 
 ::ng-deep.mat-menu-panel {
   max-width: none !important;
 }
 
-.pop-up-container{
-  width: 400px;
-}
-
 .carousel-content {
   color:#fff;
   position:absolute;
   z-index:12;
-  top:45%;
+  top:47%;
   left:0;
   width:100%;
   text-align:center;

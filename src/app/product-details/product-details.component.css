@@ -1,0 +1,12 @@
+#add-button, .minus-button{
+  cursor: pointer;
+}
+
+.promo-price{
+  color: red;
+}
+.old-price{
+  text-decoration: line-through;
+  color: grey;
+  margin-left: 10px;
+}
