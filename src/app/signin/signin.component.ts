@@ -13,7 +13,7 @@ export class SigninComponent implements OnInit {
   password!:string;
   
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,) { }
 
   ngOnInit(): void {
     this.userService.getTask().subscribe((users)=> (this.users = users))
@@ -32,12 +32,12 @@ export class SigninComponent implements OnInit {
         }
         if(this.emailusername === user.username&&this.password === user.password || this.emailusername === user.email &&this.password === user.password){
             console.log(user)
-            var userid = user.id;
+            /**var userid = user.id;
             var userName = user.name;
             var username = user.username;
             var useremail = user.email;
             var userprivilege = user.privilege;
-            found = 2;
+            found = 2;**/
             break;
         }else{
             continue;
