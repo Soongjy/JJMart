@@ -31,13 +31,12 @@ export class SigninComponent implements OnInit {
           found = 1; 
         }
         if(this.emailusername === user.username&&this.password === user.password || this.emailusername === user.email &&this.password === user.password){
-            console.log(user)
-            /**var userid = user.id;
+            var userid = user.id;
             var userName = user.name;
-            var username = user.username;
             var useremail = user.email;
             var userprivilege = user.privilege;
-            found = 2;**/
+            localStorage.setItem('userdetails',JSON.stringify(user));
+            found = 2;
             break;
         }else{
             continue;
@@ -51,6 +50,7 @@ export class SigninComponent implements OnInit {
         alert("Login Successfully")
         this.emailusername = '';
         this.password = '';
+         window.location.href = "/signin";
       }
     }
   }
