@@ -15,20 +15,23 @@ export class HomepageComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-   this.getFeaturedProducts();
+    this.getFeaturedProducts();
   }
 
-  getProducts(){
-    this.productService.getProducts().subscribe((products)=>{
-      this.products = products;
-    });
-  }
+  // getProducts(){
+  //   this.productService.getProducts().subscribe((products)=>{
+  //     this.products = products;
+  //   });
+  // }
 
   getFeaturedProducts(){
     this.productService.getProducts().subscribe((products)=>{
-      this.featProducts = products.slice(0,4);
+      this.products = products;
+      for(var i=0; i<this.products.length; i++){
+        if(this.products[i].discountedPrice!==null && this.featProducts.length<4)
+          this.featProducts.push(this.products[i]);
+      }
     });
+
   }
-
-
 }

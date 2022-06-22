@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -40,6 +41,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
