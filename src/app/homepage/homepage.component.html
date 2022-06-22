@@ -71,8 +71,8 @@
 
 <!-- category section -->
 <div class="container my-5">
-  <h1 class="text-center text-uppercase">Find your favourite products with us</h1>
   <div class="row">
+    <h1 class="text-center text-uppercase pseudo_border">Find your favourite products with us</h1>
     <div class="col-md-4 mb-4">
       <div class="category">
         <div class="content">
@@ -173,36 +173,10 @@
 
 <!--Featured products-->
 <div class="container my-5">
-  <h1 class="text-center text-uppercase">Featured products this week</h1>
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex align-items-center justify-content-center">
+    <h1 class="text-center text-uppercase pseudo_border">This week's featured products</h1>
     <div class="col-6 col-md-3 text-left" *ngFor="let product of featProducts">
-      <a routerLink="/product-details/{{ product.id }}">
-        <mat-card class="example-card">
-          <img
-            mat-card-image
-            src="{{ product.image }}"
-            width="200"
-            height="200"
-            alt="Photo of {{ product.image }}"
-          />
-          <mat-card-content>
-            <h3 class="fw-bold">
-              {{ product.name}}
-            </h3>
-            <mat-card-subtitle>RM{{ product.price }} /{{product.unit}}</mat-card-subtitle>
-          </mat-card-content>
-          <mat-card-actions class="text-center">
-            <button mat-raised-button color="warn" class="mb-3">
-              <mat-icon
-                aria-hidden="false"
-                aria-label="Example home icon"
-                [ngStyle]="{ color: 'white' }"
-                >shopping_cart</mat-icon
-              >Add to Cart
-            </button>
-          </mat-card-actions>
-        </mat-card>
-      </a>
+      <app-product [product]="product"></app-product>
     </div>
   </div>
 </div>

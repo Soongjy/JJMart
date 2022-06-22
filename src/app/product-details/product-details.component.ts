@@ -25,11 +25,9 @@ export class ProductDetailsComponent implements OnInit {
   }
 
 
-  addFunction(){
-    (document.getElementById("quantity") as HTMLInputElement).value;
-
-    console.log("xxx");
-  }
+  // addFunction(){
+  //   var quantity = Number((document.getElementById("quantity") as HTMLInputElement).value);
+  // }
 
 
 }

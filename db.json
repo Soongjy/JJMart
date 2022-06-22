@@ -157,6 +157,38 @@
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
       "discountedPrice": null
+    },
+    {
+      "id": 5,
+      "name": "Fish",
+      "price": 30,
+      "quantity": 1200,
+      "image": "https://images.unsplash.com/photo-1591874879354-bf0a6e982c60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "category": "Meat",
+      "unit": "piece",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+      "discountedPrice": 22
+    },{
+      "id": 6,
+      "name": "Rice",
+      "price": 30,
+      "quantity": 1200,
+      "image": "https://images.unsplash.com/photo-1591874879354-bf0a6e982c60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "category": "Idk",
+      "unit": "packet",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+      "discountedPrice": 15
+    },
+    {
+      "id": 7,
+      "name": "Mushroom",
+      "price": 30,
+      "quantity": 1200,
+      "image": "https://images.unsplash.com/photo-1591874879354-bf0a6e982c60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "category": "Vegetables & Fruits",
+      "unit": "packet",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+      "discountedPrice": 12
     }
   ]
 }
