@@ -2,6 +2,21 @@ a{
   text-decoration: none;
 }
 
+.pseudo_border {
+  position:relative;
+  display:inline-block;
+  margin-bottom: 5%;
+}
+.pseudo_border:after {
+  content:'';
+  position:absolute;
+  left:0;right:0;
+  top:100%;
+  margin: 10px auto;
+  width:20%;
+  height:6px;
+  background:red;
+}
 /* Carousel */
 
 .title-shadow{
