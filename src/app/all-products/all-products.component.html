@@ -1,29 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
+      <h3>Category</h3>
       <div class="list-group">
         <a
           href="#"
           class="list-group-item list-group-item-action active"
           aria-current="true"
         >
-          The current link item
+          Vegetables & Fruits
         </a>
-        <a href="#" class="list-group-item list-group-item-action"
-          >A second link item</a
+        <a href="#" routerLinkActive="router-link-active" class="list-group-item list-group-item-action"
+          >Meat</a
         >
         <a href="#" class="list-group-item list-group-item-action"
-          >A third link item</a
+          >Dairy</a
         >
         <a href="#" class="list-group-item list-group-item-action"
           >A fourth link item</a
-        >
-        <a
-          href="#"
-          class="list-group-item list-group-item-action disabled"
-          tabindex="-1"
-          aria-disabled="true"
-          >A disabled link item</a
         >
       </div>
       <label id="example-radio-group-label">Pick your favorite season</label>
@@ -48,7 +42,6 @@
          <app-product [product]="product"></app-product>
         </div>
       </div>
-
     </div>
   </div>
 

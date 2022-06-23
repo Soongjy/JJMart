@@ -1,3 +1,4 @@
+import { CategoryComponent } from './category/category.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'contactus', component:ContactUsComponent},
   { path: 'about-us', component:AboutUsComponent},
   { path: 'all-products', component:AllProductsComponent},
+  { path: 'category/:params', component:CategoryComponent},
 ];
 
 @NgModule({
