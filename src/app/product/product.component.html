@@ -1,5 +1,5 @@
 <a routerLink="/product-details/{{ product.id }}">
-  <mat-card class="example-card">
+  <mat-card class="example-card z-depth">
     <img
       mat-card-image
       src="{{ product.image }}"
@@ -15,15 +15,8 @@
         >RM{{ product.price }} /{{ product.unit }}</mat-card-subtitle
       >
     </mat-card-content>
-    <mat-card-actions class="text-center">
-      <button mat-raised-button color="warn" class="mb-3">
-        <mat-icon
-          aria-hidden="false"
-          aria-label="Example home icon"
-          [ngStyle]="{ color: 'white' }"
-          >shopping_cart</mat-icon
-        >Add to Cart
-      </button>
+    <mat-card-actions class="text-center mb-2">
+      <button class="btn btn-danger" type="button" id="button-addon2"> <i class="fas fa-shopping-cart px-2"></i>Add to Cart</button>
     </mat-card-actions>
   </mat-card>
 </a>

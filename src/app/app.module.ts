@@ -16,6 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatRadioButton, MatRadioModule} from '@angular/material/radio';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatMenuModule} from '@angular/material/menu';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -51,7 +53,9 @@ import { CategoryComponent } from './category/category.component';
     MatButtonModule,
     MatIconModule,
     MatTabsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatBadgeModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

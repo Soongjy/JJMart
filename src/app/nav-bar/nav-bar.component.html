@@ -35,7 +35,7 @@
               <li><a class="dropdown-item" routerLink="/category/vegetables & fruits">Vegetables & Fruits</a></li>
               <li><a class="dropdown-item" routerLink="/category/meat">Meat</a></li>
               <li><a class="dropdown-item" routerLink="/category/dairy">Dairy</a></li>
-              <li><a class="dropdown-item" routerLink="/category/snacks">Snacks</a></li>
+              <li><a class="dropdown-item" routerLink="/category/snacks">Noodles</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -46,9 +46,25 @@
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        <a href="#" class="me-auto text-muted">
-          <div class="material-icons mt-2" style="font-size: 38px;">shopping_cart</div>
-        </a>
+       <!--cart-->
+        <div class="mx-3">
+          <mat-icon matBadge={{cartItemCounter}} matBadgeColor="warn" [matMenuTriggerFor]="menu" class="p">shopping_cart</mat-icon>
+          <mat-menu #menu="matMenu">
+            <div class="pop-up-container px-2 py-2">
+
+              work in progress
+              <p>
+                <button class="btn btn-danger" type="button" id="button-addon2">View Cart</button>
+                <button class="btn btn-danger" type="button" id="button-addon2">Checkout</button>
+              </p>
+
+            </div>
+          </mat-menu>
+            <!-- Include text description of the icon's meaning for screen-readers -->
+            <span class="cdk-visually-hidden">
+              This is a shopping cart
+            </span>
+        </div>
         <div class="nav-item dropdown me-auto text-muted">
           <a href="#" class="d-flex nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="material-icons m-1" style="font-size: 22px;">account_circle</i>
