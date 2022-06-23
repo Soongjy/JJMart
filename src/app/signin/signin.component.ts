@@ -50,7 +50,7 @@ export class SigninComponent implements OnInit {
         alert("Login Successfully")
         this.emailusername = '';
         this.password = '';
-         window.location.href = "/signin";
+        window.location.href = "/";
       }
     }
   }

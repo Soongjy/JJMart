@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" style="font-style:italic; font-weight: bold; font-size: 28px; margin: 5px 15px 5px 5px;color: red;">Sunway Mart</a>
+    <a class="navbar-brand" href="#" style="font-style:italic; font-weight: bold; font-size: 28px; margin: 5px 15px 5px 15px;color: red;">Sunway Mart</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,7 +9,9 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a routerLink="/all-products" aria-current="page" href="#">All Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/all-products" aria-current="page" href="#">All Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -19,14 +21,14 @@
               Dropdown
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink="/register">Register</a></li>
-              <li><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
+              <li><a class="dropdown-item" routerLink="">1</a></li>
+              <li><a class="dropdown-item" routerLink="">2</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a *ngIf="privilege == 1" class="nav-link" routerLink="/adminpanel">Admin Panel</a>
           </li>
         </ul>
         <form class="d-flex me-auto" style="width:30%">
@@ -36,12 +38,21 @@
         <a href="#" class="me-auto text-muted">
           <div class="material-icons" style="font-size: 40px;">shopping_cart</div>
         </a>
-        <a href="#" class="me-auto text-muted d-flex" style="text-decoration: none">
-          <i class="material-icons" style="font-size: 25px;">account_circle</i>
-          <div class = "me-auto text-muted" style="align-self :center; font-size: 22px;"> 
-          {{name}}
+        <div class="nav-item dropdown me-auto text-muted">
+          <a href="#" class="d-flex nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="material-icons m-1" style="font-size: 25px;">account_circle</i>
+            <div class = "me-auto text-muted dropdown-toggle" style="align-self :center; font-size: 22px;"> 
+            {{name}}
+          </div>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li *ngIf="userdetails ==null"><a class="dropdown-item" routerLink="/register">Register</a></li>
+            <li *ngIf="userdetails ==null"><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
+            <li *ngIf="userdetails !=null"><a class="dropdown-item" routerLink="/manageaccount">Manage Account</a></li>
+            <li *ngIf="userdetails!=null"><hr class="dropdown-divider"></li>
+            <li *ngIf="userdetails!=null"><a class="dropdown-item" (click)="onLogout()">Log Out</a></li>
+          </ul>
         </div>
-        </a>
       </div>
     </div>
   </nav>
