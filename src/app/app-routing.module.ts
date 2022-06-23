@@ -9,6 +9,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RegisterComponent } from './register/register.component';
 import { SigninComponent } from './signin/signin.component';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch:'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'contactus', component:ContactUsComponent},
   { path: 'about-us', component:AboutUsComponent},
   { path: 'all-products', component:AllProductsComponent},
+  { path: 'adminpanel', component: AdminpanelComponent}
 ];
 
 @NgModule({
