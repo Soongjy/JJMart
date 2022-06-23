@@ -20,5 +20,4 @@ export class ProductService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Product>(url);
   }
-
 }

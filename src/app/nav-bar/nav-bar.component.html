@@ -27,6 +27,17 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Category
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/category/vegetables & fruits">Vegetables & Fruits</a></li>
+              <li><a class="dropdown-item" routerLink="/category/meat">Meat</a></li>
+              <li><a class="dropdown-item" routerLink="/category/dairy">Dairy</a></li>
+              <li><a class="dropdown-item" routerLink="/category/snacks">Snacks</a></li>
+            </ul>
+          </li>
           <li class="nav-item">
             <a *ngIf="privilege == 1" class="nav-link" routerLink="/adminpanel">Admin Panel</a>
           </li>
@@ -41,7 +52,7 @@
         <div class="nav-item dropdown me-auto text-muted">
           <a href="#" class="d-flex nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="material-icons m-1" style="font-size: 22px;">account_circle</i>
-            <div class = "me-auto text-muted dropdown-toggle" style="align-self :center; font-size: 18px;"> 
+            <div class = "me-auto text-muted dropdown-toggle" style="align-self :center; font-size: 18px;">
             {{name}}
           </div>
           </a>
