@@ -7,7 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 
 import { HomepageComponent } from './homepage/homepage.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RegisterComponent } from './register/register.component';
 import { SigninComponent } from './signin/signin.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
