@@ -25,6 +25,7 @@ import { AllProductsComponent } from './all-products/all-products.component';
 import { ProductComponent } from './product/product.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { CategoryComponent } from './category/category.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CategoryComponent } from './category/category.component';
     AllProductsComponent,
     ProductComponent,
     AdminpanelComponent,
-    CategoryComponent
+    CategoryComponent,
+    AdmindashboardComponent
   ],
   imports: [
     BrowserModule,
