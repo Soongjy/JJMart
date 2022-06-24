@@ -26,6 +26,7 @@ import { ProductComponent } from './product/product.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { CategoryComponent } from './category/category.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     ProductComponent,
     AdminpanelComponent,
     CategoryComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

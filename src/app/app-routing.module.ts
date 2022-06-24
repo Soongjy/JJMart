@@ -1,3 +1,4 @@
+import { CartComponent } from './cart/cart.component';
 import { CategoryComponent } from './category/category.component';
 import { AllProductsComponent } from './all-products/all-products.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'all-products', component:AllProductsComponent},
   { path: 'adminpanel', component: AdminpanelComponent},
   { path: 'category/:params', component:CategoryComponent},
+  { path: 'viewcart', component:CartComponent},
 ];
 
 @NgModule({

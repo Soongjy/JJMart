@@ -10,9 +10,16 @@ export class ProductComponent implements OnInit {
 
   @Input() product !: Product;
 
+  cartItems: Product[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addToCart(product: Product){
+    this.cartItems.push(product);
+    console.log(product + " has been added!")
   }
 
 }

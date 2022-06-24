@@ -1,0 +1,8 @@
+#quantity{
+  width: 150px !important;
+}
+
+.trash-icon:hover{
+  color: red;
+  cursor: pointer;
+}
