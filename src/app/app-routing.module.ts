@@ -9,7 +9,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RegisterComponent } from './register/register.component';
 import { SigninComponent } from './signin/signin.component';
-import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+
+
+const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule);
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch:'full'},
@@ -20,7 +22,7 @@ const routes: Routes = [
   { path: 'contactus', component:ContactUsComponent},
   { path: 'about-us', component:AboutUsComponent},
   { path: 'all-products', component:AllProductsComponent},
-  { path: 'adminpanel', component: AdminpanelComponent},
+  { path: 'admin', loadChildren: adminModule },
   { path: 'category/:params', component:CategoryComponent},
 ];
 
