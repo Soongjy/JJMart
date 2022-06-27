@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
 
@@ -13,7 +14,9 @@ export class SigninComponent implements OnInit {
   password!:string;
   
 
-  constructor(private userService: UserService,) { }
+  constructor(
+    private userService: UserService,
+    private router: Router,) { }
 
   ngOnInit(): void {
     this.userService.getTask().subscribe((users)=> (this.users = users))
@@ -50,7 +53,7 @@ export class SigninComponent implements OnInit {
         alert("Login Successfully")
         this.emailusername = '';
         this.password = '';
-        window.location.href = "/";
+        this.router.navigate(['/home'])
       }
     }
   }
