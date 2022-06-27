@@ -12,7 +12,7 @@ import { AdminRoutingModule } from './admin-routing.module';
   declarations: [
     AdminpanelComponent,
     AdmindashboardComponent,
-    AdminComponent,
+    AdminComponent
   ],
   imports: [
     CommonModule,
