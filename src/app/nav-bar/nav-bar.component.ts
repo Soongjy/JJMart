@@ -12,6 +12,9 @@ export class NavBarComponent implements OnInit {
   title: string = 'Sunway Mart';
   name!: string;
   privilege!:number;
+  //later create function to update counter
+  cartItemCounter :number = 6;
+
   constructor() { }
 
   ngOnInit(): void {

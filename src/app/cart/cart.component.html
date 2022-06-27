@@ -1,0 +1,85 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">Product Details</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="cartItems.length !=0; else noItem">
+      <tr *ngFor="let cartItem of cartItems">
+        <td scope="row">
+          <div class="row d-flex align-items-center">
+            <div class="col-sm-5">
+              <img
+                src="{{ cartItem.image }}"
+                alt="pic"
+                width="200"
+                height="150"
+              />
+            </div>
+            <div class="col-sm-7">
+              <p>{{ cartItem.name }}</p>
+              <p>{{ cartItem.price }}</p>
+            </div>
+          </div>
+        </td>
+        <td class="align-middle" id="quantity">
+          <div class="input-group">
+            <button
+              class="btn btn-outline-secondary"
+              id="add"
+              type="button"
+              (click)="addFunction()"
+            >
+              +
+            </button>
+            <input
+              type="text"
+              class="form-control text-center"
+              id="quantityValue"
+              placeholder="1"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              id="minus"
+              type="button"
+              (click)="minusFunction()"
+            >
+              -
+            </button>
+          </div>
+        </td>
+        <td class="text-center align-middle" id="total">100</td>
+        <td class="text-center align-middle">
+          <i
+            class="fa fa-trash trash-icon"
+            aria-hidden="true"
+            (click)="deleteCartItem(cartItem)"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+    <ng-template #noItem>
+      <tr>
+        <td colspan="4">
+          <p class="text-center">Your cart is empty!</p>
+        </td>
+      </tr>
+    </ng-template>
+  </table>
+  <div class="row">
+    <div class="col-6">
+      <button type="button" class="btn btn-outline-primary">
+        Continue Shopping
+      </button>
+    </div>
+    <div class="col-6">
+      <button type="button" class="btn btn-outline-primary float-end">
+        Checkout
+      </button>
+    </div>
+  </div>
+</div>

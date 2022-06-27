@@ -1,8 +1,7 @@
 <div class="container">
-
-  <div class="row">
+  <div class="row" *ngIf="product !=null">
     <div class="col-md-7">
-      <img src="{{product.image}}" height="500" width="700" alt="Photo of a Shiba Inu">
+      <img src="{{ product.image }}" height="500" width="700" alt="Photo of a Shiba Inu">
     </div>
     <div class="col-md-5">
       <h1>{{product.name}}</h1>
@@ -14,19 +13,12 @@
       <div class="my-3">
         <p>{{product.description}}</p>
       </div>
-      <div class="input-group mb-3 w-25">
-        <span class="input-group-text">+</span>
-        <input type="number" class="form-control item-quantity text-center" min="1" id="quantity" value="1" aria-label="Amount (to the nearest dollar)">
-        <span class="input-group-text">-</span>
+
+      <div class="input-group mb-3 w-50">
+        <input type="number" class="form-control w-50" min="1" value="1" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-danger" type="button" id="button-addon2">Add to Cart</button>
       </div>
-      <button mat-raised-button color="warn" class="mb-3">
-        <mat-icon
-          aria-hidden="false"
-          aria-label="Example home icon"
-          [ngStyle]="{ color: 'white' }"
-          >shopping_cart</mat-icon
-        >Add to Cart
-      </button>
+
     </div>
   </div>
   <div class="row">
