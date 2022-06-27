@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CartService } from '../services/cart.service';
 import { User } from '../Users';
 
 @Component({
@@ -13,9 +14,9 @@ export class NavBarComponent implements OnInit {
   name!: string;
   privilege!:number;
   //later create function to update counter
-  cartItemCounter :number = 6;
+  cartItemCounter !:number;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
@@ -39,4 +40,9 @@ export class NavBarComponent implements OnInit {
     window.location.href = "/";
     }
   }
+
+  // getItemCount(){
+  //   this.cartItemCounter = this.cartService.getCartItems().length;
+  //   console.log("THERE ARE" + this.cartItemCounter);
+  // }
 }

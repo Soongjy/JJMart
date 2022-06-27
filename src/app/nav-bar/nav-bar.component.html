@@ -11,22 +11,9 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/all-products" aria-current="page" href="#">All Products</a>
+            <a class="nav-link active" aria-current="page" routerLink="/about-us">About Us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" routerLink="">1</a></li>
-              <li><a class="dropdown-item" routerLink="">2</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Category
@@ -41,6 +28,9 @@
           <li class="nav-item">
             <a *ngIf="privilege == 1" class="nav-link" routerLink="/admin">Admin Panel</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/contactus">Contact Us</a>
+          </li>
         </ul>
         <form class="d-flex me-auto" style="width:30%">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -48,7 +38,7 @@
         </form>
        <!--cart-->
         <div class="mx-3">
-          <mat-icon matBadge={{cartItemCounter}} matBadgeColor="warn" [matMenuTriggerFor]="menu" class="p">shopping_cart</mat-icon>
+          <mat-icon matBadge={{cartItemCounter}} matBadgeColor="warn" [matMenuTriggerFor]="menu">shopping_cart</mat-icon>
           <mat-menu #menu="matMenu">
             <div class="pop-up-container px-2 py-2">
 
