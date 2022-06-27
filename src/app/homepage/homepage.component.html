@@ -23,20 +23,20 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-content">
-      <h1 class="mb-5 title-shadow" [ngStyle]="{ 'font-size': '80px' }">Sunway Mart</h1>
-      <h4>We deliver your groceries to you</h4>
-      <button mat-raised-button color="danger">Shop Now</button>
+      <h1 class="mb-5 title-shadow" [ngStyle]="{ 'font-size': '60px' }">Shop groceries from your home</h1>
+      <h3>We deliver your groceries to you</h3>
+      <button mat-raised-button color="danger" (click)="scroll()" class="mt-3">Shop Now</button>
     </div>
     <div class="carousel-item active" data-bs-interval="5000">
       <img
-        src="https://images.unsplash.com/photo-1506617420156-8e4536971650?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1423&q=80"
+        src="../../assets/bg1.jpg"
         class="d-block w-100"
         alt="..."
       />
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <img
-        src="https://images.unsplash.com/photo-1553546895-531931aa1aa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
+        src="../../assets/bg2.jpg"
         class="d-block w-100"
         alt="..."
       />
@@ -72,11 +72,11 @@
 <!-- category section -->
 <div class="container my-5">
   <div class="row">
-    <h1 class="text-center text-uppercase pseudo_border">Find your favourite products with us</h1>
+    <h1 id="fav" class="text-center pseudo_border">Find your favourite products with us</h1>
     <div class="col-md-4 mb-4">
       <div class="category">
         <div class="content">
-          <a href="#" target="_blank">
+          <a routerLink="/category/vegetables & fruits">
             <div class="content-overlay"></div>
             <img class="content-image" src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
             <div class="content-details fadeIn-bottom">
@@ -89,7 +89,7 @@
     <div class="col-md-4 mb-4">
       <div class="category">
         <div class="content">
-          <a href="#" target="_blank">
+          <a routerLink="/category/meat">
             <div class="content-overlay"></div>
             <img class="content-image" src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
             <div class="content-details fadeIn-bottom">
@@ -102,7 +102,7 @@
     <div class="col-md-4 mb-4">
       <div class="category">
         <div class="content">
-          <a href="#" target="_blank">
+          <a routerLink="/category/dairy">
             <div class="content-overlay"></div>
             <img class="content-image" src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
             <div class="content-details fadeIn-bottom">
@@ -174,7 +174,7 @@
 <!--Featured products-->
 <div class="container my-5">
   <div class="row d-flex align-items-center justify-content-center">
-    <h1 class="text-center text-uppercase pseudo_border">This week's featured products</h1>
+    <h1 class="text-center pseudo_border">This week's featured products</h1>
     <div class="col-6 col-md-3 text-left" *ngFor="let product of featProducts">
       <app-product [product]="product"></app-product>
     </div>
