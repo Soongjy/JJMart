@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
+  <div class="row" *ngIf="product !=null">
     <div class="col-md-7">
-      <img src="{{product.image}}" height="500" width="700" alt="Photo of a Shiba Inu">
+      <img src="{{ product.image }}" height="500" width="700" alt="Photo of a Shiba Inu">
     </div>
     <div class="col-md-5">
       <h1>{{product.name}}</h1>

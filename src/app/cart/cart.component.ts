@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../Product';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,18 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  cartItems: Product[] = [];
+
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.getCartItems();
   }
-
-  // increaseQty(qtyId) {
-  //   var location = document.getElementById(qtyId);
-  //   var currentQty = location.value;
-  //   var qty = Number(currentQty) + 1;
-  //   location.value = qty;
-  // }
-
 
   addFunction(){
     var quantity = document.getElementById("quantityValue") as HTMLInputElement;
@@ -29,6 +26,7 @@ export class CartComponent implements OnInit {
     console.log(quantity.value);
     console.log(total1);
   }
+
   minusFunction(){
     var quantity = document.getElementById("quantityValue") as HTMLInputElement;
     var qty:number = 1;
@@ -40,6 +38,14 @@ export class CartComponent implements OnInit {
     }
     quantity.value = qty.toString();
     console.log(quantity.value);
+  }
+
+  getCartItems(){
+    this.cartItems = this.cartService.getCartItems();
+  }
+
+  deleteCartItem(product: Product){
+    this.cartService.deleteCartItem(product);
   }
 
 }

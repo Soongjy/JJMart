@@ -1,3 +1,4 @@
+import { CartService } from './../services/cart.service';
 import { ProductService } from './../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
@@ -14,7 +15,7 @@ export class CategoryComponent implements OnInit {
   categoryProducts : Product[] = [];
   categoryName !:string;
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService, private cartService: CartService) { }
 
   ngOnInit(): void {
 
@@ -38,6 +39,10 @@ export class CategoryComponent implements OnInit {
           this.categoryProducts.push(this.products[i]);
       }
     });
+  }
+
+  addToCart(product: Product){
+
   }
 
 }
