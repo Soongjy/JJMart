@@ -10,6 +10,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RegisterComponent } from './register/register.component';
 import { SigninComponent } from './signin/signin.component';
+import { ManageaccountComponent } from './manageaccount/manageaccount.component';
 
 
 const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule);
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'admin', loadChildren: adminModule },
   { path: 'category/:params', component:CategoryComponent},
   { path: 'viewcart', component:CartComponent},
+  { path: 'manageaccount', component:ManageaccountComponent},
 ];
 
 @NgModule({

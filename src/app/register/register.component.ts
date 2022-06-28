@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit {
   name!: string;
   username!: string;
   email!: string;
+  phonenum!:string;
+  address!:string;
   password!: string;
   repassword!: string;
 
@@ -63,6 +65,8 @@ export class RegisterComponent implements OnInit {
           email: this.email,
           password: this.password,
           privilege: 0,
+          phonenum: this.phonenum,
+          address: this.address
         };
 
         this.name = '';
@@ -70,6 +74,8 @@ export class RegisterComponent implements OnInit {
         this.email = '';
         this.password = '';
         this.repassword = '';
+        this.address = '';
+        this.phonenum = '';
 
         this.userService.addUser(newUser).subscribe((user: User)=>(this.users.push(user)));
     
