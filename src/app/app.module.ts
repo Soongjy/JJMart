@@ -26,6 +26,7 @@ import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { CartComponent } from './cart/cart.component';
     MatTabsModule,
     MatRadioModule,
     MatBadgeModule,
-    MatMenuModule
+    MatMenuModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

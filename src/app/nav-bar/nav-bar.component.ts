@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CartService } from '../services/cart.service';
 import { User } from '../Users';
+import {MatBadgeModule} from '@angular/material/badge';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-nav-bar',
