@@ -25,6 +25,7 @@ import { AllProductsComponent } from './all-products/all-products.component';
 import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
+import { MiniCartComponent } from './mini-cart/mini-cart.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { CartComponent } from './cart/cart.component';
     AllProductsComponent,
     ProductComponent,
     CategoryComponent,
-    CartComponent
+    CartComponent,
+    MiniCartComponent
   ],
   imports: [
     BrowserModule,

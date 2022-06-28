@@ -32,21 +32,20 @@
               class="btn btn-outline-secondary"
               id="add"
               type="button"
-              (click)="addFunction()"
+              (click)="addFunction(cartItem)"
             >
               +
             </button>
             <input
-              type="number"
+              type="text"
               class="form-control text-center"
-              id="quantityValue"
-              placeholder="1"
+              placeholder="{{cartItem.quantity}}"
             />
             <button
               class="btn btn-outline-secondary"
               id="minus"
               type="button"
-              (click)="minusFunction()"
+              (click)="minusFunction(cartItem)"
             >
               -
             </button>

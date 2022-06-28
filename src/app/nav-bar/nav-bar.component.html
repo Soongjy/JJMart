@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/about-us">About Us</a>
@@ -40,15 +40,7 @@
         <div class="mx-3">
           <mat-icon matBadge={{cartItemCounter}} matBadgeColor="warn" [matMenuTriggerFor]="menu">shopping_cart</mat-icon>
           <mat-menu #menu="matMenu">
-            <div class="pop-up-container px-2 py-2">
-
-              work in progress
-              <p>
-                <button class="btn btn-danger" routerLink="/viewcart" type="button" id="button-addon2">View Cart</button>
-                <button class="btn btn-danger" type="button" id="button-addon2">Checkout</button>
-              </p>
-
-            </div>
+           <app-mini-cart></app-mini-cart>
           </mat-menu>
             <!-- Include text description of the icon's meaning for screen-readers -->
             <span class="cdk-visually-hidden">
