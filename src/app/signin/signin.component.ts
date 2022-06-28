@@ -12,7 +12,6 @@ export class SigninComponent implements OnInit {
   users: User[] = [];
   emailusername!: string;
   password!:string;
-  
 
   constructor(
     private userService: UserService,
