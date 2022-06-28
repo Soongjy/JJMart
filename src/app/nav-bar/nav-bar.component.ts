@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
 import { CartService } from '../services/cart.service';
 import { User } from '../Users';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -18,7 +19,10 @@ export class NavBarComponent implements OnInit {
   //later create function to update counter
   cartItemCounter !:number;
 
-  constructor(private cartService: CartService) { }
+
+  constructor(private cartService: CartService) {
+  
+   }
 
   ngOnInit(): void {
     this.userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
@@ -32,6 +36,7 @@ export class NavBarComponent implements OnInit {
         console.log(this.privilege)
       }
     }
+ 
   }
 
   onLogout(){
@@ -43,8 +48,4 @@ export class NavBarComponent implements OnInit {
     }
   }
 
-  // getItemCount(){
-  //   this.cartItemCounter = this.cartService.getCartItems().length;
-  //   console.log("THERE ARE" + this.cartItemCounter);
-  // }
 }

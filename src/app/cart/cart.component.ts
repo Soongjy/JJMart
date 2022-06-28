@@ -17,27 +17,15 @@ export class CartComponent implements OnInit {
     this.getCartItems();
   }
 
-  addFunction(){
-    var quantity = document.getElementById("quantityValue") as HTMLInputElement;
-    var total = document.getElementById("total")!.innerHTML;
-    var qty = Number(quantity.value) +1;
-    quantity.value = qty.toString();
-    var total1 = Number(total) * qty;
-    console.log(quantity.value);
-    console.log(total1);
+  addFunction(product: Product){
+    product.quantity = product.quantity+1;
   }
 
-  minusFunction(){
-    var quantity = document.getElementById("quantityValue") as HTMLInputElement;
-    var qty:number = 1;
-    if(Number(quantity.value)>1){
-      qty = Number(quantity.value)-1;
-    }
-    else{
-      qty=1;
-    }
-    quantity.value = qty.toString();
-    console.log(quantity.value);
+  minusFunction(product: Product){
+    if(product.quantity>1)
+      product.quantity = product.quantity-1;
+    else
+      product.quantity=1;
   }
 
   getCartItems(){

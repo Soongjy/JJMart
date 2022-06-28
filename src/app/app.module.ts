@@ -26,6 +26,7 @@ import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
 import { ManageaccountComponent } from './manageaccount/manageaccount.component';
+import { MiniCartComponent } from './mini-cart/mini-cart.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ManageaccountComponent } from './manageaccount/manageaccount.component'
     ProductComponent,
     CategoryComponent,
     CartComponent,
-    ManageaccountComponent
+    ManageaccountComponent,
+    MiniCartComponent
   ],
   imports: [
     BrowserModule,
