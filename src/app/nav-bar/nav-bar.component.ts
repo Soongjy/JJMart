@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
 import { CartService } from '../services/cart.service';
 import { User } from '../Users';
 
@@ -30,6 +31,16 @@ export class NavBarComponent implements OnInit {
         console.log(this.privilege)
       }
     }
+
+  //   this.cartService.getCartItems2().subscribe(items=>{
+  //     console.log("count: " + items.length);
+  //     this.cartItemCounter = items.length;
+  //   }
+  //  )
+
+  this.cartService.setCartCount(0);
+
+ 
   }
 
   onLogout(){
@@ -41,8 +52,8 @@ export class NavBarComponent implements OnInit {
     }
   }
 
-  // getItemCount(){
-  //   this.cartItemCounter = this.cartService.getCartItems().length;
-  //   console.log("THERE ARE" + this.cartItemCounter);
+  // getCount(){
+  //   this.cartService.getCartCount().subscribe(count=>this.cartItemCounter = count);
+  //   console.log("count: " + this.cartItemCounter)
   // }
 }
