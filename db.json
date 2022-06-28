@@ -143,6 +143,14 @@
       "password": "12",
       "privilege": 1,
       "id": 19
+    },
+    {
+      "name": "jessie",
+      "username": "jessie",
+      "email": "jessie",
+      "password": "jessie",
+      "privilege": 0,
+      "id": 20
     }
   ],
   "products": [
@@ -200,7 +208,8 @@
       "unit": "piece",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
       "discountedPrice": 22
-    },{
+    },
+    {
       "id": 6,
       "name": "Crackers",
       "price": 30,

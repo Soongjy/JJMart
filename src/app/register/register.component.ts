@@ -1,6 +1,5 @@
 import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit, Output,EventEmitter} from '@angular/core';
-import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
 
@@ -19,9 +18,7 @@ export class RegisterComponent implements OnInit {
   password!: string;
   repassword!: string;
 
-  constructor(
-    private userService: UserService,
-    private router: Router) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.userService.getTask().subscribe((users)=> (this.users = users))
@@ -77,7 +74,7 @@ export class RegisterComponent implements OnInit {
         this.userService.addUser(newUser).subscribe((user: User)=>(this.users.push(user)));
     
         alert("You had Signed Up Successfully, Redirecting You to Sign Up")
-        this.router.navigate(['/login'])
+        window.location.href = "/signin";
       }
     }
   }
