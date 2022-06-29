@@ -34,4 +34,14 @@ export class HomepageComponent implements OnInit {
     });
 
   }
+
+  scroll(){
+    (document.getElementById('fav')as HTMLElement).scrollIntoView({
+      behavior: 'smooth'
+    });
+
+    console.log("clicked");
+
+  }
+
 }
