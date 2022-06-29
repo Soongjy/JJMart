@@ -1,17 +1,83 @@
 
-<h1 style="margin-left:26%">My Account</h1>
-<div id=bodycontainer>
-    <h2>My Details</h2>
-    <hr>
-    <p class="p_detail">Name:</p>
+<section style="background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-abstract-watercolor-background_23-2149012404.jpg?w=2000');background-repeat: no-repeat; background-size: cover;">
+<div class="container-fluid">
+    <div class="d-flex justify-content-center">
 
-    <hr>
-    <p class="p_detail">Email Address:</p>
+    <div class="justify-content-center col-sm-5 text-black ps-0  bg-white m-5 rounded">
+        <div class="px-5 ms-xl-5 pt-4">
+        <i class="fas fa-crow fa-2x ms-xl-5 me-4 pt-4 " style="color: #709085;"></i>
+        <span class="h1 fw-bold mb-0">User Profile</span>
+        </div>
 
-    <hr>
-    <p class="p_detail">Phone Number:</p>
+        <form style="width: 36rem;" (ngSubmit)="onSubmit()">
+        <div class="d-flex  h-custom-2 ms-xl-5 mt-3 pt-5 pt-xl-0 mt-xl-n5 ps-3">
+            <div class="px-3">
+            <div class="form-outline mb-4">
+                <div class="form-outline flex-fill mb-0">
+                <input type="text" id="name" class="form-control" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"/>
+                <label class="form-label" for="name">Your Name</label>
+                </div>
+            </div>
 
-    <hr>
-    <p class="p_detail">Address:</p>
-    <hr>
+            <div class="form-outline mb-4">
+                <div class="form-outline flex-fill mb-0">
+                    <input type="text" id="username" class="form-control" [(ngModel)]="username" [ngModelOptions]="{standalone: true}"/>
+                    <label class="form-label" for="name">Your Username</label>
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <div class="form-outline flex-fill mb-0">
+                <input type="email" id="email" class="form-control"  [(ngModel)]="email" [ngModelOptions]="{standalone: true}"/>
+                <label class="form-label" for="email">Your Email</label>
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <div class="form-outline flex-fill mb-0">
+                <input type="phonenum" id="phonenum" class="form-control"  [(ngModel)]="phonenum" [ngModelOptions]="{standalone: true}"/>
+                <label class="form-label" for="phonenum">Your Phone Number</label>
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <div class="form-outline flex-fill mb-0">
+                <input type="address" id="address" class="form-control"  [(ngModel)]="address" [ngModelOptions]="{standalone: true}"/>
+                <label class="form-label" for="address">Your Address</label>
+                </div>
+            </div>
+            </div>
+
+            <div class="px-3">
+            <div class="form-outline mb-4">
+                <div class="form-outline flex-fill mb-0">
+                <input type="password" id="password" class="form-control" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"/>
+                <label class="form-label" for="password">Password</label>
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <div class="form-outline flex-fill mb-0">
+                <input type="password" id="repassword" class="form-control" [(ngModel)]="repassword" [ngModelOptions]="{standalone: true}"/>
+                <label class="form-label" for="repassword">Repeat your password</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mx-4 mt-5 mb-3 mb-lg-4 pt-4">
+                <button type="submit" class="btn btn-info btn-lg btn-block">Reset</button>
+            </div>
+
+            <p style="margin:0 0% 10px 5%">Change Password?
+                <a routerLink="/">Click here</a>
+            </p>
+            </div>
+        </div>
+        </form>
+        
+
+
+    </div>
+
+    </div>
 </div>
+</section>

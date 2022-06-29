@@ -35,10 +35,14 @@ export class RegisterComponent implements OnInit {
       alert(this.name + ' Please fill in your username')
     }else if(!this.email){
       alert('Please fill in your email')
+    }else if(!this.phonenum){
+      alert('Please fill in your phone number')
+    }else if(!this.address){
+      alert('Please fill in your address')
     }else if(!this.password){
       alert('Please fill in your password')
     }else if(!this.repassword){
-      alert('Please fill in your password')
+      alert('Please fill in your repeat password')
     }else if(this.password !== this.repassword){
       alert('Password and Repeat password is not the same')
       this.password = '';
@@ -54,6 +58,10 @@ export class RegisterComponent implements OnInit {
           break
         }else if(this.email === user.email){
           alert('This Email Has already been taken')
+          ok = false;
+          break
+        }else if(this.phonenum === user.phonenum){
+          alert('This Phone Number Has already been taken')
           ok = false;
           break
         }

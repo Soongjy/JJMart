@@ -137,14 +137,6 @@
       "id": 18
     },
     {
-      "name": "Sooong",
-      "username": "12",
-      "email": "12",
-      "password": "12",
-      "privilege": 1,
-      "id": 19
-    },
-    {
       "name": "jessie",
       "username": "jessie",
       "email": "jessie",
@@ -179,6 +171,16 @@
       "phonenum": "q2",
       "address": "q2",
       "id": 23
+    },
+    {
+      "name": "Sooong",
+      "username": "12",
+      "email": "12",
+      "password": "12",
+      "privilege": 0,
+      "phonenum": "12",
+      "address": "12",
+      "id": 24
     }
   ],
   "products": [
