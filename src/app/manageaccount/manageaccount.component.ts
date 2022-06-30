@@ -19,7 +19,7 @@ export class ManageaccountComponent implements OnInit {
   password!: string;
   repassword!: string;
   id!:number;
-
+  oldpassword!:string;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
@@ -45,11 +45,14 @@ export class ManageaccountComponent implements OnInit {
       else if(x == "id"){
         this.id = userdetails[x];
       }
+      else if(x == "password"){
+        this.oldpassword = userdetails[x];
+      }
       
     }
   }
 
-  onSubmit() {
+  onUpdate() {
     if(!this.name){
       alert('Please fill in your name')
     }else if(!this.username){
@@ -85,14 +88,14 @@ export class ManageaccountComponent implements OnInit {
           alert('This Phone Number Has already been taken')
           ok = false;
           break
-        }else if(this.password !== user.password){
-          alert("Please insert the old password to edit the user's details")
+        }else if(this.oldpassword !== this.password){
+          alert("Incorrect Old Password")
           ok = false;
           break
         }
       }
       if(ok == true){
-        const newUser = {
+        const updateUser = {
           name: this.name,
           username :this.username,
           email: this.email,
@@ -102,10 +105,12 @@ export class ManageaccountComponent implements OnInit {
           address: this.address
         };
 
-        this.userService.addUser(newUser).subscribe((user: User)=>(this.users.push(user)));
-    
-        alert("Your Profile Edited Successfully")
+        this.userService.updateUser(updateUser).subscribe((user: User)=>(this.users.put(user)));
+        this.userService.updateUser(updateUser).subscribe((user: User)=>(this.put(updateUser)));
         
+        alert("Your Profile Edited Successfully")
+        this.password='';
+        this.repassword='';
       }
     }
   }

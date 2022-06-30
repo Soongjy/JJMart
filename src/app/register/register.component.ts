@@ -2,6 +2,7 @@ import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
+  
 
 @Component({
   selector: 'app-register',

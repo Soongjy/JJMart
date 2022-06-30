@@ -43,8 +43,7 @@ export class NavBarComponent implements OnInit {
     if(!confirm("Do you really want Log Out?")) {
       return;
     }else{
-    localStorage.removeItem('userdetails');
-    //localStorage.setItem('userdetails',JSON.stringify(null));
+    localStorage.setItem('userdetails',JSON.stringify(null));
     window.location.href = "/";
     }
   }
