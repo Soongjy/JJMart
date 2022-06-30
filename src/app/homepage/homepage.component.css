@@ -33,11 +33,15 @@ a{
   max-width: none !important;
 }
 
+.carousel-control-prev, .carousel-control-next{
+  z-index: 999 !important;
+}
+
 .carousel-content {
   color:#fff;
   position:absolute;
   z-index:12;
-  top:47%;
+  top:44%;
   left:0;
   width:100%;
   text-align:center;

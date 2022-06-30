@@ -18,12 +18,6 @@ export class HomepageComponent implements OnInit {
     this.getFeaturedProducts();
   }
 
-  // getProducts(){
-  //   this.productService.getProducts().subscribe((products)=>{
-  //     this.products = products;
-  //   });
-  // }
-
   getFeaturedProducts(){
     this.productService.getProducts().subscribe((products)=>{
       this.products = products;
