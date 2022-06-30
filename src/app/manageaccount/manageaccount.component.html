@@ -4,12 +4,12 @@
     <div class="d-flex justify-content-center">
 
     <div class="justify-content-center col-sm-5 text-black ps-0  bg-white m-5 rounded">
-        <div class="px-5 ms-xl-5 pt-4">
+        <div class="px-5 ms-xl-5 py-4">
         <i class="fas fa-crow fa-2x ms-xl-5 me-4 pt-4 " style="color: #709085;"></i>
         <span class="h1 fw-bold mb-0">User Profile</span>
         </div>
 
-        <form style="width: 36rem;" (ngSubmit)="onUpdate()">
+        <form (ngSubmit)="onUpdate()">
         <div class="d-flex  h-custom-2 ms-xl-5 mt-3 pt-5 pt-xl-0 mt-xl-n5 ps-3">
             <div class="px-3">
             <div class="form-outline mb-4">
@@ -22,7 +22,7 @@
             <div class="form-outline mb-4">
                 <div class="form-outline flex-fill mb-0">
                     <input type="text" id="username" class="form-control" [(ngModel)]="username" [ngModelOptions]="{standalone: true}"/>
-                    <label class="form-label" for="name">Your Username</label>
+                    <label class="form-label" for="username">Your Username</label>
                 </div>
             </div>
 
@@ -68,7 +68,7 @@
             </div>
 
             <p style="margin:0 0% 10px 5%">Change Password?
-                <a routerLink="/">Click here</a>
+                <a routerLink="/changepassword">Click here</a>
             </p>
             </div>
         </div>

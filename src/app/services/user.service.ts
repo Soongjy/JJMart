@@ -9,6 +9,7 @@ const httpOptions = {
     'Content-Type':'application/json'
   })
 }
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +28,7 @@ export class UserService {
   }
 
   updateUser(user:User):Observable<User>{
-    const url = `${this.apiUrl}/id=${user.id}`;
+    const url = `${this.apiUrl}/${user.id}`;
     return this.http.put<User>(url,user,httpOptions);
   }
 }
