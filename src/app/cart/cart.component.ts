@@ -20,16 +20,11 @@ export class CartComponent implements OnInit {
   }
 
   addFunction(product: Product){
-    product.quantity = product.quantity+1;
-    this.getCartItems();
+    this.cartService.addFunction(product);
   }
 
   minusFunction(product: Product){
-    if(product.quantity>1)
-      product.quantity = product.quantity-1;
-    else
-      product.quantity=1;
-    this.getCartItems();
+    this.cartService.minusFunction(product);
   }
 
   getCartItems(){

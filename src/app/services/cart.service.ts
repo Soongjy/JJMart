@@ -26,10 +26,7 @@ export class CartService {
   deleteCartItem(product: Product){
     const item = this.cartItems.find(item=> item.id === product.id);
     this.cartItems.splice(this.cartItems.indexOf(item as Product), 1);
-
     this.productList.next(this.cartItems);
-
-    console.log('deleted' + product.name);
   }
 
   getProducts(){
@@ -61,6 +58,19 @@ export class CartService {
       grandTotal += product.price * product.quantity;
     })
     return grandTotal;
+  }
+
+  addFunction(product: Product){
+    product.quantity = product.quantity+1;
+    this.productList.next(this.cartItems);
+  }
+
+  minusFunction(product: Product){
+    if(product.quantity>1)
+      product.quantity = product.quantity-1;
+    else
+      product.quantity=1;
+      this.productList.next(this.cartItems);
   }
 
 
