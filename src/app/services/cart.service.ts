@@ -37,14 +37,28 @@ export class CartService {
   }
 
   addToCart(product:any){
-    this.cartItems.push(product);
+
+    let productExists = false;
+    
+    for(let i in this.cartItems){
+      if(this.cartItems[i].id === product.id){
+        this.cartItems[i].quantity ++;
+        productExists = true;
+        break;
+      }
+    }
+
+    if(!productExists){
+      this.cartItems.push(product);
+    }
+
     this.productList.next(this.cartItems);
   }
 
   getTotalPrice():number{
     let grandTotal = 0;
     this.cartItems.map((product: Product)=>{
-      grandTotal += product.price;
+      grandTotal += product.price * product.quantity;
     })
     return grandTotal;
   }

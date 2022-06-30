@@ -2,3 +2,10 @@
     width: 600px;
   }
   
+
+@media screen and (max-width: 480px) {
+  .pop-up-container{
+    width: 200px;
+  }
+  
+ }

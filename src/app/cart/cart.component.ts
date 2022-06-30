@@ -17,11 +17,11 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCartItems();
-    //this.totalPriceFunction();
   }
 
   addFunction(product: Product){
     product.quantity = product.quantity+1;
+    this.getCartItems();
   }
 
   minusFunction(product: Product){
@@ -29,6 +29,7 @@ export class CartComponent implements OnInit {
       product.quantity = product.quantity-1;
     else
       product.quantity=1;
+    this.getCartItems();
   }
 
   getCartItems(){
@@ -40,16 +41,7 @@ export class CartComponent implements OnInit {
 
   deleteCartItem(product: Product){
     this.cartService.deleteCartItem(product);
-   // this.totalPriceFunction();
   }
 
- 
-  // totalPriceFunction(){
-  //   var total= 0;
-  //   for(var i = 0; i<this.cartItems.length; i++){
-  //     total += this.cartItems[i].price;
-  //   }
-  //   this.totalPrice = total;
-  // }
 
 }

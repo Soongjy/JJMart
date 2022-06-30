@@ -105,8 +105,8 @@ export class ManageaccountComponent implements OnInit {
           address: this.address
         };
 
-        this.userService.updateUser(updateUser).subscribe((user: User)=>(this.users.put(user)));
-        this.userService.updateUser(updateUser).subscribe((user: User)=>(this.put(updateUser)));
+        // this.userService.updateUser(updateUser).subscribe((user: User)=>(this.users.put(user)));
+        // this.userService.updateUser(updateUser).subscribe((user: User)=>(this.put(updateUser)));
         
         alert("Your Profile Edited Successfully")
         this.password='';

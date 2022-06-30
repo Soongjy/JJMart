@@ -1,36 +1,45 @@
 <div class="pop-up-container px-2 py-2">
-  <div class="container">
-    <div class="row d-flex align-items-center justify-content-center" *ngFor="let cartItem of cartItems">
-      <div class="col-3">
-        <img
-          src="{{cartItem.image}}"
-          alt="pic"
-          width="120"
-          height="100"
-        />
+  <div class="container" *ngIf="cartItems.length != 0; else noItem">
+    <div class="container">
+      <div
+        class="row d-flex align-items-center justify-content-center"
+        *ngFor="let cartItem of cartItems"
+      >
+        <div class="col-3">
+          <img src="{{ cartItem.image }}" alt="pic" width="120" height="100" />
+        </div>
+        <div class="col-3">
+          <p>{{ cartItem.name }}</p>
+        </div>
+        <div class="col-3">
+          <p>x {{ cartItem.quantity }}</p>
+        </div>
+        <div class="col-3">
+          <p>RM{{ cartItem.price }}</p>
+        </div>
+        <hr class="my-3" />
       </div>
-      <div class="col-6">
-        <p>{{cartItem.name}}</p>
-      </div>
-      <div class="col-3">
-        <p>RM{{cartItem.price}}</p>
-      </div>
-      <hr class="my-3">
     </div>
-   
+    <div class="row">
+      <div class="col-8"></div>
+      <span class="col-3 fw-bold">Total: RM {{ grandTotal }}</span>
+    </div>
+
+    <div class="my-3">
+      <button
+        class="btn btn-danger px-5 mx-5"
+        routerLink="/viewcart"
+        type="button"
+        id="button-addon2"
+      >
+        View Cart
+      </button>
+      <button class="btn btn-danger px-5 mx-5" type="button" id="button-addon2">
+        Checkout
+      </button>
+    </div>
   </div>
-  <span class="fw-bold">Subtotal: RM {{ grandTotal}}</span>
-  <div class="my-3">
-    <button
-      class="btn btn-danger px-5 mx-5"
-      routerLink="/viewcart"
-      type="button"
-      id="button-addon2"
-    >
-      View Cart
-    </button>
-    <button class="btn btn-danger px-5 mx-5" type="button" id="button-addon2">
-      Checkout
-    </button>
-  </div>
+  <ng-template #noItem>
+    <p class="text-center">Your cart is empty!</p>
+  </ng-template>
 </div>

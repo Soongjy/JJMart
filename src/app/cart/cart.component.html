@@ -21,8 +21,8 @@
               />
             </div>
             <div class="col-sm-7">
-              <p>{{ cartItem.name }}</p>
-              <p>{{ cartItem.price }}</p>
+              <p>{{ cartItem.name }} / {{ cartItem.unit }} </p>
+              <p>RM {{ cartItem.price }}</p>
             </div>
           </div>
         </td>
@@ -51,7 +51,7 @@
             </button>
           </div>
         </td>
-        <td class="text-center align-middle" id="total">RM ???</td>
+        <td class="text-center align-middle" id="total">RM {{cartItem.price * cartItem.quantity}}</td>
         <td class="text-center align-middle">
           <i
             class="fa fa-trash trash-icon"
