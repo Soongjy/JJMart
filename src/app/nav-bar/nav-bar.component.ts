@@ -17,7 +17,7 @@ export class NavBarComponent implements OnInit {
   name!: string;
   privilege!:number;
   //later create function to update counter
-  cartItemCounter !:number;
+  cartItemCounter :number = 0;
 
 
   constructor(private cartService: CartService) {
@@ -36,6 +36,11 @@ export class NavBarComponent implements OnInit {
         console.log(this.privilege)
       }
     }
+
+    this.cartService.getProducts().subscribe((items)=>{
+      this.cartItemCounter = items.length;
+    })
+
  
   }
 

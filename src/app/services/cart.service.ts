@@ -10,28 +10,45 @@ export class CartService {
   private apiUrl = 'http://localhost:3000/cart';
   
   cartItems: Product[] = [];
+  public productList = new BehaviorSubject<any>([]);
   constructor() { }
 
-  addToCart(product: Product){
+  // addToCart(product: Product){
    
-    this.cartItems.push(product);
-    console.log(this.cartItems)
-  }
+  //   this.cartItems.push(product);
+  //   console.log(this.cartItems)
+  // }
 
-  getCartItems(){
-    return this.cartItems;
-  }
+  // getCartItems(){
+  //   return of(this.cartItems);
+  // }
 
   deleteCartItem(product: Product){
     const item = this.cartItems.find(item=> item.id === product.id);
-    this.cartItems.splice(this.cartItems.indexOf(item as Product), 1)
+    this.cartItems.splice(this.cartItems.indexOf(item as Product), 1);
+
+    this.productList.next(this.cartItems);
+
     console.log('deleted' + product.name);
   }
 
-  private cartCount = new ReplaySubject<number>(1);
-  cartCount$ = this.cartCount.asObservable();
-  setCartCount(count: number) {
-    this.cartCount.next(count);
+  getProducts(){
+    return this.productList.asObservable();
   }
+
+  addToCart(product:any){
+    this.cartItems.push(product);
+    this.productList.next(this.cartItems);
+  }
+
+  getTotalPrice():number{
+    let grandTotal = 0;
+    this.cartItems.map((product: Product)=>{
+      grandTotal += product.price;
+    })
+    return grandTotal;
+  }
+
+
 
 }

@@ -27,6 +27,7 @@ import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './cart/cart.component';
 import { ManageaccountComponent } from './manageaccount/manageaccount.component';
 import { MiniCartComponent } from './mini-cart/mini-cart.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { MiniCartComponent } from './mini-cart/mini-cart.component';
     MatBadgeModule,
     MatMenuModule,
     MatBadgeModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

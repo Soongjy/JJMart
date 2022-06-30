@@ -10,11 +10,14 @@ import { CartService } from '../services/cart.service';
 export class CartComponent implements OnInit {
 
   cartItems: Product[] = [];
+  grandTotal: number = 0;
+  totalItemPrice: number = 0;
 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getCartItems();
+    //this.totalPriceFunction();
   }
 
   addFunction(product: Product){
@@ -29,11 +32,24 @@ export class CartComponent implements OnInit {
   }
 
   getCartItems(){
-    this.cartItems = this.cartService.getCartItems();
+    this.cartService.getProducts().subscribe((items)=>{
+      this.cartItems = items;
+      this.grandTotal = this.cartService.getTotalPrice();
+    })
   }
 
   deleteCartItem(product: Product){
     this.cartService.deleteCartItem(product);
+   // this.totalPriceFunction();
   }
+
+ 
+  // totalPriceFunction(){
+  //   var total= 0;
+  //   for(var i = 0; i<this.cartItems.length; i++){
+  //     total += this.cartItems[i].price;
+  //   }
+  //   this.totalPrice = total;
+  // }
 
 }
