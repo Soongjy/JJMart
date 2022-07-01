@@ -30,7 +30,7 @@ import { MiniCartComponent } from './mini-cart/mini-cart.component';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { CartQuantityComponent } from './cart-quantity/cart-quantity.component';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -68,7 +68,7 @@ import { CartQuantityComponent } from './cart-quantity/cart-quantity.component';
     MatMenuModule,
     MatBadgeModule,
     MatSnackBarModule,
-
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

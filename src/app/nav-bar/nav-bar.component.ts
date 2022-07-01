@@ -28,11 +28,9 @@ export class NavBarComponent implements OnInit {
     for (let x in this.userdetails) {
       if (x == "name"){
         this.name = this.userdetails[x];
-        console.log(this.name)
       }
       else if(x == "privilege"){
         this.privilege = this.userdetails[x];
-        console.log(this.privilege)
       }
     }
 

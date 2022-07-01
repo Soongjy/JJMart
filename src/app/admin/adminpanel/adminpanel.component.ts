@@ -1,5 +1,6 @@
+import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import {MatExpansionModule} from '@angular/material/expansion';
+
 
 @Component({
   selector: 'app-adminpanel',
@@ -14,4 +15,8 @@ export class AdminpanelComponent implements OnInit {
     
   }
 
+  togglesidepanel(){
+    document.getElementById("collapseUtilities")!.classList.toggle('show');
+    document.getElementById("collapseheader")!.classList.toggle('collapsed')
+  }
 }

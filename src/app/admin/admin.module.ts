@@ -5,7 +5,7 @@ import { AdminComponent } from './admin.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { AdminRoutingModule } from './admin-routing.module';
-
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { AdminRoutingModule } from './admin-routing.module';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatExpansionModule
   ]
 })
 export class AdminModule { }
