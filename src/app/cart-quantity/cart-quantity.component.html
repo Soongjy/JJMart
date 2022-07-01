@@ -1,0 +1,23 @@
+<div class="input-group">
+    <button
+      class="btn btn-outline-secondary"
+      id="add"
+      type="button"
+      (click)="addFunction(cartItem)"
+    >
+      +
+    </button>
+    <input
+      type="text"
+      class="form-control text-center"
+      placeholder="{{cartItem.quantity}}"
+    />
+    <button
+      class="btn btn-outline-secondary"
+      id="minus"
+      type="button"
+      (click)="minusFunction(cartItem)"
+    >
+      -
+    </button>
+  </div>

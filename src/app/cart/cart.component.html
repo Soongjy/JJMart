@@ -27,7 +27,8 @@
           </div>
         </td>
         <td class="align-middle" id="quantity">
-          <div class="input-group">
+          <app-cart-quantity [cartItem]="cartItem"></app-cart-quantity>
+          <!-- <div class="input-group">
             <button
               class="btn btn-outline-secondary"
               id="add"
@@ -49,7 +50,7 @@
             >
               -
             </button>
-          </div>
+          </div> -->
         </td>
         <td class="text-center align-middle" id="total">RM{{cartItem.price * cartItem.quantity}}</td>
         <td class="text-center align-middle">
