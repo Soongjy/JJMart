@@ -8,7 +8,7 @@
         <div class="col-3">
           <img src="{{ cartItem.image }}" alt="pic" width="120" height="100" />
         </div>
-        <div class="col-3">
+        <div class="col-3 px-5">
           <p>{{ cartItem.name }}</p>
         </div>
         <div class="col-3">
@@ -26,17 +26,25 @@
     </div>
 
     <div class="my-3">
-      <button
-        class="btn btn-danger px-5 mx-5"
-        routerLink="/viewcart"
-        type="button"
-        id="button-addon2"
-      >
-        View Cart
-      </button>
-      <button class="btn btn-danger px-5 mx-5" type="button" id="button-addon2">
-        Checkout
-      </button>
+      <div class="row">
+        <div class="col-6">
+          <button
+          class="btn btn-danger w-100"
+          routerLink="/viewcart"
+          type="button"
+          id="button-addon2"
+        >
+          View Cart
+        </button>
+        </div>
+        <div class="col-6">
+  
+          <button class="btn btn-danger w-100" type="button" id="button-addon2">
+            Checkout
+          </button>
+        </div>
+      </div>
+    
     </div>
   </div>
   <ng-template #noItem>

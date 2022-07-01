@@ -23,7 +23,7 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-content">
-      <h1 class="mb-5 title-shadow" [ngStyle]="{ 'font-size': '60px' }">Shop groceries from your home</h1>
+      <h1 class="mb-5 title-shadow">Shop groceries from your home</h1>
       <h3>We deliver your groceries to you</h3>
       <button mat-raised-button color="danger" (click)="scroll()" class="mt-3">Shop Now</button>
     </div>
@@ -163,7 +163,7 @@
     <div class="row">
       <div class="col-9 offset-3">
         <h1 class="banner-title">Join to become a member today!</h1>
-        <button routerLink="/register" mat-raised-button color="warn" class="mb-3">
+        <button routerLink="/register" mat-raised-button color="warn" class="mb-3 signup-btn">
         Sign Up Now
         </button>
       </div>
@@ -172,10 +172,10 @@
 </div>
 
 <!--Featured products-->
-<div class="container my-5">
+<div class="container my-5 px-5">
   <div class="row d-flex align-items-center justify-content-center">
     <h1 class="text-center pseudo_border">This week's featured products</h1>
-    <div class="col-6 col-md-3 text-left" *ngFor="let product of featProducts">
+    <div class="col-xs-12 col-md-6 col-lg-3 text-left" *ngFor="let product of featProducts">
       <app-product [product]="product"></app-product>
     </div>
   </div>

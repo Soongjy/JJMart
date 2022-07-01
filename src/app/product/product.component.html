@@ -1,5 +1,5 @@
 
-  <mat-card class="example-card z-depth">
+  <mat-card class="product-card z-depth mb-3">
     <a routerLink="/product-details/{{ product.id }}">
     <img
       mat-card-image
@@ -17,8 +17,10 @@
         >RM{{ product.price }} /{{ product.unit }}</mat-card-subtitle
       >
     </mat-card-content>
-    <mat-card-actions class="text-center mb-2">
-      <button class="btn btn-danger" type="button" id="button-addon2" (click)="[addToCart(product), openSnackBar('message', 'Close')]"> <i class="fas fa-shopping-cart px-2"></i>Add to Cart</button>
+    <mat-card-actions class="mb-2">
+      <button mat-fab color="accent" aria-label="Example icon button with a delete icon" (click)="[addToCart(product), openSnackBar('message', 'Close')]">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 
