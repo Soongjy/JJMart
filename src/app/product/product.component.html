@@ -1,6 +1,5 @@
-
-  <mat-card class="product-card z-depth mb-3">
-    <a routerLink="/product-details/{{ product.id }}">
+<mat-card class="product-card z-depth mb-3">
+  <a routerLink="/product-details/{{ product.id }}">
     <img
       mat-card-image
       src="{{ product.image }}"
@@ -9,18 +8,25 @@
       alt="Photo of {{ product.image }}"
     />
   </a>
-    <mat-card-content>
-      <h3 class="fw-bold">
+  <mat-card-content>
+    <div class="d-inline pb-5"> 
+      <h3 >
         {{ product.name }}
       </h3>
-      <mat-card-subtitle
-        >RM{{ product.price }} /{{ product.unit }}</mat-card-subtitle
-      >
-    </mat-card-content>
-    <mat-card-actions class="mb-2">
-      <button mat-fab color="warn" aria-label="Add to cart button" (click)="[addToCart(product), openSnackBar('message', 'Close')]">
-        <mat-icon>shopping_cart</mat-icon>
-      </button>
-    </mat-card-actions>
-  </mat-card>
+    </div>
 
+    <button
+      class="d-inline float-end"
+      mat-fab
+      color="warn"
+      aria-label="Add to cart button"
+      (click)="[addToCart(product), openSnackBar('message', 'Close')]"
+    >
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+    <mat-card-subtitle class="pb-5"
+      >RM{{ product.price }} /{{ product.unit }}</mat-card-subtitle
+    >
+  </mat-card-content>
+</mat-card>

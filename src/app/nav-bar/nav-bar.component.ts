@@ -18,7 +18,6 @@ export class NavBarComponent implements OnInit {
   privilege!:number;
   cartItemCounter :number = 0;
 
-
   constructor(private cartService: CartService) {
   
    }
