@@ -176,11 +176,21 @@
       "name": "Soong",
       "username": "12",
       "email": "12",
-      "password": "123",
+      "password": "12",
       "privilege": 1,
       "phonenum": "1234",
       "address": "12",
       "id": 24
+    },
+    {
+      "name": "wef",
+      "username": "wef",
+      "email": "wef",
+      "password": "wef",
+      "privilege": 0,
+      "phonenum": "wef",
+      "address": "wef",
+      "id": 25
     }
   ],
   "products": [

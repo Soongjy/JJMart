@@ -3,6 +3,7 @@ import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-changepassword',
@@ -20,7 +21,8 @@ export class ChangepasswordComponent implements OnInit {
   reoldpassword!:string;
   privilege!:number;
   constructor(private userService: UserService,
-              private router: Router,) { }
+              private router: Router, 
+              private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.userService.getTask().subscribe((users)=> (this.users = users))
@@ -39,23 +41,37 @@ export class ChangepasswordComponent implements OnInit {
   onChangePassword(){
     const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
     if(!this.oldpassword){
-      alert('Please fill in your old password')
+      this._snackBar.open("Please fill in your old password", "Close", {
+        duration: 2000
+      });
     }else if(!this.reoldpassword){
-      alert(' Please repeat your old password')
+      this._snackBar.open("Please repeat your old password", "Close", {
+        duration: 2000
+      });
     }else if(!this.password){
-      alert('Please fill in your new password')
+      this._snackBar.open("Please fill in your new password", "Close", {
+        duration: 2000
+      });
     }else if(!this.repassword){
-      alert('Please repeat your new password')
+      this._snackBar.open("Please repeat your new password", "Close", {
+        duration: 2000
+      });
     }else if(userdetails.password !== this.oldpassword){
-      alert('Wrong Password')
+      this._snackBar.open("Wrong Password", "Close", {
+        duration: 2000
+      });
       this.oldpassword = '';
       this.reoldpassword = '';
     }else if(this.oldpassword !== this.reoldpassword){
-      alert('Old Password and Old Repeat password is not the same')
+      this._snackBar.open("Old Password and Old Repeat password is not the same", "Close", {
+        duration: 2000
+      });
       this.oldpassword = '';
       this.reoldpassword = '';
     }else if(this.password !== this.repassword){
-      alert('New Password and New Repeat password is not the same')
+      this._snackBar.open("New Password and New Repeat password is not the same", "Close", {
+        duration: 2000
+      });
       this.password = '';
       this.repassword = '';
     }
@@ -68,13 +84,19 @@ export class ChangepasswordComponent implements OnInit {
       userdetails.password = this.password
       this.userService.updateUser(userdetails).subscribe();
       localStorage.setItem('userdetails',JSON.stringify(userdetails));
+        
+      this._snackBar.open("Password Changed Successfully", "Close", {
+        duration: 2000
+      });
 
       this.oldpassword = '';
       this.reoldpassword = '';
       this.password = '';
       this.repassword = '';
 
-      window.location.href = "/manageaccount";
+      setTimeout(() => {
+        window.location.href = "/manageaccount";
+      }, 1000);
       }
     }
   }

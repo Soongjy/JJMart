@@ -2,6 +2,7 @@ import { identifierName } from '@angular/compiler';
 import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-manageaccount',
@@ -21,7 +22,7 @@ export class ManageaccountComponent implements OnInit {
   id!:number;
   oldpassword!:string;
   privilege!:number;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.userService.getTask().subscribe((users)=> (this.users = users))
@@ -39,21 +40,37 @@ export class ManageaccountComponent implements OnInit {
 
   onUpdate() {
     if(!this.name){
-      alert('Please fill in your name')
+      this._snackBar.open("Please fill in your name", "Close", {
+        duration: 2000
+      });
     }else if(!this.username){
-      alert(this.name + ' Please fill in your username')
+      this._snackBar.open(this.name + ' Please fill in your Username', "Close", {
+        duration: 2000
+      })
     }else if(!this.email){
-      alert('Please fill in your email')
+      this._snackBar.open("Please fill in your Email", "Close", {
+        duration: 2000
+      });
     }else if(!this.phonenum){
-      alert('Please fill in your phone number')
+      this._snackBar.open("Please fill in your Phone Number", "Close", {
+        duration: 2000
+      });
     }else if(!this.address){
-      alert('Please fill in your address')
+      this._snackBar.open("Please fill in your Address", "Close", {
+        duration: 2000
+      });
     }else if(!this.password){
-      alert('Please fill in your password')
+      this._snackBar.open("Please fill in your Password", "Close", {
+        duration: 2000
+      });
     }else if(!this.repassword){
-      alert('Please fill in your repeat password')
+      this._snackBar.open("Please fill in your Repeat Password", "Close", {
+        duration: 2000
+      });
     }else if(this.password !== this.repassword){
-      alert('Password and Repeat password is not the same')
+      this._snackBar.open("Password and Repeat password is not the same", "Close", {
+        duration: 2000
+      });
       this.password = '';
       this.repassword = '';
     //}else if (this.users.find(x => x.username === this.users)) {
@@ -62,19 +79,27 @@ export class ManageaccountComponent implements OnInit {
       var ok = true;
       for(var user of this.users){
         if(this.username === user.username && this.id!==user.id){
-          alert('This Username has already been taken')
+          this._snackBar.open("This Username has already been taken", "Close", {
+            duration: 2000
+          });
           ok = false;
           break
         }else if(this.email === user.email && this.id!==user.id){
-          alert('This Email Has already been taken')
+          this._snackBar.open("This Email Has already been taken", "Close", {
+            duration: 2000
+          });
           ok = false;
           break
         }else if(this.phonenum === user.phonenum && this.id!==user.id){
-          alert('This Phone Number Has already been taken')
+          this._snackBar.open("This Phone Number Has already been taken", "Close", {
+            duration: 2000
+          });
           ok = false;
           break
         }else if(this.oldpassword !== this.password){
-          alert("Incorrect Old Password")
+          this._snackBar.open("Incorrect Old Password", "Close", {
+            duration: 2000
+          });
           ok = false;
           break
         }
@@ -97,7 +122,9 @@ export class ManageaccountComponent implements OnInit {
         this.userService.updateUser(updateUser).subscribe();
         localStorage.setItem('userdetails',JSON.stringify(updateUser));
 
-        alert("Your Profile Edited Successfully")
+        this._snackBar.open("Your Profile Edited Successfully", "Close", {
+          duration: 2000
+        });
         this.password='';
         this.repassword='';
         }

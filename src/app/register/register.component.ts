@@ -2,6 +2,7 @@ import { HtmlParser } from '@angular/compiler';
 import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
+import { MatSnackBar } from '@angular/material/snack-bar';
   
 
 @Component({
@@ -21,7 +22,7 @@ export class RegisterComponent implements OnInit {
   password!: string;
   repassword!: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.userService.getTask().subscribe((users)=> (this.users = users))
@@ -31,38 +32,59 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     if(!this.name){
-      alert('Please fill in your name')
+      this._snackBar.open("Please fill in your name", "Close", {
+        duration: 2000
+      });
     }else if(!this.username){
-      alert(this.name + ' Please fill in your username')
+      this._snackBar.open(this.name + ' Please fill in your Username', "Close", {
+        duration: 2000
+      })
     }else if(!this.email){
-      alert('Please fill in your email')
+      this._snackBar.open("Please fill in your Email", "Close", {
+        duration: 2000
+      });
     }else if(!this.phonenum){
-      alert('Please fill in your phone number')
+      this._snackBar.open("Please fill in your Phone Number", "Close", {
+        duration: 2000
+      });
     }else if(!this.address){
-      alert('Please fill in your address')
+      this._snackBar.open("Please fill in your Address", "Close", {
+        duration: 2000
+      });
     }else if(!this.password){
-      alert('Please fill in your password')
+      this._snackBar.open("Please fill in your Password", "Close", {
+        duration: 2000
+      });
     }else if(!this.repassword){
-      alert('Please fill in your repeat password')
+      this._snackBar.open("Please fill in your Repeat Password", "Close", {
+        duration: 2000
+      });
     }else if(this.password !== this.repassword){
-      alert('Password and Repeat password is not the same')
+      this._snackBar.open("Password and Repeat password is not the same", "Close", {
+        duration: 2000
+      });
       this.password = '';
       this.repassword = '';
     //}else if (this.users.find(x => x.username === this.users)) {
-    }
-    else{
+    }else{
       var ok = true;
       for(var user of this.users){
         if(this.username === user.username){
-          alert('This Username has already been taken')
+          this._snackBar.open("This Username has already been taken", "Close", {
+            duration: 2000
+          });
           ok = false;
           break
         }else if(this.email === user.email){
-          alert('This Email Has already been taken')
+          this._snackBar.open("This Email Has already been taken", "Close", {
+            duration: 2000
+          });
           ok = false;
           break
         }else if(this.phonenum === user.phonenum){
-          alert('This Phone Number Has already been taken')
+          this._snackBar.open("This Phone Number Has already been taken", "Close", {
+            duration: 2000
+          });
           ok = false;
           break
         }
@@ -87,9 +109,13 @@ export class RegisterComponent implements OnInit {
         this.phonenum = '';
 
         this.userService.addUser(newUser).subscribe((user: User)=>(this.users.push(user)));
-    
-        alert("You had Signed Up Successfully, Redirecting You to Sign Up")
-        window.location.href = "/signin";
+        
+        this._snackBar.open("You had Signed Up Successfully, Redirecting You to Sign Up", "Close", {
+          duration: 2000
+        });
+        setTimeout(() => {
+          window.location.href = ("/signin");
+        }, 1000);
       }
     }
   }
