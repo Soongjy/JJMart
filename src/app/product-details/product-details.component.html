@@ -1,36 +1,45 @@
-<div class="container">
-  <div class="row" *ngIf="product !=null">
-    <div class="col-md-7">
-      <img src="{{ product.image }}" height="500" width="700" alt="Photo of a Shiba Inu">
+<div class="container my-5">
+  <div class="row" *ngIf="product != null">
+    <div class="col-md-6 col-lg-7">
+      <img
+        src="{{ product.image }}"
+        class="img-fluid"
+        alt="Photo of {{ product.image }}"
+      />
     </div>
-    <div class="col-md-5">
-      <h1>{{product.name}}</h1>
-      <h1 *ngIf="product.discountedPrice ==null">RM{{product.price}}</h1>
-      <div *ngIf="product.discountedPrice !=null">
-        <h1 class="d-inline promo-price">RM{{product.discountedPrice}}</h1>
-        <h3 class="d-inline old-price">RM{{product.price}}</h3>
+    <div class="col-md-6 col-lg-5">
+      <h1>{{ product.name }}</h1>
+      <h1 *ngIf="product.discountedPrice == null">RM{{ product.price }}</h1>
+      <div *ngIf="product.discountedPrice != null">
+        <h1 class="d-inline promo-price">RM{{ product.discountedPrice }}</h1>
+        <h3 class="d-inline old-price">RM{{ product.price }}</h3>
       </div>
       <div class="my-3">
-        <p>{{product.description}}</p>
+        <p>{{ product.description }}</p>
       </div>
-
-      <div class="input-group mb-3 w-50">
-        <input type="number" class="form-control w-50" min="1" value="1" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-danger" type="button" (click)="[addToCart(product), openSnackBar('message', 'Close')]">Add to Cart</button>
+      <div class="input-group mb-3 add-to-cart-input-group">
+        <input
+          type="number"
+          class="form-control w-50"
+          min="1"
+          value="1"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <button
+          class="btn btn-outline-danger"
+          type="button"
+          (click)="[addToCart(product), openSnackBar('message', 'Close')]"
+        >
+          Add to Cart
+        </button>
       </div>
-
     </div>
   </div>
-  <div class="row">
+  <div class="row my-3">
     <mat-tab-group>
       <mat-tab label="Reviews"> Reviews </mat-tab>
       <mat-tab label="Additional Info"> Additional Info </mat-tab>
     </mat-tab-group>
-
   </div>
-
 </div>
-
-
-
-
