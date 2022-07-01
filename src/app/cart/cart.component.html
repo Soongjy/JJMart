@@ -22,7 +22,7 @@
             </div>
             <div class="col-sm-7">
               <p>{{ cartItem.name }} / {{ cartItem.unit }} </p>
-              <p>RM {{ cartItem.price }}</p>
+              <p>RM{{ cartItem.price }}</p>
             </div>
           </div>
         </td>
@@ -51,7 +51,7 @@
             </button>
           </div>
         </td>
-        <td class="text-center align-middle" id="total">RM {{cartItem.price * cartItem.quantity}}</td>
+        <td class="text-center align-middle" id="total">RM{{cartItem.price * cartItem.quantity}}</td>
         <td class="text-center align-middle">
           <i
             class="fa fa-trash trash-icon"
@@ -71,7 +71,7 @@
   </table>
   <div class="row">
     <div class="col-md-3 offset-md-9">
-      <p class="fw-bold"> Total Price: RM {{grandTotal}}</p>
+      <p class="fw-bold"> Total Price: RM{{grandTotal}}</p>
     </div>
   </div>
   <div class="row">
@@ -81,9 +81,28 @@
       </button>
     </div>
     <div class="col-6">
-      <button type="button" class="btn btn-outline-primary float-end">
+      <button type="button" class="btn btn-outline-primary float-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Checkout
       </button>
+    </div>
+  </div>
+</div>
+
+<!-- Order confimation modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Checkout</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Confirm payment of RM{{grandTotal}} for your order?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Place Order</button>
+      </div>
     </div>
   </div>
 </div>

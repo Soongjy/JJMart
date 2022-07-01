@@ -65,7 +65,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     MatBadgeModule,
     MatMenuModule,
     MatBadgeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

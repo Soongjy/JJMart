@@ -16,7 +16,6 @@ export class NavBarComponent implements OnInit {
   title: string = 'Sunway Mart';
   name!: string;
   privilege!:number;
-  //later create function to update counter
   cartItemCounter :number = 0;
 
 
@@ -37,6 +36,7 @@ export class NavBarComponent implements OnInit {
       }
     }
 
+    //to update cart item count
     this.cartService.getProducts().subscribe((items)=>{
       this.cartItemCounter = items.length;
     })
@@ -45,7 +45,7 @@ export class NavBarComponent implements OnInit {
   }
 
   onLogout(){
-    if(!confirm("Do you really want Log Out?")) {
+    if(!confirm("Do you really want to Log Out?")) {
       return;
     }else{
     localStorage.setItem('userdetails',JSON.stringify(null));
