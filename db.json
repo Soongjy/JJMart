@@ -181,6 +181,16 @@
       "phonenum": "1234",
       "address": "12",
       "id": 24
+    },
+    {
+      "name": "wef",
+      "username": "wef",
+      "email": "wef",
+      "password": "wef",
+      "privilege": 0,
+      "phonenum": "wef",
+      "address": "wef",
+      "id": 25
     }
   ],
   "products": [

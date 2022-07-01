@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signin',
@@ -13,7 +14,7 @@ export class SigninComponent implements OnInit {
   password!:string;
   
 
-  constructor(private userService: UserService,) { }
+  constructor(private userService: UserService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.userService.getTask().subscribe((users)=> (this.users = users))
@@ -22,9 +23,13 @@ export class SigninComponent implements OnInit {
   onSubmit(){
     var found = 0;
     if(!this.emailusername){
-      alert('Please fill in your email or username')
+      this._snackBar.open("Please fill in your username or email", "Close", {
+        duration: 2000
+      });
     }else if(!this.password){
-      alert('Please fill in your password')
+      this._snackBar.open("Please fill in your password", "Close", {
+        duration: 2000
+      });
     }else{
       for(var user of this.users){
         if(this.emailusername === user.username||this.emailusername === user.email){
@@ -43,14 +48,22 @@ export class SigninComponent implements OnInit {
         }
       }
       if(found == 1){
-        alert("Your Password is incorrect")
+        this._snackBar.open("Your Password is incorrect", "Close", {
+          duration: 2000
+        });
       }else if(found == 0){
-        alert("The Username doesn't exist")
+        this._snackBar.open("The Username doesn't exist", "Close", {
+          duration: 2000
+        });
       }else if(found == 2){
-        alert("Login Successfully")
+        this._snackBar.open("Login Successfully", "Close", {
+          duration: 2000
+        });
         this.emailusername = '';
         this.password = '';
-        window.location.href = "/";
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 1000);
       }
     }
   }
