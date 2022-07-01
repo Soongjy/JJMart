@@ -20,37 +20,22 @@ export class ManageaccountComponent implements OnInit {
   repassword!: string;
   id!:number;
   oldpassword!:string;
+  privilege!:number;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.userService.getTask().subscribe((users)=> (this.users = users))
     const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
-    console.log(userdetails)
-    for (let x in userdetails) {
-      if (x == "name"){
-        this.name = userdetails[x];
-      }
-      else if(x == "username"){
-        this.username = userdetails[x];
-      }
-      else if(x == "email"){
-        this.email = userdetails[x];
-      }
-      else if(x == "phonenum"){
-        this.phonenum = userdetails[x];
-      }
-      else if(x == "address"){
-        this.address = userdetails[x];
-      }
-      else if(x == "id"){
-        this.id = userdetails[x];
-      }
-      else if(x == "password"){
-        this.oldpassword = userdetails[x];
-      }
-      
-    }
+      this.name = userdetails.name;
+      this.username = userdetails.username;
+      this.email = userdetails.email;
+      this.phonenum = userdetails.phonenum;
+      this.address = userdetails.address;
+      this.id = userdetails.id;
+      this.oldpassword = userdetails.password;
+      this.privilege = userdetails.privilege;
   }
+  
 
   onUpdate() {
     if(!this.name){
@@ -100,17 +85,22 @@ export class ManageaccountComponent implements OnInit {
           username :this.username,
           email: this.email,
           password: this.password,
-          privilege: 0,
+          privilege: this.privilege,
           phonenum: this.phonenum,
-          address: this.address
+          address: this.address,
+          id:this.id,
         };
 
-        // this.userService.updateUser(updateUser).subscribe((user: User)=>(this.users.put(user)));
-        // this.userService.updateUser(updateUser).subscribe((user: User)=>(this.put(updateUser)));
-        
+        if(!confirm("Do you really want change information?")) {
+          return;
+        }else{
+        this.userService.updateUser(updateUser).subscribe();
+        localStorage.setItem('userdetails',JSON.stringify(updateUser));
+
         alert("Your Profile Edited Successfully")
         this.password='';
         this.repassword='';
+        }
       }
     }
   }

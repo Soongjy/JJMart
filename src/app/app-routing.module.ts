@@ -11,6 +11,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { RegisterComponent } from './register/register.component';
 import { SigninComponent } from './signin/signin.component';
 import { ManageaccountComponent } from './manageaccount/manageaccount.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 
 const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule);
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'category/:params', component:CategoryComponent},
   { path: 'viewcart', component:CartComponent},
   { path: 'manageaccount', component:ManageaccountComponent},
+  { path: 'changepassword', component:ChangepasswordComponent},
 ];
 
 @NgModule({
