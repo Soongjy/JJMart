@@ -30,6 +30,7 @@ import { MiniCartComponent } from './mini-cart/mini-cart.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { CartQuantityComponent } from './cart-quantity/cart-quantity.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { CartQuantityComponent } from './cart-quantity/cart-quantity.component';
     ManageaccountComponent,
     MiniCartComponent,
     ChangepasswordComponent,
-    CartQuantityComponent
+    CartQuantityComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

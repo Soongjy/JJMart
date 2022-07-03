@@ -1,48 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <h3>Category</h3>
-      <div class="list-group">
-        <a
-          href="#"
-          class="list-group-item list-group-item-action active"
-          aria-current="true"
-        >
-          Vegetables & Fruits
-        </a>
-        <a href="#" routerLinkActive="router-link-active" class="list-group-item list-group-item-action"
-          >Meat</a
-        >
-        <a href="#" class="list-group-item list-group-item-action"
-          >Dairy</a
-        >
-        <a href="#" class="list-group-item list-group-item-action"
-          >A fourth link item</a
-        >
-      </div>
-      <label id="example-radio-group-label">Pick your favorite season</label>
-      <mat-radio-group
-        aria-labelledby="example-radio-group-label"
-        class="example-radio-group"
-        [(ngModel)]="favoriteSeason"
-      >
-        <mat-radio-button
-          class="example-radio-button"
-          *ngFor="let season of seasons"
-          [value]="season"
-        >
-          {{ season }}
-        </mat-radio-button>
-      </mat-radio-group>
-      <div>Your favorite season is: {{ favoriteSeason }}</div>
-    </div>
-    <div class="col-md-9">
-      <div class="row">
-        <div class="col-6 col-md-4 text-left mb-5" *ngFor="let product of products">
-         <app-product [product]="product"></app-product>
-        </div>
-      </div>
+<div class="container px-5 py-5">
+  <p class="text-end">{{ productCount }} item(s) found!</p>
+  <div class="row" *ngIf="products.length != 0; else noItem">
+    <div class="col-12 col-md-3 mb-5" *ngFor="let product of products">
+      <app-product [product]="product"></app-product>
     </div>
   </div>
-
+  <ng-template #noItem>
+    <p class="text-center">No results found!</p>
+  </ng-template>
 </div>

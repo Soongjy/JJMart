@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
 import { ProductService } from '../services/product.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-all-products',
@@ -9,21 +11,35 @@ import { ProductService } from '../services/product.service';
 })
 export class AllProductsComponent implements OnInit {
 
-  favoriteSeason !: string;
-  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
-
   products: Product[] = [];
 
-  constructor(private productService: ProductService) { }
+  productSub : Subscription = new Subscription();
+
+  productCount!: number;
+  
+
+  constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getProducts();
+ 
+    this.route.params.subscribe(params=>{
+      if(params.searchTerm){
+       this.productSub = this.productService.getProducts().subscribe((products)=>{
+        this.products = products.filter( product =>
+          product.name.toLowerCase().includes(params.searchTerm.toLowerCase()));
+          this.productCount = this.products.length;
+      
+      });
+      }
+    
+    })
   }
 
-  getProducts(){
-  this.productService.getProducts().subscribe((products)=>{
-    this.products = products;
-  });
-}
+//   getProducts(){
+//   this.productService.getProducts().subscribe((products)=>{
+//     this.products = products;
+//     console.log(this.products);
+//   });
+// }
 
 }

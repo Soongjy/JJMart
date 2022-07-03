@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'viewcart', component:CartComponent},
   { path: 'manageaccount', component:ManageaccountComponent},
   { path: 'changepassword', component:ChangepasswordComponent},
+  { path: 'search/:searchTerm', component:AllProductsComponent},
 ];
 
 @NgModule({
