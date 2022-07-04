@@ -15,15 +15,27 @@
       </h3>
     </div>
 
-    <button
+    <button *ngIf="userdetails!= null; else notLoggedIn"
       class="d-inline float-end"
       mat-fab
       color="warn"
       aria-label="Add to cart button"
-      (click)="[addToCart(product), openSnackBar('message', 'Close')]"
+      (click)="[addToCart(product), openSnackBarAddCart('message', 'Close')]"
     >
       <mat-icon>shopping_cart</mat-icon>
     </button>
+
+    <ng-template #notLoggedIn>
+      <button
+      class="d-inline float-end"
+      mat-fab
+      color="warn"
+      aria-label="Add to cart button"
+      (click)="openSnackBarSignIn('message', 'Close')"
+    >
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    </ng-template>
 
     <mat-card-subtitle class="pb-5"
       >RM{{ product.price }} /{{ product.unit }}</mat-card-subtitle
