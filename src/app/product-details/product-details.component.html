@@ -38,10 +38,17 @@
     
     </div>
   </div>
-  <div class="row my-3">
+  <!-- <div class="row my-3">
     <mat-tab-group>
       <mat-tab label="Reviews"> Reviews </mat-tab>
       <mat-tab label="Additional Info"> Additional Info </mat-tab>
     </mat-tab-group>
+  </div> -->
+  <hr>
+  <div class="row my-3">
+    <h3 class="fw-bold">Recommended products</h3>
+      <div class="col-6 col-md-3 text-left mb-5" *ngFor="let product of categoryProducts">
+        <app-product [product]="product" *ngIf="categoryProducts.length<=4"></app-product>
+      </div>
   </div>
 </div>

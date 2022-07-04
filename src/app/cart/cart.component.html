@@ -12,7 +12,7 @@
       <tr *ngFor="let cartItem of cartItems">
         <td scope="row">
           <div class="row d-flex align-items-center">
-            <div class="col-sm-5">
+            <div class="col-sm-12 col-md-5">
               <img
                 src="{{ cartItem.image }}"
                 alt="pic"
@@ -20,7 +20,7 @@
                 height="150"
               />
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-12 col-md-7">
               <p>{{ cartItem.name }} / {{ cartItem.unit }} </p>
               <p>RM{{ cartItem.price }}</p>
             </div>
@@ -28,29 +28,6 @@
         </td>
         <td class="align-middle" id="quantity">
           <app-cart-quantity [cartItem]="cartItem"></app-cart-quantity>
-          <!-- <div class="input-group">
-            <button
-              class="btn btn-outline-secondary"
-              id="add"
-              type="button"
-              (click)="addFunction(cartItem)"
-            >
-              +
-            </button>
-            <input
-              type="text"
-              class="form-control text-center"
-              placeholder="{{cartItem.quantity}}"
-            />
-            <button
-              class="btn btn-outline-secondary"
-              id="minus"
-              type="button"
-              (click)="minusFunction(cartItem)"
-            >
-              -
-            </button>
-          </div> -->
         </td>
         <td class="text-center align-middle" id="total">RM{{cartItem.price * cartItem.quantity}}</td>
         <td class="text-center align-middle">
@@ -102,7 +79,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-outline-danger">Place Order</button>
+        <button type="button" class="btn btn-outline-danger"  data-bs-dismiss="modal" (click)="createOrder()">Place Order</button>
       </div>
     </div>
   </div>

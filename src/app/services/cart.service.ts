@@ -73,6 +73,11 @@ export class CartService {
       this.productList.next(this.cartItems);
   }
 
+  clearCart(){
+    this.cartItems = [];
+    this.productList.next(this.cartItems);
+  }
+
 
 
 }

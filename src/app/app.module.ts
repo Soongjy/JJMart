@@ -31,6 +31,7 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { CartQuantityComponent } from './cart-quantity/cart-quantity.component';
 import { SearchComponent } from './search/search.component';
+import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { SearchComponent } from './search/search.component';
     MiniCartComponent,
     ChangepasswordComponent,
     CartQuantityComponent,
-    SearchComponent
+    SearchComponent,
+    OrderconfirmationComponent
   ],
   imports: [
     BrowserModule,

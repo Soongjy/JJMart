@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from '../Order';
 import { Product } from '../Product';
 import { CartService } from '../services/cart.service';
+import { OrderService } from '../services/order.service';
 
 @Component({
   selector: 'app-cart',
@@ -13,10 +15,32 @@ export class CartComponent implements OnInit {
   grandTotal: number = 0;
   totalItemPrice: number = 0;
 
-  constructor(private cartService: CartService) { }
+
+  orders: Order[] = [];
+
+  userdetails: any;
+  name:string ='';
+  address:string='';
+
+  constructor(private cartService: CartService, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.getCartItems();
+
+    this.userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
+    for (let x in this.userdetails) {
+      if (x == "name"){
+        this.name = this.userdetails[x];
+        console.log("name is " + this.name)
+      }
+      else if (x == "address"){
+        this.address = this.userdetails[x];
+        console.log("address is " + this.address)
+      }
+    
+    }
+
+
   }
 
   addFunction(product: Product){
@@ -38,5 +62,21 @@ export class CartComponent implements OnInit {
     this.cartService.deleteCartItem(product);
   }
 
+  createOrder(){
+    const newOrder = {
+      orderDate: new Date (),
+      totalPrice: this.grandTotal,
+      products: this.cartItems,
+      name: this.name,
+      address: this.address
+    };
+
+    this.orderService.addOrder(newOrder).subscribe((order:Order)=>(this.orders.push(order)));
+    //this.cartService.clearCart();
+    setTimeout(() => {
+      window.location.href = ("/orderconfirmation");
+    }, 1000);
+
+  }
 
 }
