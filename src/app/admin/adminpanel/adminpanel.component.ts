@@ -15,8 +15,18 @@ export class AdminpanelComponent implements OnInit {
     
   }
 
-  togglesidepanel(){
+  toggleComponents(){
+    document.getElementById("collapseComponentsheader")!.classList.toggle('collapsed');
+    document.getElementById("collapseComponents")!.classList.toggle('show');
+  }
+
+  toggleUtilities(){
+    document.getElementById("collapseUtilitiesheader")!.classList.toggle('collapsed');
     document.getElementById("collapseUtilities")!.classList.toggle('show');
-    document.getElementById("collapseheader")!.classList.toggle('collapsed')
+  }
+
+  togglePages(){
+    document.getElementById("collapsePagesheader")!.classList.toggle('collapsed');
+    document.getElementById("collapsePages")!.classList.toggle('show');
   }
 }
