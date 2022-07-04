@@ -7,6 +7,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { AdminRoutingModule } from './admin-routing.module';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ManageProductComponent } from './manage-product/manage-product.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ManageProductComponent } from './manage-product/manage-product.componen
     AdminpanelComponent,
     AdmindashboardComponent,
     AdminComponent,
-    ManageProductComponent
+    ManageProductComponent,
+    ManageUserComponent
   ],
   imports: [
     CommonModule,

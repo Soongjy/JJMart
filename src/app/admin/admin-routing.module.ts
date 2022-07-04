@@ -6,6 +6,7 @@ import { AdminComponent } from "./admin.component";
 import { AdmindashboardComponent } from "./admindashboard/admindashboard.component";
 import { AdminpanelComponent } from "./adminpanel/adminpanel.component";
 import { ManageProductComponent } from "./manage-product/manage-product.component";
+import { ManageUserComponent } from "./manage-user/manage-user.component";
 
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
         children: [
             { path: '', component: AdmindashboardComponent },
             { path: 'manageproduct', component: ManageProductComponent},
+            { path: 'manageuser', component: ManageUserComponent},
         ],
         
     }
