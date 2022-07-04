@@ -40,7 +40,7 @@ export class NavBarComponent implements OnInit {
       this.cartItemCounter = items.length;
     })
 
- 
+    
   }
 
   onLogout(){

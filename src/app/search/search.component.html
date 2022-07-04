@@ -1,1 +1,4 @@
-<p>search works!</p>
+<div class="d-flex">
+    <input class="form-control me-2" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm">
+    <button class="btn btn-outline-danger" type="submit" (click)="search()" (change)="search()">Search</button>
+</div>
