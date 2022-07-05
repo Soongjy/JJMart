@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../Product';
 import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
@@ -16,9 +16,13 @@ export class ProductDetailsComponent implements OnInit {
   products : Product[] = [];
   categoryProducts : Product[] = [];
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, private cartService: CartService, private _snackBar: MatSnackBar) { }
+  userdetails: any;
+
+  constructor(private route: ActivatedRoute, private productService: ProductService, private cartService: CartService, private _snackBar: MatSnackBar,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
     this.getDetails();
   }
   
@@ -46,10 +50,19 @@ export class ProductDetailsComponent implements OnInit {
     this.cartService.addToCart(product);
   }
 
-  openSnackBar(message: string, action: string) {
+  openSnackBarAddCart(message: string, action: string) {
     this._snackBar.open(this.product.name + " added to cart!", action, {
       duration: 2000
     });
   }
+
+  openSnackBarSignIn(message: string, action: string) {
+    this._snackBar.open("Please sign in first!", action, {
+      duration: 5000
+    })
+    .onAction()
+    .subscribe(() => this.router.navigateByUrl('/signin'));
+  }
+
 
 }

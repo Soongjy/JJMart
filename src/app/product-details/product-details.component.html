@@ -23,13 +23,24 @@
           <app-cart-quantity [cartItem]="product"></app-cart-quantity>
         </div>
         <div class="col-8">
-          <button
+          <button *ngIf="userdetails!= null; else notLoggedIn"
           class="btn btn-outline-danger w-100"
           type="button"
-          (click)="[addToCart(product), openSnackBar('message', 'Close')]"
+          (click)="[addToCart(product), openSnackBarAddCart('message', 'Close')]"
         >
           Add to Cart
         </button>
+
+        <ng-template #notLoggedIn>
+          <button
+          class="btn btn-outline-danger w-100"
+          type="button"
+          (click)="openSnackBarSignIn('message', 'Sign in now')"
+        >
+          Add to Cart
+        </button>
+        </ng-template>
+
         </div>
       </div>
       <div class="row">
