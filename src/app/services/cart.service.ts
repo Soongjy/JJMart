@@ -68,8 +68,8 @@ export class CartService {
   minusFunction(product: Product){
     if(product.quantity>1)
       product.quantity = product.quantity-1;
-    else
-      product.quantity=1;
+    else if(product.quantity>=0)
+      this.deleteCartItem(product);
       this.productList.next(this.cartItems);
   }
 
