@@ -15,24 +15,23 @@ import { MatTableDataSource} from '@angular/material/table';
 export class ManageUserComponent implements OnInit,AfterViewInit {
   users: User[] = [];
   displayedColumns: string[] = ['id', 'name', 'username', 'email'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<User>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+  
   }
 
   constructor(private userService: UserService,private _snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
-    this.userService.getTask().subscribe((users)=> (this.users = users))
-    console.log(ELEMENT_DATA)
-  }
-
-  try(){
-    console.log(this.users)
+    this.userService.getTask().subscribe((users)=> {
+    this.users = users;
+    this.dataSource = new MatTableDataSource<User>(this.users);
+    this.dataSource.paginator = this.paginator;
+    });
   }
 }
 
@@ -42,6 +41,7 @@ export interface PeriodicElement {
   weight: number;
   symbol: string;
 }
+
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
