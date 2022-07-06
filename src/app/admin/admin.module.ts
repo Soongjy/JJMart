@@ -8,17 +8,27 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { ManageBannersComponent } from './manage-banners/manage-banners.component';
 
 
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ManageProductComponent } from './manage-product/manage-product.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
     AdminpanelComponent,
     AdmindashboardComponent,
     AdminComponent,
-    ManageBannersComponent
+    ManageBannersComponent,
+    ManageProductComponent,
+    ManageUserComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatExpansionModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class AdminModule { }

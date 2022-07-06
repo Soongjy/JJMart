@@ -33,6 +33,7 @@ import { CartQuantityComponent } from './cart-quantity/cart-quantity.component';
 import { SearchComponent } from './search/search.component';
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
 
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,7 @@ import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmatio
     MatMenuModule,
     MatBadgeModule,
     MatSnackBarModule,
-
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
