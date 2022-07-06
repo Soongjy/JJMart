@@ -63,7 +63,7 @@ export class SigninComponent implements OnInit {
         this.password = '';
         setTimeout(() => {
           window.location.href = "/";
-        }, 1000);
+        }, 500);
       }
     }
   }

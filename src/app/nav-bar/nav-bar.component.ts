@@ -5,7 +5,7 @@ import { CartService } from '../services/cart.service';
 import { User } from '../Users';
 import {MatBadgeModule} from '@angular/material/badge';
 import { ThemePalette } from '@angular/material/core';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -18,7 +18,8 @@ export class NavBarComponent implements OnInit {
   privilege!:number;
   cartItemCounter :number = 0;
 
-  constructor(private cartService: CartService) {
+
+  constructor(private cartService: CartService,private _snackBar: MatSnackBar) {
   
    }
 
@@ -27,11 +28,9 @@ export class NavBarComponent implements OnInit {
     for (let x in this.userdetails) {
       if (x == "name"){
         this.name = this.userdetails[x];
-        console.log(this.name)
       }
       else if(x == "privilege"){
         this.privilege = this.userdetails[x];
-        console.log(this.privilege)
       }
     }
 
@@ -46,9 +45,12 @@ export class NavBarComponent implements OnInit {
   onLogout(){
     if(!confirm("Do you really want to Log Out?")) {
       return;
-    }else{
-    localStorage.setItem('userdetails',JSON.stringify(null));
-    window.location.href = "/";
+    }els  e{
+    setTimeout(() => {
+      localStorage.setItem('userdetails',JSON.stringify(null));
+      window.location.href = "/";
+    }, 500);
+    
     }
   }
 
