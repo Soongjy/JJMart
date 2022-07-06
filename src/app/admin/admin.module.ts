@@ -5,6 +5,7 @@ import { AdminComponent } from './admin.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { ManageBannersComponent } from './manage-banners/manage-banners.component';
 
 
 
@@ -12,7 +13,8 @@ import { AdminRoutingModule } from './admin-routing.module';
   declarations: [
     AdminpanelComponent,
     AdmindashboardComponent,
-    AdminComponent
+    AdminComponent,
+    ManageBannersComponent
   ],
   imports: [
     CommonModule,
