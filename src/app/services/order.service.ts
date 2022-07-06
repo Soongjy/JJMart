@@ -23,4 +23,8 @@ export class OrderService {
     return this.http.post<Order>(this.apiUrl, order, httpOptions);
   }
 
+  getOrders():Observable<Order[]>{
+    return this.http.get<Order[]>(this.apiUrl);
+  }
+
 }

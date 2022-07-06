@@ -5,7 +5,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource} from '@angular/material/table';
 
-
 @Component({
   selector: 'app-manage-user',
   templateUrl: './manage-user.component.html',
@@ -14,7 +13,7 @@ import { MatTableDataSource} from '@angular/material/table';
 
 export class ManageUserComponent implements OnInit,AfterViewInit {
   users: User[] = [];
-  displayedColumns: string[] = ['id', 'name', 'username', 'email'];
+  displayedColumns: string[] = ['id', 'name', 'username', 'email', 'actions'];
   dataSource = new MatTableDataSource<User>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
