@@ -8,7 +8,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ManageProductComponent } from './manage-product/manage-product.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { ManageUserComponent } from './manage-user/manage-user.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class AdminModule { }
