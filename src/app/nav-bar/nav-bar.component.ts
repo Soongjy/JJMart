@@ -45,7 +45,7 @@ export class NavBarComponent implements OnInit {
   onLogout(){
     if(!confirm("Do you really want to Log Out?")) {
       return;
-    }els  e{
+    }else{
     setTimeout(() => {
       localStorage.setItem('userdetails',JSON.stringify(null));
       window.location.href = "/";
