@@ -1,8 +1,5 @@
 export interface Banner {
-   name: string,
+   page: string,
    title: string,
-   subtitle: string,
-   image1: string,
-   image2: string,
-   image3: string
+   image: string,
 }

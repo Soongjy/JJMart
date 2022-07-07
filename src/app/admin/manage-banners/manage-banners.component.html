@@ -1,42 +1,26 @@
 <div class="container px-5 py-5">
-    <h1>Carousel</h1>
+    <h1>Update Banner</h1>
     <div class="row">
-        <form>
+        <form (ngSubmit)="onSubmit()">
             <div class="mb-3">
-                <label for="formFile1" class="form-label">Image 1</label>
-                <input class="form-control" type="file" id="formFile1">
+                <label for="carousel-title" class="form-label">Target Page</label>
+                <select type="text" class="form-control" id="page" placeholder="Carousel title" [(ngModel)]="page" [ngModelOptions]="{standalone: true}" required>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value=homepage>Homepage</option>
+                    <option value=contact-us>Contact Us</option>
+                </select>
             </div>
-        
-            <div class="mb-3">
-                <label for="formFile2" class="form-label">Image 2</label>
-                <input class="form-control" type="file" id="formFile2">
-            </div>
-        
-            <div class="mb-3">
-                <label for="formFile3" class="form-label">Image 3</label>
-                <input class="form-control" type="file" id="formFile3">
-            </div>
-        
-            <div class="mb-3">
-                <label for="carousel-title" class="form-label">Image 1</label>
-                <input type="text" class="form-control" id="image1" placeholder="Image url">
-            </div>
-    
-            <div class="mb-3">
-                <label for="carousel-title" class="form-label">Image 2</label>
-                <input type="text" class="form-control" id="image2" placeholder="Image url">
-            </div>
-    
+
             <div class="mb-3">
                 <label for="carousel-title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="carousel-title" placeholder="Carousel title">
+                <input type="text" class="form-control" id="title" placeholder="Carousel title"[(ngModel)]="title" [ngModelOptions]="{standalone: true}">
             </div>
-        
+
             <div class="mb-3">
-                <label for="carousel-subtitle" class="form-label">Subtitle</label>
-                <input type="text" class="form-control" id="carousel-subtitle" placeholder="Carousel subtitle">
+                <label for="formFile1" class="form-label">Image</label>
+                <input class="form-control" type="file" id="image" [(ngModel)]="image" [ngModelOptions]="{standalone: true}">
             </div>
-    
+
             <button type="submit" class="btn btn-primary">Submit</button>
     
         </form>

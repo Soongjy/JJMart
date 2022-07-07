@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Banner } from '../Banner';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,8 +19,8 @@ export class BannerService {
 
   constructor(private http:HttpClient) { }
 
-  updateBanner(banner: any):Observable<any>{
-    return this.http.post<any>(this.apiUrl, banner, httpOptions);
+  updateBanner(banner: Banner):Observable<any>{
+    return this.http.post<Banner>(this.apiUrl, banner, httpOptions);
   }
 
   
