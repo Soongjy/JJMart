@@ -3,7 +3,7 @@
 </div>
 <div class="container mt-5">
     <div *ngIf="orderHistoryList.length !=0; else noItem">
-        <div *ngFor="let order of orderHistoryList">
+        <div *ngFor="let order of orderHistoryList" class="mb-5">
           <div class="row border-bottom">
             <div class="col-md-3">
               <div class="fw-bold">Order ID: {{order.id}}</div>
