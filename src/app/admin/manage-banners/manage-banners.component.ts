@@ -45,6 +45,7 @@ export class ManageBannersComponent implements OnInit {
       this.image = '';
 
       console.log(newBanner)
+      this.bannerService.updateBanner(newBanner).subscribe((banner:any)=>(this.banners.push(banner)));
     }
   }
 }
