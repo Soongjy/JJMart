@@ -201,6 +201,16 @@
       "phonenum": "123",
       "address": "123",
       "id": 26
+    },
+    {
+      "name": "123",
+      "username": "12345",
+      "email": "12345",
+      "password": "123",
+      "privilege": 0,
+      "phonenum": "1234",
+      "address": "123",
+      "id": 27
     }
   ],
   "products": [
@@ -393,12 +403,9 @@
   ],
   "banners": [
     {
-      "name": "Carousel",
+      "page": "Carousel",
       "title": "Testing title",
-      "subtitle": "testingg",
-      "image1": "https://images.unsplash.com/photo-1551584277-a31a25e08fc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "image2": "https://images.unsplash.com/photo-1551584277-a31a25e08fc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "image3": "https://images.unsplash.com/photo-1551584277-a31a25e08fc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "image": "https://images.unsplash.com/photo-1551584277-a31a25e08fc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
     }
   ]
 }
