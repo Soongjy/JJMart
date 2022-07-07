@@ -34,6 +34,8 @@ import { SearchComponent } from './search/search.component';
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ChangepasswordComponent,
     CartQuantityComponent,
     SearchComponent,
-    OrderconfirmationComponent
+    OrderconfirmationComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatMenuModule,
     MatBadgeModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatBottomSheetModule
   ],
   providers: [],
   bootstrap: [AppComponent]

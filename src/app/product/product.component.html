@@ -1,5 +1,5 @@
 <mat-card class="product-card z-depth mb-3">
-  <a routerLink="/product-details/{{ product.id }}">
+  <a [routerLink]="['/product-details', product.id]">
     <img
       mat-card-image
       src="{{ product.image }}"

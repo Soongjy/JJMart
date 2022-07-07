@@ -13,6 +13,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ManageaccountComponent } from './manageaccount/manageaccount.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 
 const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule);
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'changepassword', component:ChangepasswordComponent},
   { path: 'search/:searchTerm', component:AllProductsComponent},
   { path: 'orderconfirmation', component:OrderconfirmationComponent},
+  { path: 'orderhistory', component:OrderHistoryComponent},
 ];
 
 @NgModule({

@@ -68,7 +68,8 @@ export class CartComponent implements OnInit {
       totalPrice: this.grandTotal,
       products: this.cartItems,
       name: this.name,
-      address: this.address
+      address: this.address,
+      status: "Processing"
     };
 
     this.orderService.addOrder(newOrder).subscribe((order:Order)=>(this.orders.push(order)));
