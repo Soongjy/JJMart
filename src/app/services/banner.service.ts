@@ -19,7 +19,7 @@ export class BannerService {
 
   constructor(private http:HttpClient) { }
 
-  updateBanner(banner: Banner):Observable<any>{
+  updateBanner(banner: Banner):Observable<Banner>{
     return this.http.post<Banner>(this.apiUrl, banner, httpOptions);
   }
 
