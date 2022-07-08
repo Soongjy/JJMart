@@ -35,17 +35,17 @@ export class ManageBannersComponent implements OnInit {
       });
     }else{
       const newBanner = {
-        page: "this.page",
-        title :"this.title",
-        image: "this.image",
+        page: this.page,
+        title :this.title,
+        image: this.image,
       }
 
       this.page = '';
       this.title = '';
       this.image = '';
 
-      console.log(newBanner)
-      this.bannerService.updateBanner(newBanner).subscribe((banner:any)=>(this.banners.push(banner)));
+      this.bannerService.updateBanner(newBanner).subscribe((banner: Banner)=>(this.banners.push(banner)));
+      console.log(this.banners)
     }
   }
 }
