@@ -407,5 +407,23 @@
       "title": "Testing title",
       "image": "https://images.unsplash.com/photo-1551584277-a31a25e08fc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
     }
+  ],
+  "categories": [
+    {
+      "name": "Meat",
+      "image": "assets/bg1.jpg",
+      "id": 1
+    },
+    {
+      "name": "Dairy",
+      "image": "assets/bg2.jpg",
+      "id": 2
+    },
+    {
+      "name": "Vegetables & Fruits",
+      "image": "assets/bg4.jpg",
+      "id": 3
+    }
+
   ]
 }
