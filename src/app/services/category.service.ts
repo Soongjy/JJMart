@@ -32,4 +32,14 @@ export class CategoryService {
     return this.http.delete<Category>(url);
   }
 
+  getCategory(id: number): Observable<Category> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Category>(url);
+  }
+
+  updateCategory(category: Category):Observable<Category>{
+    const url = `${this.apiUrl}/${category.id}`;
+    return this.http.put<Category>(url,category,httpOptions);
+  }
+
 }

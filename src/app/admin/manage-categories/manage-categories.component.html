@@ -1,7 +1,11 @@
 <div class="container">
   <h1 class="d-inline">Manage Categories</h1>
-  <button type="button" class="btn btn-danger btn-sm d-inline m-3" data-bs-toggle="modal"
-  data-bs-target="#addModal">
+  <button
+    type="button"
+    class="btn btn-danger btn-sm d-inline m-3"
+    data-bs-toggle="modal"
+    data-bs-target="#addModal"
+  >
     Add New Category
   </button>
   <div class="mat-elevation-z8">
@@ -34,11 +38,19 @@
             class="btn btn-primary btn-sm px-3"
             data-bs-toggle="modal"
             data-bs-target="#editModal"
+            [attr.data-sectionvalue]="element.id"
+            (click)="editCategory($event)"
           >
             Edit
           </button>
           <span class="px-2"></span>
-          <button type="button" class="btn btn-danger btn-sm" (click)="deleteCategory(element)">Delete</button>
+          <button
+            type="button"
+            class="btn btn-danger btn-sm"
+            (click)="deleteCategory(element)"
+          >
+            Delete
+          </button>
         </td>
       </ng-container>
 
@@ -54,116 +66,128 @@
     </mat-paginator>
   </div>
 
-   <!-- Add Modal -->
-   <div
-   class="modal fade"
-   id="addModal"
-   tabindex="-1"
-   aria-labelledby="addModalLabel"
-   aria-hidden="true"
- >
-   <div class="modal-dialog modal-dialog-centered">
-     <div class="modal-content">
-       <div class="modal-header">
-         <h5 class="modal-title" id="addModalLabel">New Category</h5>
-         <button
-           type="button"
-           class="btn-close"
-           data-bs-dismiss="modal"
-           aria-label="Close"
-         ></button>
-       </div>
-       <div class="modal-body">
-         <form (ngSubmit)="createCategory()">
-           <div class="mb-3">
-             <label for="name" class="form-label"
-               >Category Name</label
-             >
-             <input
-               type="text"
-               class="form-control"
-               id="name"
-               aria-describedby="name"
-               [(ngModel)] = "name"
-               [ngModelOptions]="{standalone: true}"
-             />
-           </div>
-           <div class="mb-3">
-            <label for="image" class="form-label">Image</label>
-            <input class="form-control" type="file" id="image" (change)=fileChanged()>
-           </div>
-         </form>
-       </div>
-       <div class="modal-footer">
-         <button
-           type="button"
-           class="btn btn-secondary"
-           data-bs-dismiss="modal"
-         >
-           Close
-         </button>
-         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save Changes</button>
-
-       </div>
-     </div>
-   </div>
- </div>
+  <!-- Add Modal -->
+  <div
+    class="modal fade"
+    id="addModal"
+    tabindex="-1"
+    aria-labelledby="addModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form (ngSubmit)="createCategory()">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">New Category</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="name" class="form-label">Category Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                aria-describedby="name"
+                [(ngModel)]="name"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">Image</label>
+              <input
+                class="form-control"
+                type="file"
+                id="image"
+                (change)="fileChanged()"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Edit Modal -->
   <div
     class="modal fade"
     id="editModal"
     tabindex="-1"
-    aria-labelledby="editModalLabel"
+    aria-labelledby="addModalLabel"
     aria-hidden="true"
   >
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">Modal title</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <form>
+        <form (ngSubmit)="updateCategoryChanges()">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">Update Category</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label"
-                >Category Name</label
-              >
+              <label for="name" class="form-label">Category Name</label>
               <input
-                type="email"
+                type="text"
                 class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
+                id="editName"
+                aria-describedby="editName"
+                [(ngModel)]="editName"
+                [ngModelOptions]="{ standalone: true }"
               />
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label"
-                >Image</label
-              >
+              <label for="editImage" class="form-label">Image</label>
               <input
-                type="password"
                 class="form-control"
-                id="exampleInputPassword1"
+                type="file"
+                id="editImage"
+                (change)="fileChangedEdit()"
               />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Save Changes
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

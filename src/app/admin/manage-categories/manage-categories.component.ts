@@ -17,6 +17,11 @@ export class ManageCategoriesComponent implements OnInit {
   name!: string;
   image!: string;
 
+  editName!:string;
+  editImage?:string;
+  existingImage!:string;
+  catId !:number;
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private categoryService: CategoryService) {}
@@ -54,8 +59,42 @@ export class ManageCategoriesComponent implements OnInit {
     this.image = 'assets/' + inputElement.files![0].name;
   }
 
+  fileChangedEdit() {
+    const inputElement: HTMLInputElement = document.getElementById(
+      'editImage'
+    ) as HTMLInputElement;
+    this.editImage = 'assets/' + inputElement.files![0].name;
+  }
+
   deleteCategory(category:Category){
     this.categoryService.deleteCategory(category).subscribe();
     setTimeout(() => { this.ngOnInit() }, 100);
   }
+
+ editCategory(event:any) {
+    this.catId =  event.target.dataset.sectionvalue;
+    this.categoryService.getCategory(this.catId).subscribe((category)=>{
+      this.editName = category.name;
+      this.existingImage = category.image;
+    })
+ }
+
+ updateCategoryChanges(){
+  const updateCategory = {
+    name: this.editName,
+    image: this.editImage==null? this.existingImage : this.editImage,
+    id: this.catId
+  };
+
+  if(this.editImage!=null){
+    this.fileChangedEdit();
+  }
+   
+  this.categoryService.updateCategory(updateCategory).subscribe(()=>{
+    setTimeout(() => { this.ngOnInit() }, 100);
+  });
+
+
+ 
+ }
 }
