@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../Category';
 import { Product } from '../Product';
+import { CategoryService } from '../services/category.service';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -11,11 +13,19 @@ export class HomepageComponent implements OnInit {
 
   products: Product[] = [];
   featProducts: Product[] = [];
+  categories: Category[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
     this.getFeaturedProducts();
+    this.getCategories();
+  }
+
+  getCategories(){
+    this.categoryService.getCategories().subscribe((categories)=>{
+      this.categories = categories;
+    })
   }
 
   getFeaturedProducts(){

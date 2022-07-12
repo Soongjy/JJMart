@@ -420,18 +420,18 @@
       "id": 2
     },
     {
-      "name": "qwqw3",
+      "name": "Noodles",
       "image": "assets/bg2.jpg",
       "id": 3
     },
     {
-      "name": "Snacks",
-      "image": "assets/Benefit-2.png",
+      "name": "Vegetables & Fruits",
+      "image": "assets/bg4.jpg",
       "id": 4
     },
     {
-      "name": "fdsadssdsd",
-      "image": "assets/bg2.jpg",
+      "name": "Biscuits & Cakes",
+      "image": "assets/bg1.jpg",
       "id": 5
     }
   ]
