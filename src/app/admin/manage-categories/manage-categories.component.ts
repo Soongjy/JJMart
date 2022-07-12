@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Category } from 'src/app/Category';
 import { CategoryService } from 'src/app/services/category.service';
@@ -17,17 +18,22 @@ export class ManageCategoriesComponent implements OnInit {
   name!: string;
   image!: string;
 
-  editName!:string;
-  editImage?:string;
-  existingImage!:string;
-  catId !:number;
+  editName!: string;
+  editImage?: string;
+  existingImage!: string;
+  catId!: number;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(
+    private categoryService: CategoryService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.fetchCategories();
+    (<HTMLInputElement>document.getElementById('image')).value = '';
+    (<HTMLInputElement>document.getElementById('editImage')).value = '';
   }
 
   createCategory() {
@@ -36,12 +42,30 @@ export class ManageCategoriesComponent implements OnInit {
       image: this.image,
     };
 
-    this.fileChanged();
-    this.categoryService
-      .addCategory(newCategory)
-      .subscribe((category: Category) => this.categories.push(category));
-    
-    setTimeout(() => { this.ngOnInit() }, 1000)
+    if (!this.name) {
+      this._snackBar.open('Please enter a name for category!', 'Close', {
+        duration: 2000,
+      });
+    } else if (!this.image) {
+      this._snackBar.open('Please upload an image!', 'Close', {
+        duration: 2000,
+      });
+    } else {
+      this.fileChanged();
+
+      this.categoryService
+        .addCategory(newCategory)
+        .subscribe((category: Category) => this.categories.push(category));
+
+      setTimeout(() => {
+        this._snackBar.open( newCategory.name + ' created!', 'Close', {
+          duration: 2000,
+        });
+        this.ngOnInit();
+      }, 1000);
+
+      this.name = '';
+    }
   }
 
   fetchCategories() {
@@ -53,9 +77,9 @@ export class ManageCategoriesComponent implements OnInit {
   }
 
   fileChanged() {
-    const inputElement: HTMLInputElement = document.getElementById(
+    var inputElement: HTMLInputElement = document.getElementById(
       'image'
-    ) as HTMLInputElement;
+    )! as HTMLInputElement;
     this.image = 'assets/' + inputElement.files![0].name;
   }
 
@@ -66,35 +90,42 @@ export class ManageCategoriesComponent implements OnInit {
     this.editImage = 'assets/' + inputElement.files![0].name;
   }
 
-  deleteCategory(category:Category){
+  deleteCategory(category: Category) {
     this.categoryService.deleteCategory(category).subscribe();
-    setTimeout(() => { this.ngOnInit() }, 100);
+    setTimeout(() => {
+      this._snackBar.open(category.name + ' deleted!', 'Close', {
+        duration: 2000,
+      });
+      this.ngOnInit();
+    }, 100);
   }
 
- editCategory(event:any) {
-    this.catId =  event.target.dataset.sectionvalue;
-    this.categoryService.getCategory(this.catId).subscribe((category)=>{
+  editCategory(event: any) {
+    this.catId = event.target.dataset.sectionvalue;
+    this.categoryService.getCategory(this.catId).subscribe((category) => {
       this.editName = category.name;
       this.existingImage = category.image;
-    })
- }
-
- updateCategoryChanges(){
-  const updateCategory = {
-    name: this.editName,
-    image: this.editImage==null? this.existingImage : this.editImage,
-    id: this.catId
-  };
-
-  if(this.editImage!=null){
-    this.fileChangedEdit();
+    });
   }
-   
-  this.categoryService.updateCategory(updateCategory).subscribe(()=>{
-    setTimeout(() => { this.ngOnInit() }, 100);
-  });
 
+  updateCategoryChanges() {
+    const updateCategory = {
+      name: this.editName,
+      image: this.editImage == null ? this.existingImage : this.editImage,
+      id: this.catId,
+    };
 
- 
- }
+    if (this.editImage != null) {
+      this.fileChangedEdit();
+    }
+
+    this.categoryService.updateCategory(updateCategory).subscribe(() => {
+      setTimeout(() => {
+        this._snackBar.open( updateCategory.name + ' updated!', 'Close', {
+          duration: 2000,
+        });
+        this.ngOnInit();
+      }, 100);
+    });
+  }
 }

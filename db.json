@@ -421,8 +421,18 @@
     },
     {
       "name": "qwqw3",
-      "image": "assets/Benefit-6.png",
+      "image": "assets/bg2.jpg",
       "id": 3
+    },
+    {
+      "name": "Snacks",
+      "image": "assets/Benefit-2.png",
+      "id": 4
+    },
+    {
+      "name": "fdsadssdsd",
+      "image": "assets/bg2.jpg",
+      "id": 5
     }
   ]
 }
