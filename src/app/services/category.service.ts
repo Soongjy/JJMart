@@ -19,12 +19,17 @@ export class CategoryService {
   private apiUrl = 'http://localhost:3000/categories'
 
 
-  addCategory(category: Category, ):Observable<Category>{
+  addCategory(category: Category):Observable<Category>{
     return this.http.post<Category>(this.apiUrl, category, httpOptions);
   }
 
   getCategories():Observable<Category[]>{
     return this.http.get<Category[]>(this.apiUrl);
+  }
+
+  deleteCategory(category: Category):Observable<Category>{
+    const url = `${this.apiUrl}/${category.id}`;
+    return this.http.delete<Category>(url);
   }
 
 }
