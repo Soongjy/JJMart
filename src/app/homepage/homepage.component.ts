@@ -24,7 +24,9 @@ export class HomepageComponent implements OnInit {
 
   getCategories(){
     this.categoryService.getCategories().subscribe((categories)=>{
-      this.categories = categories;
+      for(var i=0; i<categories.length; i++){
+        if(categories[i].visibility==true)
+          this.categories.push(categories[i])}
     })
   }
 

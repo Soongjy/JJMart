@@ -410,29 +410,34 @@
   ],
   "categories": [
     {
-      "name": "Meat",
-      "image": "assets/bg1.jpg",
-      "id": 1
-    },
-    {
       "name": "Dairy",
       "image": "assets/bg4.jpg",
-      "id": 2
+      "id": 2,
+      "visibility": true
     },
     {
       "name": "Noodles",
       "image": "assets/bg2.jpg",
-      "id": 3
+      "id": 3,
+      "visibility": true
     },
     {
       "name": "Vegetables & Fruits",
       "image": "assets/bg4.jpg",
-      "id": 4
+      "id": 4,
+      "visibility": true
     },
     {
       "name": "Biscuits & Cakes",
-      "image": "assets/bg1.jpg",
-      "id": 5
+      "image": "assets/cakes.jpg",
+      "id": 5,
+      "visibility": true
+    },
+    {
+      "name": "Meat",
+      "image": "assets/bg2.jpg",
+      "visibility": true,
+      "id": 6
     }
   ]
 }

@@ -80,7 +80,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     MatBadgeModule,
     MatSnackBarModule,
     MatExpansionModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
