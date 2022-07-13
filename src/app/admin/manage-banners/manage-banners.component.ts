@@ -72,13 +72,13 @@ export class ManageBannersComponent implements OnInit {
 
   copyImage() {
     //copyfile.js
-    /*const fs = require('fs');
+    const fs = require('fs');
 
     // destination will be created or overwritten by default.
     fs.copyFile(this.image, 'C:\Users\soongjy\SunwayMart\src\assets', (err: any) => {
       if (err) throw err;
       console.log('File was copied to destination');
-    });*/
+    });
   }
 
   deleteBanner(banner:Banner){
