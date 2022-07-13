@@ -15,9 +15,8 @@ const httpOptions = {
 
 export class BannerService {
 
-  private apiUrl = 'http://localhost:3000/banners'
-
   constructor(private http:HttpClient) { }
+  private apiUrl = 'http://localhost:3000/banners'
 
   addBanner(banner: Banner):Observable<Banner>{
     return this.http.post<Banner>(this.apiUrl,banner,httpOptions);
@@ -26,4 +25,5 @@ export class BannerService {
   getBanner(): Observable<Banner[]>{
     return this.http.get<Banner[]>(this.apiUrl);
   }
+
 }

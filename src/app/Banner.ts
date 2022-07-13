@@ -1,5 +1,5 @@
 export interface Banner {
-   id?:number,
+   id?:number
    page: string,
    title: string,
    image: string,

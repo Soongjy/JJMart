@@ -1,6 +1,60 @@
 <div class="container">
-    <h1>Update Banner</h1>
-    <div class="row">
+    <h1>Manage Banner</h1>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+          </ng-container>
+    
+          <ng-container matColumnDef="page">
+            <th mat-header-cell *matHeaderCellDef>Target Page</th>
+            <td mat-cell *matCellDef="let element">{{ element.page }}</td>
+          </ng-container>
+    
+          <!-- Name Column -->
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>Title</th>
+            <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+          </ng-container>
+    
+          <!-- Image Column -->
+          <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef>Image</th>
+            <td mat-cell *matCellDef="let element">
+              <img src="{{ element.image }}" alt="pic" width="60%" height="200"/>
+            </td>
+          </ng-container>
+          <!-- Actions Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                (click)="deleteBanner(element)"
+              >
+                Delete
+              </button>
+            </td>
+          </ng-container>
+    
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 20]"
+          showFirstLastButtons
+          aria-label="Select page of periodic elements"
+        >
+        </mat-paginator>
+      </div>
+
+    <h2 class="mt-5">Add Banner</h2>
+    <div class="row">   
         <form (ngSubmit)="onSubmit()">
             <div class="mb-3">
                 <label for="carousel-title" class="form-label">Target Page</label>

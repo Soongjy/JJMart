@@ -403,9 +403,34 @@
   ],
   "banners": [
     {
-      "page": "Carousel",
-      "title": "Testing title",
-      "image": "https://images.unsplash.com/photo-1551584277-a31a25e08fc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+      "page": "homepage",
+      "title": "21",
+      "image": "assets/woman-banner.jpg",
+      "id": 1
+    },
+    {
+      "page": "homepage",
+      "title": "1",
+      "image": "assets/Benefit-2.png",
+      "id": 2
+    },
+    {
+      "page": "homepage",
+      "title": "1",
+      "image": "assets/woman-banner.jpg",
+      "id": 3
+    },
+    {
+      "page": "contact-us",
+      "title": "12",
+      "image": "assets/woman-banner.jpg",
+      "id": 4
+    },
+    {
+      "page": "homepage",
+      "title": "21",
+      "image": "assets/elegant-black-and-gold-banner-background-free-vector.jpg",
+      "id": 5
     }
   ],
   "categories": [
