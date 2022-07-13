@@ -1,0 +1,48 @@
+<div class="order-history-banner text-center d-flex justify-content-center align-items-center">
+    <span class="order-history-title">Order History</span>
+</div>
+<div class="container mt-5">
+    <div *ngIf="orderHistoryList.length !=0; else noItem">
+        <div *ngFor="let order of orderHistoryList" class="mb-5">
+          <div class="row border-bottom">
+            <div class="col-md-3">
+              <div class="fw-bold">Order ID: {{order.id}}</div>
+            </div>
+            <div class="col-md-3">
+              <div class="fw-bold">Status: {{order.status}}</div>
+            </div>
+            <div class="col-md-3">
+              <div class="fw-bold">Order date: {{order.orderDate | date: 'dd/MM/yyyy hh:mm a'}}</div>
+            </div>
+            <div class="col-md-3">
+              <div class="fw-bold">Total: RM{{order.totalPrice}}</div>
+            </div>
+          </div>
+
+            <div class="row d-flex align-items-center my-3" *ngFor="let product of order.products">
+              <div class="col-md-3">
+                <img
+                  src="{{product.image}}"
+                  alt="pic"
+                  width="200"
+                  height="150"
+                />
+              </div>
+              <div class="col-md-3">
+                <p>{{product.name}} /{{product.unit}}</p>
+                <p>RM{{product.price}}</p>
+              </div>
+              <div class="col-md-3"> x {{product.quantity}}</div>
+              <div class="col-md-3">RM{{ product.price*product.quantity}}</div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #noItem>
+       <div>
+        <p>You have not purchased anything yet!</p>
+       </div>
+      </ng-template>
+    
+ 
+</div>

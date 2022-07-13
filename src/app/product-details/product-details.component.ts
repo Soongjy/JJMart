@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Product } from '../Product';
 import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
@@ -15,6 +15,7 @@ export class ProductDetailsComponent implements OnInit {
   product !: Product;
   products : Product[] = [];
   categoryProducts : Product[] = [];
+  productId!:number;
 
   userdetails: any;
 
@@ -27,8 +28,12 @@ export class ProductDetailsComponent implements OnInit {
   }
   
   getDetails(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.productService.getProduct(id)
+    // const id = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.route.paramMap.subscribe((params: ParamMap) =>{
+      this.productId = Number(params.get('id'));
+
+      this.productService.getProduct(this.productId)
       .subscribe(product => {
         this.product = product;
         var categoryName = this.product.category;
@@ -43,6 +48,12 @@ export class ProductDetailsComponent implements OnInit {
           }
         });
       });
+
+      this.categoryProducts = [];
+    });
+
+
+   
   }
 
   addToCart(product: Product){

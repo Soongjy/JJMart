@@ -38,6 +38,8 @@ import { SearchComponent } from './search/search.component';
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
 import { AuthGuard } from './services/auth-guard.service';
 
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 
 @NgModule({
@@ -62,6 +64,7 @@ import { AuthGuard } from './services/auth-guard.service';
     CartQuantityComponent,
     SearchComponent,
     OrderconfirmationComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,8 @@ import { AuthGuard } from './services/auth-guard.service';
     MatMenuModule,
     MatBadgeModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatBottomSheetModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
