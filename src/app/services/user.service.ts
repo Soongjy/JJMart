@@ -12,13 +12,14 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   private apiUrl = 'http://localhost:3000/users'
 
 
   constructor(private http:HttpClient) { }
 
-  getTask(): Observable<User[]>{
+  getUser(): Observable<User[]>{
     return this.http.get<User[]>(this.apiUrl);
   }
 

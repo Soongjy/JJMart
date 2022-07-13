@@ -13,6 +13,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ManageaccountComponent } from './manageaccount/manageaccount.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 
 const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule);
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'contactus', component:ContactUsComponent},
   { path: 'about-us', component:AboutUsComponent},
   { path: 'all-products', component:AllProductsComponent},
-  { path: 'admin', loadChildren: adminModule },
+  { path: 'admin', loadChildren: adminModule, canActivate:[AuthGuard] },
   { path: 'category/:params', component:CategoryComponent},
   { path: 'viewcart', component:CartComponent},
   { path: 'manageaccount', component:ManageaccountComponent},

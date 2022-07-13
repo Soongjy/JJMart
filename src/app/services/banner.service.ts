@@ -9,19 +9,21 @@ const httpOptions = {
   })
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
+
 export class BannerService {
 
   private apiUrl = 'http://localhost:3000/banners'
 
   constructor(private http:HttpClient) { }
 
-  updateBanner(banner: Banner):Observable<Banner>{
-    return this.http.post<Banner>(this.apiUrl, banner, httpOptions);
+  addBanner(banner: Banner):Observable<Banner>{
+    return this.http.post<Banner>(this.apiUrl,banner,httpOptions);
   }
 
-  
+  getBanner(): Observable<Banner[]>{
+    return this.http.get<Banner[]>(this.apiUrl);
+  }
 }

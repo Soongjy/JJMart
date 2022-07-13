@@ -10,7 +10,7 @@ import { Banner } from 'src/app/Banner';
   styleUrls: ['./manage-banners.component.css']
 })
 export class ManageBannersComponent implements OnInit {
-  banners!:Banner[]
+  banners:Banner[] = [];
   page!: string;
   title!: string;
   image!: string;
@@ -44,7 +44,7 @@ export class ManageBannersComponent implements OnInit {
       this.title = '';
       this.image = '';
 
-      this.bannerService.updateBanner(newBanner).subscribe((banner: Banner)=>(this.banners.push(banner)));
+      this.bannerService.addBanner(newBanner).subscribe((banners:Banner)=>(this.banners.push(banners)));
       console.log(this.banners)
     }
   }

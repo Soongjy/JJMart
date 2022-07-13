@@ -25,7 +25,7 @@ export class ManageaccountComponent implements OnInit {
   constructor(private userService: UserService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.userService.getTask().subscribe((users)=> (this.users = users))
+    this.userService.getUser().subscribe((users)=> (this.users = users))
     const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
       this.name = userdetails.name;
       this.username = userdetails.username;

@@ -36,6 +36,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { CartQuantityComponent } from './cart-quantity/cart-quantity.component';
 import { SearchComponent } from './search/search.component';
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 
 
@@ -79,7 +80,8 @@ import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmatio
     MatSnackBarModule,
     MatExpansionModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+  

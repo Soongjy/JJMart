@@ -27,7 +27,7 @@ export class ManageUserComponent implements OnInit,AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.userService.getTask().subscribe((users)=> {
+    this.userService.getUser().subscribe((users)=> {
     this.users = users;
     this.dataSource = new MatTableDataSource<User>(this.users);
     this.dataSource.paginator = this.paginator;
