@@ -73,12 +73,12 @@
 <div class="container my-5">
   <div class="row">
     <h1 id="fav" class="text-center pseudo_border">Find your favourite products with us</h1>
-    <div class="col-lg-4 mb-4" *ngFor="let category of categories">
+    <div class="col-lg-4 mb-5" *ngFor="let category of categories">
       <div class="category">
         <div class="content">
           <a routerLink="/category/{{category.name | lowercase}}">
             <div class="content-overlay"></div>
-            <img class="content-image" src="{{category.image}}" width="200" height="250">
+            <img class="content-image" src="{{category.image}}" height="250">
             <div class="content-details fadeIn-bottom">
               <h3 class="content-title">{{category.name}}</h3>
             </div>

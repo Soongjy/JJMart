@@ -42,4 +42,9 @@ export class CategoryService {
     return this.http.put<Category>(url,category,httpOptions);
   }
 
+  updateVisiblity(category: Category):Observable<Category>{
+    const url = `${this.apiUrl}/${category.id}`;
+    return this.http.put<Category>(url,category,httpOptions);
+  }
+
 }

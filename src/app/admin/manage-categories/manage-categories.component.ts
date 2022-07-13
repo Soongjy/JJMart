@@ -22,6 +22,7 @@ export class ManageCategoriesComponent implements OnInit {
   editImage?: string;
   existingImage!: string;
   catId!: number;
+  isVisible: boolean = true;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -40,6 +41,7 @@ export class ManageCategoriesComponent implements OnInit {
     const newCategory = {
       name: this.name,
       image: this.image,
+      visibility: true
     };
 
     if (!this.name) {
@@ -112,6 +114,7 @@ export class ManageCategoriesComponent implements OnInit {
     const updateCategory = {
       name: this.editName,
       image: this.editImage == null ? this.existingImage : this.editImage,
+      visibility: true,
       id: this.catId,
     };
 
@@ -127,5 +130,11 @@ export class ManageCategoriesComponent implements OnInit {
         this.ngOnInit();
       }, 100);
     });
+  }
+
+  toggleVisibility(category:Category){
+    category.visibility = !category.visibility;
+    this.categoryService.updateVisiblity(category).subscribe();
+    console.log(category.visibility);
   }
 }
