@@ -52,7 +52,7 @@
                 data-bs-target="#deleteModal"
                 aria-hidden="true"
                 [attr.data-sectionvalue]="element.id"
-                (click)="deleteBanner($event)"
+                (click)="deleteConfirmation($event)"
               ></i>
             </td>
           </ng-container>
@@ -88,7 +88,7 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">Are you sure you want to delete ?</div>
+          <div class="modal-body">Are you sure you want to delete {{deleteTitle}}?</div>
           <div class="modal-footer">
             <button
               type="button"
@@ -101,7 +101,7 @@
               type="button"
               class="btn btn-primary"
               data-bs-dismiss="modal"
-              (click)="deleteBanner($event)"
+              (click)="deleteBanner()"
             >
               Confirm
             </button>

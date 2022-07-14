@@ -401,26 +401,7 @@
       "id": 4
     }
   ],
-  "banners": [
-    {
-      "page": "Homepage",
-      "title": "121212",
-      "image": "assets/bg1.jpg",
-      "id": 2
-    },
-    {
-      "page": "Homepage",
-      "title": "1212",
-      "image": "assets/bg2.jpg",
-      "id": 3
-    },
-    {
-      "page": "Homepage",
-      "title": "dxdqw",
-      "image": "assets/bg4.jpg",
-      "id": 4
-    }
-  ],
+  "banners": [],
   "categories": [
     {
       "name": "Dairy",

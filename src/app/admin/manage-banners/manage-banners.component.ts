@@ -23,6 +23,7 @@ export class ManageBannersComponent implements OnInit {
 
   editTargetPage!: string;
   editTitle!:string;
+  deleteTitle!:string;
   editImage?: string;
   existingImage!: string;
 
@@ -88,11 +89,17 @@ export class ManageBannersComponent implements OnInit {
     this.editImage = 'assets/' + inputElement.files![0].name;
   }
 
-  deleteBanner(event:any) {
+  deleteConfirmation(event:any){
     this.bannerId = event.target.dataset.sectionvalue;
+    this.bannerService.getBanner(this.bannerId).subscribe((banner) => {
+      this.deleteTitle = banner.title;
+    });
+  }
+
+  deleteBanner() {
     this.bannerService.deleteBanner(this.bannerId).subscribe();
     setTimeout(() => {
-      this._snackBar.open(' deleted!', 'Close', {
+      this._snackBar.open(this.deleteTitle +' deleted!', 'Close', {
         duration: 2000,
       });
       this.ngOnInit();
