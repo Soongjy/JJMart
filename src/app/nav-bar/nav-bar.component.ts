@@ -1,11 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
 import { CartService } from '../services/cart.service';
-import { User } from '../Users';
-import {MatBadgeModule} from '@angular/material/badge';
-import { ThemePalette } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CategoryService } from '../services/category.service';
+import { Category } from '../Category';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -15,11 +12,14 @@ export class NavBarComponent implements OnInit {
   userdetails !: [];
   title: string = 'Sunway Mart';
   name!: string;
-  privilege!:number;
-  cartItemCounter :number = 0;
+  privilege!: number;
+  cartItemCounter: number = 0;
+  categories: Category[] = [];
+
+  mobile!: boolean;
 
 
-  constructor(private cartService: CartService,private _snackBar: MatSnackBar) {
+  constructor(private cartService: CartService,private _snackBar: MatSnackBar, private categoryService: CategoryService) {
   
    }
 
@@ -39,7 +39,15 @@ export class NavBarComponent implements OnInit {
       this.cartItemCounter = items.length;
     })
 
-    
+    this.getCategories();
+
+    //check screen size
+    if (window.screen.width <= 360) { // 768px portrait
+      this.mobile = true;
+    }else{
+      this.mobile = false;
+    }
+
   }
 
   onLogout(){
@@ -52,6 +60,12 @@ export class NavBarComponent implements OnInit {
     }, 500);
     
     }
+  }
+
+  getCategories(){
+    this.categoryService.getCategories().subscribe((categories)=>{
+      this.categories = categories;
+    })
   }
 
 }

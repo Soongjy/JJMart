@@ -256,7 +256,7 @@
       "price": 30,
       "quantity": 1,
       "amount": 1200,
-      "image": "https://images.unsplash.com/photo-1591874879354-bf0a6e982c60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "category": "Noodles",
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
@@ -297,6 +297,42 @@
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
       "discountedPrice": 12
+    },
+    {
+      "id": 8,
+      "name": "Raspberry Popsicle",
+      "price": 30,
+      "quantity": 1,
+      "amount": 1200,
+      "image": "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=587&q=80",
+      "category": "Dairy",
+      "unit": "packet",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+      "discountedPrice": 12
+    },
+    {
+      "id": 9,
+      "name": "Mi Sedap",
+      "price": 10,
+      "quantity": 1,
+      "amount": 1200,
+      "image": "https://images.unsplash.com/photo-1587115507286-f27e42621c25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "category": "Noodles",
+      "unit": "packet",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+      "discountedPrice": null
+    },
+    {
+      "id": 10,
+      "name": "Cookies",
+      "price": 30,
+      "quantity": 1,
+      "amount": 1200,
+      "image": "https://images.unsplash.com/photo-1621353354739-1420ff28ead9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      "category": "Biscuits & Cakes",
+      "unit": "packet",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+      "discountedPrice": 15
     }
   ],
   "orders": [
@@ -404,19 +440,25 @@
   "banners": [],
   "categories": [
     {
-      "name": "Dairy",
+      "name": "Vegetables & Fruits",
       "image": "assets/bg4.jpg",
-      "id": 2,
+      "id": 1,
       "visibility": true
+    },
+    {
+      "name": "Meat",
+      "image": "assets/bg1.jpg",
+      "visibility": true,
+      "id": 2
     },
     {
       "name": "Noodles",
       "image": "assets/bg2.jpg",
-      "id": 3,
-      "visibility": true
+      "visibility": true,
+      "id": 3
     },
     {
-      "name": "Vegetables & Fruits",
+      "name": "Dairy",
       "image": "assets/bg4.jpg",
       "id": 4,
       "visibility": true
@@ -426,12 +468,6 @@
       "image": "assets/cakes.jpg",
       "id": 5,
       "visibility": true
-    },
-    {
-      "name": "Meat",
-      "image": "assets/bg2.jpg",
-      "visibility": true,
-      "id": 6
     }
   ]
 }

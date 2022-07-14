@@ -17,3 +17,25 @@ table{
 .fa-trash:hover{
     color: red;
 }
+
+.mat-elevation-z8 {    
+    overflow-x: auto;
+   }
+
+
+@media only screen and (max-width: 780px){
+   .example-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  img{
+    width: 70px;
+    height: 70px;
+  }
+
+  .mat-cell{
+    font-size: 10px;
+  }
+
+}

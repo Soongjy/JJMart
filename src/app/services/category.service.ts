@@ -27,8 +27,8 @@ export class CategoryService {
     return this.http.get<Category[]>(this.apiUrl);
   }
 
-  deleteCategory(category: Category):Observable<Category>{
-    const url = `${this.apiUrl}/${category.id}`;
+  deleteCategory(id: number):Observable<Category>{
+    const url = `${this.apiUrl}/${id}`;
     return this.http.delete<Category>(url);
   }
 
