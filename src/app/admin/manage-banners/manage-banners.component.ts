@@ -19,6 +19,12 @@ export class ManageBannersComponent implements OnInit {
   page!: string;
   title!: string;
   image!: string;
+  bannerId!:number;
+
+  editTargetPage!: string;
+  editTitle!:string;
+  editImage?: string;
+  existingImage!: string;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private _snackBar: MatSnackBar, private bannerService: BannerService) { }
@@ -52,10 +58,15 @@ export class ManageBannersComponent implements OnInit {
       }
 
       this.bannerService.addBanner(newBanner).subscribe((banners:Banner) => this.banners.push(banners));
-      this.copyImage();
       this.ngOnInit();
-
-
+      
+      setTimeout(() => {
+        this._snackBar.open(newBanner.title + ' Added!', 'Close', {
+          duration: 2000,
+        });
+        this.ngOnInit();
+      }, 100);
+      
       this.page = '';
       this.title = '';
       this.image = '';
@@ -63,25 +74,68 @@ export class ManageBannersComponent implements OnInit {
   }
 
   fetchBanners() {
-    this.bannerService.getBanner().subscribe((banners) => {
+    this.bannerService.getBanners().subscribe((banners) => {
       this.banners = banners;
       this.dataSource = new MatTableDataSource<Banner>(this.banners);
       this.dataSource.paginator = this.paginator;
     });
   }
 
-  copyImage() {
-    //copyfile.js
-    const fs = require('fs');
+  fileChangedEdit() {
+    const inputElement: HTMLInputElement = document.getElementById(
+      'editImage'
+    ) as HTMLInputElement;
+    this.editImage = 'assets/' + inputElement.files![0].name;
+  }
 
-    // destination will be created or overwritten by default.
-    fs.copyFile(this.image, 'C:\Users\soongjy\SunwayMart\src\assets', (err: any) => {
-      if (err) throw err;
-      console.log('File was copied to destination');
+  deleteBanner(banner:Banner) {
+    this.bannerService.deleteBanner(banner).subscribe();
+    setTimeout(() => {
+      this._snackBar.open(banner.title + ' deleted!', 'Close', {
+        duration: 2000,
+      });
+      this.ngOnInit();
+    }, 100);
+  }
+
+  editBanner(event: any) {
+    this.bannerId = event.target.dataset.sectionvalue;
+    this.bannerService.getBanner(this.bannerId).subscribe((banner) => {
+      this.editTargetPage = banner.page;
+      this.editTitle = banner.title;
+      this.existingImage = banner.image;
     });
   }
 
-  deleteBanner(banner:Banner){
+  updateBannerChanges(){
+    if(!this.editTargetPage){
+      this._snackBar.open("Please fill in your target page", "Close", {
+        duration: 2000
+      });
+    }else if(!this.editTitle){
+      this._snackBar.open("Please fill in your title", "Close", {
+        duration: 2000
+      })
+    }else{
+      const updateBanner = {
+        page: this.editTargetPage,
+        title :this.editTitle,
+        image :this.editImage == null ? this.existingImage : this.editImage,
+        id:this.bannerId,
+      };
 
+      if (this.editImage != null) {
+        this.fileChangedEdit();
+      }
+
+      this.bannerService.updateBanner(updateBanner).subscribe(()=>{
+        setTimeout(() => {
+          this._snackBar.open( updateBanner.title + ' updated!', 'Close', {
+            duration: 2000,
+          });
+          this.ngOnInit();
+        }, 100);
+      })
+    }
   }
 }
