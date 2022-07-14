@@ -16,6 +16,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { BannerService } from '../services/banner.service';
 import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
+import { ManageCompanyProfileComponent } from './manage-company-profile/manage-company-profile.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ManageCategoriesComponent } from './manage-categories/manage-categories
     ManageBannersComponent,
     ManageProductComponent,
     ManageUserComponent,
-    ManageCategoriesComponent
+    ManageCategoriesComponent,
+    ManageCompanyProfileComponent
   ],
   imports: [
     CommonModule,
