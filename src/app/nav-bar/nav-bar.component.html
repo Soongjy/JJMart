@@ -34,7 +34,7 @@
         </ul>
         <app-search class="searchbox"></app-search>
        <!--cart-->
-        <div class="mx-4 cart-icon">
+        <div class="mx-4 cart-icon pt-2">
           <mat-icon matBadge={{cartItemCounter}} matBadgeColor="warn" [matMenuTriggerFor]="menu">shopping_cart</mat-icon>
           <mat-menu #menu="matMenu">
            <app-mini-cart></app-mini-cart>
@@ -51,7 +51,7 @@
             {{name}}
           </div>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
             <li *ngIf="userdetails ==null"><a class="dropdown-item" routerLink="/register">Register</a></li>
             <li *ngIf="userdetails ==null"><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
             <li *ngIf="userdetails !=null"><a class="dropdown-item" routerLink="/manageaccount">Account Settings</a></li>

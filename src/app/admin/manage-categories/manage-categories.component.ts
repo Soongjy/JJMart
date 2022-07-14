@@ -23,6 +23,7 @@ export class ManageCategoriesComponent implements OnInit {
   existingImage!: string;
   catId!: number;
   isVisible: boolean = true;
+  selectedCat?: string;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -91,15 +92,24 @@ export class ManageCategoriesComponent implements OnInit {
     ) as HTMLInputElement;
     this.editImage = 'assets/' + inputElement.files![0].name;
   }
+  
+  deleteConfirmation(event:any){
+    this.catId = event.target.dataset.sectionvalue;
+    this.categoryService.getCategory(this.catId).subscribe((category) => {
+      this.selectedCat = category.name;
+    });
 
-  deleteCategory(category: Category) {
-    this.categoryService.deleteCategory(category).subscribe();
+  }
+
+  deleteCategory() {
+    this.categoryService.deleteCategory(this.catId).subscribe();
     setTimeout(() => {
-      this._snackBar.open(category.name + ' deleted!', 'Close', {
+      this._snackBar.open(this.selectedCat + ' deleted!', 'Close', {
         duration: 2000,
       });
       this.ngOnInit();
     }, 100);
+
   }
 
   editCategory(event: any) {
@@ -135,6 +145,5 @@ export class ManageCategoriesComponent implements OnInit {
   toggleVisibility(category:Category){
     category.visibility = !category.visibility;
     this.categoryService.updateVisiblity(category).subscribe();
-    console.log(category.visibility);
   }
 }
