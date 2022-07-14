@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../Category';
 import { Product } from '../Product';
+import { Banner } from '../Banner';
 import { CategoryService } from '../services/category.service';
 import { ProductService } from '../services/product.service';
+import { BannerService } from '../services/banner.service';
 
 @Component({
   selector: 'app-homepage',
@@ -14,12 +16,31 @@ export class HomepageComponent implements OnInit {
   products: Product[] = [];
   featProducts: Product[] = [];
   categories: Category[] = [];
+  banners:Banner[]=[];
+  firstBanner:Banner[]=[];
 
-  constructor(private productService: ProductService, private categoryService: CategoryService) { }
+  constructor(private productService: ProductService, private categoryService: CategoryService, private bannerService:BannerService) { }
 
   ngOnInit(): void {
     this.getFeaturedProducts();
     this.getCategories();
+    this.getBanners();
+  }
+
+  getBanners(){
+    this.bannerService.getBanners().subscribe((banners)=>{
+      for(var banner of banners){
+        if (banner.page=='Homepage'){
+          if (this.firstBanner.length===0){
+            this.firstBanner.push(banner)
+            console.log(this.firstBanner)
+          }else{
+            this.banners.push(banner)
+            console.log(this.banners)
+          }
+        }
+      }
+    })
   }
 
   getCategories(){

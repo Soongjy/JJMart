@@ -6,19 +6,13 @@
       data-bs-slide-to="0"
       class="active"
       aria-current="true"
-      aria-label="Slide 1"
+      aria-label="Slide 0"
     ></button>
-    <button
+    <button *ngFor="let count of banners ; index as i"
       type="button"
       data-bs-target="#carouselExampleCaptions"
-      data-bs-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleCaptions"
-      data-bs-slide-to="2"
-      aria-label="Slide 3"
+      [attr.data-bs-slide-to] = "i+1"
+      attr.aria-label="Slide i+1"
     ></button>
   </div>
   <div class="carousel-inner">
@@ -28,26 +22,21 @@
       <button mat-raised-button color="danger" (click)="scroll()" class="mt-3">Shop Now</button>
     </div>
     <div class="carousel-item active" data-bs-interval="5000">
-      <img
-        src="../../assets/bg1.jpg"
+      <img *ngFor="let banner of firstBanner"
+        src="../../{{banner.image}}"
         class="d-block w-100"
         alt="..."
       />
     </div>
-    <div class="carousel-item" data-bs-interval="5000">
+    <div class="carousel-item" data-bs-interval="5000" *ngFor="let banner of banners">
       <img
-        src="../../assets/bg2.jpg"
+        src='../../{{banner.image}}'
         class="d-block w-100"
         alt="..."
       />
     </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img
-        src="../../assets/bg4.jpg"
-        class="d-block w-100"
-        alt="..."
-      />
-    </div>
+    
+    
   </div>
   <button
     class="carousel-control-prev"

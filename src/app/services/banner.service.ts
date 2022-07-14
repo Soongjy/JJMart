@@ -36,8 +36,8 @@ export class BannerService {
     return this.http.put<Banner>(url,banner,httpOptions);
   }
 
-  deleteBanner(banner: Banner):Observable<Banner>{
-    const url = `${this.apiUrl}/${banner.id}`;
+  deleteBanner(id:number):Observable<Banner>{
+    const url = `${this.apiUrl}/${id}`;
     return this.http.delete<Banner>(url);
   }
 }

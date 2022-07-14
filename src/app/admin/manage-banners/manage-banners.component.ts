@@ -88,16 +88,17 @@ export class ManageBannersComponent implements OnInit {
     this.editImage = 'assets/' + inputElement.files![0].name;
   }
 
-  deleteBanner(banner:Banner) {
-    this.bannerService.deleteBanner(banner).subscribe();
+  deleteBanner(event:any) {
+    this.bannerId = event.target.dataset.sectionvalue;
+    this.bannerService.deleteBanner(this.bannerId).subscribe();
     setTimeout(() => {
-      this._snackBar.open(banner.title + ' deleted!', 'Close', {
+      this._snackBar.open(' deleted!', 'Close', {
         duration: 2000,
       });
       this.ngOnInit();
     }, 100);
   }
-
+  
   editBanner(event: any) {
     this.bannerId = event.target.dataset.sectionvalue;
     this.bannerService.getBanner(this.bannerId).subscribe((banner) => {

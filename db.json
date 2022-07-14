@@ -403,34 +403,22 @@
   ],
   "banners": [
     {
-      "page": "contact-us",
-      "title": "qdw",
-      "image": "assets/woman-banner.jpg",
-      "id": 6
-    },
-    {
-      "page": "homepage",
-      "title": "dqw",
+      "page": "Homepage",
+      "title": "121212",
       "image": "assets/bg1.jpg",
-      "id": 7
+      "id": 2
     },
     {
-      "page": "homepage",
-      "title": "dqw",
-      "image": "assets/woman-banner.jpg",
-      "id": 8
+      "page": "Homepage",
+      "title": "1212",
+      "image": "assets/bg2.jpg",
+      "id": 3
     },
     {
-      "page": "homepage",
-      "title": "dq",
-      "image": "assets/woman-banner.jpg",
-      "id": 9
-    },
-    {
-      "page": "homepage",
-      "title": "21e",
-      "image": "assets/woman-banner.jpg",
-      "id": 10
+      "page": "Homepage",
+      "title": "dxdqw",
+      "image": "assets/bg4.jpg",
+      "id": 4
     }
   ],
   "categories": [
