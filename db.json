@@ -439,22 +439,28 @@
   ],
   "banners": [
     {
-      "page": "contact-us",
-      "title": "qdw",
-      "image": "assets/woman-banner.jpg",
+      "page": "Homepage",
+      "title": "Banner 1",
+      "image": "assets/bg1.jpg",
       "id": 1
     },
     {
       "page": "Homepage",
-      "title": "xxxx",
-      "image": "assets/bg4.jpg",
+      "title": "Banner 2",
+      "image": "assets/bg2.jpg",
       "id": 2
     },
     {
       "page": "Homepage",
-      "title": "Whaaat",
-      "image": "assets/bg2.jpg",
+      "title": "Banner 3",
+      "image": "assets/bg4.jpg",
       "id": 3
+    },
+    {
+      "page": "Homepage",
+      "title": "qqwd",
+      "image": "assets/contactusbg.jpeg",
+      "id": 4
     }
   ],
   "categories": [

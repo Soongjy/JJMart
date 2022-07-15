@@ -1,6 +1,6 @@
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button
+    <button *ngFor="let banner of firstBanner"
       type="button"
       data-bs-target="#carouselExampleCaptions"
       data-bs-slide-to="0"
@@ -23,14 +23,14 @@
     </div>
     <div class="carousel-item active" data-bs-interval="5000">
       <img *ngFor="let banner of firstBanner"
-        src="../../{{banner.image}}"
+        src="{{banner.image}}"
         class="d-block w-100"
         alt="..."
       />
     </div>
     <div class="carousel-item" data-bs-interval="5000" *ngFor="let banner of banners">
       <img
-        src='../../{{banner.image}}'
+        src='{{banner.image}}'
         class="d-block w-100"
         alt="..."
       />

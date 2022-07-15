@@ -19,13 +19,14 @@ export class ManageBannersComponent implements OnInit {
   page!: string;
   title!: string;
   image!: string;
+  imageUrl!: string;
   bannerId!:number;
 
   editTargetPage!: string;
   editTitle!:string;
   deleteTitle!:string;
   editImage?: string;
-  existingImage!: string;
+  existingImageUrl!: string;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private _snackBar: MatSnackBar, private bannerService: BannerService) { }
@@ -43,34 +44,47 @@ export class ManageBannersComponent implements OnInit {
       this._snackBar.open("Please fill in your title", "Close", {
         duration: 2000
       })
-    }else if(!this.image){
+    }else if(!this.image && !this.imageUrl){
       this._snackBar.open("Please select your image", "Close", {
+        duration: 2000
+      });
+    }else if(this.image && this.imageUrl){
+      this._snackBar.open("Please insert either Image or Url", "Close", {
         duration: 2000
       });
     }else{
       var inputElement: HTMLInputElement = document.getElementById(
         'image'
       )! as HTMLInputElement;
-
-      const newBanner = {
-        page: this.page,
-        title :this.title,
-        image: 'assets/' + inputElement.files![0].name,
-      }
-
-      this.bannerService.addBanner(newBanner).subscribe((banners:Banner) => this.banners.push(banners));
-      this.ngOnInit();
       
-      setTimeout(() => {
-        this._snackBar.open(newBanner.title + ' Added!', 'Close', {
-          duration: 2000,
-        });
+      if(this.image){
+        const newBanner = {
+          page: this.page,
+          title : this.title,
+          image : 'assets/' + inputElement.files![0].name,
+        }
+      }else{
+        const newBanner = {
+          page: this.page,
+          title : this.title,
+          image :this.imageUrl
+        }
+
+        this.bannerService.addBanner(newBanner).subscribe((banners:Banner) => this.banners.push(banners));
         this.ngOnInit();
-      }, 100);
-      
-      this.page = '';
-      this.title = '';
-      this.image = '';
+        
+        setTimeout(() => {
+          this._snackBar.open(newBanner.title + ' Added!', 'Close', {
+            duration: 2000,
+          });
+          this.ngOnInit();
+        }, 100);
+        
+        this.page = '';
+        this.title = '';
+        this.image = '';
+        this.imageUrl = '';
+      }
     }
   }
 
@@ -83,10 +97,15 @@ export class ManageBannersComponent implements OnInit {
   }
 
   fileChangedEdit() {
+    try{
     const inputElement: HTMLInputElement = document.getElementById(
       'editImage'
     ) as HTMLInputElement;
     this.editImage = 'assets/' + inputElement.files![0].name;
+    }
+    catch{
+      this.editImage=null!
+    }
   }
 
   deleteConfirmation(event:any){
@@ -111,7 +130,6 @@ export class ManageBannersComponent implements OnInit {
     this.bannerService.getBanner(this.bannerId).subscribe((banner) => {
       this.editTargetPage = banner.page;
       this.editTitle = banner.title;
-      this.existingImage = banner.image;
     });
   }
 
@@ -124,17 +142,24 @@ export class ManageBannersComponent implements OnInit {
       this._snackBar.open("Please fill in your title", "Close", {
         duration: 2000
       })
+    }else if(!this.editImage&&!this.existingImageUrl){
+      this._snackBar.open("Please insert an Image", "Close", {
+        duration: 2000
+      })
+      
     }else{
+
+      if (this.editImage != null && this.existingImageUrl== null) {
+        this.fileChangedEdit();
+      }
+      
       const updateBanner = {
         page: this.editTargetPage,
         title :this.editTitle,
-        image :this.editImage == null ? this.existingImage : this.editImage,
+        image :this.editImage == null ? this.existingImageUrl : this.editImage,
         id:this.bannerId,
       };
 
-      if (this.editImage != null) {
-        this.fileChangedEdit();
-      }
 
       this.bannerService.updateBanner(updateBanner).subscribe(()=>{
         setTimeout(() => {
@@ -144,6 +169,10 @@ export class ManageBannersComponent implements OnInit {
           this.ngOnInit();
         }, 100);
       })
+      this.page = '';
+      this.title = '';
+      this.image = '';
+      this.imageUrl = '';
     }
   }
 }
