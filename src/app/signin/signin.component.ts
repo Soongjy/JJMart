@@ -12,6 +12,7 @@ export class SigninComponent implements OnInit {
   users: User[] = [];
   emailusername!: string;
   password!:string;
+  userprivilege!:number;
   
 
   constructor(private userService: UserService,private _snackBar: MatSnackBar) { }
@@ -39,7 +40,7 @@ export class SigninComponent implements OnInit {
             var userid = user.id;
             var userName = user.name;
             var useremail = user.email;
-            var userprivilege = user.privilege;
+            this.userprivilege = user.privilege;
             localStorage.setItem('userdetails',JSON.stringify(user));
             found = 2;
             break;
@@ -55,6 +56,15 @@ export class SigninComponent implements OnInit {
         this._snackBar.open("The Username doesn't exist", "Close", {
           duration: 2000
         });
+      }else if(found == 2 && this.userprivilege == 1){
+        this._snackBar.open("Login Successfully", "Close", {
+          duration: 2000
+        });
+        this.emailusername = '';
+        this.password = '';
+        setTimeout(() => {
+          window.location.href = "/admin";
+        }, 500);
       }else if(found == 2){
         this._snackBar.open("Login Successfully", "Close", {
           duration: 2000

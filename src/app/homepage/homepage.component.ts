@@ -33,10 +33,8 @@ export class HomepageComponent implements OnInit {
         if (banner.page=='Homepage'){
           if (this.firstBanner.length===0){
             this.firstBanner.push(banner)
-            console.log(this.firstBanner)
           }else{
             this.banners.push(banner)
-            console.log(this.banners)
           }
         }
       }
