@@ -7,6 +7,7 @@ import { AdmindashboardComponent } from "./admindashboard/admindashboard.compone
 import { AdminpanelComponent } from "./adminpanel/adminpanel.component";
 import { ManageBannersComponent } from "./manage-banners/manage-banners.component";
 import { ManageCategoriesComponent } from "./manage-categories/manage-categories.component";
+import { ManageCompanyProfileComponent } from "./manage-company-profile/manage-company-profile.component";
 import { ManageProductComponent } from "./manage-product/manage-product.component";
 import { ManageUserComponent } from "./manage-user/manage-user.component";
 
@@ -21,6 +22,7 @@ const routes: Routes = [
             { path: 'manageproduct', component: ManageProductComponent},
             { path: 'manageuser', component: ManageUserComponent},
             { path: 'managecategories', component: ManageCategoriesComponent},
+            { path: 'manage-company-profile', component: ManageCompanyProfileComponent},
         ],
         
     }

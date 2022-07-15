@@ -437,7 +437,26 @@
       "id": 4
     }
   ],
-  "banners": [],
+  "banners": [
+    {
+      "page": "contact-us",
+      "title": "qdw",
+      "image": "assets/woman-banner.jpg",
+      "id": 1
+    },
+    {
+      "page": "Homepage",
+      "title": "xxxx",
+      "image": "assets/bg4.jpg",
+      "id": 2
+    },
+    {
+      "page": "Homepage",
+      "title": "Whaaat",
+      "image": "assets/bg2.jpg",
+      "id": 3
+    }
+  ],
   "categories": [
     {
       "name": "Vegetables & Fruits",
