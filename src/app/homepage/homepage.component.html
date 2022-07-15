@@ -23,14 +23,14 @@
     </div>
     <div class="carousel-item active" data-bs-interval="5000">
       <img *ngFor="let banner of firstBanner"
-        src="../../{{banner.image}}"
+        src="{{banner.image}}"
         class="d-block w-100"
         alt="..."
       />
     </div>
     <div class="carousel-item" data-bs-interval="5000" *ngFor="let banner of banners">
       <img
-        src='../../{{banner.image}}'
+        src='{{banner.image}}'
         class="d-block w-100"
         alt="..."
       />

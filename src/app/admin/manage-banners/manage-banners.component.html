@@ -131,7 +131,7 @@
             </div>
             <div class="modal-body">
               <div class="mb-3">
-                <label for="name" class="form-label">Target Page</label>
+                <label for="page" class="form-label">Target Page</label>
                 <select type="text" class="form-control" id="page" placeholder="Carousel title" [(ngModel)]="page" [ngModelOptions]="{standalone: true}" required>
                     <option value="" disabled selected>Choose your option</option>
                     <option value=Homepage>Homepage</option>
@@ -152,6 +152,10 @@
               <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
                 <input class="form-control" type="file" id="image" [(ngModel)]="image" [ngModelOptions]="{standalone: true}" />
+              </div>
+              <div class="mb-3">
+                <label for="imageurl" class="form-label">Image Url</label>
+                <input type="text" class="form-control" id="imageUrl"aria-describedby="imageUrl" [(ngModel)]="imageUrl" [ngModelOptions]="{ standalone: true }" />
               </div>
             </div>
             <div class="modal-footer">
@@ -206,9 +210,9 @@
                 [(ngModel)]="editTargetPage"
                 [ngModelOptions]="{ standalone: true }"
               >
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value=homepage>Homepage</option>
-                    <option value=contact-us>Contact Us</option>
+                <option value="" disabled selected>Choose your option</option>
+                <option value=Homepage>Homepage</option>
+                <option value=Contact-us>Contact Us</option>
               </select>
             </div>
             <div class="mb-3">
@@ -231,6 +235,17 @@
                 (change)="fileChangedEdit()"
               />
             </div>
+            <div class="mb-3">
+              <label for="imageurl" class="form-label">Image Url</label>
+              <input
+              type="text"
+              class="form-control"
+              id="imageUrl"
+              aria-describedby="imageUrl"
+              [(ngModel)]="existingImageUrl"
+              [ngModelOptions]="{ standalone: true }"
+              />
+          </div>
           </div>
           <div class="modal-footer">
             <button
