@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Company } from '../Company';
 
 
 const httpOptions = {
@@ -20,12 +21,14 @@ export class CompanyService {
 
   constructor(private http:HttpClient) { }
 
-  getCompanyInfo(): Observable<any[]>{
-    return this.http.get<any[]>(this.apiUrl);
+
+  getCompanyInfo(id: number): Observable<Company> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Company>(url);
   }
 
-  updateCompanyInfo(company:any):Observable<any>{
+  updateCompanyInfo(company:Company):Observable<Company>{
     const url = `${this.apiUrl}/${1}`;
-    return this.http.put<any>(url,company,httpOptions);
+    return this.http.put<Company>(url,company,httpOptions);
   }
 }

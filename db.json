@@ -494,5 +494,16 @@
       "id": 5,
       "visibility": true
     }
+  ],
+  "company": [
+    {
+      "aboutUsInfo": "lmaodsfdg ttyty",
+      "address": "xxx",
+      "contactNum": "xxx",
+      "googleMaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7968.206763698615!2d101.59385166977539!3d3.0670348000000107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f0e1d182d%3A0x7628d090a2360b02!2sMK%20Mart%20Sunway!5e0!3m2!1sen!2smy!4v1655699245083!5m2!1sen!2smy",
+      "email": "xxx",
+      "businessHours": "33",
+      "id": 1
+    }
   ]
 }
