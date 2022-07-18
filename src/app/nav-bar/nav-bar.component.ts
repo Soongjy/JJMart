@@ -3,6 +3,7 @@ import { CartService } from '../services/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from '../services/category.service';
 import { Category } from '../Category';
+import { CompanyService } from '../services/company.service';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -18,8 +19,10 @@ export class NavBarComponent implements OnInit {
 
   mobile!: boolean;
 
+  companyLogo!:string;
 
-  constructor(private cartService: CartService,private _snackBar: MatSnackBar, private categoryService: CategoryService) {
+
+  constructor(private cartService: CartService,private _snackBar: MatSnackBar, private categoryService: CategoryService, private companyService: CompanyService) {
   
    }
 
@@ -47,6 +50,11 @@ export class NavBarComponent implements OnInit {
     }else{
       this.mobile = false;
     }
+
+    //get logo
+    this.companyService.getCompanyInfo(1).subscribe(company=>{
+      this.companyLogo = company.companyLogo;
+    })
 
   }
 

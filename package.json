@@ -23,6 +23,7 @@
     "@angular/router": "^14.0.0",
     "json-server": "^0.17.0",
     "rxjs": "~7.5.0",
+    "safe-pipe": "^2.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

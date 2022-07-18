@@ -2,15 +2,15 @@
     <h1 class="page-title text-center background-overlay" style="padding-top: 140px;padding-bottom: 140px;">Contact Us</h1>
     <div class="row m-2" style="padding:0px 15% 10px 15% ;height: 70%; border-bottom: 10px solid red;">
         <div class="col" id="map" style="height:100%">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7968.206763698615!2d101.59385166977539!3d3.0670348000000107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f0e1d182d%3A0x7628d090a2360b02!2sMK%20Mart%20Sunway!5e0!3m2!1sen!2smy!4v1655699245083!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+            <iframe [src]="googleMaps|safe" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
         <div class="col" id="contactdetailscontainer">
             <div class="contactdetails m-0">
                 <div class="iconcontainer">
                     <i class="material-icons" style="font-size: 50px;">place</i>
                 </div>
                 <p style="margin:8px;font-size:16px">
-                    <strong style="font-size:22px">Sunway Mart</strong><br>
-                    48, Jalan PJS 11/7, Bandar Sunway, 46150 Petaling Jaya, Selangor.
+                    <strong style="font-size:22px">Address</strong><br>
+                    {{address}}
                 </p>
             </div>
             <div class="contactdetails m-0">
@@ -19,7 +19,7 @@
                 </div>
                 <p style="margin:8px;font-size:18px">
                     <strong style="font-size:23px">Contact Number</strong><br>
-                    012-3456789
+                    {{contactNum}}
                 </p>
             </div>
             <div class="contactdetails m-0">
@@ -27,8 +27,8 @@
                     <i class="material-icons" style="font-size: 50px;">email</i>
                 </div>
                 <p style="margin:8px;font-size:16px">
-                    <strong style="font-size:20px">OG Solutions</strong><br>
-                    sunwaymart@gmail.com
+                    <strong style="font-size:20px">Email</strong><br>
+                    {{email}}
                 </p>
             </div>
             <div class="contactdetails m-0">
@@ -37,7 +37,7 @@
                 </div>
                 <p style="margin:8px;font-size:16px">
                     <strong style="font-size:20px">Business Hours</strong><br>
-                    Monday to Sunday: 8.00am to 10.00pm
+                    {{businessHours}}
                 </p>
             </div>
         </div>

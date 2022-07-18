@@ -488,5 +488,18 @@
       "id": 5,
       "visibility": true
     }
+  ],
+  "company": [
+    {
+      "companyLogo": "assets/logo.png",
+      "aboutUsImage": "assets/woman-banner.jpg",
+      "aboutUsInfo": "      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.\n\n\n Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+      "address": " 48, Jalan PJS 11/7, Bandar Sunway, 46150 Petaling Jaya, Selangor",
+      "contactNum": "012-3456789",
+      "googleMaps": "http://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7968.206763698615!2d101.59385166977539!3d3.0670348000000107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c8f0e1d182d%3A0x7628d090a2360b02!2sMK%20Mart%20Sunway!5e0!3m2!1sen!2smy!4v1655699245083!5m2!1sen!2smy",
+      "email": "sunwaymart@gmail.com",
+      "businessHours": "Monday to Sunday: 8.00am to 10.00pm",
+      "id": 1
+    }
   ]
 }
