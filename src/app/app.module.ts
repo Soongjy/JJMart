@@ -41,6 +41,9 @@ import { AuthGuard } from './services/auth-guard.service';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 
+import { SafePipe } from './safe.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +67,8 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     CartQuantityComponent,
     SearchComponent,
     OrderconfirmationComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

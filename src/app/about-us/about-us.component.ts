@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from '../services/company.service';
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor() { }
+
+  aboutUsImage!: string;
+  aboutUsInfo!: string;
+
+
+  constructor(private companyService: CompanyService) { }
 
   ngOnInit(): void {
+
+    this.companyService.getCompanyInfo(1).subscribe(company=>{
+      this.aboutUsImage = company.aboutUsImage;
+      this.aboutUsInfo = company.aboutUsInfo;
+    })
   }
 
 }

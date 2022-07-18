@@ -17,8 +17,8 @@ export class ManageCompanyProfileComponent implements OnInit {
   company!: Company;
 
 
-  companyLogo!: string;
-  aboutUsImage!: string;
+  // companyLogo!: string;
+  // aboutUsImage!: string;
   aboutUsInfo!: string;
   address!: string;
   contactNum!: string;
@@ -34,8 +34,8 @@ export class ManageCompanyProfileComponent implements OnInit {
 
   fetchCompanyDetails(){
     this.companyService.getCompanyInfo(1).subscribe((company)=>{
-      this.companyLogo = company.companyLogo;
-      this.aboutUsImage = company.aboutUsImage;
+      this.existingCompanyLogo = company.companyLogo;
+      this.existingAboutUsImage = company.aboutUsImage;
       this.aboutUsInfo = company.aboutUsInfo;
       this.address = company.address;
       this.contactNum = company.contactNum;
@@ -63,9 +63,10 @@ export class ManageCompanyProfileComponent implements OnInit {
 
   updateCompanyDetails(){
 
+
     const updateCompany = {
-      companyLogo: this.companyLogoPath,
-      aboutUsImage: this.aboutUsImagePath,
+      companyLogo: this.companyLogoPath ==null ? this.existingCompanyLogo : this.companyLogoPath,
+      aboutUsImage: this.aboutUsImagePath ==null ? this.existingAboutUsImage : this.aboutUsImagePath,
       aboutUsInfo: this.aboutUsInfo,
       address: this.address,
       contactNum: this.contactNum,
@@ -78,6 +79,8 @@ export class ManageCompanyProfileComponent implements OnInit {
     if (this.companyLogoPath != null) {
       this.fileChangedLogo();
     }
+
+    
 
     if (this.aboutUsImagePath != null) {
       this.fileChangedAboutUs();
