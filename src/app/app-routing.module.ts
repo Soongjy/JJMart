@@ -15,6 +15,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule);
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'about-us', component:AboutUsComponent},
   { path: 'all-products', component:AllProductsComponent},
   { path: 'admin', loadChildren: adminModule, canActivate:[AuthGuard] },
+  { path: 'adminlogin', component:AdminLoginComponent},
   { path: 'category/:params', component:CategoryComponent},
   { path: 'viewcart', component:CartComponent},
   { path: 'manageaccount', component:ManageaccountComponent},

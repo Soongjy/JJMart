@@ -40,6 +40,7 @@ import { AuthGuard } from './services/auth-guard.service';
 
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     CartQuantityComponent,
     SearchComponent,
     OrderconfirmationComponent,
-    OrderHistoryComponent
+    OrderHistoryComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,

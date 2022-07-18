@@ -10,6 +10,7 @@ import { Category } from '../Category';
 })
 export class NavBarComponent implements OnInit {
   userdetails !: [];
+  admindetails !:[];
   title: string = 'Sunway Mart';
   name!: string;
   privilege!: number;
@@ -25,12 +26,18 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
-    for (let x in this.userdetails) {
-      if (x == "name"){
-        this.name = this.userdetails[x];
+    this.admindetails = JSON.parse(localStorage.getItem('admindetails')||"[]");
+    if(!this.admindetails){
+      for (let x in this.userdetails) {
+        if (x == "name"){
+          this.name = this.userdetails[x];
+        }
       }
-      else if(x == "privilege"){
-        this.privilege = this.userdetails[x];
+    }else{
+      for (let x in this.admindetails) {
+        if (x == "name"){
+          this.name = this.admindetails[x];
+        }
       }
     }
 
@@ -56,6 +63,7 @@ export class NavBarComponent implements OnInit {
     }else{
     setTimeout(() => {
       localStorage.setItem('userdetails',JSON.stringify(null));
+      localStorage.setItem('admindetails',JSON.stringify(null));
       window.location.href = "/";
     }, 500);
     

@@ -488,5 +488,17 @@
       "id": 5,
       "visibility": true
     }
+  ],
+  "admin":[
+    {
+      "name": "123",
+      "username": "12345",
+      "email": "12345",
+      "password": "123",
+      "privilege": 0,
+      "phonenum": "1234",
+      "address": "123",
+      "id": 27
+    }
   ]
 }
