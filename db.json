@@ -437,26 +437,6 @@
       "id": 4
     }
   ],
-  "banners": [
-    {
-      "page": "Homepage",
-      "title": "Banner 1",
-      "image": "assets/bg1.jpg",
-      "id": 1
-    },
-    {
-      "page": "Homepage",
-      "title": "Banner 2",
-      "image": "assets/bg2.jpg",
-      "id": 2
-    },
-    {
-      "page": "Homepage",
-      "title": "Banner 3",
-      "image": "assets/bg4.jpg",
-      "id": 3
-    }
-  ],
   "categories": [
     {
       "name": "Vegetables & Fruits",
@@ -502,7 +482,7 @@
       "id": 1
     }
   ],
-  "admin":[
+  "admin": [
     {
       "name": "123",
       "username": "12345",
@@ -512,6 +492,26 @@
       "phonenum": "1234",
       "address": "123",
       "id": 1
+    }
+  ],
+  "images": [
+    {
+      "page": "Homepage",
+      "title": "Banner 1",
+      "image": "assets/bg1.jpg",
+      "id": 1
+    },
+    {
+      "page": "Homepage",
+      "title": "Banner 2",
+      "image": "assets/bg2.jpg",
+      "id": 2
+    },
+    {
+      "page": "Homepage",
+      "title": "Banner 3",
+      "image": "assets/bg4.jpg",
+      "id": 3
     }
   ]
 }

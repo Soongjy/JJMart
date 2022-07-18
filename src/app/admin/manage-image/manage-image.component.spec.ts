@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ManageBannersComponent } from './manage-banners.component';
+import { ManageImageComponent } from './manage-image.component';
 
-describe('ManageBannersComponent', () => {
-  let component: ManageBannersComponent;
-  let fixture: ComponentFixture<ManageBannersComponent>;
+describe('ManageImageComponent', () => {
+  let component: ManageImageComponent;
+  let fixture: ComponentFixture<ManageImageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ManageBannersComponent ]
+      declarations: [ ManageImageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ManageBannersComponent);
+    fixture = TestBed.createComponent(ManageImageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
