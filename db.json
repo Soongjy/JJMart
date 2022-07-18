@@ -501,5 +501,17 @@
       "businessHours": "Monday to Sunday: 8.00am to 10.00pm",
       "id": 1
     }
+  ],
+  "admin":[
+    {
+      "name": "123",
+      "username": "12345",
+      "email": "12345",
+      "password": "123",
+      "privilege": 0,
+      "phonenum": "1234",
+      "address": "123",
+      "id": 1
+    }
   ]
 }

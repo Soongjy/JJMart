@@ -40,6 +40,7 @@ import { AuthGuard } from './services/auth-guard.service';
 
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 import { SafePipe } from './safe.pipe';
 
@@ -68,7 +69,8 @@ import { SafePipe } from './safe.pipe';
     SearchComponent,
     OrderconfirmationComponent,
     OrderHistoryComponent,
-    SafePipe
+    SafePipe,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,

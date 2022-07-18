@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
-import { User } from '../Users';
+import { Admin } from '../Admin';
+import { AdminService } from '../services/admin.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.css']
 })
-export class SigninComponent implements OnInit {
-  users: User[] = [];
+
+export class AdminLoginComponent implements OnInit {
+  admins:Admin[]=[];
   emailusername!: string;
   password!:string;
   userprivilege!:number;
   
 
-  constructor(private userService: UserService,private _snackBar: MatSnackBar) { }
+  constructor(private adminService: AdminService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe((users)=> (this.users = users))
+    this.adminService.getUser().subscribe((admins)=> (this.admins = admins))
   }
 
   onSubmit(){
@@ -32,16 +33,17 @@ export class SigninComponent implements OnInit {
         duration: 2000
       });
     }else{
-      for(var user of this.users){
-        if(this.emailusername === user.username||this.emailusername === user.email){
+      for(var admin of this.admins){
+        if(this.emailusername === admin.username||this.emailusername === admin.email){
           found = 1; 
         }
-        if(this.emailusername === user.username&&this.password === user.password || this.emailusername === user.email &&this.password === user.password){
-            var userid = user.id;
-            var userName = user.name;
-            var useremail = user.email;
-            this.userprivilege = user.privilege;
-            localStorage.setItem('userdetails',JSON.stringify(user));
+        if(this.emailusername === admin.username&&this.password === admin.password || this.emailusername === admin.email &&this.password === admin.password){
+            var userid = admin.id;
+            var userName = admin.name;
+            var useremail = admin.email;
+            this.userprivilege = admin.privilege;
+            localStorage.setItem('userdetails',JSON.stringify(null))
+            localStorage.setItem('admindetails',JSON.stringify(admin));
             found = 2;
             break;
         }else{
@@ -63,10 +65,9 @@ export class SigninComponent implements OnInit {
         this.emailusername = '';
         this.password = '';
         setTimeout(() => {
-          window.location.href = "/";
+          window.location.href = "/admin";
         }, 500);
       }
     }
   }
-  
 }

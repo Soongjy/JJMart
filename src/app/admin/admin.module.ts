@@ -17,7 +17,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { BannerService } from '../services/banner.service';
 import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
 import { ManageCompanyProfileComponent } from './manage-company-profile/manage-company-profile.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     ManageUserComponent,
     ManageCategoriesComponent,
     ManageCompanyProfileComponent,
-    AdminLoginComponent
   ],
   imports: [
     CommonModule,
