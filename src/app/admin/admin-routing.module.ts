@@ -5,10 +5,10 @@ import { AdminComponent } from "./admin.component";
 
 import { AdmindashboardComponent } from "./admindashboard/admindashboard.component";
 import { AdminpanelComponent } from "./adminpanel/adminpanel.component";
-import { ManageBannersComponent } from "./manage-banners/manage-banners.component";
 import { ManageCategoriesComponent } from "./manage-categories/manage-categories.component";
 import { ManageProductComponent } from "./manage-product/manage-product.component";
 import { ManageUserComponent } from "./manage-user/manage-user.component";
+import { ManageBannersComponent } from "./manage-banners/manage-banners.component";
 
 
 
