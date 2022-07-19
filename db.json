@@ -333,6 +333,18 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
       "discountedPrice": 15,
       "visibility": true
+    },
+    {
+      "name": "WX",
+      "category": "Dairy",
+      "image": "assets/cart.jpg",
+      "price": "566",
+      "quantity": 1,
+      "unit": "100g",
+      "description": "3434343",
+      "discountedPrice": "20",
+      "visibility": true,
+      "id": 11
     }
   ],
   "orders": [],

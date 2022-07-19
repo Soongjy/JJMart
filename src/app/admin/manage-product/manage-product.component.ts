@@ -194,6 +194,7 @@ export class ManageProductComponent implements OnInit {
       this.editHasDiscount = false;
       (<HTMLInputElement>document.getElementById('editDiscountedPrice')).value = '';
       (<HTMLInputElement>document.getElementById('editDiscountedPrice')).disabled = true;
+      this.editDiscountedPrice = 0;
     }
 
   }

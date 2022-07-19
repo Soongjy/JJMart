@@ -66,7 +66,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <div id="collapsePagesheader" class="nav-link collapsed" style="cursor: pointer;" (click)="togglePages()" data-toggle="collapse" >
             <i class="fas fa-fw fa-folder"></i>
             <span>Pages</span>
@@ -82,13 +82,43 @@
                 <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
             </div>
         </div>
-    </li>
+    </li> -->
 
-    <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+        <a class="nav-link" routerLink="./manageproduct">
+            <i class="fas fa-fw fa-gift"></i>
+            <span>Manage Products</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="./manageuser">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Manage Users</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="./managecategories">
+            <i class="fas fa-fw fa-sitemap"></i>
+            <span>Manage Categories</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="./manage-images">
+            <i class="fas fa-fw fa-file-image"></i>
+            <span>Manage Images</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="./manage-company-profile">
+            <i class="fas fa-fw fa-address-book"></i>
+            <span>Manage Company Profile</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="forgot-password.html">
+            <i class="fas fa-fw fa-question"></i>
+            <span>Forgot Password</span>
+        </a>
     </li>
 </ul>
 <!-- End of Sidebar -->
