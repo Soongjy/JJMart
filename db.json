@@ -496,22 +496,70 @@
   ],
   "images": [
     {
-      "page": "Homepage",
-      "title": "Banner 1",
+      "page": "Homepage Banner",
+      "title": "Shop groceries from your home",
       "image": "assets/bg1.jpg",
       "id": 1
     },
     {
-      "page": "Homepage",
+      "page": "Homepage Banner",
       "title": "Banner 2",
       "image": "assets/bg2.jpg",
       "id": 2
     },
     {
-      "page": "Homepage",
+      "page": "Homepage Banner",
       "title": "Banner 3",
       "image": "assets/bg4.jpg",
       "id": 3
+    },
+    {
+      "page": "Homepage Notice",
+      "title": "Join to become a member today!",
+      "image": "assets/woman-banner.jpg",
+      "id": 4
+    },
+    {
+      "page": "Contact Us Banner",
+      "title": "Contact Us",
+      "image": "assets/contactusbg.jpeg",
+      "id": 5
+    },
+    {
+      "page": "About Us Banner",
+      "title": "About Us",
+      "image": "https://images.unsplash.com/photo-1525328437458-0c4d4db7cab4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "id": 6
+    },
+    {
+      "page": "Admin Login Background",
+      "title": "Admin Login Background Image",
+      "image": "https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000",
+      "id": 7
+    },
+    {
+      "page": "Log in",
+      "title": "Login Image",
+      "image": "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp",
+      "id": 8
+    },
+    {
+      "page": "Register",
+      "title": "Register Image",
+      "image": "https://images.unsplash.com/photo-1553075712-453f7213c24f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
+      "id": 9
+    },
+    {
+      "page": "User Manage Account Background",
+      "title": "User Manage Account",
+      "image": "https://img.freepik.com/free-vector/hand-painted-watercolor-abstract-watercolor-background_23-2149012404.jpg?w=2000",
+      "id": 10
+    },
+    {
+      "page": "Category Banner",
+      "title": "Category Banner",
+      "image": "https://images.unsplash.com/photo-1483137140003-ae073b395549?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "id": 11
     }
   ]
 }

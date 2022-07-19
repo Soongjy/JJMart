@@ -62,7 +62,7 @@
           <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
             <li *ngIf="userdetails ==null && admindetails ==null"><a class="dropdown-item" routerLink="/register">Register</a></li>
             <li *ngIf="userdetails ==null &&admindetails==null"><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
-            <li *ngIf="userdetails !=null ||admindetails!=null"><a class="dropdown-item" routerLink="/manageaccount">Account Settings</a></li>
+            <li *ngIf="userdetails !=null &&admindetails==null"><a class="dropdown-item" routerLink="/manageaccount">Account Settings</a></li>
             <li *ngIf="userdetails !=null && admindetails"><a class="dropdown-item" routerLink="/orderhistory">Order History</a></li>
             <li *ngIf="userdetails!=null ||admindetails!=null"><hr class="dropdown-divider"></li>
             <li *ngIf="userdetails!=null ||admindetails!=null"><a class="dropdown-item" (click)="onLogout()">Log Out</a></li>

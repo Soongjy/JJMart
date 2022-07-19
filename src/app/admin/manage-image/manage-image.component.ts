@@ -26,7 +26,7 @@ export class ManageImageComponent implements OnInit {
   editTargetPage!: string;
   editTitle!:string;
   deleteTitle!:string;
-  editImage?: string;
+  editImage!: string;
   existingImageUrl!: string;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -72,22 +72,22 @@ export class ManageImageComponent implements OnInit {
         }
       }
 
-        this.imageService.addImage(this.newImage).subscribe((images:Image) => this.images.push(images));
+      this.imageService.addImage(this.newImage).subscribe((images:Image) => this.images.push(images));
+      this.ngOnInit();
+      
+      setTimeout(() => {
+        this._snackBar.open(this.newImage.title + ' Added!', 'Close', {
+          duration: 2000,
+        });
         this.ngOnInit();
-        
-        setTimeout(() => {
-          this._snackBar.open(this.newImage.title + ' Added!', 'Close', {
-            duration: 2000,
-          });
-          this.ngOnInit();
-        }, 100);
-        
-        this.page = '';
-        this.title = '';
-        this.image = '';
-        this.imageUrl = '';
-      }
+      }, 100);
+      
+      this.page = '';
+      this.title = '';
+      this.image = '';
+      this.imageUrl = '';
     }
+  }
 
   fetchImages() {
     this.imageService.getImages().subscribe((images) => {
@@ -103,6 +103,7 @@ export class ManageImageComponent implements OnInit {
       'editImage'
     ) as HTMLInputElement;
     this.editImage = 'assets/' + inputElement.files![0].name;
+    this.existingImageUrl = this.editImage;
     }
     catch{
       this.editImage=null!
@@ -131,6 +132,7 @@ export class ManageImageComponent implements OnInit {
     this.imageService.getImage(this.imageId).subscribe((image) => {
       this.editTargetPage = image.page;
       this.editTitle = image.title;
+      this.existingImageUrl = image.image;
     });
   }
 
@@ -157,7 +159,7 @@ export class ManageImageComponent implements OnInit {
       const updateImage = {
         page: this.editTargetPage,
         title :this.editTitle,
-        image :this.editImage == null ? this.existingImageUrl : this.editImage,
+        image :this.existingImageUrl != '' ? this.existingImageUrl : this.editImage,
         id:this.imageId,
       };
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Admin } from '../Admin';
 import { AdminService } from '../services/admin.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ImageService } from '../services/image.service';
+import { Image } from '../Image';
 
 @Component({
   selector: 'app-admin-login',
@@ -10,16 +12,34 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 
 export class AdminLoginComponent implements OnInit {
+  images: Image[]=[];
   admins:Admin[]=[];
   emailusername!: string;
   password!:string;
   userprivilege!:number;
+
   
 
-  constructor(private adminService: AdminService,private _snackBar: MatSnackBar) { }
+  constructor(private adminService: AdminService,private _snackBar: MatSnackBar, private imageService:ImageService) { }
 
   ngOnInit(): void {
-    this.adminService.getUser().subscribe((admins)=> (this.admins = admins))
+    this.images= [
+      {
+        page: "Admin Login Background",
+        title : "Admin Login Background",
+        image : "https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000"
+      }
+    ]
+    this.adminService.getUser().subscribe((admins)=> (this.admins = admins));
+
+    this.imageService.getImages().subscribe((images)=>{
+      for(var image of images){
+        if (image.page=='Admin Login Background'){
+          this.images=[]
+          this.images.push(image)
+        }
+      }
+    })
   }
 
   onSubmit(){

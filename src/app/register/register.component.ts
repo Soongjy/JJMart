@@ -3,7 +3,8 @@ import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
 import { MatSnackBar } from '@angular/material/snack-bar';
-  
+import { ImageService } from '../services/image.service';
+import { Image } from '../Image';
 
 @Component({
   selector: 'app-register',
@@ -12,6 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class RegisterComponent implements OnInit {
 
+  images:Image[]=[];
   users: User[] = [];
   @Output() onAddUser: EventEmitter<User> =new EventEmitter();
   name!: string;
@@ -22,10 +24,18 @@ export class RegisterComponent implements OnInit {
   password!: string;
   repassword!: string;
 
-  constructor(private userService: UserService, private _snackBar: MatSnackBar) { }
+  constructor(private userService: UserService, private _snackBar: MatSnackBar, private imageService: ImageService) { }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe((users)=> (this.users = users))
+    this.userService.getUser().subscribe((users)=> (this.users = users));
+
+    this.imageService.getImages().subscribe((images)=>{
+      for(var image of images){
+        if (image.page=='Register'){
+          this.images.push(image)
+        }
+      }
+    })
   }
 
   

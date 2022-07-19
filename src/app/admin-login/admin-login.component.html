@@ -1,4 +1,4 @@
-<section class="vh-100" style="background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000')">
+<section class="vh-100" *ngFor="let image of images" style="background-image: url('{{image.image}}')">
     <div class="container-fluid">
       <div class="row justify-content-center" >
         <div class="col-sm-4 m-5 ps-4 text-black bg-white rounded">

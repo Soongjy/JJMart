@@ -19,8 +19,13 @@ export class HomepageComponent implements OnInit {
   categories: Category[] = [];
   images:Image[]=[];
   firstImage:Image[]=[];
+  homepagenoticeImage:Image[]=[];
+  imagetitle!:string
 
-  constructor(private productService: ProductService, private categoryService: CategoryService, private imageService:ImageService) { }
+  constructor(
+    private productService: ProductService, 
+    private categoryService: CategoryService, 
+    private imageService:ImageService) { }
 
   ngOnInit(): void {
     this.getFeaturedProducts();
@@ -31,12 +36,14 @@ export class HomepageComponent implements OnInit {
   getImages(){
     this.imageService.getImages().subscribe((images)=>{
       for(var image of images){
-        if (image.page=='Homepage'){
+        if (image.page=='Homepage Banner'){
           if (this.firstImage.length===0){
             this.firstImage.push(image)
           }else{
             this.images.push(image)
           }
+        }else if(image.page == 'Homepage Notice'){
+          this.homepagenoticeImage.push(image)
         }
       }
     })
