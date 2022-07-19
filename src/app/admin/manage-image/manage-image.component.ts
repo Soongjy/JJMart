@@ -3,36 +3,37 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 
-import { BannerService } from 'src/app/services/banner.service';
-import { Banner } from 'src/app/Banner';
+import { Image } from 'src/app/Image';
+import { ImageService } from 'src/app/services/image.service';
 
 @Component({
-  selector: 'app-manage-banners',
-  templateUrl: './manage-banners.component.html',
-  styleUrls: ['./manage-banners.component.css']
+  selector: 'app-manage-image',
+  templateUrl: './manage-image.component.html',
+  styleUrls: ['./manage-image.component.css']
 })
-export class ManageBannersComponent implements OnInit {
+export class ManageImageComponent implements OnInit {
   displayedColumns: string[] = ['id', 'page', 'title', 'image','actions'];
-  dataSource = new MatTableDataSource<Banner>();
+  dataSource = new MatTableDataSource<Image>();
 
-  banners:Banner[] = [];
+  images:Image[] = [];
   page!: string;
   title!: string;
   image!: string;
   imageUrl!: string;
-  bannerId!:number;
+  imageId!:number;
+  newImage!:Image;
 
   editTargetPage!: string;
   editTitle!:string;
   deleteTitle!:string;
-  editImage?: string;
+  editImage!: string;
   existingImageUrl!: string;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  constructor(private _snackBar: MatSnackBar, private bannerService: BannerService) { }
+  constructor(private _snackBar: MatSnackBar, private imageService: ImageService) { }
 
   ngOnInit(): void {
-    this.fetchBanners();
+    this.fetchImages();
   }
 
   onSubmit() {
@@ -58,40 +59,40 @@ export class ManageBannersComponent implements OnInit {
       )! as HTMLInputElement;
       
       if(this.image){
-        const newBanner = {
+        this.newImage = {
           page: this.page,
           title : this.title,
           image : 'assets/' + inputElement.files![0].name,
         }
       }else{
-        const newBanner = {
+        this.newImage = {
           page: this.page,
           title : this.title,
           image :this.imageUrl
         }
-
-        this.bannerService.addBanner(newBanner).subscribe((banners:Banner) => this.banners.push(banners));
-        this.ngOnInit();
-        
-        setTimeout(() => {
-          this._snackBar.open(newBanner.title + ' Added!', 'Close', {
-            duration: 2000,
-          });
-          this.ngOnInit();
-        }, 100);
-        
-        this.page = '';
-        this.title = '';
-        this.image = '';
-        this.imageUrl = '';
       }
+
+      this.imageService.addImage(this.newImage).subscribe((images:Image) => this.images.push(images));
+      this.ngOnInit();
+      
+      setTimeout(() => {
+        this._snackBar.open(this.newImage.title + ' Added!', 'Close', {
+          duration: 2000,
+        });
+        this.ngOnInit();
+      }, 100);
+      
+      this.page = '';
+      this.title = '';
+      this.image = '';
+      this.imageUrl = '';
     }
   }
 
-  fetchBanners() {
-    this.bannerService.getBanners().subscribe((banners) => {
-      this.banners = banners;
-      this.dataSource = new MatTableDataSource<Banner>(this.banners);
+  fetchImages() {
+    this.imageService.getImages().subscribe((images) => {
+      this.images = images;
+      this.dataSource = new MatTableDataSource<Image>(this.images);
       this.dataSource.paginator = this.paginator;
     });
   }
@@ -102,6 +103,7 @@ export class ManageBannersComponent implements OnInit {
       'editImage'
     ) as HTMLInputElement;
     this.editImage = 'assets/' + inputElement.files![0].name;
+    this.existingImageUrl = this.editImage;
     }
     catch{
       this.editImage=null!
@@ -109,14 +111,14 @@ export class ManageBannersComponent implements OnInit {
   }
 
   deleteConfirmation(event:any){
-    this.bannerId = event.target.dataset.sectionvalue;
-    this.bannerService.getBanner(this.bannerId).subscribe((banner) => {
-      this.deleteTitle = banner.title;
+    this.imageId = event.target.dataset.sectionvalue;
+    this.imageService.getImage(this.imageId).subscribe((image) => {
+      this.deleteTitle = image.title;
     });
   }
 
-  deleteBanner() {
-    this.bannerService.deleteBanner(this.bannerId).subscribe();
+  deleteImage() {
+    this.imageService.deleteImage(this.imageId).subscribe();
     setTimeout(() => {
       this._snackBar.open(this.deleteTitle +' deleted!', 'Close', {
         duration: 2000,
@@ -125,15 +127,16 @@ export class ManageBannersComponent implements OnInit {
     }, 100);
   }
   
-  editBanner(event: any) {
-    this.bannerId = event.target.dataset.sectionvalue;
-    this.bannerService.getBanner(this.bannerId).subscribe((banner) => {
-      this.editTargetPage = banner.page;
-      this.editTitle = banner.title;
+  editImages(event: any) {
+    this.imageId = event.target.dataset.sectionvalue;
+    this.imageService.getImage(this.imageId).subscribe((image) => {
+      this.editTargetPage = image.page;
+      this.editTitle = image.title;
+      this.existingImageUrl = image.image;
     });
   }
 
-  updateBannerChanges(){
+  updateImageChanges(){
     if(!this.editTargetPage){
       this._snackBar.open("Please fill in your target page", "Close", {
         duration: 2000
@@ -153,17 +156,17 @@ export class ManageBannersComponent implements OnInit {
         this.fileChangedEdit();
       }
       
-      const updateBanner = {
+      const updateImage = {
         page: this.editTargetPage,
         title :this.editTitle,
-        image :this.editImage == null ? this.existingImageUrl : this.editImage,
-        id:this.bannerId,
+        image :this.existingImageUrl != '' ? this.existingImageUrl : this.editImage,
+        id:this.imageId,
       };
 
 
-      this.bannerService.updateBanner(updateBanner).subscribe(()=>{
+      this.imageService.updateImage(updateImage).subscribe(()=>{
         setTimeout(() => {
-          this._snackBar.open( updateBanner.title + ' updated!', 'Close', {
+          this._snackBar.open( updateImage.title + ' updated!', 'Close', {
             duration: 2000,
           });
           this.ngOnInit();

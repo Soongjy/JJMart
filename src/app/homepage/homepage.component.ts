@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../Category';
 import { Product } from '../Product';
-import { Banner } from '../Banner';
+import { Image } from '../Image';
 import { CategoryService } from '../services/category.service';
 import { ProductService } from '../services/product.service';
-import { BannerService } from '../services/banner.service';
+import { ImageService } from '../services/image.service';
+
 
 @Component({
   selector: 'app-homepage',
@@ -16,26 +17,33 @@ export class HomepageComponent implements OnInit {
   products: Product[] = [];
   featProducts: Product[] = [];
   categories: Category[] = [];
-  banners:Banner[]=[];
-  firstBanner:Banner[]=[];
+  images:Image[]=[];
+  firstImage:Image[]=[];
+  homepagenoticeImage:Image[]=[];
+  imagetitle!:string
 
-  constructor(private productService: ProductService, private categoryService: CategoryService, private bannerService:BannerService) { }
+  constructor(
+    private productService: ProductService, 
+    private categoryService: CategoryService, 
+    private imageService:ImageService) { }
 
   ngOnInit(): void {
     this.getFeaturedProducts();
     this.getCategories();
-    this.getBanners();
+    this.getImages();
   }
 
-  getBanners(){
-    this.bannerService.getBanners().subscribe((banners)=>{
-      for(var banner of banners){
-        if (banner.page=='Homepage'){
-          if (this.firstBanner.length===0){
-            this.firstBanner.push(banner)
+  getImages(){
+    this.imageService.getImages().subscribe((images)=>{
+      for(var image of images){
+        if (image.page=='Homepage Banner'){
+          if (this.firstImage.length===0){
+            this.firstImage.push(image)
           }else{
-            this.banners.push(banner)
+            this.images.push(image)
           }
+        }else if(image.page == 'Homepage Notice'){
+          this.homepagenoticeImage.push(image)
         }
       }
     })

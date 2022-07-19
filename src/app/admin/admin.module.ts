@@ -6,7 +6,7 @@ import { AdminComponent } from './admin.component';
 import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { AdminRoutingModule } from './admin-routing.module';
-import { ManageBannersComponent } from './manage-banners/manage-banners.component';
+
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -14,22 +14,22 @@ import { ManageProductComponent } from './manage-product/manage-product.componen
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { BannerService } from '../services/banner.service';
+
 import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
 import { ManageCompanyProfileComponent } from './manage-company-profile/manage-company-profile.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { ManageImageComponent } from './manage-image/manage-image.component';
+
 
 @NgModule({
   declarations: [
     AdminpanelComponent,
     AdmindashboardComponent,
     AdminComponent,
-    ManageBannersComponent,
     ManageProductComponent,
     ManageUserComponent,
     ManageCategoriesComponent,
     ManageCompanyProfileComponent,
-    AdminLoginComponent
+    ManageImageComponent,
   ],
   imports: [
     CommonModule,

@@ -1,19 +1,19 @@
 <div class="container">
-    <h1 class="d-inline">Manage Banner</h1>
+    <h1 class="d-inline">Manage Image</h1>
     <button
     type="button"
     class="btn btn-danger btn-sm d-inline mx-3 mb-2"
     data-bs-toggle="modal"
     data-bs-target="#addModal"
     >
-        Add New Banner
+        Add New Image
     </button>
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
           <!-- ID Column -->
           <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef width="10%">ID</th>
-            <td mat-cell *matCellDef="let count of element; index as i" >{{i + 1}}</td>
+            <td mat-cell *matCellDef="let element; index as i" >{{i + 1}}</td>
           </ng-container>
     
           <ng-container matColumnDef="page">
@@ -31,7 +31,7 @@
           <ng-container matColumnDef="image" >
             <th mat-header-cell *matHeaderCellDef width="40%">Image</th>
             <td mat-cell *matCellDef="let element">
-              <img src="{{ element.image }}" alt="pic" width="90%" height="200"/>
+              <img src="{{ element.image }}" alt="pic"width="80%" height="200"/>
             </td>
           </ng-container>
           <!-- Actions Column -->
@@ -43,7 +43,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#editModal"
                 [attr.data-sectionvalue]="element.id"
-                (click)="editBanner($event)"
+                (click)="editImages($event)"
               ></i>
               <span class="px-2"></span>
               <i
@@ -101,7 +101,7 @@
               type="button"
               class="btn btn-primary"
               data-bs-dismiss="modal"
-              (click)="deleteBanner()"
+              (click)="deleteImage()"
             >
               Confirm
             </button>
@@ -109,7 +109,7 @@
         </div>
       </div>
     </div>
-    <!--Create Banner-->
+    <!--Create Image-->
     <div
     class="modal fade"
     id="addModal"
@@ -121,7 +121,7 @@
         <div class="modal-content">
           <form (ngSubmit)="onSubmit()">
             <div class="modal-header">
-              <h5 class="modal-title" id="addModalLabel">New Banner</h5>
+              <h5 class="modal-title" id="addModalLabel">New Image</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -134,8 +134,15 @@
                 <label for="page" class="form-label">Target Page</label>
                 <select type="text" class="form-control" id="page" placeholder="Carousel title" [(ngModel)]="page" [ngModelOptions]="{standalone: true}" required>
                     <option value="" disabled selected>Choose your option</option>
-                    <option value=Homepage>Homepage</option>
-                    <option value=Contact-us>Contact Us</option>
+                    <option value="Homepage Banner">Homepage Banner</option>
+                    <option value="Homepage Notice">Homepage Notice</option>
+                    <option value="Contact Us Banner">Contact Us Banner</option>
+                    <option value="About Us Banner">About Us Banner</option>
+                    <option value="Log in">Log In</option>
+                    <option value="Admin Login Background">Admin Login Background</option>
+                    <option value="Register">Register</option>
+                    <option value="User Manage Account Background">User Manage Account</option>
+                    <option value="Category Banner">Category Banner</option>
                 </select>
               </div>
               <div class="mb-3">
@@ -179,7 +186,7 @@
       </div>
     </div>
     
-    <!--Update Banner-->
+    <!--Update Image-->
     <div
     class="modal fade"
     id="editModal"
@@ -189,9 +196,9 @@
     >
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <form (ngSubmit)="updateBannerChanges()">
+        <form (ngSubmit)="updateImageChanges()">
           <div class="modal-header">
-            <h5 class="modal-title" id="addModalLabel">Update Banner</h5>
+            <h5 class="modal-title" id="addModalLabel">Update Image</h5>
             <button
               type="button"
               class="btn-close"
@@ -210,9 +217,15 @@
                 [(ngModel)]="editTargetPage"
                 [ngModelOptions]="{ standalone: true }"
               >
-                <option value="" disabled selected>Choose your option</option>
-                <option value=Homepage>Homepage</option>
-                <option value=Contact-us>Contact Us</option>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="Homepage Banner">Homepage Banner</option>
+              <option value="Homepage Notice">Homepage Notice</option>
+              <option value="Contact Us Banner">Contact Us Banner</option>
+              <option value="About Us Banner">About Us Banner</option>
+              <option value="Log in">Log In</option>
+              <option value="Admin Login Background">Admin Login Background</option>
+              <option value="Register">Register</option>
+              <option value="User Manage Account Background">User Manage Account</option>
               </select>
             </div>
             <div class="mb-3">

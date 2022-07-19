@@ -3,6 +3,8 @@ import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ImageService } from '../services/image.service';
+import { Image } from '../Image';
 
 @Component({
   selector: 'app-manageaccount',
@@ -11,6 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ManageaccountComponent implements OnInit {
   users: User[] = [];
+  images: Image[] = [];
   @Output() onAddUser: EventEmitter<User> =new EventEmitter();
   name!: string;
   username!: string;
@@ -22,19 +25,38 @@ export class ManageaccountComponent implements OnInit {
   id!:number;
   oldpassword!:string;
   privilege!:number;
-  constructor(private userService: UserService, private _snackBar: MatSnackBar) { }
+  constructor(private userService: UserService, private _snackBar: MatSnackBar,private imageService:ImageService) { }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe((users)=> (this.users = users))
+
+    this.userService.getUser().subscribe((users)=> (this.users = users));
     const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
-      this.name = userdetails.name;
-      this.username = userdetails.username;
-      this.email = userdetails.email;
-      this.phonenum = userdetails.phonenum;
-      this.address = userdetails.address;
-      this.id = userdetails.id;
-      this.oldpassword = userdetails.password;
-      this.privilege = userdetails.privilege;
+    this.name = userdetails.name;
+    this.username = userdetails.username;
+    this.email = userdetails.email;
+    this.phonenum = userdetails.phonenum;
+    this.address = userdetails.address;
+    this.id = userdetails.id;
+    this.oldpassword = userdetails.password;
+    this.privilege = userdetails.privilege;
+
+    this.images= [
+      {
+        page: "User Manage Account Background",
+        title : "User Manage Account Background image",
+        image : "https://img.freepik.com/free-vector/hand-painted-watercolor-abstract-watercolor-background_23-2149012404.jpg?w=2000"
+      }
+    ]
+
+    this.imageService.getImages().subscribe((images)=>{
+      for(var image of images){
+        if (image.page == 'User Manage Account Background'){
+          this.images=[]
+          this.images.push(image)
+        }
+      }
+    })
+    
   }
   
 

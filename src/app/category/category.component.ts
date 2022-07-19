@@ -3,6 +3,8 @@ import { ProductService } from './../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
 import { ActivatedRoute } from '@angular/router';
+import { ImageService } from '../services/image.service';
+import { Image } from '../Image';
 
 @Component({
   selector: 'app-category',
@@ -14,11 +16,22 @@ export class CategoryComponent implements OnInit {
   products : Product[] = [];
   categoryProducts : Product[] = [];
   categoryName !:string;
+  images:Image[]=[];
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, private cartService: CartService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private productService: ProductService, 
+    private cartService: CartService,
+    private imageService: ImageService) { }
 
   ngOnInit(): void {
-
+    this.imageService.getImages().subscribe((images)=>{
+      for(var image of images){
+        if (image.page=='Category Banner'){
+          this.images.push(image)
+        }
+      }
+    })
 
     this.route.params.subscribe(routeParams => {
       this.categoryProducts = [];

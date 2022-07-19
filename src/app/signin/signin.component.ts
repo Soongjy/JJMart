@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../Users';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Image } from '../Image';
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'app-signin',
@@ -13,12 +15,20 @@ export class SigninComponent implements OnInit {
   emailusername!: string;
   password!:string;
   userprivilege!:number;
-  
+  images:Image[]=[];
 
-  constructor(private userService: UserService,private _snackBar: MatSnackBar) { }
+  constructor(private userService: UserService,private _snackBar: MatSnackBar,private imageService:ImageService) { }
 
   ngOnInit(): void {
     this.userService.getUser().subscribe((users)=> (this.users = users))
+
+    this.imageService.getImages().subscribe((images)=>{
+      for(var image of images){
+        if (image.page=='Log in'){
+          this.images.push(image)
+        }
+      }
+    })
   }
 
   onSubmit(){
@@ -56,15 +66,6 @@ export class SigninComponent implements OnInit {
         this._snackBar.open("The Username doesn't exist", "Close", {
           duration: 2000
         });
-      }else if(found == 2 && this.userprivilege == 1){
-        this._snackBar.open("Login Successfully", "Close", {
-          duration: 2000
-        });
-        this.emailusername = '';
-        this.password = '';
-        setTimeout(() => {
-          window.location.href = "/admin";
-        }, 500);
       }else if(found == 2){
         this._snackBar.open("Login Successfully", "Close", {
           duration: 2000

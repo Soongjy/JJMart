@@ -1,5 +1,5 @@
 
-<section style="background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-abstract-watercolor-background_23-2149012404.jpg?w=2000');background-repeat: no-repeat; background-size: cover;">
+<section *ngFor="let image of images" style="background-image: url('{{image.image}}');background-repeat: no-repeat; background-size: cover;">
 <div class="container-fluid">
     <div class="d-flex justify-content-center">
 
