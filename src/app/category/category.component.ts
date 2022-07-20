@@ -48,8 +48,9 @@ export class CategoryComponent implements OnInit {
     this.productService.getProducts().subscribe((products)=>{
       this.products = products;
       for(var i=0; i<this.products.length; i++){
-        if(this.products[i].category.toLocaleLowerCase()==categoryName)
-          this.categoryProducts.push(this.products[i]);
+        if(products[i].visibility==true)
+          if(this.products[i].category.toLocaleLowerCase()==categoryName)
+            this.categoryProducts.push(this.products[i]);
       }
     });
   }

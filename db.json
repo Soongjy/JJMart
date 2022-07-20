@@ -63,226 +63,157 @@
   ],
   "products": [
     {
-      "id": 1,
       "name": "Tomato",
+      "category": "Vegetables & Fruits",
+      "image": "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "price": 30,
       "quantity": 1,
-      "amount": 1200,
-      "image": "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "category": "Vegetables & Fruits",
-      "unit": "100g",
+      "unit": "200g",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": 25
+      "discountedPrice": "16",
+      "visibility": true,
+      "id": 1
     },
     {
-      "id": 2,
       "name": "Chicken",
+      "category": "Meat",
+      "image": "https://images.unsplash.com/photo-1642102903996-cdad15f5dcdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       "price": 30,
       "quantity": 1,
-      "amount": 1200,
-      "image": "https://images.unsplash.com/photo-1642102903996-cdad15f5dcdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-      "category": "Meat",
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": null
+      "discountedPrice": "12",
+      "visibility": true,
+      "id": 2
     },
     {
       "id": 3,
       "name": "Chocolate",
       "price": 20,
       "quantity": 1,
-      "amount": 1000,
       "image": "https://images.unsplash.com/photo-1565071559227-20ab25b7685e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "category": "Dairy",
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": 10
+      "discountedPrice": 10,
+      "visibility": true
     },
     {
-      "id": 4,
       "name": "Indo Mee Goreng",
+      "category": "Noodles",
+      "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "price": 30,
       "quantity": 1,
-      "amount": 1200,
-      "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "category": "Noodles",
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": null
+      "discountedPrice": 0,
+      "visibility": true,
+      "id": 4
     },
     {
       "id": 5,
       "name": "Fish",
       "price": 30,
       "quantity": 1,
-      "amount": 1200,
       "image": "https://images.unsplash.com/photo-1498654200943-1088dd4438ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "category": "Meat",
       "unit": "piece",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": 22
+      "discountedPrice": 22,
+      "visibility": true
     },
     {
       "id": 6,
       "name": "Crackers",
       "price": 30,
       "quantity": 1,
-      "amount": 1200,
       "image": "https://images.unsplash.com/photo-1551584277-a31a25e08fc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "category": "Biscuits & Cakes",
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": 15
+      "discountedPrice": 15,
+      "visibility": true
     },
     {
       "id": 7,
       "name": "Mushroom",
       "price": 30,
       "quantity": 1,
-      "amount": 1200,
       "image": "https://images.unsplash.com/photo-1552825897-bb5efa86eab1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "category": "Vegetables & Fruits",
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": 12
+      "discountedPrice": 12,
+      "visibility": true
     },
     {
       "id": 8,
       "name": "Raspberry Popsicle",
       "price": 30,
       "quantity": 1,
-      "amount": 1200,
       "image": "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=587&q=80",
       "category": "Dairy",
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": 12
+      "discountedPrice": 12,
+      "visibility": true
     },
     {
       "id": 9,
       "name": "Mi Sedap",
       "price": 10,
       "quantity": 1,
-      "amount": 1200,
       "image": "https://images.unsplash.com/photo-1587115507286-f27e42621c25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "category": "Noodles",
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": null
+      "discountedPrice": 0,
+      "visibility": true
     },
     {
       "id": 10,
       "name": "Cookies",
       "price": 30,
       "quantity": 1,
-      "amount": 1200,
       "image": "https://images.unsplash.com/photo-1621353354739-1420ff28ead9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       "category": "Biscuits & Cakes",
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": 15
+      "discountedPrice": 15,
+      "visibility": true
+    },
+    {
+      "name": "WX",
+      "category": "Dairy",
+      "image": "assets/cart.jpg",
+      "price": "566",
+      "quantity": 1,
+      "unit": "100g",
+      "description": "3434343",
+      "discountedPrice": "20",
+      "visibility": true,
+      "id": 11
     }
   ],
-  "orders": [
+  "orders": [],
+  "banners": [
     {
-      "orderDate": "2022-07-07T02:03:32.591Z",
-      "totalPrice": 60,
-      "products": [
-        {
-          "id": 5,
-          "name": "Fish",
-          "price": 30,
-          "quantity": 1,
-          "amount": 1200,
-          "image": "https://images.unsplash.com/photo-1498654200943-1088dd4438ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Meat",
-          "unit": "piece",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 22
-        },
-        {
-          "id": 6,
-          "name": "Crackers",
-          "price": 30,
-          "quantity": 1,
-          "amount": 1200,
-          "image": "https://images.unsplash.com/photo-1551584277-a31a25e08fc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Biscuits & Cakes",
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 15
-        }
-      ],
-      "name": "Sooong",
-      "address": "12",
-      "status": "Processing",
+      "page": "Homepage",
+      "title": "Banner 1",
+      "image": "assets/bg1.jpg",
       "id": 1
     },
     {
-      "orderDate": "2022-07-07T02:04:27.658Z",
-      "totalPrice": 30,
-      "products": [
-        {
-          "id": 1,
-          "name": "Tomato",
-          "price": 30,
-          "quantity": 1,
-          "amount": 1200,
-          "image": "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Vegetables & Fruits",
-          "unit": "100g",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 25
-        }
-      ],
-      "name": "liyana",
-      "address": "123",
-      "status": "Processing",
+      "page": "Homepage",
+      "title": "Banner 2",
+      "image": "assets/bg2.jpg",
       "id": 2
     },
     {
-      "orderDate": "2022-07-07T03:44:21.274Z",
-      "totalPrice": 90,
-      "products": [
-        {
-          "id": 7,
-          "name": "Mushroom",
-          "price": 30,
-          "quantity": 3,
-          "amount": 1200,
-          "image": "https://images.unsplash.com/photo-1552825897-bb5efa86eab1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Vegetables & Fruits",
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 12
-        }
-      ],
-      "name": "Sooong",
-      "address": "12",
-      "status": "Processing",
+      "page": "Homepage",
+      "title": "Banner 3",
+      "image": "assets/bg4.jpg",
       "id": 3
-    },
-    {
-      "orderDate": "2022-07-07T04:16:18.204Z",
-      "totalPrice": 40,
-      "products": [
-        {
-          "id": 3,
-          "name": "Chocolate",
-          "price": 20,
-          "quantity": 2,
-          "amount": 1000,
-          "image": "https://images.unsplash.com/photo-1565071559227-20ab25b7685e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Dairy",
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 10
-        }
-      ],
-      "name": "Sooong",
-      "address": "12",
-      "status": "Processing",
-      "id": 4
     }
   ],
   "categories": [
