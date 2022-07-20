@@ -26,9 +26,8 @@ export class AllProductsComponent implements OnInit {
       if(params.searchTerm){
        this.productSub = this.productService.getProducts().subscribe((products)=>{
         this.products = products.filter( product =>
-          product.category.toLowerCase().includes(params.searchTerm.toLowerCase()) || product.name.toLowerCase().includes(params.searchTerm.toLowerCase()));
+          (product.name.toLocaleLowerCase().includes(params.searchTerm.toLocaleLowerCase())|| product.category?.toLocaleLowerCase().includes(params.searchTerm.toLocaleLowerCase())));
           this.productCount = this.products.length;
-      
       });
       }
     

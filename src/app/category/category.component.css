@@ -9,3 +9,10 @@
   font-size:50px;
   color:white;
 }
+
+
+@media only screen and (max-width: 780px){
+  .category-title{
+    font-size:35px;
+  }
+}

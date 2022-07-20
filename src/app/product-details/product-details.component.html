@@ -9,8 +9,8 @@
     </div>
     <div class="col-md-6 col-lg-5">
       <h1>{{ product.name }}</h1>
-      <h1 *ngIf="product.discountedPrice == null">RM{{ product.price }}</h1>
-      <div *ngIf="product.discountedPrice != null">
+      <h1 *ngIf="product.discountedPrice == 0">RM{{ product.price }}</h1>
+      <div *ngIf="product.discountedPrice != 0">
         <h1 class="d-inline promo-price">RM{{ product.discountedPrice }}</h1>
         <h3 class="d-inline old-price">RM{{ product.price }}</h3>
       </div>
@@ -58,7 +58,7 @@
   <hr>
   <div class="row my-3">
     <h3 class="fw-bold">Recommended products</h3>
-      <div class="col-6 col-md-3 text-left mb-5" *ngFor="let product of categoryProducts">
+      <div class="col-12 col-md-6 col-lg-3 text-left mb-5" *ngFor="let product of categoryProducts">
         <app-product [product]="product" *ngIf="categoryProducts.length<=4"></app-product>
       </div>
   </div>

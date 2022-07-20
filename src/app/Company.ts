@@ -1,7 +1,8 @@
 export interface Company {
     companyLogo: string,
     aboutUsImage: string,
-    aboutUsInfo: string,
+    aboutUsInfo_1: string,
+    aboutUsInfo_2: string,
     address: string,
     contactNum: string,
     googleMaps: string,

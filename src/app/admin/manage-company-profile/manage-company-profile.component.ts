@@ -19,7 +19,8 @@ export class ManageCompanyProfileComponent implements OnInit {
 
   // companyLogo!: string;
   // aboutUsImage!: string;
-  aboutUsInfo!: string;
+  aboutUsInfo_1!: string;
+  aboutUsInfo_2!: string;
   address!: string;
   contactNum!: string;
   googleMaps!: string;
@@ -36,7 +37,8 @@ export class ManageCompanyProfileComponent implements OnInit {
     this.companyService.getCompanyInfo(1).subscribe((company)=>{
       this.existingCompanyLogo = company.companyLogo;
       this.existingAboutUsImage = company.aboutUsImage;
-      this.aboutUsInfo = company.aboutUsInfo;
+      this.aboutUsInfo_1 = company.aboutUsInfo_1;
+      this.aboutUsInfo_2 = company.aboutUsInfo_2;
       this.address = company.address;
       this.contactNum = company.contactNum;
       this.googleMaps = company.googleMaps;
@@ -67,7 +69,8 @@ export class ManageCompanyProfileComponent implements OnInit {
     const updateCompany = {
       companyLogo: this.companyLogoPath ==null ? this.existingCompanyLogo : this.companyLogoPath,
       aboutUsImage: this.aboutUsImagePath ==null ? this.existingAboutUsImage : this.aboutUsImagePath,
-      aboutUsInfo: this.aboutUsInfo,
+      aboutUsInfo_1: this.aboutUsInfo_1,
+      aboutUsInfo_2: this.aboutUsInfo_2,
       address: this.address,
       contactNum: this.contactNum,
       googleMaps: this.googleMaps,

@@ -12,7 +12,8 @@ export class AboutUsComponent implements OnInit {
 
   images:Image[]=[];
   aboutUsImage!: string;
-  aboutUsInfo!: string;
+  aboutUsInfo_1!: string;
+  aboutUsInfo_2!: string;
 
 
   constructor(private companyService: CompanyService,private imageService:ImageService) { }
@@ -21,7 +22,8 @@ export class AboutUsComponent implements OnInit {
 
     this.companyService.getCompanyInfo(1).subscribe(company=>{
       this.aboutUsImage = company.aboutUsImage;
-      this.aboutUsInfo = company.aboutUsInfo;
+      this.aboutUsInfo_1 = company.aboutUsInfo_1;
+      this.aboutUsInfo_2 = company.aboutUsInfo_2;
     })
 
     this.imageService.getImages().subscribe((images)=>{

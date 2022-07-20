@@ -22,7 +22,9 @@ table{
     overflow-x: auto;
    }
 
-
+   ::ng-deep .cdk-overlay-container {
+    z-index: 10000 !important;
+  }
 @media only screen and (max-width: 780px){
    .example-container {
     max-width: 100%;

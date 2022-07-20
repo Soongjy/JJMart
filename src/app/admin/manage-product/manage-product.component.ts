@@ -24,8 +24,8 @@ export class ManageProductComponent implements OnInit {
   price!: number;
   unit!: string;
   description!: string;
-  discountedPrice!: number;
-  hasDiscount!: boolean;
+  discountedPrice: number = 0;
+  hasDiscount: boolean = true;
 
   editName!: string;
   editImage?: string;
@@ -53,12 +53,11 @@ export class ManageProductComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('image')).value = '';
     (<HTMLInputElement>document.getElementById('editImage')).value = '';
     (<HTMLInputElement>document.getElementById('price')).value = '';
-    (<HTMLInputElement>document.getElementById('discountedPrice')).value = '';
-    
-    this.name = "";
-    this.image = "";
-    this.unit = "";
-    this.description = "";
+
+    this.name = '';
+    this.image = '';
+    this.unit = '';
+    this.description = '';
 
     this.getCategories();
   }
@@ -80,11 +79,38 @@ export class ManageProductComponent implements OnInit {
       category: this.category,
       unit: this.unit,
       description: this.description,
-      discountedPrice: this.discountedPrice ? this.discountedPrice : 0,
+      discountedPrice: this.hasDiscount ? this.discountedPrice : 0,
       visibility: true,
     };
 
+    if (!this.name) {
+      this._snackBar.open('Please enter a name!', 'Close', {
+        duration: 2000,
+      });
+    } else if (!this.price) {
+      this._snackBar.open('Please enter a price!', 'Close', {
+        duration: 2000,
+      });
+    } else if (!this.image) {
       this.fileChanged();
+      this._snackBar.open('Please upload an image!', 'Close', {
+        duration: 2000,
+      });
+    } else if (!this.unit) {
+      this._snackBar.open('Please enter a unit!', 'Close', {
+        duration: 2000,
+      });
+    } else if (!this.description) {
+      this._snackBar.open('Please enter a description!', 'Close', {
+        duration: 2000,
+      });
+    } else if (this.hasDiscount && this.discountedPrice == 0) {
+      this._snackBar.open('Please enter a discounted price!', 'Close', {
+        duration: 2000,
+      });
+    } else {
+      this.fileChanged();
+      ($('#addModal') as any).modal('hide');
       this.productService
         .addProduct(newProduct)
         .subscribe((product: Product) => this.products.push(product));
@@ -95,14 +121,20 @@ export class ManageProductComponent implements OnInit {
         });
         this.ngOnInit();
       }, 1000);
-
     }
 
+    console.log('discount: ' + this.hasDiscount);
+  }
+
   fileChanged() {
-    var inputElement: HTMLInputElement = document.getElementById(
-      'image'
-    )! as HTMLInputElement;
-    this.image = 'assets/' + inputElement.files![0].name;
+    try {
+      var inputElement: HTMLInputElement = document.getElementById(
+        'image'
+      )! as HTMLInputElement;
+      this.image = 'assets/' + inputElement.files![0].name;
+    } catch {
+      this.image = 'assets/logo.png';
+    }
   }
 
   fileChangedEdit() {
@@ -130,13 +162,12 @@ export class ManageProductComponent implements OnInit {
   }
 
   editProduct(event: any) {
-  
     this.productId = event.target.dataset.sectionvalue;
     this.productService.getProduct(this.productId).subscribe((product) => {
       this.editName = product.name;
-      this.editCategory = product.category
+      this.editCategory = product.category;
       this.existingImage = product.image;
-      this.editPrice =  product.price;
+      this.editPrice = product.price;
       this.editUnit = product.unit;
       this.editDescription = product.description;
       this.editDiscountedPrice = product.discountedPrice;
@@ -161,7 +192,7 @@ export class ManageProductComponent implements OnInit {
     }
     this.productService.updateProduct(updateProduct).subscribe(() => {
       setTimeout(() => {
-        this._snackBar.open( updateProduct.name + ' updated!', 'Close', {
+        this._snackBar.open(updateProduct.name + ' updated!', 'Close', {
           duration: 2000,
         });
         this.ngOnInit();
@@ -181,27 +212,28 @@ export class ManageProductComponent implements OnInit {
       this.hasDiscount = false;
       (<HTMLInputElement>document.getElementById('discountedPrice')).value = '';
     }
-
-    console.log(this.hasDiscount);
   }
 
   toggleCheckBoxEdit(event: any) {
     if (event.target.checked) {
       this.editHasDiscount = true;
-      (<HTMLInputElement>document.getElementById('editDiscountedPrice')).disabled = false;
-      
+      (<HTMLInputElement>(
+        document.getElementById('editDiscountedPrice')
+      )).disabled = false;
     } else {
       this.editHasDiscount = false;
-      (<HTMLInputElement>document.getElementById('editDiscountedPrice')).value = '';
-      (<HTMLInputElement>document.getElementById('editDiscountedPrice')).disabled = true;
+      (<HTMLInputElement>document.getElementById('editDiscountedPrice')).value =
+        '';
+      (<HTMLInputElement>(
+        document.getElementById('editDiscountedPrice')
+      )).disabled = true;
       this.editDiscountedPrice = 0;
     }
-
   }
 
-  getCategories(){
-    this.categoryService.getCategories().subscribe((categories)=>{
+  getCategories() {
+    this.categoryService.getCategories().subscribe((categories) => {
       this.categories = categories;
-    })
+    });
   }
 }
