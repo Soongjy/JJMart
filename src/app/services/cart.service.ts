@@ -13,16 +13,6 @@ export class CartService {
   public productList = new BehaviorSubject<any>([]);
   constructor() { }
 
-  // addToCart(product: Product){
-   
-  //   this.cartItems.push(product);
-  //   console.log(this.cartItems)
-  // }
-
-  // getCartItems(){
-  //   return of(this.cartItems);
-  // }
-
   deleteCartItem(product: Product){
     const item = this.cartItems.find(item=> item.id === product.id);
     this.cartItems.splice(this.cartItems.indexOf(item as Product), 1);
@@ -34,7 +24,7 @@ export class CartService {
   }
 
   addToCart(product:any){
-
+    
     let productExists = false;
     
     for(let i in this.cartItems){

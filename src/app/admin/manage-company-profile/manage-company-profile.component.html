@@ -12,8 +12,14 @@
       </div>
 
     <div class="mb-3">
-      <label for="aboutUsInfo" class="form-label">About Us Info</label>
-      <textarea class="form-control" id="aboutUsInfo" rows="3" [(ngModel)]="aboutUsInfo"
+      <label for="aboutUsInfo_1" class="form-label">About Us Para 1</label>
+      <textarea class="form-control" id="aboutUsInfo_1" rows="3" [(ngModel)]="aboutUsInfo_1"
+      [ngModelOptions]="{ standalone: true }"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="aboutUsInfo_2" class="form-label">About Us Para 2</label>
+      <textarea class="form-control" id="aboutUsInfo_2" rows="3" [(ngModel)]="aboutUsInfo_2"
       [ngModelOptions]="{ standalone: true }"></textarea>
     </div>
 
