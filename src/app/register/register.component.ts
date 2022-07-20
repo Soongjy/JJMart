@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   constructor(private userService: UserService, private _snackBar: MatSnackBar, private imageService: ImageService) { }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe((users)=> (this.users = users));
+    this.userService.getUsers().subscribe((users)=> (this.users = users));
 
     this.imageService.getImages().subscribe((images)=>{
       for(var image of images){
@@ -105,7 +105,7 @@ export class RegisterComponent implements OnInit {
           username :this.username,
           email: this.email,
           password: this.password,
-          privilege: 0,
+          privilege: '0',
           phonenum: this.phonenum,
           address: this.address
         };

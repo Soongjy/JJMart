@@ -24,12 +24,12 @@ export class ManageaccountComponent implements OnInit {
   repassword!: string;
   id!:number;
   oldpassword!:string;
-  privilege!:number;
+  privilege!:string;
   constructor(private userService: UserService, private _snackBar: MatSnackBar,private imageService:ImageService) { }
 
   ngOnInit(): void {
 
-    this.userService.getUser().subscribe((users)=> (this.users = users));
+    this.userService.getUsers().subscribe((users)=> (this.users = users));
     const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
     this.name = userdetails.name;
     this.username = userdetails.username;

@@ -25,7 +25,7 @@ export class ChangepasswordComponent implements OnInit {
               private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe((users)=> (this.users = users))
+    this.userService.getUsers().subscribe((users)=> (this.users = users))
     const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
     for (let x in userdetails) {
       if(x == "id"){

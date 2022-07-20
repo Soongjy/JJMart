@@ -1,166 +1,14 @@
 {
   "users": [
     {
-      "name": "John Bob",
-      "username": "John",
-      "email": "John123@gmail.com",
-      "password": "abc123",
-      "privilege": 0,
-      "id": 1
-    },
-    {
-      "name": "Aysha Ash",
-      "username": "Aysha",
-      "email": "Aysha@gmail.com",
-      "password": "abc123",
-      "privilege": 0,
-      "id": 2
-    },
-    {
-      "name": "Jun Ming",
-      "username": "Bob",
-      "email": "Bob321@gmail.com",
-      "password": "abc123",
-      "privilege": 0,
-      "id": 3
-    },
-    {
-      "name": "Henry",
-      "username": "Curry",
-      "email": "StfCurry@gmail.com",
-      "password": "abc123",
-      "privilege": 0,
-      "id": 4
-    },
-    {
-      "name": "123",
-      "username": "123",
-      "email": "123",
-      "password": "123",
-      "privilege": 0,
-      "id": 5
-    },
-    {
-      "name": "wx",
-      "username": "xqw",
-      "email": "qwx",
-      "password": "qw",
-      "privilege": 0,
-      "id": 6
-    },
-    {
-      "name": "wd",
-      "username": "dwq",
-      "email": "qdw",
-      "password": "123",
-      "privilege": 0,
-      "id": 7
-    },
-    {
-      "name": "123",
-      "username": "wd",
-      "email": "223",
-      "password": "12",
-      "privilege": 0,
-      "id": 8
-    },
-    {
-      "name": "123",
-      "username": "dwdqw",
-      "email": "qwq",
-      "password": "123",
-      "privilege": 0,
-      "id": 9
-    },
-    {
-      "name": "123",
-      "username": "1ve",
-      "email": "wqw",
-      "password": "123",
-      "privilege": 0,
-      "id": 10
-    },
-    {
-      "name": "avs",
-      "username": "vsva",
-      "email": "qwe",
-      "password": "123",
-      "privilege": 0,
-      "id": 11
-    },
-    {
-      "name": "dwq",
-      "username": "dqwd",
-      "email": "dqwqvq",
-      "password": "qwe",
-      "privilege": 0,
-      "id": 12
-    },
-    {
-      "name": "qw",
-      "username": "dqw",
-      "email": "qdwd",
-      "password": "123",
-      "privilege": 0,
-      "id": 13
-    },
-    {
-      "name": "123",
-      "username": "sdf",
-      "email": "asd",
-      "password": "123",
-      "privilege": 0,
-      "id": 15
-    },
-    {
-      "name": "qwe",
-      "username": "wq",
-      "email": "q qw",
-      "password": "qwe",
-      "privilege": 0,
-      "id": 16
-    },
-    {
-      "name": "123",
-      "username": "122",
-      "email": "122",
-      "password": "122",
-      "privilege": 0,
-      "id": 17
-    },
-    {
-      "name": "123",
-      "username": "1234",
-      "email": "1234",
-      "password": "123",
-      "privilege": 0,
-      "id": 18
-    },
-    {
-      "name": "jessie",
-      "username": "jessie",
-      "email": "jessie",
-      "password": "jessie",
-      "privilege": 0,
-      "id": 20
-    },
-    {
-      "name": "ev",
-      "username": "2d",
-      "email": "1fc",
-      "password": "ce",
-      "privilege": 0,
-      "id": 21
-    },
-    {
-      "name": "d2",
-      "username": "d2",
-      "email": "d2",
+      "name": "d212",
+      "username": "d212",
+      "email": "d212",
       "password": "d2",
       "privilege": 0,
-      "phonenum": "d2",
-      "address": "d2",
-      "id": 22
+      "phonenum": "d212",
+      "address": "d2212",
+      "id": 1
     },
     {
       "name": "q2",
@@ -170,7 +18,7 @@
       "privilege": 0,
       "phonenum": "q2",
       "address": "q2",
-      "id": 23
+      "id": 2
     },
     {
       "name": "Sooong",
@@ -180,7 +28,7 @@
       "privilege": 1,
       "phonenum": "12345",
       "address": "12",
-      "id": 24
+      "id": 3
     },
     {
       "name": "wef",
@@ -190,7 +38,7 @@
       "privilege": 0,
       "phonenum": "wef",
       "address": "wef",
-      "id": 25
+      "id": 4
     },
     {
       "name": "liyana",
@@ -200,17 +48,17 @@
       "privilege": 0,
       "phonenum": "123",
       "address": "123",
-      "id": 26
+      "id": 5
     },
     {
-      "name": "123",
-      "username": "12345",
-      "email": "12345",
-      "password": "123",
+      "name": "21",
+      "username": "21",
+      "email": "21",
+      "password": "21",
       "privilege": 0,
-      "phonenum": "1234",
-      "address": "123",
-      "id": 27
+      "phonenum": "21",
+      "address": "21",
+      "id": 6
     }
   ],
   "products": [

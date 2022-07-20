@@ -19,7 +19,7 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  getUser(): Observable<User[]>{
+  getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.apiUrl);
   }
 
@@ -30,5 +30,15 @@ export class UserService {
   updateUser(user:User):Observable<User>{
     const url = `${this.apiUrl}/${user.id}`;
     return this.http.put<User>(url,user,httpOptions);
+  }
+
+  getUser(id: number): Observable<User> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<User>(url);
+  }
+
+  deleteUser(id:number):Observable<User>{
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<User>(url);
   }
 }

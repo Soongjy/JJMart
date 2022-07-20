@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="width:95%">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between my-4">
         <h1 class="h3 mb-0 text-gray-800">Manage User</h1>
@@ -7,40 +7,57 @@
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" >
 
-            <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-        
-            <!-- Position Column -->
             <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef> ID</th>
+            <th mat-header-cell *matHeaderCellDef width="6%"> ID</th>
             <td mat-cell *matCellDef="let element"> {{element.id}} </td>
             </ng-container>
         
-            <!-- Name Column -->
             <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <th mat-header-cell *matHeaderCellDef width="10%"> Name </th>
             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
             </ng-container>
         
-            <!-- Weight Column -->
             <ng-container matColumnDef="username">
-            <th mat-header-cell *matHeaderCellDef> Username </th>
+            <th mat-header-cell *matHeaderCellDef width="10%"> Username </th>
             <td mat-cell *matCellDef="let element"> {{element.username}} </td>
             </ng-container>
-        
-            <!-- Symbol Column -->
+            
+            <ng-container matColumnDef="phonenum">
+            <th mat-header-cell *matHeaderCellDef width="15%"> Phone Number </th>
+            <td mat-cell *matCellDef="let element"> {{element.phonenum}} </td>
+            </ng-container>
+
             <ng-container matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <th mat-header-cell *matHeaderCellDef width="20%"> Email </th>
             <td mat-cell *matCellDef="let element"> {{element.email}} </td>
             </ng-container>
 
+            <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef width="20%"> Address </th>
+            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+            </ng-container>
+
             <ng-container matColumnDef="actions">
-                <th mat-header-cell *matHeaderCellDef> Actions </th>
-                <td mat-cell *matCellDef="let element">  
-                    <button type="button" class="btn btn-primary btn-sm mr-3">Edit</button>
-                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
-                </td>
-                </ng-container>
+                <th mat-header-cell *matHeaderCellDef width="5%">Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <i
+                class="fas fa-pencil-alt"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal"
+                [attr.data-sectionvalue]="element.id"
+                (click)="editUsers($event)"
+              ></i>
+              <span class="px-2"></span>
+              <i
+                class="fas fa-trash"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteModal"
+                aria-hidden="true"
+                [attr.data-sectionvalue]="element.id"
+                (click)="deleteConfirmation($event)"
+              ></i>
+            </td>
+            </ng-container>
         
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -52,22 +69,22 @@
         </mat-paginator>
     </div>
 
-    <div class="d-sm-flex align-items-center justify-content-between my-4">
-        <h5 class="h5 mb-0 text-gray-800">Add User</h5>
+    <div class="d-sm-flex align-items-center justify-content-between mt-5 mb-3">
+        <h2 class="h2 mb-0 text-gray-800">Add User</h2>
     </div>
 
-    <form class="border px-5 py-5">
+    <form class="border px-5 py-5" (ngSubmit)="createNewUser()">
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Name">
+                    <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
                   </div>
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="mb-3">
-                    <label for="privilege" class="form-label">Privilege</label>
-                    <input type="text" class="form-control" id="privilege" placeholder="0">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Address" [(ngModel)]="address" [ngModelOptions]="{standalone: true}">
                   </div>
             </div>
         </div>
@@ -75,33 +92,186 @@
             <div class="col-sm-12 col-md-6">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Username">
+                    <input type="text" class="form-control" id="username" placeholder="Username" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
                   </div>
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <label for="privilege" class="form-label">Privilege</label>
+                    <input type="text" class="form-control" id="privilege" placeholder="0" [(ngModel)]="privilege" [ngModelOptions]="{standalone: true}">
                   </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="mb-3">
+                    <label for="Phone Number" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phonenum" placeholder="012xxxxxxx" [(ngModel)]="phonenum" [ngModelOptions]="{standalone: true}">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="password" placeholder="xxxxx">
-                  </div>
+                    <input type="password" class="form-control" id="password" placeholder="******" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="xxx@xx.com" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                </div>
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="mb-3">
                     <label for="confirmpassword" class="form-label">Confirm Password</label>
-                    <input type="text" class="form-control" id="confirmpassword" placeholder="xxxxxx">
-                  </div>
+                    <input type="password" class="form-control" id="confirmpassword" placeholder="******" [(ngModel)]="repassword" [ngModelOptions]="{standalone: true}">
+                </div>
             </div>
         </div>
-        <div class="float-right">
+        <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-danger mb-3">Create User</button>
         </div>
     </form>
-       
+    
+    <!-- Delete confirmation modal -->
+    <div
+    class="modal fade"
+    id="deleteModal"
+    tabindex="-1"
+    aria-labelledby="deleteModalLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete category</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">Are you sure you want to delete {{deleteUserName}}?</div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+            (click)="deleteUser()"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--Update User-->
+    <div
+    class="modal fade"
+    id="editModal"
+    tabindex="-1"
+    aria-labelledby="addModalLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form class="border p-3" (ngSubmit)="updateUser()">
+            <div class="modal-header">
+                <h4 class="m-0 modal-title" id="addModalLabel">Update User</h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="updatename" placeholder="Name" [(ngModel)]="updatename" [ngModelOptions]="{standalone: true}">
+                      </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="updateaddress" placeholder="Address" [(ngModel)]="updateaddress" [ngModelOptions]="{standalone: true}">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="updateusername" placeholder="Username" [(ngModel)]="updateusername" [ngModelOptions]="{standalone: true}">
+                      </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="mb-3">
+                        <label for="privilege" class="form-label">Privilege</label>
+                        <input type="text" class="form-control" id="updateprivilege" placeholder="0" [(ngModel)]="updateprivilege" [ngModelOptions]="{standalone: true}">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="mb-3">
+                        <label for="Phone Number" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="updatephonenum" placeholder="012xxxxxxx" [(ngModel)]="updatephonenum" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="updatepassword" placeholder="******" [(ngModel)]="updatepassword" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="updateemail" placeholder="xxx@xx.com" [(ngModel)]="updateemail" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="mb-3">
+                        <label for="confirmpassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="updateconfirmpassword" placeholder="******" [(ngModel)]="updaterepassword" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                >
+                Close
+                </button>
+                <button
+                type="submit"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                >
+                Save Changes
+                </button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

@@ -23,6 +23,7 @@ export class ManageImageComponent implements OnInit {
   imageId!:number;
   newImage!:Image;
 
+  i:number=0;
   editTargetPage!: string;
   editTitle!:string;
   deleteTitle!:string;
@@ -44,7 +45,7 @@ export class ManageImageComponent implements OnInit {
     }else if(!this.title){
       this._snackBar.open("Please fill in your title", "Close", {
         duration: 2000
-      })
+      });
     }else if(!this.image && !this.imageUrl){
       this._snackBar.open("Please select your image", "Close", {
         duration: 2000
@@ -54,38 +55,52 @@ export class ManageImageComponent implements OnInit {
         duration: 2000
       });
     }else{
-      var inputElement: HTMLInputElement = document.getElementById(
-        'image'
-      )! as HTMLInputElement;
-      
-      if(this.image){
-        this.newImage = {
-          page: this.page,
-          title : this.title,
-          image : 'assets/' + inputElement.files![0].name,
-        }
-      }else{
-        this.newImage = {
-          page: this.page,
-          title : this.title,
-          image :this.imageUrl
+      var cont = 1
+      for(var image of this.images){
+        if (this.page == "Homepage Banner"){
+          continue;
+        }else if (this.page == image.page){
+          this._snackBar.open("This Page has already reach the image number limit", "Close", {
+            duration: 2000
+          });
+          cont = 0
         }
       }
+      
+      if(cont == 1){
+        var inputElement: HTMLInputElement = document.getElementById(
+          'image'
+        )! as HTMLInputElement;
+        
+        if(this.image){
+          this.newImage = {
+            page: this.page,
+            title : this.title,
+            image : 'assets/' + inputElement.files![0].name,
+          }
+        }else{
+          this.newImage = {
+            page: this.page,
+            title : this.title,
+            image :this.imageUrl
+          }
+        }
 
-      this.imageService.addImage(this.newImage).subscribe((images:Image) => this.images.push(images));
-      this.ngOnInit();
-      
-      setTimeout(() => {
-        this._snackBar.open(this.newImage.title + ' Added!', 'Close', {
-          duration: 2000,
-        });
+        this.imageService.addImage(this.newImage).subscribe((images:Image) => this.images.push(images));
         this.ngOnInit();
-      }, 100);
-      
-      this.page = '';
-      this.title = '';
-      this.image = '';
-      this.imageUrl = '';
+        
+        setTimeout(() => {
+          this._snackBar.open(this.newImage.title + ' Added!', 'Close', {
+            duration: 2000,
+          });
+          this.ngOnInit();
+        }, 100);
+        
+        this.page = '';
+        this.title = '';
+        this.image = '';
+        this.imageUrl = '';
+      }
     }
   }
 

@@ -4,7 +4,7 @@ export interface User {
     username: string;
     email: string;
     password: string;
-    privilege: number;
+    privilege: string;
     phonenum: string;
     address: string;
 }

@@ -14,13 +14,13 @@ export class SigninComponent implements OnInit {
   users: User[] = [];
   emailusername!: string;
   password!:string;
-  userprivilege!:number;
+  userprivilege!:string;
   images:Image[]=[];
 
   constructor(private userService: UserService,private _snackBar: MatSnackBar,private imageService:ImageService) { }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe((users)=> (this.users = users))
+    this.userService.getUsers().subscribe((users)=> (this.users = users))
 
     this.imageService.getImages().subscribe((images)=>{
       for(var image of images){
