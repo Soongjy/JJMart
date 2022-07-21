@@ -1,83 +1,73 @@
-<footer class="row container-fluid mt-2" *ngIf="!admindetails">
-  <div class="col-4">
-    <div class="" style="margin: 5% 0% 5px 15%; text-align: center;">
+<footer class="container-fluid mt-3" *ngIf="!admindetails">
+  <div class="row px-5 py-3">
+    <div class="col-12 col-md-3 pt-4">
       <a class="navbar-brand" routerLink="/">
         <img src="{{companyLogo}}" alt="Sunway Mart Logo" width="180" height="40">
       </a>
       <p class="text-muted">Your Trusty Online Shopping Mart</p>
      </div>
-    <div class="container mt-3">
-      <!-- Section: Social media -->
-      <section class="mb-4" style="margin: 5% 0% 5px 35%">
-        <h4 class="mb-0 ms-5 text-muted">Follow Us</h4>
-        <!-- Facebook -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-dark"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-
-        <!-- Twitter -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-dark"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-          ><i class="fab fa-twitter"></i
-        ></a>
-
-        <!-- Instagram -->
-        <a
-          class="btn btn-link btn-floating btn-lg text-dark"
-          href="#!"
-          role="button"
-          data-mdb-ripple-color="dark"
-          ><i class="fab fa-instagram"></i
-        ></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
-  </div>
-
-
-  <div class="col-2 pt-4 ">
-    <h4>Customer Suport</h4>
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown
+    <div class="col-12 col-md-3 pt-4">
+      <h4>Customer Suport</h4>
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Navigation
       </a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         <li><a class="dropdown-item" routerLink="/about-us">About Us</a></li>
         <li><a class="dropdown-item" routerLink="/contactus">Contact Us</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
       </ul>
-  </div>
+    </div>
 
-  <div class="col  pt-4">
-    <ul class="nav flex-column">
-      <li class="nav-item mb-2"><h4 class="m-0">Address</h4></li>
-      <li class="nav-item mb-2"><p class="m-0  text-muted">{{address}}</p></li>
-      <li class="nav-item mb-2"><h4 class="m-0">Contact Number</h4></li>
-      <li class="nav-item mb-2"><p class="m-0 text-muted">&#9743; {{contactNum}}</p></li>
-    </ul>
-  </div>
+    <div class="col-12 col-md-3 pt-4">
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><h4 class="m-0">Address</h4></li>
+        <li class="nav-item mb-2">
+          <p class="m-0 text-muted">{{ address }}</p>
+        </li>
+        <li class="nav-item mb-2"><h4 class="m-0">Contact Number</h4></li>
+        <li class="nav-item mb-2">
+          <p class="m-0 text-muted">&#9743; {{ contactNum }}</p>
+        </li>
+      </ul>
+    </div>
 
-  <div class="col  pt-4">
-    <h4>Payment Method</h4>
-    <ul class="nav flex-column">
-      <li class="nav-item mb-2">
-        <img class ="m-1" src="https://publish-p35803-e190640.adobeaemcloud.com/content/dam/aem-cplotusonlinecommerce-project/my/images/medias/logo/master-card-logo.svg" alt="MasterCard">
-        <img class ="m-1" src="https://publish-p35803-e190640.adobeaemcloud.com/content/dam/aem-cplotusonlinecommerce-project/my/images/medias/logo/visa-logo.svg" alt="Visa">
-        <img class ="m-1" src="https://publish-p35803-e190640.adobeaemcloud.com/content/dam/aem-cplotusonlinecommerce-project/my/images/medias/logo/touch-logo.svg" alt="Touch 'n go ewallet">
-      </li>
-
-    </ul>
+    <div class="col-12 col-md-3 pt-4">
+      <h4>Payment Method</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <img
+            class="m-1"
+            src="https://publish-p35803-e190640.adobeaemcloud.com/content/dam/aem-cplotusonlinecommerce-project/my/images/medias/logo/master-card-logo.svg"
+            alt="MasterCard"
+          />
+          <img
+            class="m-1"
+            src="https://publish-p35803-e190640.adobeaemcloud.com/content/dam/aem-cplotusonlinecommerce-project/my/images/medias/logo/visa-logo.svg"
+            alt="Visa"
+          />
+          <img
+            class="m-1"
+            src="https://publish-p35803-e190640.adobeaemcloud.com/content/dam/aem-cplotusonlinecommerce-project/my/images/medias/logo/touch-logo.svg"
+            alt="Touch 'n go ewallet"
+          />
+        </li>
+      </ul>
+    </div>
+   
   </div>
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(239, 234, 234);">
-    © 2022 Copyright: Sunway Shared Services Sdn Bhd
+  <div class="row">
+    <!-- Copyright -->
+    <div
+      class="text-center p-3"
+      style="background-color: rgba(239, 234, 234)"
+    >
+      © 2022 Copyright: Sunway Shared Services Sdn Bhd
+    </div>
   </div>
 </footer>
-

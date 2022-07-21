@@ -51,13 +51,6 @@ export class NavBarComponent implements OnInit {
 
     this.getCategories();
 
-    //check screen size
-    if (window.screen.width <= 360) { // 768px portrait
-      this.mobile = true;
-    }else{
-      this.mobile = false;
-    }
-
     //get logo
     this.companyService.getCompanyInfo(1).subscribe(company=>{
       this.companyLogo = company.companyLogo;
@@ -80,7 +73,10 @@ export class NavBarComponent implements OnInit {
 
   getCategories(){
     this.categoryService.getCategories().subscribe((categories)=>{
-      this.categories = categories;
+      for(var i=0; i<categories.length; i++){
+        if(categories[i].visibility==true)
+          this.categories.push(categories[i]);
+      }
     })
   }
 

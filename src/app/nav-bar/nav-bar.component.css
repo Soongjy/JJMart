@@ -9,3 +9,24 @@
 .searchbox{
     width: 30% !important;
 }
+
+.mobile-cart{
+    display: none;
+}
+
+
+@media only screen and (max-width: 980px){
+.mobile-cart{
+    display: block;
+}
+
+.main-cart{
+    display: none;
+}
+
+.navbar-toggler{
+    margin-left: 28%;
+        
+}
+}
+  

@@ -192,6 +192,18 @@
       "discountedPrice": "20",
       "visibility": true,
       "id": 11
+    },
+    {
+      "name": "xxx",
+      "price": "12",
+      "quantity": 1,
+      "image": "assets/bg2.jpg",
+      "category": "Song",
+      "unit": "xx",
+      "description": "xx",
+      "discountedPrice": "1",
+      "visibility": true,
+      "id": 12
     }
   ],
   "orders": [],
@@ -245,6 +257,12 @@
       "image": "assets/cakes.jpg",
       "id": 5,
       "visibility": true
+    },
+    {
+      "name": "Song",
+      "image": "assets/cakes.jpg",
+      "visibility": false,
+      "id": 6
     }
   ],
   "company": [

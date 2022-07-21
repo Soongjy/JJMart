@@ -25,6 +25,11 @@ table{
    ::ng-deep .cdk-overlay-container {
     z-index: 10000 !important;
   }
+
+.manage-title{
+    font-size: calc(.5 * (3.8vh + 1.1vw));
+}
+
 @media only screen and (max-width: 780px){
    .example-container {
     max-width: 100%;
