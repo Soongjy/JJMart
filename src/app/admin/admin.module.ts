@@ -18,6 +18,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
 import { ManageCompanyProfileComponent } from './manage-company-profile/manage-company-profile.component';
 import { ManageImageComponent } from './manage-image/manage-image.component';
+import { ManageAdminComponent } from './manage-admin/manage-admin.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ManageImageComponent } from './manage-image/manage-image.component';
     ManageCategoriesComponent,
     ManageCompanyProfileComponent,
     ManageImageComponent,
+    ManageAdminComponent,
   ],
   imports: [
     CommonModule,

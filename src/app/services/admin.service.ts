@@ -19,16 +19,26 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
 
-  getUser(): Observable<Admin[]>{
+  getAdmins(): Observable<Admin[]>{
     return this.http.get<Admin[]>(this.apiUrl);
   }
 
-  addUser(admin:Admin):Observable<Admin>{
+  addAdmin(admin:Admin):Observable<Admin>{
     return this.http.post<Admin>(this.apiUrl, admin, httpOptions)
   }
 
-  updateUser(admin:Admin):Observable<Admin>{
+  updateAdmin(admin:Admin):Observable<Admin>{
     const url = `${this.apiUrl}/${admin.id}`;
     return this.http.put<Admin>(url,admin,httpOptions);
+  }
+
+  getAdmin(id: number): Observable<Admin> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Admin>(url);
+  }
+
+  deleteAdmin(id:number):Observable<Admin>{
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<Admin>(url);
   }
 }

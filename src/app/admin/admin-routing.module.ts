@@ -10,7 +10,7 @@ import { ManageCompanyProfileComponent } from "./manage-company-profile/manage-c
 import { ManageProductComponent } from "./manage-product/manage-product.component";
 import { ManageUserComponent } from "./manage-user/manage-user.component";
 import { ManageImageComponent } from "./manage-image/manage-image.component";
-
+import { ManageAdminComponent } from "./manage-admin/manage-admin.component";
 
 const routes: Routes = [
     {
@@ -20,6 +20,7 @@ const routes: Routes = [
             { path: 'manage-images', component: ManageImageComponent},
             { path: 'manageproduct', component: ManageProductComponent},
             { path: 'manageuser', component: ManageUserComponent},
+            { path: 'manageadmin', component: ManageAdminComponent},
             { path: 'managecategories', component: ManageCategoriesComponent},
             { path: 'manage-company-profile', component: ManageCompanyProfileComponent},
         ],
