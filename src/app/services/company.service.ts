@@ -18,17 +18,29 @@ const httpOptions = {
 export class CompanyService {
 
   private apiUrl = 'http://localhost:3000/company';
+  private apiUrlAboutUs = 'http://localhost:3000/aboutus';
+  private apiUrlContactUs = 'http://localhost:3000/contactus';
 
   constructor(private http:HttpClient) { }
 
-
-  getCompanyInfo(id: number): Observable<Company> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<Company>(url);
+  getContactUs(id: number): Observable<any> {
+    const url = `${this.apiUrlContactUs}/${id}`;
+    return this.http.get<any>(url);
   }
 
-  updateCompanyInfo(company:Company):Observable<Company>{
+  updateContactUs(contactUs:any):Observable<any>{
+    const url = `${this.apiUrlContactUs}/${1}`;
+    return this.http.put<any>(url,contactUs,httpOptions);
+  }
+  
+
+  getCompanyInfo(id: number): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<any>(url);
+  }
+
+  updateCompanyInfo(company:any):Observable<any>{
     const url = `${this.apiUrl}/${1}`;
-    return this.http.put<Company>(url,company,httpOptions);
+    return this.http.put<any>(url,company,httpOptions);
   }
 }

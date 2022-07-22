@@ -214,6 +214,18 @@
       "discountedPrice": "1",
       "visibility": true,
       "id": 12
+    },
+    {
+      "name": "Jessie",
+      "price": "3434",
+      "quantity": 1,
+      "image": "assets/cart.jpg",
+      "category": "Testing & Lol",
+      "unit": "12232",
+      "description": "121212",
+      "discountedPrice": "122",
+      "visibility": true,
+      "id": 13
     }
   ],
   "orders": [
@@ -294,6 +306,28 @@
       "address": "",
       "status": "Processing",
       "id": 3
+    },
+    {
+      "orderDate": "2022-07-22T02:38:49.390Z",
+      "totalPrice": 3434,
+      "products": [
+        {
+          "name": "Jessie",
+          "price": "3434",
+          "quantity": 1,
+          "image": "assets/cart.jpg",
+          "category": "Testing & Lol",
+          "unit": "12232",
+          "description": "121212",
+          "discountedPrice": "122",
+          "visibility": true,
+          "id": 13
+        }
+      ],
+      "name": "jj",
+      "address": "",
+      "status": "Processing",
+      "id": 4
     }
   ],
   "banners": [
@@ -352,6 +386,12 @@
       "image": "assets/cakes.jpg",
       "visibility": false,
       "id": 6
+    },
+    {
+      "name": "Testing & Lol",
+      "image": "assets/bg4.jpg",
+      "visibility": true,
+      "id": 7
     }
   ],
   "company": [
@@ -459,5 +499,16 @@
       "products": [],
       "id": 2
     }
-  ]
+  ],
+  "contactus": [
+    {
+      "address": " 48, Jalan PJS 11/7, Bandar Sunway, 46150 Petaling Jaya, Selangor",
+      "contactNum": "023347374",
+      "googleMaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0951359269343!2d101.60991729999999!3d3.0692472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c86ab05fb35%3A0xbf1fa91e44859318!2sMenara%20Sunway%2C%20Bandar%20Sunway%2C%2047500%20Subang%20Jaya%2C%20Selangor!5e0!3m2!1sen!2smy!4v1658457686440!5m2!1sen!2smy",
+      "email": "sunwaymart@gmail.com",
+      "businessHours": "Monday to Sunday: 8.00am to 10.00pm",
+      "id": 1
+    }
+  ],
+  "aboutus": []
 }
