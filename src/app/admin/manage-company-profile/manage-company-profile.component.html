@@ -3,88 +3,44 @@
   <form class="border px-5 py-5">
     <div class="mb-3">
       <label for="companyLogo" class="form-label">Company logo</label>
-      <input class="form-control" type="file" id="companyLogo" (change)="fileChangedLogo()"/>
+      <input
+        class="form-control"
+        type="file"
+        id="companyLogo"
+        (change)="fileChangedLogo()"
+      />
     </div>
 
     <div class="mb-3">
-        <label for="aboutUsImage" class="form-label">About Us Image</label>
-        <input class="form-control" type="file" id="aboutUsImage" (change)="fileChangedAboutUs()"/>
-      </div>
-
-    <div class="mb-3">
-      <label for="aboutUsInfo_1" class="form-label">About Us Para 1</label>
-      <textarea class="form-control" id="aboutUsInfo_1" rows="3" [(ngModel)]="aboutUsInfo_1"
-      [ngModelOptions]="{ standalone: true }"></textarea>
-    </div>
-
-    <div class="mb-3">
-      <label for="aboutUsInfo_2" class="form-label">About Us Para 2</label>
-      <textarea class="form-control" id="aboutUsInfo_2" rows="3" [(ngModel)]="aboutUsInfo_2"
-      [ngModelOptions]="{ standalone: true }"></textarea>
-    </div>
-
-    <div class="mb-3">
-      <label for="address" class="form-label">Address</label>
+      <label for="address" class="form-label">Company slogan</label>
       <input
         type="text"
         class="form-control"
-        id="address"
-        placeholder="Address"
-        [(ngModel)]="address"
+        id="companySlogan"
+        placeholder="companySlogan"
+        [(ngModel)]="companySlogan"
         [ngModelOptions]="{ standalone: true }"
       />
     </div>
 
     <div class="mb-3">
-      <label for="contactNum" class="form-label">Contact Number</label>
+      <label for="paymentOptionImage" class="form-label">Payment Option</label>
       <input
-        type="text"
         class="form-control"
-        id="contactNum"
-        placeholder="0123456"
-        [(ngModel)]="contactNum"
-        [ngModelOptions]="{ standalone: true }"
+        type="file"
+        id="paymentOptionImage"
+        (change)="fileChangedPaymentOption()"
       />
     </div>
-
-    <div class="mb-3">
-      <label for="googleMaps" class="form-label">Google Maps</label>
-      <input
-        type="text"
-        class="form-control"
-        id="googleMaps"
-        placeholder="Embed code"
-        [(ngModel)]="googleMaps"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </div>
-
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        placeholder="sunwaymart@gmail.com"
-        [(ngModel)]="email"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </div>
-
-    <div class="mb-3">
-      <label for="businessHours" class="form-label">Business Hours</label>
-      <input
-        type="text"
-        class="form-control"
-        id="businessHours"
-        placeholder="Monday to Sunday: 8.00am to 10.00pm"
-        [(ngModel)]="businessHours"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </div>
-
+    
     <div>
-      <button type="submit" class="btn btn-danger mb-3" (click)="updateCompanyDetails()">Save Changes</button>
+      <button
+        type="submit"
+        class="btn btn-danger mb-3"
+        (click)="updateCompanyDetails()"
+      >
+        Save Changes
+      </button>
     </div>
   </form>
 </div>

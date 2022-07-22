@@ -11,19 +11,34 @@ import { Image } from '../Image';
 export class AboutUsComponent implements OnInit {
 
   images:Image[]=[];
-  aboutUsImage!: string;
-  aboutUsInfo_1!: string;
-  aboutUsInfo_2!: string;
+  aboutUsInfo!: string;
+  aboutUsImage1!: string;
+  aboutUsImage2!: string;
+  aboutUsImage3!: string;
+  imageTitle1!: string;
+  imageTitle2!: string;
+  imageTitle3!: string;
+  imageSubtitle1!: string;
+  imageSubtitle2!: string;
+  imageSubtitle3!: string;
+
 
 
   constructor(private companyService: CompanyService,private imageService:ImageService) { }
 
   ngOnInit(): void {
 
-    this.companyService.getCompanyInfo(1).subscribe(company=>{
-      this.aboutUsImage = company.aboutUsImage;
-      this.aboutUsInfo_1 = company.aboutUsInfo_1;
-      this.aboutUsInfo_2 = company.aboutUsInfo_2;
+    this.companyService.getAboutUs(1).subscribe(aboutus=>{
+      this.aboutUsInfo = aboutus.aboutUsInfo;
+      this.aboutUsImage1 = aboutus.aboutUsImage1;
+      this.aboutUsImage2 = aboutus.aboutUsImage2;
+      this.aboutUsImage3 = aboutus.aboutUsImage3;
+      this.imageTitle1 = aboutus.imageTitle1;
+      this.imageTitle2 = aboutus.imageTitle2;
+      this.imageTitle3 = aboutus.imageTitle3;
+      this.imageSubtitle1 = aboutus.imageSubtitle1;
+      this.imageSubtitle2 = aboutus.imageSubtitle2;
+      this.imageSubtitle3 = aboutus.imageSubtitle3;
     })
 
     this.imageService.getImages().subscribe((images)=>{

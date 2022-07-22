@@ -4,7 +4,7 @@
       <a class="navbar-brand" routerLink="/">
         <img src="{{companyLogo}}" alt="Sunway Mart Logo" width="180" height="40">
       </a>
-      <p class="text-muted">Your Trusty Online Shopping Mart</p>
+      <p class="text-muted">{{companySlogan}}</p>
      </div>
     <div class="col-12 col-md-3 pt-4">
       <h4>Customer Suport</h4>
@@ -39,9 +39,16 @@
 
     <div class="col-12 col-md-3 pt-4">
       <h4>Payment Method</h4>
-      <ul class="nav flex-column">
+      <ul class="nav flex-column payment">
         <li class="nav-item mb-2">
           <img
+          class="m-1"
+          src="{{paymentOption}}"
+          alt="Visa"
+          width="180"
+          height="60"
+        />
+          <!-- <img
             class="m-1"
             src="https://publish-p35803-e190640.adobeaemcloud.com/content/dam/aem-cplotusonlinecommerce-project/my/images/medias/logo/master-card-logo.svg"
             alt="MasterCard"
@@ -55,7 +62,7 @@
             class="m-1"
             src="https://publish-p35803-e190640.adobeaemcloud.com/content/dam/aem-cplotusonlinecommerce-project/my/images/medias/logo/touch-logo.svg"
             alt="Touch 'n go ewallet"
-          />
+          /> -->
         </li>
       </ul>
     </div>

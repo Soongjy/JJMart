@@ -32,8 +32,17 @@ export class CompanyService {
     const url = `${this.apiUrlContactUs}/${1}`;
     return this.http.put<any>(url,contactUs,httpOptions);
   }
-  
 
+  getAboutUs(id: number): Observable<any> {
+    const url = `${this.apiUrlAboutUs}/${id}`;
+    return this.http.get<any>(url);
+  }
+
+  updateAboutUs(aboutUs:any):Observable<any>{
+    const url = `${this.apiUrlAboutUs}/${1}`;
+    return this.http.put<any>(url,aboutUs,httpOptions);
+  }
+  
   getCompanyInfo(id: number): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<any>(url);

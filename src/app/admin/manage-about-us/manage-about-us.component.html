@@ -1,1 +1,125 @@
-<p>manage-about-us works!</p>
+<div class="container">
+  <h1 class="d-inline manage-title">Manage About Us</h1>
+  <form class="border px-5 py-5">
+    <div class="mb-3">
+      <label for="aboutUsInfo" class="form-label">About Us Info</label>
+      <textarea
+        class="form-control"
+        id="aboutUsInfo"
+        rows="3"
+        [(ngModel)]="aboutUsInfo"
+        [ngModelOptions]="{ standalone: true }"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="aboutUsImage1" class="form-label">First Image</label>
+      <input
+        class="form-control"
+        type="file"
+        id="aboutUsImage1"
+        (change)="fileChangedImage1()"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="imageTitle1" class="form-label">First Image Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageTitle1"
+        placeholder="imageTitle1"
+        [(ngModel)]="imageTitle1"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="imageSubtitle1" class="form-label">First Image Subtitle</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageSubtitle1"
+        placeholder="imageSubtitle1"
+        [(ngModel)]="imageSubtitle1"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="aboutUsImage2" class="form-label">Second Image</label>
+      <input
+        class="form-control"
+        type="file"
+        id="aboutUsImage2"
+        (change)="fileChangedImage2()"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="imageTitle2" class="form-label">Second Image Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageTitle2"
+        placeholder="imageTitle2"
+        [(ngModel)]="imageTitle2"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="imageSubtitle2" class="form-label">Second Image Subtitle</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageSubtitle2"
+        placeholder="imageSubtitle2"
+        [(ngModel)]="imageSubtitle2"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="aboutUsImage3" class="form-label">Third Image</label>
+      <input
+        class="form-control"
+        type="file"
+        id="aboutUsImage3"
+        (change)="fileChangedImage3()"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="imageTitle3" class="form-label">Third Image Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageTitle3"
+        placeholder="imageTitle3"
+        [(ngModel)]="imageTitle3"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="imageSubtitle3" class="form-label">Third Image Subtitle</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageSubtitle3"
+        placeholder="imageSubtitle3"
+        [(ngModel)]="imageSubtitle3"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+    <div>
+      <button
+        type="submit"
+        class="btn btn-danger mb-3"
+        (click)="updateAboutUs()"
+      >
+        Save Changes
+      </button>
+    </div>
+  </form>
+</div>
