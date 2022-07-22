@@ -1,17 +1,44 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { Cart } from '../Cart';
 import { Product } from '../Product';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  private apiUrl = 'http://localhost:3000/cart';
+  private apiUrl = 'http://localhost:3000/carts';
   
   cartItems: Product[] = [];
   public productList = new BehaviorSubject<any>([]);
-  constructor() { }
+  
+  constructor(private http:HttpClient) { }
+
+  updateCart(cart:Cart):Observable<Cart>{
+    const url = `${this.apiUrl}/${cart.id}`;
+    return this.http.put<Cart>(url,cart,httpOptions);
+  }
+
+  newCart(cart:Cart):Observable<Cart>{
+    return this.http.post<Cart>(this.apiUrl, cart, httpOptions);
+  }
+
+  getCart(cart:Cart): Observable<Cart> {
+    const url = `${this.apiUrl}/${cart.id}`;
+    return this.http.get<Cart>(url);
+  }
+
+  getCarts(): Observable<Cart[]>{
+    return this.http.get<Cart[]>(this.apiUrl);
+  }
 
   deleteCartItem(product: Product){
     const item = this.cartItems.find(item=> item.id === product.id);

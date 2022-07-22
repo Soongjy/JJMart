@@ -28,6 +28,14 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService, private orderService: OrderService) { }
 
   ngOnInit(): void {
+
+    this.userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
+    for (let x in this.userdetails) {
+      if (x == "name"){
+        this.name = this.userdetails[x];
+      }
+    }
+
     this.getCartItems();
   }
 

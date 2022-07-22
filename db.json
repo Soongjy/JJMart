@@ -51,14 +51,24 @@
       "id": 5
     },
     {
-      "name": "21",
-      "username": "21",
-      "email": "21",
-      "password": "21",
-      "privilege": 0,
-      "phonenum": "21",
-      "address": "21",
+      "name": "wx",
+      "username": "wx",
+      "email": "asaas",
+      "password": "123",
+      "privilege": "0",
+      "phonenum": "asaas",
+      "address": "asass",
       "id": 6
+    },
+    {
+      "name": "jj",
+      "username": "jj",
+      "email": "jjjj",
+      "password": "123",
+      "privilege": "0",
+      "phonenum": "jjj",
+      "address": "jjjj",
+      "id": 7
     }
   ],
   "products": [
@@ -206,7 +216,86 @@
       "id": 12
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "orderDate": "2022-07-21T12:21:13.532Z",
+      "totalPrice": 50,
+      "products": [
+        {
+          "id": 3,
+          "name": "Chocolate",
+          "price": 20,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1565071559227-20ab25b7685e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Dairy",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 10,
+          "visibility": true
+        },
+        {
+          "name": "Indo Mee Goreng",
+          "category": "Noodles",
+          "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "price": 30,
+          "quantity": 1,
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 0,
+          "visibility": true,
+          "id": 4
+        }
+      ],
+      "name": "",
+      "address": "",
+      "status": "Processing",
+      "id": 1
+    },
+    {
+      "orderDate": "2022-07-21T12:26:28.294Z",
+      "totalPrice": 30,
+      "products": [
+        {
+          "name": "Tomato",
+          "category": "Vegetables & Fruits",
+          "image": "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "price": 30,
+          "quantity": 1,
+          "unit": "200g",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": "20",
+          "visibility": true,
+          "id": 1
+        }
+      ],
+      "name": "",
+      "address": "",
+      "status": "Processing",
+      "id": 2
+    },
+    {
+      "orderDate": "2022-07-21T12:30:26.465Z",
+      "totalPrice": 30,
+      "products": [
+        {
+          "name": "Chicken",
+          "category": "Meat",
+          "image": "https://images.unsplash.com/photo-1642102903996-cdad15f5dcdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+          "price": 30,
+          "quantity": 1,
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": "12",
+          "visibility": true,
+          "id": 2
+        }
+      ],
+      "name": "jj",
+      "address": "",
+      "status": "Processing",
+      "id": 3
+    }
+  ],
   "banners": [
     {
       "page": "Homepage",
@@ -357,6 +446,18 @@
       "title": "Category Banner",
       "image": "https://images.unsplash.com/photo-1483137140003-ae073b395549?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "id": 11
+    }
+  ],
+  "carts": [
+    {
+      "username": "wx",
+      "products": [],
+      "id": 1
+    },
+    {
+      "username": "jj",
+      "products": [],
+      "id": 2
     }
   ]
 }

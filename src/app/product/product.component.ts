@@ -50,3 +50,21 @@ export class ProductComponent implements OnInit {
   }
 
 }
+
+
+ // this.userdetails = JSON.parse(localStorage.getItem('userdetails') || '[]');
+    // for (let x in this.userdetails) {
+    //   if (x == 'username') {
+    //     this.username = this.userdetails[x];
+    //     console.log(this.username);
+    //   }
+    // }
+    // this.cartService.getCarts().subscribe((carts) => {
+    //   this.carts = carts;
+    //   for (let i = 0; i < carts.length; i++) {
+    //     if (carts[i].username == this.username){
+    //       this.currentCart = carts[i];
+    //     }
+          
+    //   }
+    // });
