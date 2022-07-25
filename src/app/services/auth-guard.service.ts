@@ -9,9 +9,11 @@ export class AuthGuard implements CanActivate{
     constructor() { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
-        const admindetails = JSON.parse(localStorage.getItem('admindetails')!);
-        if(admindetails){
-            return true;
+        if(sessionStorage.getItem('isAdmin')=='true'){
+            const admindetails = JSON.parse(sessionStorage.getItem('admindetails')!);
+            if(admindetails){
+                return true;
+            }
         }
         return false;
     }

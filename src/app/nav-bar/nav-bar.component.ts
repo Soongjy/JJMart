@@ -21,6 +21,7 @@ export class NavBarComponent implements OnInit {
   mobile!: boolean;
 
   companyLogo!:string;
+  status!: string;
 
 
   constructor(private cartService: CartService,private _snackBar: MatSnackBar, private categoryService: CategoryService, private companyService: CompanyService) {
@@ -28,8 +29,13 @@ export class NavBarComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
-    this.admindetails = JSON.parse(localStorage.getItem('admindetails')||"[]");
+    this.userdetails = JSON.parse(sessionStorage.getItem('userdetails')!);
+    this.admindetails = JSON.parse(sessionStorage.getItem('admindetails')!);
+    if (sessionStorage.getItem('isAdmin') == "true") {      
+      this.status = "admin";
+    }else if (sessionStorage.getItem('isUser') == "true") {      
+      this.status = "user";
+    }
     if(!this.admindetails){
       for (let x in this.userdetails) {
         if (x == "name"){
@@ -62,20 +68,32 @@ export class NavBarComponent implements OnInit {
     this.companyService.getCompanyInfo(1).subscribe(company=>{
       this.companyLogo = company.companyLogo;
     })
-
+    
   }
 
   onLogout(){
-    if(!confirm("Do you really want to Log Out?")) {
-      return;
-    }else{
-    setTimeout(() => {
-      localStorage.setItem('userdetails',JSON.stringify(null));
-      localStorage.setItem('admindetails',JSON.stringify(null));
-      window.location.href = "/";
-    }, 500);
-    
+    if (sessionStorage.getItem('isUser') == "true") {
+        if(!confirm("Do you really want to Log Out?")) {
+          return;
+        }else{
+        setTimeout(() => {
+          localStorage.setItem('userdetails',JSON.stringify(null));
+          sessionStorage.clear();
+          window.location.href = "/";
+        }, 500);
+        }
     }
+    if (sessionStorage.getItem('isAdmin') == "true") {
+      if(!confirm("Do you really want to Log Out?")) {
+        return;
+      }else{
+      setTimeout(() => {
+        localStorage.setItem('admindetails',JSON.stringify(null));
+        sessionStorage.clear();
+        window.location.href = "/adminlogin";
+      }, 500);
+      }
+  }
   }
 
   getCategories(){

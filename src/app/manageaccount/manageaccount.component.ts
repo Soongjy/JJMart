@@ -30,7 +30,7 @@ export class ManageaccountComponent implements OnInit {
   ngOnInit(): void {
 
     this.userService.getUsers().subscribe((users)=> (this.users = users));
-    const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
+    const userdetails = JSON.parse(sessionStorage.getItem('userdetails')||"[]");
     this.name = userdetails.name;
     this.username = userdetails.username;
     this.email = userdetails.email;
@@ -143,12 +143,17 @@ export class ManageaccountComponent implements OnInit {
         }else{
         this.userService.updateUser(updateUser).subscribe();
         localStorage.setItem('userdetails',JSON.stringify(updateUser));
+        sessionStorage.setItem('userdetails',JSON.stringify(updateUser));
 
         this._snackBar.open("Your Profile Edited Successfully", "Close", {
           duration: 2000
         });
         this.password='';
         this.repassword='';
+
+        setTimeout(() => {
+          window.location.href = "/manageaccount";
+        }, 500);
         }
       }
     }

@@ -62,8 +62,10 @@ export class AdminLoginComponent implements OnInit {
             var userName = admin.name;
             var useremail = admin.email;
             this.userprivilege = admin.privilege;
-            localStorage.setItem('userdetails',JSON.stringify(null))
+            sessionStorage.clear();
             localStorage.setItem('admindetails',JSON.stringify(admin));
+            sessionStorage.setItem('isAdmin','true');
+            sessionStorage.setItem('admindetails',JSON.stringify(admin));
             found = 2;
             break;
         }else{

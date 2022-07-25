@@ -52,6 +52,8 @@ export class SigninComponent implements OnInit {
             var useremail = user.email;
             this.userprivilege = user.privilege;
             localStorage.setItem('userdetails',JSON.stringify(user));
+            sessionStorage.setItem('userdetails',JSON.stringify(user));
+            sessionStorage.setItem('isUser','true')
             found = 2;
             break;
         }else{
