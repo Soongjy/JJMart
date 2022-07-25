@@ -204,18 +204,6 @@
       "id": 11
     },
     {
-<<<<<<< HEAD
-      "name": "Soap",
-      "price": "20",
-      "quantity": 1,
-      "image": "assets/Soap.jfif",
-      "category": "Cleaning and Laundry",
-      "unit": "10",
-      "description": "efewfef",
-      "discountedPrice": "18",
-      "visibility": true,
-      "id": 12
-=======
       "name": "xxx",
       "price": "12",
       "quantity": 1,
@@ -238,134 +226,9 @@
       "discountedPrice": "122",
       "visibility": true,
       "id": 13
->>>>>>> jessie
     }
   ],
   "orders": [
-    {
-<<<<<<< HEAD
-      "orderDate": "2022-07-21T03:52:23.677Z",
-      "totalPrice": 60,
-=======
-      "orderDate": "2022-07-21T12:21:13.532Z",
-      "totalPrice": 50,
-      "products": [
-        {
-          "id": 3,
-          "name": "Chocolate",
-          "price": 20,
-          "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1565071559227-20ab25b7685e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Dairy",
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 10,
-          "visibility": true
-        },
-        {
-          "name": "Indo Mee Goreng",
-          "category": "Noodles",
-          "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "price": 30,
-          "quantity": 1,
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 0,
-          "visibility": true,
-          "id": 4
-        }
-      ],
-      "name": "",
-      "address": "",
-      "status": "Processing",
-      "id": 1
-    },
-    {
-      "orderDate": "2022-07-21T12:26:28.294Z",
-      "totalPrice": 30,
->>>>>>> jessie
-      "products": [
-        {
-          "name": "Tomato",
-          "category": "Vegetables & Fruits",
-          "image": "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "price": 30,
-          "quantity": 1,
-          "unit": "200g",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": "20",
-          "visibility": true,
-          "id": 1
-<<<<<<< HEAD
-        },
-        {
-          "id": 7,
-          "name": "Mushroom",
-          "price": 30,
-          "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1552825897-bb5efa86eab1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Vegetables & Fruits",
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 12,
-          "visibility": true
-=======
->>>>>>> jessie
-        }
-      ],
-      "name": "",
-      "address": "",
-      "status": "Processing",
-<<<<<<< HEAD
-      "id": 1
-=======
-      "id": 2
-    },
-    {
-      "orderDate": "2022-07-21T12:30:26.465Z",
-      "totalPrice": 30,
-      "products": [
-        {
-          "name": "Chicken",
-          "category": "Meat",
-          "image": "https://images.unsplash.com/photo-1642102903996-cdad15f5dcdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-          "price": 30,
-          "quantity": 1,
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": "12",
-          "visibility": true,
-          "id": 2
-        }
-      ],
-      "name": "jj",
-      "address": "",
-      "status": "Processing",
-      "id": 3
-    },
-    {
-      "orderDate": "2022-07-22T02:38:49.390Z",
-      "totalPrice": 3434,
-      "products": [
-        {
-          "name": "Jessie",
-          "price": "3434",
-          "quantity": 1,
-          "image": "assets/cart.jpg",
-          "category": "Testing & Lol",
-          "unit": "12232",
-          "description": "121212",
-          "discountedPrice": "122",
-          "visibility": true,
-          "id": 13
-        }
-      ],
-      "name": "jj",
-      "address": "",
-      "status": "Processing",
-      "id": 4
->>>>>>> jessie
-    }
   ],
   "banners": [
     {
@@ -417,25 +280,6 @@
       "image": "assets/cakes.jpg",
       "id": 5,
       "visibility": true
-    },
-    {
-<<<<<<< HEAD
-      "name": "Cleaning and Laundry",
-      "image": "assets/cakes.jpg",
-      "visibility": true,
-      "id": 6
-=======
-      "name": "Song",
-      "image": "assets/cakes.jpg",
-      "visibility": false,
-      "id": 6
-    },
-    {
-      "name": "Testing & Lol",
-      "image": "assets/bg4.jpg",
-      "visibility": true,
-      "id": 7
->>>>>>> jessie
     }
   ],
   "company": [
