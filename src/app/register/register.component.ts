@@ -6,6 +6,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ImageService } from '../services/image.service';
 import { Image } from '../Image';
 import { CartService } from '../services/cart.service';
+import * as CryptoJS from 'crypto-js';
+
 
 @Component({
   selector: 'app-register',

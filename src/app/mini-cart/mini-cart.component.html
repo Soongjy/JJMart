@@ -1,9 +1,9 @@
 <div class="pop-up-container px-2 py-2">
-  <div class="container" *ngIf="cartItems.length != 0; else noItem">
+  <div class="container" *ngIf="cartData.length != 0; else noItem">
     <div class="container">
       <div
         class="row d-flex align-items-center justify-content-center"
-        *ngFor="let cartItem of cartItems"
+        *ngFor="let cartItem of cartData"
       >
         <div class="col-3">
           <img src="{{ cartItem.image }}" alt="pic" width="120" height="100" />

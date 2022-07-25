@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AnyTxtRecord } from 'dns';
 import { Order } from '../Order';
 import { Product } from '../Product';
 import { CartService } from '../services/cart.service';
@@ -22,13 +21,14 @@ export class CartComponent implements OnInit {
   userdetails: any;
   name:string ='';
   address:string='';
+  cartData: Product[] = [];
 
-  cartDetails: any;
-
-  constructor(private cartService: CartService, private orderService: OrderService) { }
+  constructor(private cartService: CartService, private orderService: OrderService) {
+  
+   }
 
   ngOnInit(): void {
-
+  
     this.userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
     for (let x in this.userdetails) {
       if (x == "name"){
@@ -36,7 +36,9 @@ export class CartComponent implements OnInit {
       }
     }
 
-    this.getCartItems();
+    this.cartData = JSON.parse(localStorage.getItem('cartData') ||'[]');
+    this.grandTotal = this.cartService.getTotalPrice();
+    //this.cartService.syncItems();
   }
 
   addFunction(product: Product){
@@ -49,7 +51,7 @@ export class CartComponent implements OnInit {
 
   getCartItems(){
     this.cartService.getProducts().subscribe((items)=>{
-      this.cartItems = items;
+      this.cartData = items;
       this.grandTotal = this.cartService.getTotalPrice();
     })
   }

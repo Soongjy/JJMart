@@ -13,12 +13,19 @@ export class CartQuantityComponent implements OnInit {
   grandTotal: number = 0;
   totalItemPrice: number = 0;
   @Input() cartItem!: Product;
+  
+
+  cartData: Product[] = [];
 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    //this.cartService.syncItems();
+   // this.cartData = JSON.parse(localStorage.getItem('cartData') ||'[]');
+
   }
   addFunction(product: Product){
+
     this.cartService.addFunction(product);
   }
 
@@ -28,7 +35,7 @@ export class CartQuantityComponent implements OnInit {
 
   getCartItems(){
     this.cartService.getProducts().subscribe((items)=>{
-      this.cartItems = items;
+      this.cartData = items;
       this.grandTotal = this.cartService.getTotalPrice();
     })
   }

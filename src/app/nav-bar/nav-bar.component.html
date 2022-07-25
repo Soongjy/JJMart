@@ -52,7 +52,7 @@
         <app-search *ngIf="admindetails==null"  class="searchbox"></app-search>
        <!--cart-->
         <div *ngIf="admindetails==null"  class="mx-4 cart-icon pt-2 main-cart">
-          <mat-icon matBadge={{cartItemCounter}} matBadgeColor="warn" [matMenuTriggerFor]="menu">shopping_cart</mat-icon>
+          <mat-icon matBadge={{test}} matBadgeColor="warn" [matMenuTriggerFor]="menu">shopping_cart</mat-icon>
           <mat-menu #menu="matMenu">
            <app-mini-cart></app-mini-cart>
           </mat-menu>
