@@ -36,7 +36,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { CartQuantityComponent } from './cart-quantity/cart-quantity.component';
 import { SearchComponent } from './search/search.component';
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
-import { AuthGuard } from './services/auth-guard.service';
+import { AuthGuard,AdminAuthGuard,UserAuthGuard } from './services/auth-guard.service';
 
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { OrderHistoryComponent } from './order-history/order-history.component';
@@ -90,7 +90,7 @@ import { SafePipe } from './safe.pipe';
     MatExpansionModule,
     MatBottomSheetModule,
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard,AdminAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

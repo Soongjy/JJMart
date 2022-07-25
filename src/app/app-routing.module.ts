@@ -13,7 +13,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ManageaccountComponent } from './manageaccount/manageaccount.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
-import { AuthGuard } from './services/auth-guard.service';
+import { AuthGuard, AdminAuthGuard, UserAuthGuard } from './services/auth-guard.service';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 
@@ -22,7 +22,7 @@ const adminModule = () => import('./admin/admin.module').then(x => x.AdminModule
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch:'full'},
-  { path: 'home', component: HomepageComponent },
+  { path: 'home', component: HomepageComponent, canActivate:[AdminAuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
@@ -32,12 +32,12 @@ const routes: Routes = [
   { path: 'admin', loadChildren: adminModule, canActivate:[AuthGuard] },
   { path: 'adminlogin', component:AdminLoginComponent},
   { path: 'category/:params', component:CategoryComponent},
-  { path: 'viewcart', component:CartComponent},
-  { path: 'manageaccount', component:ManageaccountComponent},
-  { path: 'changepassword', component:ChangepasswordComponent},
+  { path: 'viewcart', component:CartComponent, canActivate:[UserAuthGuard]},
+  { path: 'manageaccount', component:ManageaccountComponent, canActivate:[UserAuthGuard]},
+  { path: 'changepassword', component:ChangepasswordComponent, canActivate:[UserAuthGuard]},
   { path: 'search/:searchTerm', component:AllProductsComponent},
-  { path: 'orderconfirmation', component:OrderconfirmationComponent},
-  { path: 'orderhistory', component:OrderHistoryComponent},
+  { path: 'orderconfirmation', component:OrderconfirmationComponent, canActivate:[UserAuthGuard]},
+  { path: 'orderhistory', component:OrderHistoryComponent, canActivate:[UserAuthGuard]},
 ];
 
 @NgModule({
