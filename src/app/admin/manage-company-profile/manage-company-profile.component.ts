@@ -11,21 +11,12 @@ import { CompanyService } from 'src/app/services/company.service';
 export class ManageCompanyProfileComponent implements OnInit {
 
   companyLogoPath!: string;
-  aboutUsImagePath!: string;
+  paymentOptionImagePath!: string;
   existingCompanyLogo!: string;
-  existingAboutUsImage!: string;
+  existingPaymentOptionImage!: string;
+  companySlogan!: string;
   company!: Company;
 
-
-  // companyLogo!: string;
-  // aboutUsImage!: string;
-  aboutUsInfo_1!: string;
-  aboutUsInfo_2!: string;
-  address!: string;
-  contactNum!: string;
-  googleMaps!: string;
-  email!: string;
-  businessHours!: string;
 
   constructor(private companyService: CompanyService, private _snackBar: MatSnackBar) { }
 
@@ -36,14 +27,9 @@ export class ManageCompanyProfileComponent implements OnInit {
   fetchCompanyDetails(){
     this.companyService.getCompanyInfo(1).subscribe((company)=>{
       this.existingCompanyLogo = company.companyLogo;
-      this.existingAboutUsImage = company.aboutUsImage;
-      this.aboutUsInfo_1 = company.aboutUsInfo_1;
-      this.aboutUsInfo_2 = company.aboutUsInfo_2;
-      this.address = company.address;
-      this.contactNum = company.contactNum;
-      this.googleMaps = company.googleMaps;
-      this.email = company.email;
-      this.businessHours = company.businessHours;
+      this.existingPaymentOptionImage = company.paymentOptionImage;
+      this.companySlogan = company.companySlogan;
+    
     });
 
   }
@@ -55,11 +41,11 @@ export class ManageCompanyProfileComponent implements OnInit {
     this.companyLogoPath = 'assets/' + companyLogo.files![0].name;
   }
 
-  fileChangedAboutUs() {
-    const aboutUsImage: HTMLInputElement = document.getElementById(
-      'aboutUsImage'
+  fileChangedPaymentOption() {
+    const paymentOptionImage: HTMLInputElement = document.getElementById(
+      'paymentOptionImage'
     ) as HTMLInputElement;
-    this.aboutUsImagePath = 'assets/' + aboutUsImage.files![0].name;
+    this.paymentOptionImagePath = 'assets/' + paymentOptionImage.files![0].name;
   }
   
 
@@ -68,14 +54,8 @@ export class ManageCompanyProfileComponent implements OnInit {
 
     const updateCompany = {
       companyLogo: this.companyLogoPath ==null ? this.existingCompanyLogo : this.companyLogoPath,
-      aboutUsImage: this.aboutUsImagePath ==null ? this.existingAboutUsImage : this.aboutUsImagePath,
-      aboutUsInfo_1: this.aboutUsInfo_1,
-      aboutUsInfo_2: this.aboutUsInfo_2,
-      address: this.address,
-      contactNum: this.contactNum,
-      googleMaps: this.googleMaps,
-      email: this.email,
-      businessHours: this.businessHours,
+      paymentOptionImage: this.paymentOptionImagePath ==null ? this.existingPaymentOptionImage : this.paymentOptionImagePath,
+      companySlogan: this.companySlogan,
       id: 1,
     };
 
@@ -83,10 +63,8 @@ export class ManageCompanyProfileComponent implements OnInit {
       this.fileChangedLogo();
     }
 
-    
-
-    if (this.aboutUsImagePath != null) {
-      this.fileChangedAboutUs();
+    if (this.paymentOptionImagePath != null) {
+      this.fileChangedPaymentOption();
     }
 
     this.companyService.updateCompanyInfo(updateCompany).subscribe(() => {

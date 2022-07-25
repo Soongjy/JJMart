@@ -8,8 +8,8 @@
         <th scope="col">Remove</th>
       </tr>
     </thead>
-    <tbody *ngIf="cartItems.length !=0; else noItem">
-      <tr *ngFor="let cartItem of cartItems">
+    <tbody *ngIf="cartData.length !=0; else noItem">
+      <tr *ngFor="let cartItem of cartData">
         <td scope="row">
           <div class="row d-flex align-items-center">
             <div class="col-sm-12 col-md-5">
@@ -28,6 +28,29 @@
         </td>
         <td class="align-middle" id="quantity">
           <app-cart-quantity [cartItem]="cartItem"></app-cart-quantity>
+          <!-- <div class="input-group">
+            <button
+              class="btn btn-outline-secondary"
+              id="add"
+              type="button"
+              (click)="addFunction(cartItem)"
+            >
+              +
+            </button>
+            <input
+              type="text"
+              class="form-control text-center"
+              placeholder="{{cartItem.quantity}}"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              id="minus"
+              type="button"
+              (click)="minusFunction(cartItem)"
+            >
+              -
+            </button>
+          </div> -->
         </td>
         <td class="text-center align-middle" id="total">RM{{cartItem.price * cartItem.quantity}}</td>
         <td class="text-center align-middle">
