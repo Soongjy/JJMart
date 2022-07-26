@@ -73,7 +73,7 @@
             <li *ngIf="userdetails ==null &&admindetails==null"><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
             <li *ngIf="userdetails !=null &&admindetails==null"><a class="dropdown-item" routerLink="/manageaccount">Account Settings</a></li>
             <li *ngIf="userdetails !=null && admindetails==null"><a class="dropdown-item" routerLink="/orderhistory">Order History</a></li>
-            <li *ngIf="userdetails!=null ||admindetails!=null"><hr class="dropdown-divider"></li>
+            <li *ngIf="userdetails!=null &&admindetails!=null"><hr class="dropdown-divider"></li>
             <li *ngIf="userdetails!=null ||admindetails!=null"><a class="dropdown-item" (click)="onLogout()">Log Out</a></li>
           </ul>
         </div>

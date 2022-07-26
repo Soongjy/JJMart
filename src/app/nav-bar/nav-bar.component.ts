@@ -76,16 +76,18 @@ export class NavBarComponent implements OnInit {
   }
 
   onLogout(){
-    if(!confirm("Do you really want to Log Out?")) {
-      return;
-    }else{
-    setTimeout(() => {
-      localStorage.setItem('userdetails',JSON.stringify(null));
-      localStorage.setItem('admindetails',JSON.stringify(null));
-      window.localStorage.removeItem('cartData');
-      window.location.href = "/";
-    }, 500);
-    
+    if (sessionStorage.getItem('isUser') == "true") {
+      if(!confirm("Do you really want to Log Out?")) {
+        return;
+      }else{
+      setTimeout(() => {
+        localStorage.setItem('userdetails',JSON.stringify(null));
+        localStorage.setItem('admindetails',JSON.stringify(null));
+        window.localStorage.removeItem('cartData');
+        sessionStorage.clear();
+        window.location.href = "/";
+      }, 500);
+      }
     }
     if (sessionStorage.getItem('isAdmin') == "true") {
       if(!confirm("Do you really want to Log Out?")) {
@@ -93,11 +95,12 @@ export class NavBarComponent implements OnInit {
       }else{
       setTimeout(() => {
         localStorage.setItem('admindetails',JSON.stringify(null));
+        window.localStorage.removeItem('cartData');
         sessionStorage.clear();
         window.location.href = "/adminlogin";
       }, 500);
       }
-  }
+    }
   }
 
   getCategories(){
