@@ -7,6 +7,10 @@ import { Product } from 'src/app/Product';
 import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
 @Component({
   selector: 'app-manage-product',
   templateUrl: './manage-product.component.html',
@@ -40,6 +44,11 @@ export class ManageProductComponent implements OnInit {
   selectedProduct!: string;
   productId!: number;
 
+  searchTerm!:any;
+  myControl = new FormControl<string | Product>('');
+  options: Product[] = [];
+  filteredOptions!: Observable<Product[]>;
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
@@ -60,6 +69,24 @@ export class ManageProductComponent implements OnInit {
     this.description = '';
 
     this.getCategories();
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => {
+        const name = typeof value === 'string' ? value : value?.name;
+        return name ? this._filter(name as string) : this.options.slice();
+      }),
+    );
+  }
+
+  displayFn(product: Product): string {
+    return product && product.name ? product.name : '';
+  }
+
+  private _filter(name: string): Product[] {
+    const filterValue = name.toLowerCase();
+
+    return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
   fetchProducts() {
@@ -67,6 +94,7 @@ export class ManageProductComponent implements OnInit {
       this.products = products;
       this.dataSource = new MatTableDataSource<Product>(this.products);
       this.dataSource.paginator = this.paginator;
+      this.options =products;
     });
   }
 
@@ -236,4 +264,22 @@ export class ManageProductComponent implements OnInit {
       this.categories = categories;
     });
   }
+
+  search(){
+    if(this.searchTerm){
+      this.productService.getProducts().subscribe((products) => {
+        this.products = products.filter( products =>
+          (products.name.toLocaleLowerCase().includes(this.searchTerm.toLowerCase())
+          ||products.id==this.searchTerm
+          ||products.category?.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase()))
+        )
+      });
+    }else{
+      this.productService.getProducts().subscribe((products) => {
+        this.products = products;
+      });
+    }
+    this.dataSource = new MatTableDataSource<Product>(this.products);
+    this.dataSource.paginator = this.paginator;
+  }  
 }

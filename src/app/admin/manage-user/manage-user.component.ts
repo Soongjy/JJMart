@@ -5,6 +5,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource} from '@angular/material/table';
 
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
 @Component({
   selector: 'app-manage-user',
   templateUrl: './manage-user.component.html',
@@ -38,6 +42,10 @@ export class ManageUserComponent implements OnInit {
   updaterepassword: any;
   updateprivilege: any;
 
+  searchTerm!:any;
+  myControl = new FormControl<string | User>('');
+  options: User[] = [];
+  filteredOptions!: Observable<User[]>;
 
   constructor(private userService: UserService,private _snackBar: MatSnackBar) {
   }
@@ -47,7 +55,26 @@ export class ManageUserComponent implements OnInit {
     this.users = users;
     this.dataSource = new MatTableDataSource<User>(this.users);
     this.dataSource.paginator = this.paginator;
+    this.options =users;
     });
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => {
+        const name = typeof value === 'string' ? value : value?.name;
+        return name ? this._filter(name as string) : this.options.slice();
+      }),
+    );
+  }
+
+  displayFn(user: User): string {
+    return user && user.name ? user.name : '';
+  }
+
+  private _filter(name: string): User[] {
+    const filterValue = name.toLowerCase();
+
+    return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
   createNewUser(){
@@ -254,6 +281,23 @@ export class ManageUserComponent implements OnInit {
       }
     }
   }
+
+  search(){
+    if(this.searchTerm){
+      this.userService.getUsers().subscribe((users) => {
+        this.users = users.filter( users =>
+          (users.name.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
+          ||users.id==this.searchTerm)
+        )
+      });
+    }else{
+      this.userService.getUsers().subscribe((users) => {
+        this.users = users;
+      });
+    }
+    this.dataSource = new MatTableDataSource<User>(this.users);
+    this.dataSource.paginator = this.paginator;
+  }  
 }
 
 

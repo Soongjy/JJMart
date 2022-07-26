@@ -5,6 +5,11 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Category } from 'src/app/Category';
 import { CategoryService } from 'src/app/services/category.service';
 
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
+
 @Component({
   selector: 'app-manage-categories',
   templateUrl: './manage-categories.component.html',
@@ -18,12 +23,18 @@ export class ManageCategoriesComponent implements OnInit {
   name!: string;
   image!: string;
 
+  searchTerm!:any;
+
   editName!: string;
   editImage?: string;
   existingImage!: string;
   catId!: number;
   isVisible: boolean = true;
   selectedCat?: string;
+
+  myControl = new FormControl<string | Category>('');
+  options: Category[] = [];
+  filteredOptions!: Observable<Category[]>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -36,6 +47,24 @@ export class ManageCategoriesComponent implements OnInit {
     this.fetchCategories();
     (<HTMLInputElement>document.getElementById('image')).value = '';
     (<HTMLInputElement>document.getElementById('editImage')).value = '';
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => {
+        const name = typeof value === 'string' ? value : value?.name;
+        return name ? this._filter(name as string) : this.options.slice();
+      }),
+    );
+  }
+
+  displayFn(category: Category): string {
+    return category && category.name ? category.name : '';
+  }
+
+  private _filter(name: string): Category[] {
+    const filterValue = name.toLowerCase();
+
+    return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
   createCategory() {
@@ -76,6 +105,7 @@ export class ManageCategoriesComponent implements OnInit {
       this.categories = categories;
       this.dataSource = new MatTableDataSource<Category>(this.categories);
       this.dataSource.paginator = this.paginator;
+      this.options =categories;
     });
   }
 
@@ -146,4 +176,21 @@ export class ManageCategoriesComponent implements OnInit {
     category.visibility = !category.visibility;
     this.categoryService.updateVisiblity(category).subscribe();
   }
+
+  search(){
+    if(this.searchTerm){
+      this.categoryService.getCategories().subscribe((categories) => {
+        this.categories = categories.filter( categories =>
+          (categories.name.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
+          ||categories.id==this.searchTerm)
+        )
+      });
+    }else{
+      this.categoryService.getCategories().subscribe((categories) => {
+        this.categories = categories;
+      });
+    }
+    this.dataSource = new MatTableDataSource<Category>(this.categories);
+    this.dataSource.paginator = this.paginator;
+  }  
 }

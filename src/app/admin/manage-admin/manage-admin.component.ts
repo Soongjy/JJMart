@@ -5,6 +5,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource} from '@angular/material/table';
 
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
 @Component({
   selector: 'app-manage-admin',
   templateUrl: './manage-admin.component.html',
@@ -38,6 +42,10 @@ export class ManageAdminComponent implements OnInit {
   updaterepassword: any;
   updateprivilege: any;
 
+  searchTerm!:any;
+  myControl = new FormControl<string | Admin>('');
+  options: Admin[] = [];
+  filteredOptions!: Observable<Admin[]>;
 
   constructor(private adminService: AdminService,private _snackBar: MatSnackBar) {
   }
@@ -47,7 +55,26 @@ export class ManageAdminComponent implements OnInit {
     this.admins = admins;
     this.dataSource = new MatTableDataSource<Admin>(this.admins);
     this.dataSource.paginator = this.paginator;
+    this.options =admins;
     });
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => {
+        const name = typeof value === 'string' ? value : value?.name;
+        return name ? this._filter(name as string) : this.options.slice();
+      }),
+    );
+  }
+
+  displayFn(admin: Admin): string {
+    return admin && admin.name ? admin.name : '';
+  }
+
+  private _filter(name: string): Admin[] {
+    const filterValue = name.toLowerCase();
+
+    return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
   createNewAdmin(){
@@ -254,6 +281,24 @@ export class ManageAdminComponent implements OnInit {
       }
     }
   }
+
+  search(){
+    if(this.searchTerm){
+      this.adminService.getAdmins().subscribe((admins) => {
+        this.admins = admins.filter( admins =>
+          (admins.name.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
+          ||admins.id==this.searchTerm
+          )
+        )
+      });
+    }else{
+      this.adminService.getAdmins().subscribe((admins) => {
+        this.admins = admins;
+      });
+    }
+    this.dataSource = new MatTableDataSource<Admin>(this.admins);
+    this.dataSource.paginator = this.paginator;
+  } 
 }
 
 

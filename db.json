@@ -228,8 +228,7 @@
       "id": 13
     }
   ],
-  "orders": [
-  ],
+  "orders": [],
   "banners": [
     {
       "page": "Homepage",
@@ -310,6 +309,16 @@
       "phonenum": "123",
       "address": "123",
       "id": 2
+    },
+    {
+      "name": "wef",
+      "username": "wer",
+      "email": "wer",
+      "password": "wer",
+      "privilege": "Normal Admin",
+      "phonenum": "wer",
+      "address": "wer",
+      "id": 3
     }
   ],
   "images": [
