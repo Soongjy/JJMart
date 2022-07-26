@@ -15,7 +15,7 @@ export class MiniCartComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    //this.getCartItems();
+    this.getCartItems();
     this.cartData = JSON.parse(localStorage.getItem('cartData') ||'[]');
   }
 

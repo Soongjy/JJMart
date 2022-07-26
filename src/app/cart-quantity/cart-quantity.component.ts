@@ -20,9 +20,6 @@ export class CartQuantityComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    //this.cartService.syncItems();
-   // this.cartData = JSON.parse(localStorage.getItem('cartData') ||'[]');
-
   }
   addFunction(product: Product){
 

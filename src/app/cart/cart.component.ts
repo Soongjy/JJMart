@@ -11,11 +11,8 @@ import { OrderService } from '../services/order.service';
 })
 export class CartComponent implements OnInit {
 
-  cartItems: Product[] = [];
   grandTotal: number = 0;
   totalItemPrice: number = 0;
-
-
   orders: Order[] = [];
 
   userdetails: any;
@@ -36,9 +33,8 @@ export class CartComponent implements OnInit {
       }
     }
 
+    this.getCartItems();
     this.cartData = JSON.parse(localStorage.getItem('cartData') ||'[]');
-    this.grandTotal = this.cartService.getTotalPrice();
-    //this.cartService.syncItems();
   }
 
   addFunction(product: Product){
@@ -64,7 +60,7 @@ export class CartComponent implements OnInit {
     const newOrder = {
       orderDate: new Date (),
       totalPrice: this.grandTotal,
-      products: this.cartItems,
+      products: this.cartData,
       name: this.name,
       address: this.address,
       status: "Processing"
