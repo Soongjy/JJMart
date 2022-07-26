@@ -62,7 +62,8 @@ export class HomepageComponent implements OnInit {
       this.products = products;
       for(var i=0; i<this.products.length; i++){
         if(this.products[i].discountedPrice!==null && this.featProducts.length<4)
-          this.featProducts.push(this.products[i]);
+          if(this.products[i].visibility)
+            this.featProducts.push(this.products[i]);
       }
     });
 

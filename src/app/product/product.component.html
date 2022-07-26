@@ -38,7 +38,7 @@
     </ng-template>
 
     <mat-card-subtitle class="pb-5"
-      >RM{{ product.price }} /{{ product.unit }}</mat-card-subtitle
+      >RM{{ product.discountedPrice!=0 ? product.discountedPrice: product.price }} /{{ product.unit }}</mat-card-subtitle
     >
   </mat-card-content>
 </mat-card>

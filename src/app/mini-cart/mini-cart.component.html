@@ -15,7 +15,7 @@
           <p>x {{ cartItem.quantity }}</p>
         </div>
         <div class="col-3">
-          <p>RM{{ cartItem.price }}</p>
+          <p>RM{{ cartItem.discountedPrice!=0 ? cartItem.discountedPrice: cartItem.price }}</p>
         </div>
         <hr class="my-3" />
       </div>
