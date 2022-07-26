@@ -5,6 +5,7 @@ import { User } from '../Users';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ImageService } from '../services/image.service';
 import { Image } from '../Image';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-register',
@@ -99,7 +100,9 @@ export class RegisterComponent implements OnInit {
           break
         }
       }
+
       if(ok == true){
+        
         const newUser = {
           name: this.name,
           username :this.username,
@@ -129,4 +132,5 @@ export class RegisterComponent implements OnInit {
       }
     }
   }
+
 }
