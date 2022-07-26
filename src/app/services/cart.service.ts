@@ -74,7 +74,7 @@ export class CartService {
   getTotalPrice(): number {
     let grandTotal = 0;
     this.cartData.map((product: Product) => {
-      grandTotal += product.price * product.quantity;
+      grandTotal += (product.discountedPrice!=0 ? product.discountedPrice: product.price) * product.quantity;
     });
 
     return grandTotal;
@@ -135,7 +135,6 @@ export class CartService {
     this.productList.next(this.cartData);
 
     this.syncItems();
-    console.log("test: " + productExists)
   }
 
 

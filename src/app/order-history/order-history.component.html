@@ -30,10 +30,10 @@
               </div>
               <div class="col-md-3">
                 <p>{{product.name}} /{{product.unit}}</p>
-                <p>RM{{product.price}}</p>
+                <p>RM{{product.discountedPrice!=0 ? product.discountedPrice: product.price}}</p>
               </div>
               <div class="col-md-3"> x {{product.quantity}}</div>
-              <div class="col-md-3">RM{{ product.price*product.quantity}}</div>
+              <div class="col-md-3">RM{{(product.discountedPrice!=0 ? product.discountedPrice: product.price )*product.quantity}}</div>
             </div>
         </div>
     </div>

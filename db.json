@@ -215,6 +215,18 @@
       "discountedPrice": 0,
       "visibility": true,
       "id": 13
+    },
+    {
+      "name": "Wen Xuen",
+      "price": "99999999999",
+      "quantity": 1,
+      "image": "assets/cactus.jpg",
+      "category": "Home & Gardening",
+      "unit": "piece",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo",
+      "discountedPrice": "9990",
+      "visibility": true,
+      "id": 14
     }
   ],
   "orders": [
@@ -273,6 +285,74 @@
       "address": "",
       "status": "Processing",
       "id": 2
+    },
+    {
+      "orderDate": "2022-07-26T07:58:18.087Z",
+      "totalPrice": 60,
+      "products": [
+        {
+          "name": "Indo Mee Goreng",
+          "category": "Noodles",
+          "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "price": 30,
+          "quantity": 2,
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 0,
+          "visibility": true,
+          "id": 4
+        }
+      ],
+      "name": "jj",
+      "address": "",
+      "status": "Processing",
+      "id": 3
+    },
+    {
+      "orderDate": "2022-07-26T09:19:45.359Z",
+      "totalPrice": 10024,
+      "products": [
+        {
+          "name": "Wen Xuen",
+          "price": "99999999999",
+          "quantity": 1,
+          "image": "assets/cactus.jpg",
+          "category": "Home & Gardening",
+          "unit": "piece",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo",
+          "discountedPrice": "9990",
+          "visibility": true,
+          "id": 14
+        },
+        {
+          "name": "Chicken",
+          "category": "Meat",
+          "image": "https://images.unsplash.com/photo-1642102903996-cdad15f5dcdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+          "price": 30,
+          "quantity": 2,
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": "12",
+          "visibility": true,
+          "id": 2
+        },
+        {
+          "id": 9,
+          "name": "Mi Sedap",
+          "price": 10,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1587115507286-f27e42621c25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Noodles",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 0,
+          "visibility": true
+        }
+      ],
+      "name": "jj",
+      "address": "",
+      "status": "Processing",
+      "id": 4
     }
   ],
   "banners": [
@@ -304,21 +384,21 @@
     },
     {
       "name": "Meat",
-      "image": "assets/bg1.jpg",
+      "image": "assets/meat.jpg",
       "visibility": true,
       "id": 2
     },
     {
       "name": "Noodles",
-      "image": "assets/bg2.jpg",
+      "image": "assets/noodles.jpg",
       "visibility": true,
       "id": 3
     },
     {
       "name": "Dairy",
-      "image": "assets/bg4.jpg",
-      "id": 4,
-      "visibility": true
+      "image": "assets/dairy.jpg",
+      "visibility": true,
+      "id": 4
     },
     {
       "name": "Biscuits & Cakes",
