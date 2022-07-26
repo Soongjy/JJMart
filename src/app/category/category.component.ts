@@ -18,6 +18,8 @@ export class CategoryComponent implements OnInit {
   categoryName !:string;
   images:Image[]=[];
 
+  testing: string = "HAPPY"
+
   constructor(
     private route: ActivatedRoute, 
     private productService: ProductService, 
@@ -25,6 +27,7 @@ export class CategoryComponent implements OnInit {
     private imageService: ImageService) { }
 
   ngOnInit(): void {
+    console.log(this.testing.toLocaleLowerCase())
     this.imageService.getImages().subscribe((images)=>{
       for(var image of images){
         if (image.page=='Category Banner'){
@@ -49,7 +52,7 @@ export class CategoryComponent implements OnInit {
       this.products = products;
       for(var i=0; i<this.products.length; i++){
         if(products[i].visibility==true)
-          if(this.products[i].category.toLocaleLowerCase()==categoryName)
+          if((this.products[i].category?.toLocaleLowerCase())==categoryName)
             this.categoryProducts.push(this.products[i]);
       }
     });

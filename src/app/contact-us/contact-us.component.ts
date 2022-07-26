@@ -25,13 +25,13 @@ export class ContactUsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.companyService.getCompanyInfo(1).subscribe(company=>{
+    this.companyService.getContactUs(1).subscribe(contactUs=>{
 
-      this.address = company.address;
-      this.contactNum = company.contactNum;
-      this.email = company.email;
-      this.businessHours= company.businessHours;
-      this.googleMaps = company.googleMaps;
+      this.address = contactUs.address;
+      this.contactNum = contactUs.contactNum;
+      this.email = contactUs.email;
+      this.businessHours= contactUs.businessHours;
+      this.googleMaps = contactUs.googleMaps;
     
     })
 

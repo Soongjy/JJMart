@@ -5,7 +5,9 @@ import { User } from '../Users';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ImageService } from '../services/image.service';
 import { Image } from '../Image';
+import { CartService } from '../services/cart.service';
 import * as CryptoJS from 'crypto-js';
+
 
 @Component({
   selector: 'app-register',
@@ -25,7 +27,7 @@ export class RegisterComponent implements OnInit {
   password!: string;
   repassword!: string;
 
-  constructor(private userService: UserService, private _snackBar: MatSnackBar, private imageService: ImageService) { }
+  constructor(private userService: UserService, private _snackBar: MatSnackBar, private imageService: ImageService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe((users)=> (this.users = users));
@@ -113,6 +115,13 @@ export class RegisterComponent implements OnInit {
           address: this.address
         };
 
+        const newCart = {
+          username: this.username,
+          products: []
+        };
+
+        this.cartService.newCart(newCart).subscribe();
+
         this.name = '';
         this.username = '';
         this.email = '';
@@ -122,6 +131,8 @@ export class RegisterComponent implements OnInit {
         this.phonenum = '';
 
         this.userService.addUser(newUser).subscribe((user: User)=>(this.users.push(user)));
+
+     
         
         this._snackBar.open("You had Signed Up Successfully, Redirecting You to Sign Up", "Close", {
           duration: 2000

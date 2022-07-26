@@ -9,18 +9,19 @@ import { CartService } from '../services/cart.service';
 })
 export class MiniCartComponent implements OnInit {
 
-  cartItems: Product[] = [];
+  cartData: Product[] = [];
   grandTotal: number = 0;
   
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.getCartItems();
+    //this.getCartItems();
+    this.cartData = JSON.parse(localStorage.getItem('cartData') ||'[]');
   }
 
   getCartItems(){
     this.cartService.getProducts().subscribe((items)=>{
-      this.cartItems = items;
+      this.cartData = items;
       this.grandTotal = this.cartService.getTotalPrice();
     })
   }

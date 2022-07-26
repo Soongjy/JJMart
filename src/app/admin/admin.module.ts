@@ -19,6 +19,8 @@ import { ManageCategoriesComponent } from './manage-categories/manage-categories
 import { ManageCompanyProfileComponent } from './manage-company-profile/manage-company-profile.component';
 import { ManageImageComponent } from './manage-image/manage-image.component';
 import { ManageAdminComponent } from './manage-admin/manage-admin.component';
+import { ManageAboutUsComponent } from './manage-about-us/manage-about-us.component';
+import { ManageContactUsComponent } from './manage-contact-us/manage-contact-us.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { ManageAdminComponent } from './manage-admin/manage-admin.component';
     ManageCompanyProfileComponent,
     ManageImageComponent,
     ManageAdminComponent,
+    ManageAboutUsComponent,
+    ManageContactUsComponent,
   ],
   imports: [
     CommonModule,

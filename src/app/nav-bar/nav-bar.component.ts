@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from '../services/category.service';
 import { Category } from '../Category';
 import { CompanyService } from '../services/company.service';
+import { Product } from '../Product';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -23,10 +24,15 @@ export class NavBarComponent implements OnInit {
   companyLogo!:string;
   status!: string;
 
+  cartData: Product[] = [];
+
+  test!:number;
 
   constructor(private cartService: CartService,private _snackBar: MatSnackBar, private categoryService: CategoryService, private companyService: CompanyService) {
   
    }
+
+   
 
   ngOnInit(): void {
     this.userdetails = JSON.parse(sessionStorage.getItem('userdetails')!);
@@ -50,19 +56,17 @@ export class NavBarComponent implements OnInit {
       }
     }
 
+    this.cartData = JSON.parse(localStorage.getItem('cartData') ||'[]');
+    this.test = JSON.parse(localStorage.getItem('counter')!);
+
     //to update cart item count
     this.cartService.getProducts().subscribe((items)=>{
       this.cartItemCounter = items.length;
+
+  
     })
 
     this.getCategories();
-
-    //check screen size
-    if (window.screen.width <= 360) { // 768px portrait
-      this.mobile = true;
-    }else{
-      this.mobile = false;
-    }
 
     //get logo
     this.companyService.getCompanyInfo(1).subscribe(company=>{
@@ -72,16 +76,16 @@ export class NavBarComponent implements OnInit {
   }
 
   onLogout(){
-    if (sessionStorage.getItem('isUser') == "true") {
-        if(!confirm("Do you really want to Log Out?")) {
-          return;
-        }else{
-        setTimeout(() => {
-          localStorage.setItem('userdetails',JSON.stringify(null));
-          sessionStorage.clear();
-          window.location.href = "/";
-        }, 500);
-        }
+    if(!confirm("Do you really want to Log Out?")) {
+      return;
+    }else{
+    setTimeout(() => {
+      localStorage.setItem('userdetails',JSON.stringify(null));
+      localStorage.setItem('admindetails',JSON.stringify(null));
+      window.localStorage.removeItem('cartData');
+      window.location.href = "/";
+    }, 500);
+    
     }
     if (sessionStorage.getItem('isAdmin') == "true") {
       if(!confirm("Do you really want to Log Out?")) {
@@ -98,7 +102,10 @@ export class NavBarComponent implements OnInit {
 
   getCategories(){
     this.categoryService.getCategories().subscribe((categories)=>{
-      this.categories = categories;
+      for(var i=0; i<categories.length; i++){
+        if(categories[i].visibility==true)
+          this.categories.push(categories[i]);
+      }
     })
   }
 

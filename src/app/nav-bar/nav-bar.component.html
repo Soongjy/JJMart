@@ -7,11 +7,21 @@
     <a *ngIf="status =='admin'" class="navbar-brand" routerLink="/admin">
       <img src="{{this.companyLogo}}" alt="Sunway Mart Logo" width="180" height="40">
     </a>
-    <!-- <a *ngIf="privilege != 1"  class="navbar-brand" routerLink="/" style="font-style:italic; font-weight: bold; font-size: 28px; margin: 5px 15px 5px 15px;color: red;">Sunway Mart</a>
-    <a *ngIf="privilege == 1"  class="navbar-brand" routerLink="/admin" style="font-style:italic; font-weight: bold; font-size: 28px; margin: 5px 15px 5px 15px;color: red;">Sunway Mart</a> -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+        <!--cart-->
+     <div *ngIf="admindetails==null"  class="mx-4 cart-icon pt-2 mobile-cart">
+      <mat-icon matBadge={{cartItemCounter}} matBadgeColor="warn" [matMenuTriggerFor]="menu">shopping_cart</mat-icon>
+      <mat-menu #menu="matMenu">
+       <app-mini-cart></app-mini-cart>
+      </mat-menu>
+        <!-- Include text description of the icon's meaning for screen-readers -->
+        <span class="cdk-visually-hidden">
+          This is a shopping cart
+        </span>
+    </div>
+      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
           <li class="nav-item">
@@ -41,9 +51,8 @@
         </ul>
         <app-search *ngIf="status !='admin'"  class="searchbox"></app-search>
        <!--cart-->
-        
-        <div *ngIf="status !='admin'"  class="mx-4 cart-icon pt-2">
-          <mat-icon matBadge={{cartItemCounter}} matBadgeColor="warn" [matMenuTriggerFor]="menu">shopping_cart</mat-icon>
+        <div *ngIf="status !='admin'"  class="mx-4 cart-icon pt-2 main-cart">
+          <mat-icon matBadge={{test}} matBadgeColor="warn" [matMenuTriggerFor]="menu">shopping_cart</mat-icon>
           <mat-menu #menu="matMenu">
            <app-mini-cart></app-mini-cart>
           </mat-menu>
@@ -60,14 +69,15 @@
           </div>
           </a>
           <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-            <li *ngIf="status !='user' && status !='admin'"><a class="dropdown-item" routerLink="/register">Register</a></li>
-            <li *ngIf="status !='user' && status !='admin'"><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
-            <li *ngIf="status =='user'"><a class="dropdown-item" routerLink="/manageaccount">Account Settings</a></li>
-            <li *ngIf="status =='user'"><a class="dropdown-item" routerLink="/orderhistory">Order History</a></li>
-            <li *ngIf="status =='user'"><hr class="dropdown-divider"></li>
-            <li *ngIf="status =='user' ||status =='admin'"><a class="dropdown-item" (click)="onLogout()">Log Out</a></li>
+            <li *ngIf="userdetails ==null && admindetails ==null"><a class="dropdown-item" routerLink="/register">Register</a></li>
+            <li *ngIf="userdetails ==null &&admindetails==null"><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
+            <li *ngIf="userdetails !=null &&admindetails==null"><a class="dropdown-item" routerLink="/manageaccount">Account Settings</a></li>
+            <li *ngIf="userdetails !=null && admindetails==null"><a class="dropdown-item" routerLink="/orderhistory">Order History</a></li>
+            <li *ngIf="userdetails!=null ||admindetails!=null"><hr class="dropdown-divider"></li>
+            <li *ngIf="userdetails!=null ||admindetails!=null"><a class="dropdown-item" (click)="onLogout()">Log Out</a></li>
           </ul>
         </div>
       </div>
     </div>
+   
   </nav>

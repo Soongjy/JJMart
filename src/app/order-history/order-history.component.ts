@@ -26,6 +26,7 @@ export class OrderHistoryComponent implements OnInit {
     }
 
     this.getOrderHistory();
+    console.log(this.name)
   }
 
   getOrderHistory(){

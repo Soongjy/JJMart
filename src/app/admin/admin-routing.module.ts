@@ -11,6 +11,9 @@ import { ManageProductComponent } from "./manage-product/manage-product.componen
 import { ManageUserComponent } from "./manage-user/manage-user.component";
 import { ManageImageComponent } from "./manage-image/manage-image.component";
 import { ManageAdminComponent } from "./manage-admin/manage-admin.component";
+import { ManageAboutUsComponent } from "./manage-about-us/manage-about-us.component";
+import { ManageContactUsComponent } from "./manage-contact-us/manage-contact-us.component";
+
 
 const routes: Routes = [
     {
@@ -23,6 +26,8 @@ const routes: Routes = [
             { path: 'manageadmin', component: ManageAdminComponent},
             { path: 'managecategories', component: ManageCategoriesComponent},
             { path: 'manage-company-profile', component: ManageCompanyProfileComponent},
+            { path: 'manage-about-us', component: ManageAboutUsComponent},
+            { path: 'manage-contact-us', component: ManageContactUsComponent},
         ],
         
     }
