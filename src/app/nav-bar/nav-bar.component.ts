@@ -57,7 +57,6 @@ export class NavBarComponent implements OnInit {
     }
 
     this.cartData = JSON.parse(localStorage.getItem('cartData') ||'[]');
-    this.test = JSON.parse(localStorage.getItem('counter')!);
 
     //to update cart item count
     this.cartService.getProducts().subscribe((items)=>{
