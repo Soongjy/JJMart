@@ -45,11 +45,6 @@ export class CartService {
     this.cartData.splice(this.cartData.indexOf(item as Product), 1);
     this.productList.next(this.cartData);
     this.syncItems();
-    setTimeout(() => {
-      window.location.href = ("/viewcart");
-    }, 1000);
-
-    
   }
 
   getProducts() {
@@ -114,6 +109,7 @@ export class CartService {
   clearCart() {
     this.cartData = [];
     this.productList.next(this.cartData);
+    this.syncItems();
   }
   
   getCount(){

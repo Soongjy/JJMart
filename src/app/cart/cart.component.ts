@@ -67,11 +67,12 @@ export class CartComponent implements OnInit {
     };
 
     this.orderService.addOrder(newOrder).subscribe((order:Order)=>(this.orders.push(order)));
-    //this.cartService.clearCart();
+
     setTimeout(() => {
       window.location.href = ("/orderconfirmation");
+      this.cartService.clearCart();
     }, 1000);
-
+  
   }
 
 }
