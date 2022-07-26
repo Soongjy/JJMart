@@ -73,7 +73,7 @@
   ],
   "products": [
     {
-      "name": "Tomatoo",
+      "name": "Tomato",
       "category": "Vegetables & Fruits",
       "image": "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "price": "25",
@@ -81,7 +81,7 @@
       "unit": "200g",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
       "discountedPrice": "20",
-      "visibility": true,
+      "visibility": false,
       "id": 1
     },
     {
@@ -193,37 +193,26 @@
       "visibility": true
     },
     {
-      "name": "Jessie",
-      "price": "45",
+      "name": "Cactus",
+      "category": "Home & Gardening",
+      "image": "assets/cactus.jpg",
+      "price": "54",
       "quantity": 1,
-      "image": "assets/Benefit-6.png",
-      "unit": "fgfg",
-      "description": "qwqw",
-      "discountedPrice": "20",
-      "visibility": true,
-      "id": 11
-    },
-    {
-      "name": "xxx",
-      "price": "12",
-      "quantity": 1,
-      "image": "assets/bg2.jpg",
-      "category": "Song",
-      "unit": "xx",
-      "description": "xx",
-      "discountedPrice": "1",
+      "unit": "per plant",
+      "description": "This is a pointy cactus",
+      "discountedPrice": "34",
       "visibility": true,
       "id": 12
     },
     {
-      "name": "Jessie",
-      "price": "3434",
+      "name": "Shovel",
+      "price": "15",
       "quantity": 1,
-      "image": "assets/cart.jpg",
-      "category": "Testing & Lol",
-      "unit": "12232",
-      "description": "121212",
-      "discountedPrice": "122",
+      "image": "assets/shovel.jpg",
+      "category": "Home & Gardening",
+      "unit": "per shovel",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo",
+      "discountedPrice": 0,
       "visibility": true,
       "id": 13
     }
@@ -336,6 +325,12 @@
       "image": "assets/cakes.jpg",
       "id": 5,
       "visibility": true
+    },
+    {
+      "name": "Home & Gardening",
+      "image": "assets/home-garden.jpg",
+      "visibility": true,
+      "id": 6
     }
   ],
   "company": [
@@ -453,7 +448,7 @@
       "address": " 48, Jalan PJS 11/7, Bandar Sunway, 46150 Petaling Jaya, Selangor",
       "contactNum": "023347374",
       "googleMaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0951359269343!2d101.60991729999999!3d3.0692472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c86ab05fb35%3A0xbf1fa91e44859318!2sMenara%20Sunway%2C%20Bandar%20Sunway%2C%2047500%20Subang%20Jaya%2C%20Selangor!5e0!3m2!1sen!2smy!4v1658457686440!5m2!1sen!2smy",
-      "email": "sunwaymart@gmail.com",
+      "email": "jj-mart@gmail.com",
       "businessHours": "Monday to Sunday: 8.00am to 10.00pm",
       "id": 1
     }
