@@ -262,6 +262,28 @@
       "address": "",
       "status": "Processing",
       "id": 1
+    },
+    {
+      "orderDate": "2022-07-26T06:19:00.616Z",
+      "totalPrice": 80,
+      "products": [
+        {
+          "id": 3,
+          "name": "Chocolate",
+          "price": 20,
+          "quantity": 4,
+          "image": "https://images.unsplash.com/photo-1565071559227-20ab25b7685e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Dairy",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 10,
+          "visibility": true
+        }
+      ],
+      "name": "liyana",
+      "address": "",
+      "status": "Processing",
+      "id": 2
     }
   ],
   "banners": [

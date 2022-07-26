@@ -106,6 +106,39 @@ export class CartService {
     this.syncItems();
   }
 
+
+  addProductDetails(product: Product){
+    product.quantity = product.quantity+1;
+  }
+
+  minusProductDetails(product: Product){
+    if(product.quantity>1)
+      product.quantity = product.quantity-1;
+  }
+
+  addToCartProductDetails(product: any) {
+    let productExists = false;
+
+    for (let i in this.cartData) {
+      if (this.cartData[i].id === product.id) {
+        this.cartData[i].quantity +=product.quantity;
+        productExists = true;
+        break;
+      }
+    }
+
+    if (!productExists) {
+      this.cartData.push(product);
+      window.location.reload();
+    }
+
+    this.productList.next(this.cartData);
+
+    this.syncItems();
+    console.log("test: " + productExists)
+  }
+
+
   clearCart() {
     this.cartData = [];
     this.productList.next(this.cartData);
@@ -114,11 +147,9 @@ export class CartService {
   
   getCount(){
     return this.cartData.length;
-    
   }
 
   syncItems() {
     localStorage.setItem('cartData', JSON.stringify(this.cartData)); // sync the data
-    localStorage.setItem('counter', this.cartData.length.toString());
   }
 }

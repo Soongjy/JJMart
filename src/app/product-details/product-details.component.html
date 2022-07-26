@@ -20,7 +20,29 @@
   
       <div class="row">
         <div class="col-4">
-          <app-cart-quantity [cartItem]="product"></app-cart-quantity>
+          <div class="input-group">
+            <button
+              class="btn btn-outline-secondary"
+              id="add"
+              type="button"
+              (click)="add(product)"
+            >
+              +
+            </button>
+            <input
+              type="text"
+              class="form-control text-center"
+              placeholder="{{product.quantity}}"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              id="minus"
+              type="button"
+              (click)="minus(product)"
+            >
+              -
+            </button>
+          </div>
         </div>
         <div class="col-8">
           <button *ngIf="userdetails!= null; else notLoggedIn"

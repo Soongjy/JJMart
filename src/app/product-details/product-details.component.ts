@@ -51,14 +51,21 @@ export class ProductDetailsComponent implements OnInit {
 
       this.categoryProducts = [];
     });
-
-
-   
   }
 
   addToCart(product: Product){
 
-    this.cartService.addToCart(product);
+    this.cartService.addToCartProductDetails(product);
+  }
+
+  add(product: Product){
+
+    this.cartService.addProductDetails(product);
+  }
+
+  minus(product: Product){
+
+    this.cartService.minusProductDetails(product);
   }
 
   openSnackBarAddCart(message: string, action: string) {
@@ -74,6 +81,4 @@ export class ProductDetailsComponent implements OnInit {
     .onAction()
     .subscribe(() => this.router.navigateByUrl('/signin'));
   }
-
-
 }
