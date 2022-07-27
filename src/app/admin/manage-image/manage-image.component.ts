@@ -6,6 +6,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { Image } from 'src/app/Image';
 import { ImageService } from 'src/app/services/image.service';
 
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
 @Component({
   selector: 'app-manage-image',
   templateUrl: './manage-image.component.html',
@@ -30,11 +34,34 @@ export class ManageImageComponent implements OnInit {
   editImage!: string;
   existingImageUrl!: string;
 
+  searchTerm!:any;
+  myControl = new FormControl<string | Image>('');
+  options: Image[] = [];
+  filteredOptions!: Observable<Image[]>;
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private _snackBar: MatSnackBar, private imageService: ImageService) { }
 
   ngOnInit(): void {
     this.fetchImages();
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => {
+        const page = typeof value === 'string' ? value : value?.page;
+        return page ? this._filter(page as string) : this.options.slice();
+      }),
+    );
+  }
+
+  displayFn(image: Image): string {
+    return image && image.page ? image.page : '';
+  }
+
+  private _filter(page: string): Image[] {
+    const filterValue = page.toLowerCase();
+
+    return this.options.filter(option => option.page.toLowerCase().includes(filterValue));
   }
 
   onSubmit() {
@@ -109,6 +136,7 @@ export class ManageImageComponent implements OnInit {
       this.images = images;
       this.dataSource = new MatTableDataSource<Image>(this.images);
       this.dataSource.paginator = this.paginator;
+      this.options =images;
     });
   }
 
@@ -193,4 +221,21 @@ export class ManageImageComponent implements OnInit {
       this.imageUrl = '';
     }
   }
+
+  search(){
+    if(this.searchTerm){
+      this.imageService.getImages().subscribe((images) => {
+        this.images = images.filter( images =>
+          (images.page.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
+          ||images.id==this.searchTerm)
+          )
+      });
+    }else{
+      this.imageService.getImages().subscribe((images) => {
+        this.images = images;
+      });
+    }
+    this.dataSource = new MatTableDataSource<Image>(this.images);
+    this.dataSource.paginator = this.paginator;
+  }  
 }

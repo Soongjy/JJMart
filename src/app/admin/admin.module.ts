@@ -14,6 +14,8 @@ import { ManageProductComponent } from './manage-product/manage-product.componen
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
 import { ManageCompanyProfileComponent } from './manage-company-profile/manage-company-profile.component';
@@ -46,6 +48,8 @@ import { ManageContactUsComponent } from './manage-contact-us/manage-contact-us.
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
   ],
 })
 export class AdminModule { }

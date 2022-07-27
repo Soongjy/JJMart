@@ -1,13 +1,28 @@
-<div class="container">
-    <h1 class="d-inline manage-title">Manage Image</h1>
-    <button
-    type="button"
-    class="btn btn-danger btn-sm d-inline mx-3 mb-2"
-    data-bs-toggle="modal"
-    data-bs-target="#addModal"
-    >
-        Add New Image
-    </button>
+<div class="container px-2 py-2">
+    <div class="row">
+      <div class="col">
+        <h1 class="d-inline manage-title">Manage Image</h1>
+        <button
+        type="button"
+        class="btn btn-danger btn-sm d-inline mx-3 mb-2"
+        data-bs-toggle="modal"
+        data-bs-target="#addModal"
+        >
+            Add New Image
+        </button>
+      </div>
+      <div class="col-md-4">
+        <div class="d-flex py-3">
+          <input class="form-control me-2" placeholder="Search" aria-label="Search" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="searchTerm" (change)="search()">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option.page}}
+            </mat-option>
+          </mat-autocomplete>
+          <button class="btn btn-outline-danger" type="submit" (click)="search()">Search</button>
+        </div>
+      </div>
+    </div>
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
           <!-- ID Column -->
