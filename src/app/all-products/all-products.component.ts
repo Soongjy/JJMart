@@ -26,20 +26,11 @@ export class AllProductsComponent implements OnInit {
       if(params.searchTerm){
        this.productSub = this.productService.getProducts().subscribe((products)=>{
         this.products = products.filter( product =>
-          (product.visibility==true &&(product.name.toLocaleLowerCase().includes(params.searchTerm.toLocaleLowerCase())
-          || product.category?.toLocaleLowerCase().includes(params.searchTerm.toLocaleLowerCase()))));
+          (product.visibility &&(product.name.toLocaleLowerCase().includes(params.searchTerm.toLocaleLowerCase())|| product.category?.toLocaleLowerCase().includes(params.searchTerm.toLocaleLowerCase()))));
           this.productCount = this.products.length;
       });
       }
     
     })
   }
-
-//   getProducts(){
-//   this.productService.getProducts().subscribe((products)=>{
-//     this.products = products;
-//     console.log(this.products);
-//   });
-// }
-
 }
