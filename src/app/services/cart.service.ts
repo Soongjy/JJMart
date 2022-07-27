@@ -45,11 +45,6 @@ export class CartService {
     this.cartData.splice(this.cartData.indexOf(item as Product), 1);
     this.productList.next(this.cartData);
     this.syncItems();
-    setTimeout(() => {
-      window.location.href = ("/viewcart");
-    }, 1000);
-
-    
   }
 
   getProducts() {
@@ -79,7 +74,7 @@ export class CartService {
   getTotalPrice(): number {
     let grandTotal = 0;
     this.cartData.map((product: Product) => {
-      grandTotal += product.price * product.quantity;
+      grandTotal += (product.discountedPrice!=0 ? product.discountedPrice: product.price) * product.quantity;
     });
 
     return grandTotal;
@@ -111,18 +106,49 @@ export class CartService {
     this.syncItems();
   }
 
+
+  addProductDetails(product: Product){
+    product.quantity = product.quantity+1;
+  }
+
+  minusProductDetails(product: Product){
+    if(product.quantity>1)
+      product.quantity = product.quantity-1;
+  }
+
+  addToCartProductDetails(product: any) {
+    let productExists = false;
+
+    for (let i in this.cartData) {
+      if (this.cartData[i].id === product.id) {
+        this.cartData[i].quantity +=product.quantity;
+        productExists = true;
+        break;
+      }
+    }
+
+    if (!productExists) {
+      this.cartData.push(product);
+      window.location.reload();
+    }
+
+    this.productList.next(this.cartData);
+
+    this.syncItems();
+  }
+
+
   clearCart() {
     this.cartData = [];
     this.productList.next(this.cartData);
+    this.syncItems();
   }
   
   getCount(){
     return this.cartData.length;
-    
   }
 
   syncItems() {
     localStorage.setItem('cartData', JSON.stringify(this.cartData)); // sync the data
-    localStorage.setItem('counter', this.cartData.length.toString());
   }
 }

@@ -9,9 +9,9 @@ import { CartService } from '../services/cart.service';
 })
 export class CartQuantityComponent implements OnInit {
 
-  cartItems: Product[] = [];
-  grandTotal: number = 0;
-  totalItemPrice: number = 0;
+  // cartItems: Product[] = [];
+  // grandTotal: number = 0;
+  // totalItemPrice: number = 0;
   @Input() cartItem!: Product;
   
 
@@ -30,11 +30,10 @@ export class CartQuantityComponent implements OnInit {
     this.cartService.minusFunction(product);
   }
 
-  getCartItems(){
-    this.cartService.getProducts().subscribe((items)=>{
-      this.cartData = items;
-      this.grandTotal = this.cartService.getTotalPrice();
-    })
-  }
+  // getCartItems(){
+  //   this.cartService.getProducts().subscribe((items)=>{
+  //     this.cartData = items;
+  //   })
+  // }
 
 }

@@ -22,7 +22,7 @@
             </div>
             <div class="col-sm-12 col-md-7">
               <p>{{ cartItem.name }} / {{ cartItem.unit }} </p>
-              <p>RM{{ cartItem.price }}</p>
+              <p>RM{{ cartItem.discountedPrice!=0 ? cartItem.discountedPrice: cartItem.price}}</p>
             </div>
           </div>
         </td>
@@ -52,7 +52,7 @@
             </button>
           </div> -->
         </td>
-        <td class="text-center align-middle" id="total">RM{{cartItem.price * cartItem.quantity}}</td>
+        <td class="text-center align-middle" id="total">RM{{(cartItem.discountedPrice!=0 ? cartItem.discountedPrice: cartItem.price) * cartItem.quantity}}</td>
         <td class="text-center align-middle">
           <i
             class="fa fa-trash trash-icon"
