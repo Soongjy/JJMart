@@ -42,7 +42,7 @@ export class ProductDetailsComponent implements OnInit {
           this.products = products;
           for(var i=0; i<this.products.length; i++){
             if(this.products[i].category==categoryName){
-              if(this.products[i].name != productName && this.categoryProducts.length<4)
+              if(this.products[i].name != productName && this.categoryProducts.length<4 && this.products[i].visibility)
                 this.categoryProducts.push(this.products[i]);
             }
           }
