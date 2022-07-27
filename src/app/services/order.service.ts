@@ -14,6 +14,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class OrderService {
+  updateVisiblity(order: Order) {
+    throw new Error('Method not implemented.');
+  }
 
   private apiUrl = 'http://localhost:3000/orders'
 
@@ -27,4 +30,18 @@ export class OrderService {
     return this.http.get<Order[]>(this.apiUrl);
   }
 
+  deleteOrder(id: number):Observable<Order>{
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete<Order>(url);
+  }
+
+  getOrder(id: number): Observable<Order> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Order>(url);
+  }
+
+  updateOrder(order: Order):Observable<Order>{
+    const url = `${this.apiUrl}/${order.id}`;
+    return this.http.put<Order>(url,order,httpOptions);
+  }
 }

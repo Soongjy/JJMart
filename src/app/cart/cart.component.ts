@@ -30,6 +30,8 @@ export class CartComponent implements OnInit {
     for (let x in this.userdetails) {
       if (x == "name"){
         this.name = this.userdetails[x];
+      }else if(x == "address"){
+        this.address = this.userdetails[x];
       }
     }
 
@@ -58,7 +60,7 @@ export class CartComponent implements OnInit {
 
   createOrder(){
     const newOrder = {
-      orderDate: new Date (),
+      orderDate: new Date(),
       totalPrice: this.grandTotal,
       products: this.cartData,
       name: this.name,

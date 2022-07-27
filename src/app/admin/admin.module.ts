@@ -23,6 +23,7 @@ import { ManageImageComponent } from './manage-image/manage-image.component';
 import { ManageAdminComponent } from './manage-admin/manage-admin.component';
 import { ManageAboutUsComponent } from './manage-about-us/manage-about-us.component';
 import { ManageContactUsComponent } from './manage-contact-us/manage-contact-us.component';
+import { ManageOrderComponent } from './manage-order/manage-order.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ManageContactUsComponent } from './manage-contact-us/manage-contact-us.
     ManageAdminComponent,
     ManageAboutUsComponent,
     ManageContactUsComponent,
+    ManageOrderComponent,
   ],
   imports: [
     CommonModule,

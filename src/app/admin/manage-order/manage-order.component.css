@@ -1,0 +1,29 @@
+table{
+    width: 100% !important;
+}
+
+.fa-eye, .fa-eye-slash, .fa-pencil-alt, .fa-trash{
+    cursor: pointer;
+}   
+
+.fa-eye:hover, .fa-eye-slash:hover{
+    color:rgb(98, 96, 96);
+}
+
+.fa-pencil-alt:hover{
+    color: blue;
+}
+
+.fa-trash:hover{
+    color: red;
+}
+
+.mat-elevation-z8 {    
+    overflow-x: auto;
+   }
+   
+.manage-title{
+    font-size: calc(.5 * (3.8vh + 1.1vw));
+}
+
+
