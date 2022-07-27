@@ -55,10 +55,7 @@ export class ManageCategoriesComponent implements OnInit {
         return name ? this._filter(name as string) : this.options.slice();
       }),
     );
-  }
 
-  displayFn(category: Category): string {
-    return category && category.name ? category.name : '';
   }
 
   private _filter(name: string): Category[] {
@@ -178,6 +175,8 @@ export class ManageCategoriesComponent implements OnInit {
   }
 
   search(){
+    console.log(this.searchTerm)
+    
     if(this.searchTerm){
       this.categoryService.getCategories().subscribe((categories) => {
         this.categories = categories.filter( categories =>

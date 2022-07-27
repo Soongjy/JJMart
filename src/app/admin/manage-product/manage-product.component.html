@@ -14,8 +14,8 @@
     <div class="col-md-4">
       <div class="d-flex py-3">
         <input class="form-control me-2" placeholder="Search" aria-label="Search" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="searchTerm" (ngModelChange)="search()">
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option" disabled>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
             {{option.name}}
           </mat-option>
         </mat-autocomplete>

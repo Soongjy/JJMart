@@ -266,18 +266,21 @@ export class ManageProductComponent implements OnInit {
   }
 
   search(){
+    console.log(this.searchTerm)
     if(this.searchTerm){
       this.productService.getProducts().subscribe((products) => {
         this.products = products.filter( products =>
-          (products.name.toLocaleLowerCase().includes(this.searchTerm.toLowerCase())
+          (products.name.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
           ||products.id==this.searchTerm
           ||products.category?.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase()))
         )
       });
+      console.log(this.products)
     }else{
       this.productService.getProducts().subscribe((products) => {
         this.products = products;
       });
+      console.log("search null")
     }
     this.dataSource = new MatTableDataSource<Product>(this.products);
     this.dataSource.paginator = this.paginator;
