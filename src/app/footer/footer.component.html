@@ -1,26 +1,17 @@
-<footer class="container-fluid mt-3" *ngIf="!admindetails">
+<footer class="container-fluid" *ngIf="!admindetails">
   <div class="row px-5 py-3">
     <div class="col-12 col-md-3 pt-4">
       <a class="navbar-brand" routerLink="/">
-        <img src="{{companyLogo}}" alt="Sunway Mart Logo" width="180" height="40">
+        <img src="{{companyLogo}}" alt="Sunway Mart Logo" width="160" height="40">
       </a>
       <p class="text-muted">{{companySlogan}}</p>
      </div>
     <div class="col-12 col-md-3 pt-4">
-      <h4>Customer Suport</h4>
-      <a
-        class="nav-link dropdown-toggle"
-        href="#"
-        id="navbarDropdown"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Navigation
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" routerLink="/about-us">About Us</a></li>
-        <li><a class="dropdown-item" routerLink="/contactus">Contact Us</a></li>
+      <h4>Quick Links</h4>
+      <ul>
+        <li class="m-0 text-muted"><a routerLink="/">Home</a></li>
+        <li class="m-0 text-muted"><a routerLink="/about-us">About Us</a></li>
+        <li class="m-0 text-muted"><a routerLink="/contactus">Contact Us</a></li>
       </ul>
     </div>
 
@@ -74,7 +65,7 @@
       class="text-center p-3"
       style="background-color: rgba(239, 234, 234)"
     >
-      © 2022 Copyright: Sunway Shared Services Sdn Bhd
+      Copyright © {{currentYear}} JJ Mart. All Rights Reserved
     </div>
   </div>
 </footer>

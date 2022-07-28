@@ -271,6 +271,40 @@
       "address": "12qwertyuiopkjgdnjhsrty",
       "status": "Pending",
       "id": 1
+    },
+    {
+      "orderDate": "2022-07-28T01:40:00.387Z",
+      "totalPrice": 42,
+      "products": [
+        {
+          "id": 3,
+          "name": "Chocolate",
+          "price": 20,
+          "quantity": 3,
+          "image": "https://images.unsplash.com/photo-1565071559227-20ab25b7685e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Dairy",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 10,
+          "visibility": true
+        },
+        {
+          "id": 8,
+          "name": "Raspberry Popsicle",
+          "price": 30,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=587&q=80",
+          "category": "Dairy",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 12,
+          "visibility": true
+        }
+      ],
+      "name": "naruto",
+      "address": "naruto",
+      "status": "Pending",
+      "id": 2
     }
   ],
   "banners": [
@@ -417,13 +451,13 @@
     {
       "page": "Log in",
       "title": "Login Image",
-      "image": "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp",
+      "image": "assets/login.jpg",
       "id": 8
     },
     {
       "page": "Register",
       "title": "Register Image",
-      "image": "https://images.unsplash.com/photo-1553075712-453f7213c24f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
+      "image": "assets/register.jpg",
       "id": 9
     },
     {

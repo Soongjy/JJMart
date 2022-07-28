@@ -5,3 +5,25 @@ footer{
 .payment{
     margin-left: -15px;
 }
+
+li{
+    list-style-type: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+a, a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    color: black;
+}
+
+.navbar-brand{
+    margin-left: 20px;
+}

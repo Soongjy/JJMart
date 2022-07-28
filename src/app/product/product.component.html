@@ -16,7 +16,7 @@
     </div>
 
     <button *ngIf="userdetails!= null; else notLoggedIn"
-      class="d-inline float-end"
+      class="d-inline float-end addToCart"
       mat-fab
       color="warn"
       aria-label="Add to cart button"
@@ -27,7 +27,7 @@
 
     <ng-template #notLoggedIn>
       <button
-      class="d-inline float-end"
+      class="d-inline float-end addToCart"
       mat-fab
       color="warn"
       aria-label="Add to cart button"
