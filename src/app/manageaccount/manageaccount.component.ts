@@ -5,6 +5,7 @@ import { User } from '../Users';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ImageService } from '../services/image.service';
 import { Image } from '../Image';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-manageaccount',
@@ -37,7 +38,7 @@ export class ManageaccountComponent implements OnInit {
     this.phonenum = userdetails.phonenum;
     this.address = userdetails.address;
     this.id = userdetails.id;
-    this.oldpassword = userdetails.password;
+    this.oldpassword = this.decryptPassword(userdetails.oldpassword);
     this.privilege = userdetails.privilege;
 
     this.images= [
@@ -131,7 +132,7 @@ export class ManageaccountComponent implements OnInit {
           name: this.name,
           username :this.username,
           email: this.email,
-          password: this.password,
+          password: encodeURIComponent(CryptoJS.AES.encrypt(JSON.stringify(this.password), 'secret key 123').toString()),
           privilege: this.privilege,
           phonenum: this.phonenum,
           address: this.address,
@@ -157,6 +158,12 @@ export class ManageaccountComponent implements OnInit {
         }
       }
     }
+  }
+
+  decryptPassword(password:string){
+    var deData= CryptoJS.AES.decrypt(decodeURIComponent(password), 'secret key 123'); 
+    var decryptedPassword= JSON.parse(deData.toString(CryptoJS.enc.Utf8));
+    return decryptedPassword;
   }
 }
 

@@ -31,16 +31,6 @@
       "id": 3
     },
     {
-      "name": "wef",
-      "username": "wef",
-      "email": "wef",
-      "password": "wef",
-      "privilege": 0,
-      "phonenum": "wef",
-      "address": "wef",
-      "id": 4
-    },
-    {
       "name": "liyana",
       "username": "liyana",
       "email": "liyana@gmail.com",
@@ -89,6 +79,16 @@
       "phonenum": "naruto",
       "address": "naruto",
       "id": 9
+    },
+    {
+      "name": "wef",
+      "username": "wef",
+      "email": "wef",
+      "password": "U2FsdGVkX1%2F7sk1pSfj6y6HbzbI8pfbgx8W8DjDlJec%3D",
+      "privilege": "0",
+      "phonenum": "wef",
+      "address": "wef",
+      "id": 10
     }
   ],
   "products": [
@@ -459,6 +459,11 @@
       "username": "naruto",
       "products": [],
       "id": 4
+    },
+    {
+      "username": "wef",
+      "products": [],
+      "id": 5
     }
   ],
   "contactus": [
