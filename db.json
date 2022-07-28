@@ -101,7 +101,7 @@
       "unit": "200g",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
       "discountedPrice": "20",
-      "visibility": false,
+      "visibility": true,
       "id": 1
     },
     {
@@ -305,6 +305,40 @@
       "address": "naruto",
       "status": "Pending",
       "id": 2
+    },
+    {
+      "orderDate": "2022-07-28T04:07:36.213Z",
+      "totalPrice": 72,
+      "products": [
+        {
+          "name": "Chicken",
+          "category": "Meat",
+          "image": "https://images.unsplash.com/photo-1642102903996-cdad15f5dcdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+          "price": 30,
+          "quantity": 1,
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": "12",
+          "visibility": true,
+          "id": 2
+        },
+        {
+          "name": "Indo Mee Goreng",
+          "category": "Noodles",
+          "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "price": 30,
+          "quantity": 2,
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 0,
+          "visibility": true,
+          "id": 4
+        }
+      ],
+      "name": "naruto",
+      "address": "naruto",
+      "status": "Pending",
+      "id": 3
     }
   ],
   "banners": [
@@ -473,33 +507,7 @@
       "id": 11
     }
   ],
-  "carts": [
-    {
-      "username": "wx",
-      "products": [],
-      "id": 1
-    },
-    {
-      "username": "jj",
-      "products": [],
-      "id": 2
-    },
-    {
-      "username": "jessica",
-      "products": [],
-      "id": 3
-    },
-    {
-      "username": "naruto",
-      "products": [],
-      "id": 4
-    },
-    {
-      "username": "wef",
-      "products": [],
-      "id": 5
-    }
-  ],
+  "carts": [],
   "contactus": [
     {
       "address": " 48, Jalan PJS 11/7, Bandar Sunway, 46150 Petaling Jaya, Selangor",
@@ -512,12 +520,12 @@
   ],
   "aboutus": [
     {
-      "aboutUsInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore",
+      "aboutUsInfo": "Welcome to JJ Mart, your number one source for all your grocery needs. We're dedicated to giving you the very best of our products, with a focus on dependability, customer service and uniqueness. Founded in 2022 by JY and JL, JJ Mart has come a long way. We now serve customers all over Malaysia, and are thrilled to be a part of the ecommerce industry.",
       "aboutUsImage1": "assets/Benefit-1.png",
       "aboutUsImage2": "assets/Benefit-2.png",
       "aboutUsImage3": "assets/Benefit-6.png",
       "imageTitle1": "Easy Account Access",
-      "imageTitle2": "Exclusive promotions & personalized coupons",
+      "imageTitle2": "Exclusive promotions",
       "imageTitle3": "Birthday Rewards",
       "imageSubtitle1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore",
       "imageSubtitle2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore",

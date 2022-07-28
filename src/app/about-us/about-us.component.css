@@ -18,6 +18,9 @@
  .benefits-card{
     padding-left: 10%;
  }
-@media screen and (max-width: 420px) {
-
+@media screen and (max-width: 900px) {
+  .pic{
+    height: 70%;
+    width: 70%;
+  }
 }
