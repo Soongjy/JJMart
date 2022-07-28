@@ -8,16 +8,16 @@
       />
     </div>
     <div class="col-md-6 col-lg-5">
-      <h1>{{ product.name }}</h1>
-      <h1 *ngIf="product.discountedPrice == 0">RM{{ product.price }}</h1>
+      <h1 class="pt-2">{{ product.name }}</h1>
+      <h2 *ngIf="product.discountedPrice == 0">RM{{ product.price }}</h2>
       <div *ngIf="product.discountedPrice != 0">
-        <h1 class="d-inline promo-price">RM{{ product.discountedPrice }}</h1>
+        <h2 class="d-inline promo-price">RM{{ product.discountedPrice }}</h2>
         <h3 class="d-inline old-price">RM{{ product.price }}</h3>
       </div>
       <div class="my-3">
         <p>{{ product.description }}</p>
       </div>
-  
+
       <div class="row">
         <div class="col-4">
           <div class="input-group">
@@ -25,50 +25,49 @@
               class="btn btn-outline-secondary"
               id="add"
               type="button"
-              (click)="add(product)"
+              (click)="minus(product)"
             >
-              +
+              -
             </button>
             <input
               type="text"
               class="form-control text-center"
-              placeholder="{{product.quantity}}"
+              placeholder="{{ product.quantity }}"
             />
             <button
               class="btn btn-outline-secondary"
               id="minus"
               type="button"
-              (click)="minus(product)"
+              (click)="add(product)"
             >
-              -
+              +
             </button>
           </div>
         </div>
         <div class="col-8">
-          <button *ngIf="userdetails!= null; else notLoggedIn"
-          class="btn btn-outline-danger w-100"
-          type="button"
-          (click)="[addToCart(product), openSnackBarAddCart('message', 'Close')]"
-        >
-          Add to Cart
-        </button>
-
-        <ng-template #notLoggedIn>
           <button
-          class="btn btn-outline-danger w-100"
-          type="button"
-          (click)="openSnackBarSignIn('message', 'Sign in now')"
-        >
-          Add to Cart
-        </button>
-        </ng-template>
+            *ngIf="userdetails != null; else notLoggedIn"
+            class="btn btn-outline-danger w-100"
+            type="button"
+            (click)="
+              [addToCart(product), openSnackBarAddCart('message', 'Close')]
+            "
+          >
+            Add to Cart
+          </button>
 
+          <ng-template #notLoggedIn>
+            <button
+              class="btn btn-outline-danger w-100"
+              type="button"
+              (click)="openSnackBarSignIn('message', 'Sign in now')"
+            >
+              Add to Cart
+            </button>
+          </ng-template>
         </div>
       </div>
-      <div class="row">
-        
-      </div>
-    
+      <div class="row"></div>
     </div>
   </div>
   <!-- <div class="row my-3">
@@ -77,11 +76,25 @@
       <mat-tab label="Additional Info"> Additional Info </mat-tab>
     </mat-tab-group>
   </div> -->
-  <hr>
+  <hr />
   <div class="row my-3">
     <h3 class="fw-bold">Recommended products</h3>
-      <div class="col-12 col-md-6 col-lg-3 text-left mb-5" *ngFor="let product of categoryProducts">
-        <app-product [product]="product" *ngIf="categoryProducts.length<=4"></app-product>
+    <div *ngIf="categoryProducts.length > 0; else noRecommendations">
+      <div
+        class="col-6 col-lg-3 text-left mb-5"
+        *ngFor="let product of categoryProducts"
+      >
+        <app-product
+          [product]="product"
+          *ngIf="categoryProducts.length <= 4"
+        ></app-product>
       </div>
+    </div>
+
+    <ng-template #noRecommendations>
+      <p>No recommendations for now!</p>
+    </ng-template>
   </div>
+
+
 </div>
