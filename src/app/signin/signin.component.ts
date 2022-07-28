@@ -4,7 +4,7 @@ import { User } from '../Users';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Image } from '../Image';
 import { ImageService } from '../services/image.service';
-
+import * as CryptoJS from 'crypto-js';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -42,11 +42,13 @@ export class SigninComponent implements OnInit {
         duration: 2000
       });
     }else{
+
+
       for(var user of this.users){
         if(this.emailusername === user.username||this.emailusername === user.email){
           found = 1; 
         }
-        if(this.emailusername === user.username&&this.password === user.password || this.emailusername === user.email &&this.password === user.password){
+        if(this.emailusername === user.username&& this.decryptPassword(user.password)=== this.password || this.emailusername === user.email && this.decryptPassword(user.password) === this.password){
             var userid = user.id;
             var userName = user.name;
             var useremail = user.email;
@@ -79,6 +81,12 @@ export class SigninComponent implements OnInit {
         }, 500);
       }
     }
+  }
+
+  decryptPassword(password:string){
+    var deData= CryptoJS.AES.decrypt(decodeURIComponent(password), 'secret key 123'); 
+    var decryptedPassword= JSON.parse(deData.toString(CryptoJS.enc.Utf8));
+    return decryptedPassword;
   }
   
 }
