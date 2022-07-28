@@ -303,7 +303,7 @@
       ],
       "name": "naruto",
       "address": "naruto",
-      "status": "Pending",
+      "status": "Approved",
       "id": 2
     },
     {
@@ -337,7 +337,7 @@
       ],
       "name": "naruto",
       "address": "naruto",
-      "status": "Pending",
+      "status": "Approved",
       "id": 3
     }
   ],
