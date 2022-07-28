@@ -69,6 +69,26 @@
       "phonenum": "jjj",
       "address": "jjjj",
       "id": 7
+    },
+    {
+      "name": "jessica",
+      "username": "jessica",
+      "email": "123",
+      "password": "U2FsdGVkX1%2FlK5eVQGakFg6hCED3%2FkJ1ezQzxqgbCik%3D",
+      "privilege": "0",
+      "phonenum": "123232323",
+      "address": "121332324",
+      "id": 8
+    },
+    {
+      "name": "naruto",
+      "username": "naruto",
+      "email": "naruto",
+      "password": "U2FsdGVkX190qvYI6%2FlVXqNDUb8OXe5G64mjT0m%2F6ew%3D",
+      "privilege": "0",
+      "phonenum": "naruto",
+      "address": "naruto",
+      "id": 9
     }
   ],
   "products": [
@@ -198,19 +218,19 @@
       "image": "assets/cactus.jpg",
       "price": "54",
       "quantity": 1,
-      "unit": "per plant",
-      "description": "This is a pointy cactus",
+      "unit": "piece",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
       "discountedPrice": "34",
       "visibility": true,
       "id": 12
     },
     {
       "name": "Shovel",
+      "category": "Home & Gardening",
+      "image": "assets/shovel.jpg",
       "price": "15",
       "quantity": 1,
-      "image": "assets/shovel.jpg",
-      "category": "Home & Gardening",
-      "unit": "per shovel",
+      "unit": "piece",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo",
       "discountedPrice": 0,
       "visibility": true,
@@ -429,6 +449,16 @@
       "username": "jj",
       "products": [],
       "id": 2
+    },
+    {
+      "username": "jessica",
+      "products": [],
+      "id": 3
+    },
+    {
+      "username": "naruto",
+      "products": [],
+      "id": 4
     }
   ],
   "contactus": [
