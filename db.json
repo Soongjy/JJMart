@@ -101,7 +101,7 @@
       "unit": "200g",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
       "discountedPrice": "20",
-      "visibility": false,
+      "visibility": true,
       "id": 1
     },
     {
@@ -273,21 +273,43 @@
       "id": 1
     },
     {
-      "orderDate": "2022-07-28T03:38:50.204Z",
-      "totalPrice": 78,
+      "orderDate": "2022-07-28T01:40:00.387Z",
+      "totalPrice": 42,
       "products": [
         {
-          "id": 5,
-          "name": "Fish",
-          "price": 30,
+          "id": 3,
+          "name": "Chocolate",
+          "price": 20,
           "quantity": 3,
-          "image": "https://images.unsplash.com/photo-1498654200943-1088dd4438ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Meat",
-          "unit": "piece",
+          "image": "https://images.unsplash.com/photo-1565071559227-20ab25b7685e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Dairy",
+          "unit": "packet",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 22,
+          "discountedPrice": 10,
           "visibility": true
         },
+        {
+          "id": 8,
+          "name": "Raspberry Popsicle",
+          "price": 30,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=587&q=80",
+          "category": "Dairy",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 12,
+          "visibility": true
+        }
+      ],
+      "name": "naruto",
+      "address": "naruto",
+      "status": "Pending",
+      "id": 2
+    },
+    {
+      "orderDate": "2022-07-28T04:07:36.213Z",
+      "totalPrice": 72,
+      "products": [
         {
           "name": "Chicken",
           "category": "Meat",
@@ -299,114 +321,24 @@
           "discountedPrice": "12",
           "visibility": true,
           "id": 2
-        }
-      ],
-      "name": "wef",
-      "address": "wef",
-      "status": "Approved",
-      "id": 2
-    },
-    {
-      "orderDate": "2022-07-28T03:39:18.167Z",
-      "totalPrice": 27,
-      "products": [
-        {
-          "id": 7,
-          "name": "Mushroom",
-          "price": 30,
-          "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1552825897-bb5efa86eab1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Vegetables & Fruits",
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 12,
-          "visibility": true
         },
         {
-          "name": "Shovel",
-          "category": "Home & Gardening",
-          "image": "assets/shovel.jpg",
-          "price": "15",
-          "quantity": 1,
-          "unit": "piece",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo",
+          "name": "Indo Mee Goreng",
+          "category": "Noodles",
+          "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "price": 30,
+          "quantity": 2,
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
           "discountedPrice": 0,
           "visibility": true,
-          "id": 13
+          "id": 4
         }
       ],
-      "name": "wef",
-      "address": "wef",
-      "status": "Approved",
+      "name": "naruto",
+      "address": "naruto",
+      "status": "Pending",
       "id": 3
-    },
-    {
-      "orderDate": "2022-07-28T03:39:37.104Z",
-      "totalPrice": 42,
-      "products": [
-        {
-          "id": 7,
-          "name": "Mushroom",
-          "price": 30,
-          "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1552825897-bb5efa86eab1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Vegetables & Fruits",
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 12,
-          "visibility": true
-        },
-        {
-          "name": "Indo Mee Goreng",
-          "category": "Noodles",
-          "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "price": 30,
-          "quantity": 1,
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 0,
-          "visibility": true,
-          "id": 4
-        }
-      ],
-      "name": "wef",
-      "address": "wef",
-      "status": "Approved",
-      "id": 4
-    },
-    {
-      "orderDate": "2022-07-28T03:39:52.536Z",
-      "totalPrice": 52,
-      "products": [
-        {
-          "name": "Indo Mee Goreng",
-          "category": "Noodles",
-          "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "price": 30,
-          "quantity": 1,
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 0,
-          "visibility": true,
-          "id": 4
-        },
-        {
-          "id": 5,
-          "name": "Fish",
-          "price": 30,
-          "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1498654200943-1088dd4438ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Meat",
-          "unit": "piece",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 22,
-          "visibility": true
-        }
-      ],
-      "name": "wef",
-      "address": "wef",
-      "status": "Approved",
-      "id": 5
     }
   ],
   "banners": [
@@ -553,13 +485,13 @@
     {
       "page": "Log in",
       "title": "Login Image",
-      "image": "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp",
+      "image": "assets/login.jpg",
       "id": 8
     },
     {
       "page": "Register",
       "title": "Register Image",
-      "image": "https://images.unsplash.com/photo-1553075712-453f7213c24f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
+      "image": "assets/register.jpg",
       "id": 9
     },
     {
@@ -575,33 +507,7 @@
       "id": 11
     }
   ],
-  "carts": [
-    {
-      "username": "wx",
-      "products": [],
-      "id": 1
-    },
-    {
-      "username": "jj",
-      "products": [],
-      "id": 2
-    },
-    {
-      "username": "jessica",
-      "products": [],
-      "id": 3
-    },
-    {
-      "username": "naruto",
-      "products": [],
-      "id": 4
-    },
-    {
-      "username": "wef",
-      "products": [],
-      "id": 5
-    }
-  ],
+  "carts": [],
   "contactus": [
     {
       "address": " 48, Jalan PJS 11/7, Bandar Sunway, 46150 Petaling Jaya, Selangor",
@@ -614,12 +520,12 @@
   ],
   "aboutus": [
     {
-      "aboutUsInfo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore",
+      "aboutUsInfo": "Welcome to JJ Mart, your number one source for all your grocery needs. We're dedicated to giving you the very best of our products, with a focus on dependability, customer service and uniqueness. Founded in 2022 by JY and JL, JJ Mart has come a long way. We now serve customers all over Malaysia, and are thrilled to be a part of the ecommerce industry.",
       "aboutUsImage1": "assets/Benefit-1.png",
       "aboutUsImage2": "assets/Benefit-2.png",
       "aboutUsImage3": "assets/Benefit-6.png",
       "imageTitle1": "Easy Account Access",
-      "imageTitle2": "Exclusive promotions & personalized coupons",
+      "imageTitle2": "Exclusive promotions",
       "imageTitle3": "Birthday Rewards",
       "imageSubtitle1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore",
       "imageSubtitle2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam dolorum tempore",

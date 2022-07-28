@@ -27,9 +27,6 @@ export class RegisterComponent implements OnInit {
   password!: string;
   repassword!: string;
 
-  public encryptInfo!: string;
-  public decryptedInfo!: string;
-  
   constructor(private userService: UserService, private _snackBar: MatSnackBar, private imageService: ImageService, private cartService: CartService) { }
 
   ngOnInit(): void {

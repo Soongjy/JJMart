@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container px-5 py-5">
   <table class="table">
     <thead>
       <tr class="text-center">
@@ -12,7 +12,7 @@
       <tr *ngFor="let cartItem of cartData">
         <td scope="row">
           <div class="row d-flex align-items-center">
-            <div class="col-sm-12 col-md-5">
+            <div class="col-sm-12 col-md-5 cartImage">
               <img
                 src="{{ cartItem.image }}"
                 alt="pic"
@@ -28,29 +28,6 @@
         </td>
         <td class="align-middle" id="quantity">
           <app-cart-quantity [cartItem]="cartItem"></app-cart-quantity>
-          <!-- <div class="input-group">
-            <button
-              class="btn btn-outline-secondary"
-              id="add"
-              type="button"
-              (click)="addFunction(cartItem)"
-            >
-              +
-            </button>
-            <input
-              type="text"
-              class="form-control text-center"
-              placeholder="{{cartItem.quantity}}"
-            />
-            <button
-              class="btn btn-outline-secondary"
-              id="minus"
-              type="button"
-              (click)="minusFunction(cartItem)"
-            >
-              -
-            </button>
-          </div> -->
         </td>
         <td class="text-center align-middle" id="total">RM{{(cartItem.discountedPrice!=0 ? cartItem.discountedPrice: cartItem.price) * cartItem.quantity}}</td>
         <td class="text-center align-middle">

@@ -38,3 +38,18 @@ color: white;
   color: white;
   font-size: 50px;
 }
+
+@media screen and (max-width: 900px) {
+  .material-icons{
+   font-size: xx-large !important;
+   margin-left: -5px;
+   margin-top: -5px;
+
+  }
+  .iconcontainer{
+    height: 50px;
+    width: 50px;
+  }
+}
+
+
