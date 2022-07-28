@@ -19,24 +19,29 @@ import {map, startWith} from 'rxjs/operators';
 export class ManageOrderComponent implements OnInit {
 
   orders: Order[] = [];
-  displayedColumns: string[] = ['id','name','orderdate','address','totalPrice','actions'];
+  displayedColumns: string[] = ['id','name','orderdate','address','totalPrice','status','actions'];
   dataSource = new MatTableDataSource<Order>();
 
   name!: string;
   searchTerm!:any;
-  editName!: string;
+  orderDate!: Date;
   orderid!: number;
   selectedOrder?: number;
-  grandTotal!: number;
-  cartData: Product[] = [];
+
+
   address!: string;
-  status!: string;
+  status!: string; 
+  products!: Product[]; 
+  totalAmount!: number;
 
   myControl = new FormControl<string | Order>('');
   options: Order[] = [];
   filteredOptions!: Observable<Order[]>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+
+  
   
 
 
@@ -93,27 +98,53 @@ export class ManageOrderComponent implements OnInit {
 
   }
 
-  editOrder(event: any) {
+  order(event: any) {
     this.orderid = event.target.dataset.sectionvalue;
     this.orderService.getOrder(this.orderid).subscribe((order) => {
-      this.editName = order.name;
+      this.name = order.name;
+      this.orderDate = order.orderDate;
+      this.address= order.address;
+      this.totalAmount = order.totalPrice;
+      this.status = order.status;
+      this.products = order.products
     });
   }
 
-  updateOrderChanges() {
-    const updateOrder = {
-      orderDate: new Date(),
-      totalPrice: this.grandTotal,
-      products: this.cartData,
+  ApproveOrder() {
+    const ApproveOrder = {
+      orderDate: this.orderDate,
+      totalPrice: this.totalAmount,
+      products: this.products,
       name: this.name,
       address: this.address,
-      status: this.status,
+      status: "Approved",
       id: this.orderid,
     };
 
-    this.orderService.updateOrder(updateOrder).subscribe(() => {
+    this.orderService.updateOrder(ApproveOrder).subscribe(() => {
       setTimeout(() => {
-        this._snackBar.open( updateOrder.name + ' updated!', 'Close', {
+        this._snackBar.open("OrderID "+ ApproveOrder.id + ' Approved!', 'Close', {
+          duration: 2000,
+        });
+        this.ngOnInit();
+      }, 100);
+    });
+  }
+
+  rejectOrder() {
+    const ApproveOrder = {
+      orderDate: this.orderDate,
+      totalPrice: this.totalAmount,
+      products: this.products,
+      name: this.name,
+      address: this.address,
+      status: "Rejected",
+      id: this.orderid,
+    };
+
+    this.orderService.updateOrder(ApproveOrder).subscribe(() => {
+      setTimeout(() => {
+        this._snackBar.open("OrderID"+ ApproveOrder.id + ' Rejected!', 'Close', {
           duration: 2000,
         });
         this.ngOnInit();
