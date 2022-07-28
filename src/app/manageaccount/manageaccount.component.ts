@@ -26,6 +26,7 @@ export class ManageaccountComponent implements OnInit {
   id!:number;
   oldpassword!:string;
   privilege!:string;
+  
   constructor(private userService: UserService, private _snackBar: MatSnackBar,private imageService:ImageService) { }
 
   ngOnInit(): void {
@@ -38,7 +39,7 @@ export class ManageaccountComponent implements OnInit {
     this.phonenum = userdetails.phonenum;
     this.address = userdetails.address;
     this.id = userdetails.id;
-    this.oldpassword = this.decryptPassword(userdetails.oldpassword);
+    this.oldpassword = this.decryptPassword(userdetails.password);
     this.privilege = userdetails.privilege;
 
     this.images= [

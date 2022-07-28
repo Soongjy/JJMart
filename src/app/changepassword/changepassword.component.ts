@@ -4,6 +4,7 @@ import { UserService } from '../services/user.service';
 import { User } from '../Users';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-changepassword',
@@ -26,7 +27,7 @@ export class ChangepasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe((users)=> (this.users = users))
-    const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
+    const userdetails = JSON.parse(sessionStorage.getItem('userdetails')||"[]");
     for (let x in userdetails) {
       if(x == "id"){
         this.id = userdetails[x];
@@ -39,7 +40,7 @@ export class ChangepasswordComponent implements OnInit {
   }
 
   onChangePassword(){
-    const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
+    const userdetails = JSON.parse(sessionStorage.getItem('userdetails')||"[]");
     if(!this.oldpassword){
       this._snackBar.open("Please fill in your old password", "Close", {
         duration: 2000
@@ -56,7 +57,7 @@ export class ChangepasswordComponent implements OnInit {
       this._snackBar.open("Please repeat your new password", "Close", {
         duration: 2000
       });
-    }else if(userdetails.password !== this.oldpassword){
+    }else if(this.decryptPassword(userdetails.password) !== this.oldpassword){
       this._snackBar.open("Wrong Password", "Close", {
         duration: 2000
       });
@@ -81,9 +82,10 @@ export class ChangepasswordComponent implements OnInit {
         return;
       }else{
       const userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
-      userdetails.password = this.password
+      userdetails.password = encodeURIComponent(CryptoJS.AES.encrypt(JSON.stringify(this.password), 'secret key 123').toString()),
       this.userService.updateUser(userdetails).subscribe();
       localStorage.setItem('userdetails',JSON.stringify(userdetails));
+      sessionStorage.setItem('userdetails',JSON.stringify(userdetails));
         
       this._snackBar.open("Password Changed Successfully", "Close", {
         duration: 2000
@@ -99,6 +101,12 @@ export class ChangepasswordComponent implements OnInit {
       }, 1000);
       }
     }
+  }
+  
+  decryptPassword(password:string){
+    var deData= CryptoJS.AES.decrypt(decodeURIComponent(password), 'secret key 123'); 
+    var decryptedPassword= JSON.parse(deData.toString(CryptoJS.enc.Utf8));
+    return decryptedPassword;
   }
 }
 
