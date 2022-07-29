@@ -4,6 +4,7 @@ import { Admin } from '../../Admin';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource} from '@angular/material/table';
+import * as CryptoJS from 'crypto-js';
 
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
@@ -41,6 +42,7 @@ export class ManageAdminComponent implements OnInit {
   updatepassword: any;
   updaterepassword: any;
   updateprivilege: any;
+  checkpassword!: string;
 
   searchTerm!:any;
   myControl = new FormControl<string | Admin>('');
@@ -141,7 +143,7 @@ export class ManageAdminComponent implements OnInit {
           name: this.name,
           username :this.adminname,
           email: this.email,
-          password: this.password,
+          password: encodeURIComponent(CryptoJS.AES.encrypt(JSON.stringify(this.password), 'secret key 456').toString()),
           privilege: this.privilege,
           phonenum: this.phonenum,
           address: this.address
@@ -189,7 +191,8 @@ export class ManageAdminComponent implements OnInit {
       this.updatename = admin.name;
       this.updateadminname = admin.username;
       this.updateemail = admin.email;
-      this.updatepassword = admin.password;
+      this.updatepassword = this.decryptPassword(admin.password);
+      this.checkpassword = this.decryptPassword(admin.password);
       this.updateaddress = admin.address;
       this.updatephonenum = admin.phonenum;
       this.updateprivilege = admin.privilege;
@@ -219,6 +222,10 @@ export class ManageAdminComponent implements OnInit {
       });
     }else if(!this.updatepassword){
       this._snackBar.open("Please fill in your Password", "Close", {
+        duration: 2000
+      });
+    }else if(!this.updatepassword&&this.updatepassword!=this.password){
+      this._snackBar.open("Incorrect Password", "Close", {
         duration: 2000
       });
     }else if(this.updaterepassword&&this.updatepassword !== this.updaterepassword){
@@ -256,7 +263,7 @@ export class ManageAdminComponent implements OnInit {
           name: this.updatename,
           username :this.updateadminname,
           email: this.updateemail,
-          password: this.updatepassword,
+          password: encodeURIComponent(CryptoJS.AES.encrypt(JSON.stringify(this.updatepassword), 'secret key 456').toString()),
           privilege: this.updateprivilege,
           phonenum: this.updatephonenum,
           address: this.updateaddress,
@@ -282,6 +289,28 @@ export class ManageAdminComponent implements OnInit {
     }
   }
 
+  resetPassword(){
+    if (!confirm('Do you want to reset admin id '+ this.adminId +' password?')) {
+      return;
+    } else {
+      const updateAdmin = {
+        name: this.updatename,
+        username :this.updateadminname,
+        email: this.updateemail,
+        password: encodeURIComponent(CryptoJS.AES.encrypt(JSON.stringify('123456'), 'secret key 456').toString()),
+        privilege: this.updateprivilege,
+        phonenum: this.updatephonenum,
+        address: this.updateaddress,
+        id:this.adminId,
+      };
+
+      this.adminService.updateAdmin(updateAdmin).subscribe((admin: Admin)=>(this.admins.push(admin)));
+      this._snackBar.open(this.adminId +" Password had reset to 123456", "Close", {
+        duration: 2000
+      });
+    }
+  }
+
   search(){
     if(this.searchTerm){
       this.adminService.getAdmins().subscribe((admins) => {
@@ -290,15 +319,24 @@ export class ManageAdminComponent implements OnInit {
           ||admins.id==this.searchTerm
           )
         )
+        this.dataSource = new MatTableDataSource<Admin>(this.admins);
+        this.dataSource.paginator = this.paginator;
       });
     }else{
       this.adminService.getAdmins().subscribe((admins) => {
         this.admins = admins;
+        this.dataSource = new MatTableDataSource<Admin>(this.admins);
+        this.dataSource.paginator = this.paginator;
       });
     }
-    this.dataSource = new MatTableDataSource<Admin>(this.admins);
-    this.dataSource.paginator = this.paginator;
   } 
+
+  decryptPassword(password:string){
+    var deData= CryptoJS.AES.decrypt(decodeURIComponent(password), 'secret key 456'); 
+    var decryptedPassword= JSON.parse(deData.toString(CryptoJS.enc.Utf8));
+    return decryptedPassword;
+  }
 }
+
 
 

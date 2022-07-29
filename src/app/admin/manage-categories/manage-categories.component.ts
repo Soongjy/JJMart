@@ -183,13 +183,15 @@ export class ManageCategoriesComponent implements OnInit {
           (categories.name.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
           ||categories.id==this.searchTerm)
         )
+        this.dataSource = new MatTableDataSource<Category>(this.categories);
+        this.dataSource.paginator = this.paginator;
       });
     }else{
       this.categoryService.getCategories().subscribe((categories) => {
         this.categories = categories;
+        this.dataSource = new MatTableDataSource<Category>(this.categories);
+        this.dataSource.paginator = this.paginator;
       });
     }
-    this.dataSource = new MatTableDataSource<Category>(this.categories);
-    this.dataSource.paginator = this.paginator;
   }  
 }

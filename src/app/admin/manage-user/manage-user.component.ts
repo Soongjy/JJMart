@@ -312,14 +312,16 @@ export class ManageUserComponent implements OnInit {
           (users.name.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
           ||users.id==this.searchTerm)
         )
+        this.dataSource = new MatTableDataSource<User>(this.users);
+        this.dataSource.paginator = this.paginator;
       });
     }else{
       this.userService.getUsers().subscribe((users) => {
         this.users = users;
+        this.dataSource = new MatTableDataSource<User>(this.users);
+        this.dataSource.paginator = this.paginator;
       });
     }
-    this.dataSource = new MatTableDataSource<User>(this.users);
-    this.dataSource.paginator = this.paginator;
   }  
 }
 

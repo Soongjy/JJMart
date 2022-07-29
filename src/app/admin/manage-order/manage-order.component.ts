@@ -152,9 +152,7 @@ export class ManageOrderComponent implements OnInit {
     });
   }
 
-  search(){
-    console.log(this.searchTerm)
-    
+  search(){    
     if(this.searchTerm){
       this.orderService.getOrders().subscribe((orders) => {
         this.orders = orders.filter( orders =>
@@ -162,14 +160,46 @@ export class ManageOrderComponent implements OnInit {
           ||orders.address.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
           ||orders.id==this.searchTerm)
         )
+        this.dataSource = new MatTableDataSource<Order>(this.orders);
+        this.dataSource.paginator = this.paginator;
       });
     }else{
       this.orderService.getOrders().subscribe((orders) => {
         this.orders = orders;
+        this.dataSource = new MatTableDataSource<Order>(this.orders);
+        this.dataSource.paginator = this.paginator;
       });
     }
-    this.dataSource = new MatTableDataSource<Order>(this.orders);
-    this.dataSource.paginator = this.paginator;
-  }  
+  }
+
+  orderRejected(){
+    this.orderService.getOrders().subscribe((orders) => {
+      this.orders = orders.filter(orders =>
+        (orders.status=="Rejected")
+      )
+      this.dataSource = new MatTableDataSource<Order>(this.orders);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
+
+  orderPending(){
+    this.orderService.getOrders().subscribe((orders) => {
+      this.orders = orders.filter(orders =>
+        (orders.status=="Pending")
+      )
+      this.dataSource = new MatTableDataSource<Order>(this.orders);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
+
+  orderApproved(){
+    this.orderService.getOrders().subscribe((orders) => {
+      this.orders = orders.filter(orders =>
+        (orders.status=="Approved")
+      )
+      this.dataSource = new MatTableDataSource<Order>(this.orders);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
 }
 

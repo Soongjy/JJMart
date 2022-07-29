@@ -283,7 +283,7 @@
       ],
       "name": "naruto",
       "address": "naruto",
-      "status": "Approved",
+      "status": "Rejected",
       "id": 2
     },
     {
@@ -392,8 +392,8 @@
       "name": "12",
       "username": "12",
       "email": "12",
-      "password": "12",
-      "privilege": "12",
+      "password": "U2FsdGVkX1%2BF3OvmMh%2B6Jz46OPx19xokVZ6SpOM4C4k%3D",
+      "privilege": "",
       "phonenum": "12",
       "address": "12",
       "id": 1
@@ -402,20 +402,20 @@
       "name": "123",
       "username": "123",
       "email": "123",
-      "password": "123",
-      "privilege": "Normal Admin",
+      "password": "U2FsdGVkX1%2BG4LGSgkVB278GupWp8FuMd9rDt91sRMM%3D",
+      "privilege": "",
       "phonenum": "123",
       "address": "123",
       "id": 2
     },
     {
       "name": "wef",
-      "username": "wer",
-      "email": "wer",
-      "password": "wer",
-      "privilege": "Normal Admin",
-      "phonenum": "wer",
-      "address": "wer",
+      "username": "wef",
+      "email": "wef",
+      "password": "U2FsdGVkX1%2BNc4z3YLoaex150M4fW2bpXz4a78TDfrI%3D",
+      "privilege": "",
+      "phonenum": "wef",
+      "address": "wef",
       "id": 3
     }
   ],

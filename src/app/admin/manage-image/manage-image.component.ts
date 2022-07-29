@@ -229,13 +229,15 @@ export class ManageImageComponent implements OnInit {
           (images.page.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
           ||images.id==this.searchTerm)
           )
+        this.dataSource = new MatTableDataSource<Image>(this.images);
+        this.dataSource.paginator = this.paginator;
       });
     }else{
       this.imageService.getImages().subscribe((images) => {
         this.images = images;
+        this.dataSource = new MatTableDataSource<Image>(this.images);
+        this.dataSource.paginator = this.paginator;
       });
     }
-    this.dataSource = new MatTableDataSource<Image>(this.images);
-    this.dataSource.paginator = this.paginator;
   }  
 }

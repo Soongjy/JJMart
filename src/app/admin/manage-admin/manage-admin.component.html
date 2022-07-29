@@ -267,8 +267,8 @@
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="mb-3">
-                        <label for="confirmpassword" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="updateconfirmpassword" placeholder="******" [(ngModel)]="updaterepassword" [ngModelOptions]="{standalone: true}">
+                        <label for="confirmpassword" class="form-label">Only for Change Password</label>
+                        <input type="password" class="form-control" id="updateconfirmpassword" placeholder="Change Password" [(ngModel)]="updaterepassword" [ngModelOptions]="{standalone: true}">
                     </div>
                 </div>
             </div>
@@ -280,6 +280,14 @@
                 data-bs-dismiss="modal"
                 >
                 Close
+                </button>
+                <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+                (click)="resetPassword()"
+                >
+                Reset Password
                 </button>
                 <button
                 type="submit"

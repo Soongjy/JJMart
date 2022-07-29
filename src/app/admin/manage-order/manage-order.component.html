@@ -3,23 +3,22 @@
       <div class="col">
         <h1 class="d-inline manage-title">Manage Order</h1>
         <button
-        type="button"
         class="btn btn-danger btn-sm d-inline mx-3 mb-2"
-        (click)="search()"
+        (click)="orderRejected();"
         >
             Order Rejected
         </button>
         <button
         type="button"
         class="btn btn-warning btn-sm d-inline mx-3 mb-2"
-        (click)="search()"
+        (click)="orderPending()"
         >
             Order Pending
         </button>
         <button
         type="button"
         class="btn btn-success btn-sm d-inline mx-3 mb-2"
-        (click)="search()"
+        (click)="orderApproved()"
         >
             Order Approved
         </button>
@@ -176,23 +175,34 @@
                         <h2 class="h2 m-1">Customer's Details</h2>
 
                         <div class="container">
-                            <h3 class="h4 mt-2 mb-0">Order Id :</h3>
-                            <p class="mb-1 mx-2">{{orderid}}</p>
+                          <tr>
+                            <td><h3 class="h4 mt-2 mb-0">Order Id</h3></td>
+                            <td>&nbsp;:</td>
+                            <td><p class="mb-1 mx-2">{{orderid}}</td>
+                          </tr>
+                          <tr>
+                            <td><h3 class="h4 mt-2 mb-0">Date</h3></td>
+                            <td>&nbsp;:</td>
+                            <td><p class="mb-1 mx-2">{{orderDate | date:'dd-MM-yyyy'}}</td>
+                          </tr>
 
-                            <h3 class="h4 mt-2 mb-0">Order Date :</h3>
-                            <p class="mb-1 mx-2">{{orderDate | date:'dd-MM-yyyy'}}</p>
-
-                            <h3 class="h4 mt-2 mb-0">Name :</h3>
-                            <p class="mb-1 mx-2">{{name}}</p>
-
-                            <h3 class="h4 mt-2 mb-0">Address :</h3>
-                            <address class="mb-1 mx-2 ">{{address}}</address>
-
-                            <h3 class="h4 mt-2 mb-0">Status :</h3>
-                            <address class="mb-1 mx-2 ">{{status}}</address>
-
- 
-                            
+                          <tr>
+                            <td><h3 class="h4 mt-2 mb-0">Name</h3></td>
+                            <td>&nbsp;:</td>
+                            <td><p class="mb-1 mx-2">{{name}}</td>
+                          </tr>
+                          
+                          <tr>
+                            <td><h3 class="h4 mt-2 mb-0">Address</h3></td>
+                            <td>&nbsp;:</td>
+                            <td><p class="mb-1 mx-2">{{address}}</td>
+                          </tr>
+                          
+                          <tr>
+                            <td><h3 class="h4 mt-2 mb-0">Status</h3></td>
+                            <td>&nbsp;:</td>
+                            <td><p class="mb-1 mx-2">{{status}}</td>
+                          </tr>
                         </div>
                     </div>
                     <div class="col mb-3 d-flex flex-column">

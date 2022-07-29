@@ -266,7 +266,6 @@ export class ManageProductComponent implements OnInit {
   }
 
   search(){
-    console.log(this.searchTerm)
     if(this.searchTerm){
       this.productService.getProducts().subscribe((products) => {
         this.products = products.filter( products =>
@@ -274,15 +273,16 @@ export class ManageProductComponent implements OnInit {
           ||products.id==this.searchTerm
           ||products.category?.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase()))
         )
+        this.dataSource = new MatTableDataSource<Product>(this.products);
+        this.dataSource.paginator = this.paginator;
       });
-      console.log(this.products)
     }else{
       this.productService.getProducts().subscribe((products) => {
         this.products = products;
+        this.dataSource = new MatTableDataSource<Product>(this.products);
+        this.dataSource.paginator = this.paginator;
       });
-      console.log("search null")
     }
-    this.dataSource = new MatTableDataSource<Product>(this.products);
-    this.dataSource.paginator = this.paginator;
+
   }  
 }

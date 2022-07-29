@@ -4,6 +4,7 @@ import { AdminService } from '../services/admin.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ImageService } from '../services/image.service';
 import { Image } from '../Image';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-admin-login',
@@ -57,7 +58,7 @@ export class AdminLoginComponent implements OnInit {
         if(this.emailusername === admin.username||this.emailusername === admin.email){
           found = 1; 
         }
-        if(this.emailusername === admin.username&&this.password === admin.password || this.emailusername === admin.email &&this.password === admin.password){
+        if(this.emailusername === admin.username&&this.password === this.decryptPassword(admin.password) || this.emailusername === admin.email &&this.password === this.decryptPassword(admin.password)){
             var userid = admin.id;
             var userName = admin.name;
             var useremail = admin.email;
@@ -91,5 +92,11 @@ export class AdminLoginComponent implements OnInit {
         }, 500);
       }
     }
+  }
+
+  decryptPassword(password:string){
+    var deData= CryptoJS.AES.decrypt(decodeURIComponent(password), 'secret key 456'); 
+    var decryptedPassword= JSON.parse(deData.toString(CryptoJS.enc.Utf8));
+    return decryptedPassword;
   }
 }
