@@ -236,13 +236,11 @@
                       </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <div class="mb-3">
-                        <label for="privilege" class="form-label">Privilege</label>
-                        <select type="text" class="form-control" id="updateprivilege" placeholder="0" [(ngModel)]="updateprivilege" [ngModelOptions]="{standalone: true}">
-                            <option>Normal User</option>
-                        </select>
-                    </div>
-                </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="updateemail" placeholder="xxx@xx.com" [(ngModel)]="updateemail" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div> 
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-6">
@@ -252,25 +250,13 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="updatepassword" placeholder="******" [(ngModel)]="updatepassword" [ngModelOptions]="{standalone: true}">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="updateemail" placeholder="xxx@xx.com" [(ngModel)]="updateemail" [ngModelOptions]="{standalone: true}">
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="mb-3">
-                        <label for="confirmpassword" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="updateconfirmpassword" placeholder="******" [(ngModel)]="updaterepassword" [ngModelOptions]="{standalone: true}">
-                    </div>
-                </div>
+                  <div class="mb-3">
+                      <label for="privilege" class="form-label">Privilege</label>
+                      <select type="text" class="form-control" id="updateprivilege" placeholder="0" [(ngModel)]="updateprivilege" [ngModelOptions]="{standalone: true}">
+                          <option>Normal User</option>
+                      </select>
+                  </div>
+              </div>
             </div>
             </div>
             <div class="modal-footer">
@@ -280,6 +266,14 @@
                 data-bs-dismiss="modal"
                 >
                 Close
+                </button>
+                <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+                (click)="resetPassword()"
+                >
+                Reset Password
                 </button>
                 <button
                 type="submit"

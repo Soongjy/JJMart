@@ -4,6 +4,7 @@ import { User } from '../../Users';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource} from '@angular/material/table';
+import * as CryptoJS from 'crypto-js';
 
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
@@ -217,16 +218,16 @@ export class ManageUserComponent implements OnInit {
       this._snackBar.open("Please fill in your Address", "Close", {
         duration: 2000
       });
-    }else if(!this.updatepassword){
-      this._snackBar.open("Please fill in your Password", "Close", {
-        duration: 2000
-      });
-    }else if(this.updaterepassword&&this.updatepassword !== this.updaterepassword){
-      this._snackBar.open("Password and Repeat password is not the same", "Close", {
-        duration: 2000
-      });
-      this.updatepassword = '';
-      this.updaterepassword = '';
+    //}else if(!this.updatepassword){
+    //  this._snackBar.open("Please fill in your Password", "Close", {
+    //    duration: 2000
+    //  });
+    //}else if(this.updaterepassword&&this.updatepassword !== this.updaterepassword){
+    //  this._snackBar.open("Password and Repeat password is not the same", "Close", {
+    //    duration: 2000
+    //  });
+    //  this.updatepassword = '';
+    //  this.updaterepassword = '';
     //}else if (this.users.find(x => x.username === this.users)) {
     }else{
       var ok = true;
@@ -279,6 +280,28 @@ export class ManageUserComponent implements OnInit {
         });
         this.ngOnInit();
       }
+    }
+  }
+
+  resetPassword(){
+    if (!confirm('Do you want to reset user id '+ this.userId +' password?')) {
+      return;
+    } else {
+      const updateUser = {
+        name: this.updatename,
+        username :this.updateusername,
+        email: this.updateemail,
+        password: encodeURIComponent(CryptoJS.AES.encrypt(JSON.stringify('123456'), 'secret key 123').toString()),
+        privilege: this.updateprivilege,
+        phonenum: this.updatephonenum,
+        address: this.updateaddress,
+        id:this.userId,
+      };
+
+      this.userService.updateUser(updateUser).subscribe((user: User)=>(this.users.push(user)));
+      this._snackBar.open(this.userId +" Password had reset to 123456", "Close", {
+        duration: 2000
+      });
     }
   }
 

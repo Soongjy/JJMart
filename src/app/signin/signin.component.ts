@@ -84,8 +84,10 @@ export class SigninComponent implements OnInit {
   }
 
   decryptPassword(password:string){
-    var deData= CryptoJS.AES.decrypt(decodeURIComponent(password), 'secret key 123'); 
+    var deData= CryptoJS.AES.decrypt(decodeURIComponent(password), 'secret key 123');
+    console.log(deData) 
     var decryptedPassword= JSON.parse(deData.toString(CryptoJS.enc.Utf8));
+    console.log(decryptedPassword) 
     return decryptedPassword;
   }
   
