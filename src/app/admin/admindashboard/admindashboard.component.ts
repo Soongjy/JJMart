@@ -58,12 +58,11 @@ export class AdmindashboardComponent implements OnInit {
   getTodaysRevenue(){
     this.todaysRevenue = 0;
     var today =new Date();
-    console.log(today.toLocaleDateString())
     this.orderService.getOrders().subscribe(
       (orders)=>{
         for(let i=0; i<orders.length; i++){
-          console.log(orders[i].orderDate)
-          if(orders[i].orderDate== today){
+          var date:Date = new Date(orders[i].orderDate)
+          if(date.toLocaleDateString()== today.toLocaleDateString()){
             this.todaysRevenue +=orders[i].totalPrice
           }
         }
