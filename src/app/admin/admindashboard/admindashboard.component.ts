@@ -23,11 +23,11 @@ export class AdmindashboardComponent implements OnInit {
   totalRevenue!:number;
   todaysRevenue!:number;
 
+
   constructor(private orderService: OrderService, private productService: ProductService, private userService:UserService,
     private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-
     this.getTotalPendingOrder();
     this.getTotalProducts();
     this.getTotalCategories();
@@ -57,7 +57,18 @@ export class AdmindashboardComponent implements OnInit {
 
   getTodaysRevenue(){
     this.todaysRevenue = 0;
-    
+    var today =new Date();
+    console.log(today.toLocaleDateString())
+    this.orderService.getOrders().subscribe(
+      (orders)=>{
+        for(let i=0; i<orders.length; i++){
+          console.log(orders[i].orderDate)
+          if(orders[i].orderDate== today){
+            this.todaysRevenue +=orders[i].totalPrice
+          }
+        }
+      }
+    );
   }
 
 
@@ -85,5 +96,6 @@ export class AdmindashboardComponent implements OnInit {
       }
     );
   }
+
 
 }
