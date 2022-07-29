@@ -20,3 +20,18 @@ table{
 .manage-title{
     font-size: calc(.5 * (3.8vh + 1.1vw));
 }
+
+
+@media only screen and (max-width: 780px){
+
+ 
+   img{
+     width: 150px;
+     height: 70px;
+   }
+ 
+   .mat-cell{
+     font-size: 10px;
+   }
+ 
+ }
