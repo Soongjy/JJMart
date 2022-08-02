@@ -29,4 +29,16 @@ export class AdminpanelComponent implements OnInit {
     document.getElementById("collapsePagesheader")!.classList.toggle('collapsed');
     document.getElementById("collapsePages")!.classList.toggle('show');
   }
+
+  toggleProducts(){
+    document.getElementById("collapseProductsheader")!.classList.toggle('collapsed');
+    document.getElementById("collapseProducts")!.classList.toggle('show');
+  }
+
+  toggleAccounts(){
+    document.getElementById("collapseAccountsheader")!.classList.toggle('collapsed');
+    document.getElementById("collapseAccounts")!.classList.toggle('show');
+  }
 }
+
+

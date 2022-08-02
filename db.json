@@ -533,7 +533,7 @@
     {
       "page": "Log in",
       "title": "Login Image",
-      "image": "assets/login.jpg",
+      "image": "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp",
       "id": 8
     },
     {

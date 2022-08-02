@@ -18,78 +18,99 @@
     </li>
 
     <!-- Divider -->
-    <!-- <hr class="sidebar-divider"> -->
-
-    <!-- Heading -->
-    <!-- <div class="sidebar-heading">
-        Interface
-    </div> -->
-
-    <!-- Nav Item - Pages Collapse Menu
-    <li class="nav-item">
-        <div id="collapseComponentsheader" class="nav-link collapsed" style="cursor: pointer;" (click)="toggleComponents()" data-toggle="collapse" >
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Components</span>
-        </div>
-        <div id="collapseComponents" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="cards.html">Cards</a>
-            </div>
-        </div>
-    </li> -->
-
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <!-- <li class="nav-item">
-        <div id="collapseUtilitiesheader" class="nav-link collapsed" style="cursor: pointer;" (click)="toggleUtilities()" data-toggle="collapse" >
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
-        </div>
-        <div id="collapseUtilities" class="collapse">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
-            </div>
-        </div>
-    </li> -->
-
-    <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Manage Sunway Mart
-    </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <!-- <li class="nav-item">
-        <div id="collapsePagesheader" class="nav-link collapsed" style="cursor: pointer;" (click)="togglePages()" data-toggle="collapse" >
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
-        </div>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Manage</h6>
-                <a class="collapse-item" routerLink="./manageproduct">Manage Products</a>
-                <a class="collapse-item" routerLink="./manageuser">Manage Users</a>
-                <a class="collapse-item" routerLink="./managecategories">Manage Categories</a>
-                <a class="collapse-item" routerLink="./manage-images">Manage Images</a>
-                <a class="collapse-item" routerLink="./manage-company-profile">Manage Company Profile</a>
-                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            </div>
-        </div>
-    </li> -->
     <li class="nav-item">
-        <a class="nav-link" routerLink="./manageorder">
+        <a class="nav-link py-3" routerLink="./manageorder">
             <i class="fas fa-fw fa-server"></i>
-            <span>Manage Order</span>
+            <span>Manage Orders</span>
         </a>
     </li>
 
+    <li class="nav-item">
+        <div id="collapseProductsheader" class="nav-link collapsed py-3" style="cursor: pointer;" (click)="toggleProducts()" data-toggle="collapse" >
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Manage Products</span>
+        </div>
+        <div id="collapseProducts" class="collapse">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Company Profile:</h6>              
+                    <a class="collapse-item px-0" routerLink="./manageproduct">
+                        <i class="fas fa-fw fa-gift mx-2"></i>
+                        <span>Products</span>
+                    </a>
+                    <a class="collapse-item px-0" routerLink="./managecategories">
+                        <i class="fas fa-fw fa-sitemap mx-2"></i>
+                        <span>Categories</span>
+                    </a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <div id="collapseUtilitiesheader" class="nav-link collapsed py-3" style="cursor: pointer;" (click)="toggleUtilities()" data-toggle="collapse" >
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Manage Interface</span>
+        </div>
+        <div id="collapseUtilities" class="collapse">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Company Profile:</h6>              
+                    <a class="collapse-item px-0" routerLink="./manage-images">
+                        <i class="fas fa-fw fa-file-image mx-2"></i>
+                        <span>Images</span>
+                    </a>                              
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <div id="collapseAccountsheader" class="nav-link collapsed py-3" style="cursor: pointer;" (click)="toggleAccounts()" data-toggle="collapse" >
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Manage Account</span>
+        </div>
+        <div id="collapseAccounts" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Account</h6>
+                <a class="collapse-item px-0" routerLink="./manageuser">
+                    <i class="fas fa-fw fa-users mx-2"></i>
+                    <span>User Account</span>
+                </a>              
+                <a class="collapse-item px-0" routerLink="./manageadmin">
+                    <i class="fas fa-fw fa-user mx-2"></i>
+                    <span>About Us</span>
+                </a>                
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <div id="collapseComponentsheader" class="nav-link collapsed py-3" style="cursor: pointer;" (click)="toggleComponents()" data-toggle="collapse" >
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Company Profile</span>
+        </div>
+        <div id="collapseComponents" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Company Profile</h6>
+                <a class="collapse-item px-0" routerLink="./manage-company-profile">
+                    <i class="fas fa-fw fa-address-book mx-2"></i>
+                    <span>Company Profile</span>
+                </a>              
+                <a class="collapse-item px-0" routerLink="./manage-about-us">
+                    <i class="fas fa-fw fa-id-card mx-2"></i>
+                    <span>About Us</span>
+                </a>                
+                <a class="collapse-item px-0" routerLink="./manage-contact-us">
+                    <i class="fas fa-fw fa-phone mx-2" ></i>
+                    <span>Contact Us</span>
+                </a>
+            </div>
+        </div>
+    </li>
+    
+
+    
+    <!-- 
     <li class="nav-item">
         <a class="nav-link" routerLink="./manageproduct">
             <i class="fas fa-fw fa-gift"></i>
@@ -138,6 +159,33 @@
             <span>Manage Contact Us</span>
         </a>
     </li>
+    <li class="nav-item">
+            <a class="nav-link py-3" routerLink="./manageorder">
+                <i class="fas fa-fw fa-server"></i>
+                <span>Manage Orders</span>
+            </a>
+    </li>
+    -->
+
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- <li class="nav-item">
+        <div id="collapsePagesheader" class="nav-link collapsed" style="cursor: pointer;" (click)="togglePages()" data-toggle="collapse" >
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Pages</span>
+        </div>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Manage</h6>
+                <a class="collapse-item" routerLink="./manageproduct">Manage Products</a>
+                <a class="collapse-item" routerLink="./manageuser">Manage Users</a>
+                <a class="collapse-item" routerLink="./managecategories">Manage Categories</a>
+                <a class="collapse-item" routerLink="./manage-images">Manage Images</a>
+                <a class="collapse-item" routerLink="./manage-company-profile">Manage Company Profile</a>
+                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+            </div>
+        </div>
+    </li> -->
 
     <hr class="sidebar-divider my-0">
 
