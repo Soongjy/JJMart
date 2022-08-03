@@ -8,6 +8,8 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { AdminRoutingModule } from './admin-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule} from 'ng2-charts';
+import { Chart  } from 'chart.js';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ManageProductComponent } from './manage-product/manage-product.component';
@@ -24,6 +26,7 @@ import { ManageAdminComponent } from './manage-admin/manage-admin.component';
 import { ManageAboutUsComponent } from './manage-about-us/manage-about-us.component';
 import { ManageContactUsComponent } from './manage-contact-us/manage-contact-us.component';
 import { ManageOrderComponent } from './manage-order/manage-order.component';
+import { MyLineChartComponent } from './my-line-chart/my-line-chart.component';
 
 
 @NgModule({
@@ -40,6 +43,7 @@ import { ManageOrderComponent } from './manage-order/manage-order.component';
     ManageAboutUsComponent,
     ManageContactUsComponent,
     ManageOrderComponent,
+    MyLineChartComponent,
   ],
   imports: [
     CommonModule,
@@ -52,6 +56,7 @@ import { ManageOrderComponent } from './manage-order/manage-order.component';
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatFormFieldModule,
+    NgChartsModule,
   ],
 })
 export class AdminModule { }

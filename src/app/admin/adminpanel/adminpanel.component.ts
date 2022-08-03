@@ -12,7 +12,7 @@ export class AdminpanelComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
   toggleComponents(){
@@ -39,6 +39,7 @@ export class AdminpanelComponent implements OnInit {
     document.getElementById("collapseAccountsheader")!.classList.toggle('collapsed');
     document.getElementById("collapseAccounts")!.classList.toggle('show');
   }
+
 }
 
 

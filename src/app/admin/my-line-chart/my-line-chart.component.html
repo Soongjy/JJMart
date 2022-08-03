@@ -1,0 +1,34 @@
+
+  <div class="card shadow mb-4">
+     
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">{{year}} Monthly Earnings Overview</h6>
+          <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" (click)="chartdropdowntoggle()" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" id="line-chart-dropdown"
+                aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Action:</div>
+                <a class="dropdown-item" (click)="changeColor()">Change Color</a>
+                <a class="dropdown-item" href="#">Another action</a>
+            </div>
+        </div>
+      </div>
+     
+      <div class="card-body">
+          <div class="chart-area">
+            <div class="flex-item">
+              <div style="display: block;">
+              <canvas baseChart width="100%" height="43%"
+                          [data]="lineChartData"
+                          [options]="lineChartOptions"
+                          [type]="lineChartType"
+                          (chartHover)="chartHovered($event)"
+                          (chartClick)="chartClicked($event)"></canvas>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>

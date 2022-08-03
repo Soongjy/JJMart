@@ -7,7 +7,7 @@ import { OrderService } from 'src/app/services/order.service';
 import { ProductService } from 'src/app/services/product.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/Users';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admindashboard',
@@ -25,7 +25,7 @@ export class AdmindashboardComponent implements OnInit {
 
 
   constructor(private orderService: OrderService, private productService: ProductService, private userService:UserService,
-    private categoryService: CategoryService) { }
+    private categoryService: CategoryService, private router:Router) { }
 
   ngOnInit(): void {
     this.getTotalPendingOrder();
@@ -46,10 +46,15 @@ export class AdmindashboardComponent implements OnInit {
 
   getTotalRevenue(){
     this.totalRevenue = 0;
+    var month =new Date().getMonth();
     this.orderService.getOrders().subscribe(
       (orders)=>{
         for(let i=0; i<orders.length; i++){
+          var date:Date = new Date(orders[i].orderDate)
+          var orderMonth =date.getMonth();
+          if(month === orderMonth){
           this.totalRevenue +=orders[i].totalPrice;
+          }
         }
       }
     );
@@ -95,6 +100,4 @@ export class AdmindashboardComponent implements OnInit {
       }
     );
   }
-
-
 }

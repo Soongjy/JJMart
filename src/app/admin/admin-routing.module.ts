@@ -29,7 +29,7 @@ const routes: Routes = [
             { path: 'manage-company-profile', component: ManageCompanyProfileComponent},
             { path: 'manage-about-us', component: ManageAboutUsComponent},
             { path: 'manage-contact-us', component: ManageContactUsComponent},
-            { path: 'manageorder', component: ManageOrderComponent},
+            { path: 'manageorder/:params', component: ManageOrderComponent},
         ],
         
     }

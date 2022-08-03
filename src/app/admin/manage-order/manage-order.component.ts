@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Order } from 'src/app/Order';
 import { OrderService } from 'src/app/services/order.service';
 import { Product } from 'src/app/Product';
+import { ActivatedRoute } from '@angular/router';
 
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
@@ -47,7 +48,8 @@ export class ManageOrderComponent implements OnInit {
 
   constructor(
     private orderService: OrderService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private route: ActivatedRoute, 
   ) {}
 
   ngOnInit(): void {
@@ -60,6 +62,12 @@ export class ManageOrderComponent implements OnInit {
         return name ? this._filter(name as string) : this.options.slice();
       }),
     );
+
+    this.route.params.subscribe(routeParams => {
+      if(this.route.snapshot.paramMap.get('params') as string == 'Pending'){
+        this.searchTerm = this.route.snapshot.paramMap.get('params') as string;
+      }
+    });
   }
 
   private _filter(name: string): Order[] {
@@ -158,6 +166,7 @@ export class ManageOrderComponent implements OnInit {
         this.orders = orders.filter( orders =>
           (orders.name.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
           ||orders.address.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
+          ||orders.status.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
           ||orders.id==this.searchTerm)
         )
         this.dataSource = new MatTableDataSource<Order>(this.orders);

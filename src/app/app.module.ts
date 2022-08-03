@@ -43,6 +43,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 import { SafePipe } from './safe.pipe';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -71,6 +72,7 @@ import { SafePipe } from './safe.pipe';
     OrderHistoryComponent,
     SafePipe,
     AdminLoginComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -89,6 +91,7 @@ import { SafePipe } from './safe.pipe';
     MatSnackBarModule,
     MatExpansionModule,
     MatBottomSheetModule,
+    NgChartsModule,
   ],
   providers: [AuthGuard,AdminAuthGuard],
   bootstrap: [AppComponent]
