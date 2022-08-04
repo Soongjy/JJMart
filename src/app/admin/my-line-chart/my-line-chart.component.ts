@@ -12,7 +12,6 @@ import {default as Annotation} from 'chartjs-plugin-annotation';
 })
 
 export class MyLineChartComponent implements OnInit{
-  data :number[]=[];
   year = new Date().getFullYear()
 
   constructor(private orderService: OrderService) {
@@ -31,7 +30,7 @@ export class MyLineChartComponent implements OnInit{
                 monthlyRevenue = monthlyRevenue + orders[i].totalPrice
               }
             }
-            this.data.push(monthlyRevenue);
+            this.lineChartData.datasets[0].data.push(monthlyRevenue);
           }
         }
     );
@@ -40,7 +39,7 @@ export class MyLineChartComponent implements OnInit{
   public lineChartData: ChartConfiguration['data'] = {
     datasets: [
       {
-        data: this.data,
+        data: [],
         label: 'Monthly Revenue',
         backgroundColor: 'rgba(148,159,177,0.2)',
         borderColor: 'rgba(148,159,177,1)',

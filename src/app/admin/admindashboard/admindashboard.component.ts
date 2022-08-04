@@ -52,7 +52,7 @@ export class AdmindashboardComponent implements OnInit {
         for(let i=0; i<orders.length; i++){
           var date:Date = new Date(orders[i].orderDate)
           var orderMonth =date.getMonth();
-          if(month === orderMonth){
+          if(month === orderMonth && orders[i].status=='Approved'){
           this.totalRevenue +=orders[i].totalPrice;
           }
         }
@@ -67,7 +67,7 @@ export class AdmindashboardComponent implements OnInit {
       (orders)=>{
         for(let i=0; i<orders.length; i++){
           var date:Date = new Date(orders[i].orderDate)
-          if(date.toLocaleDateString()== today.toLocaleDateString()){
+          if(date.toLocaleDateString()== today.toLocaleDateString() && orders[i].status=='Approved'){
             this.todaysRevenue +=orders[i].totalPrice
           }
         }
