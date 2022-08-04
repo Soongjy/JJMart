@@ -28,7 +28,7 @@ export class ManageOrderComponent implements OnInit {
   orderDate!: Date;
   orderid!: number;
   selectedOrder?: number;
-
+  pagestatus!:string;
 
   address!: string;
   status!: string; 
@@ -53,8 +53,6 @@ export class ManageOrderComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.fetchOrders();
-
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => {
@@ -65,7 +63,9 @@ export class ManageOrderComponent implements OnInit {
 
     this.route.params.subscribe(routeParams => {
       if(this.route.snapshot.paramMap.get('params') as string == 'Pending'){
-        this.searchTerm = this.route.snapshot.paramMap.get('params') as string;
+        this.pagestatus = 'Pending';
+      }else{
+        this.fetchOrders();
       }
     });
   }
@@ -134,7 +134,13 @@ export class ManageOrderComponent implements OnInit {
         this._snackBar.open("OrderID "+ ApproveOrder.id + ' Approved!', 'Close', {
           duration: 2000,
         });
-        this.ngOnInit();
+        if(this.pagestatus=="Approved"){
+          this.orderApproved()
+        }else if(this.pagestatus=="Pending"){
+          this.orderPending()
+        }else if(this.pagestatus=="Rejected"){
+          this.orderRejected()
+        }else{this.ngOnInit();}
       }, 100);
     });
   }
@@ -155,7 +161,13 @@ export class ManageOrderComponent implements OnInit {
         this._snackBar.open("OrderID"+ ApproveOrder.id + ' Rejected!', 'Close', {
           duration: 2000,
         });
-        this.ngOnInit();
+        if(this.pagestatus=="Approved"){
+          this.orderApproved()
+        }else if(this.pagestatus=="Pending"){
+          this.orderPending()
+        }else if(this.pagestatus=="Rejected"){
+          this.orderRejected()
+        }else{this.ngOnInit()};
       }, 100);
     });
   }
@@ -169,12 +181,21 @@ export class ManageOrderComponent implements OnInit {
           ||orders.status.toLocaleLowerCase().includes(this.searchTerm.toLocaleLowerCase())
           ||orders.id==this.searchTerm)
         )
+        this.pagestatus='';
+        this.dataSource = new MatTableDataSource<Order>(this.orders);
+        this.dataSource.paginator = this.paginator;
+      });
+    }else if(this.pagestatus){
+      this.orderService.getOrders().subscribe((orders) => {
+        this.orders = orders.filter( orders =>
+          orders.status.toLocaleLowerCase().includes(this.pagestatus.toLocaleLowerCase()))
         this.dataSource = new MatTableDataSource<Order>(this.orders);
         this.dataSource.paginator = this.paginator;
       });
     }else{
       this.orderService.getOrders().subscribe((orders) => {
         this.orders = orders;
+        this.pagestatus='';
         this.dataSource = new MatTableDataSource<Order>(this.orders);
         this.dataSource.paginator = this.paginator;
       });
@@ -186,6 +207,7 @@ export class ManageOrderComponent implements OnInit {
       this.orders = orders.filter(orders =>
         (orders.status=="Rejected")
       )
+      this.pagestatus="Rejected"
       this.dataSource = new MatTableDataSource<Order>(this.orders);
       this.dataSource.paginator = this.paginator;
     });
@@ -196,6 +218,7 @@ export class ManageOrderComponent implements OnInit {
       this.orders = orders.filter(orders =>
         (orders.status=="Pending")
       )
+      this.pagestatus="Pending"
       this.dataSource = new MatTableDataSource<Order>(this.orders);
       this.dataSource.paginator = this.paginator;
     });
@@ -206,6 +229,7 @@ export class ManageOrderComponent implements OnInit {
       this.orders = orders.filter(orders =>
         (orders.status=="Approved")
       )
+      this.pagestatus="Approved"
       this.dataSource = new MatTableDataSource<Order>(this.orders);
       this.dataSource.paginator = this.paginator;
     });

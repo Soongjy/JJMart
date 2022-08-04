@@ -283,7 +283,7 @@
       ],
       "name": "naruto",
       "address": "naruto",
-      "status": "Rejected",
+      "status": "Approved",
       "id": 2
     },
     {
@@ -317,7 +317,7 @@
       ],
       "name": "naruto",
       "address": "naruto",
-      "status": "Rejected",
+      "status": "Approved",
       "id": 3
     },
     {
@@ -351,7 +351,7 @@
       ],
       "name": "Sooong",
       "address": "12",
-      "status": "Approved",
+      "status": "Rejected",
       "id": 4
     },
     {
@@ -397,7 +397,7 @@
       ],
       "name": "Sooong",
       "address": "12",
-      "status": "Approved",
+      "status": "Pending",
       "id": 5
     },
     {
@@ -431,32 +431,88 @@
       ],
       "name": "Sooong",
       "address": "12",
-      "status": "Approved",
+      "status": "Pending",
       "id": 6
     },
     {
-      "orderDate": "2022-08-04T02:05:02.585Z",
-      "totalPrice": 22,
+      "orderDate": "2022-08-04T04:14:12.570Z",
+      "totalPrice": 40,
       "products": [
         {
-          "id": 3,
-          "name": "Chocolate",
-          "price": 20,
-          "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1565071559227-20ab25b7685e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          "category": "Dairy",
-          "unit": "packet",
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": 10,
-          "visibility": true
-        },
-        {
-          "id": 8,
-          "name": "Raspberry Popsicle",
+          "name": "Indo Mee Goreng",
+          "category": "Noodles",
+          "image": "https://images.unsplash.com/photo-1628610688436-e635552020fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
           "price": 30,
           "quantity": 1,
-          "image": "https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=587&q=80",
-          "category": "Dairy",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 0,
+          "visibility": true,
+          "id": 4
+        },
+        {
+          "id": 9,
+          "name": "Mi Sedap",
+          "price": 10,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1587115507286-f27e42621c25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Noodles",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 0,
+          "visibility": true
+        }
+      ],
+      "name": "Sooong",
+      "address": "12",
+      "status": "Pending",
+      "id": 7
+    },
+    {
+      "orderDate": "2022-08-04T04:14:22.613Z",
+      "totalPrice": 49,
+      "products": [
+        {
+          "name": "Cactus",
+          "category": "Home & Gardening",
+          "image": "assets/cactus.jpg",
+          "price": "54",
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": "34",
+          "visibility": true,
+          "id": 12
+        },
+        {
+          "name": "Shovel",
+          "category": "Home & Gardening",
+          "image": "assets/shovel.jpg",
+          "price": "15",
+          "quantity": 1,
+          "unit": "piece",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo",
+          "discountedPrice": 0,
+          "visibility": true,
+          "id": 13
+        }
+      ],
+      "name": "Sooong",
+      "address": "12",
+      "status": "Approved",
+      "id": 8
+    },
+    {
+      "orderDate": "2022-08-04T04:14:30.812Z",
+      "totalPrice": 12,
+      "products": [
+        {
+          "id": 7,
+          "name": "Mushroom",
+          "price": 30,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1552825897-bb5efa86eab1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Vegetables & Fruits",
           "unit": "packet",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
           "discountedPrice": 12,
@@ -466,7 +522,7 @@
       "name": "Sooong",
       "address": "12",
       "status": "Approved",
-      "id": 7
+      "id": 9
     }
   ],
   "banners": [
