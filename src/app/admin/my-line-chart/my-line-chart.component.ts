@@ -15,23 +15,6 @@ export class MyLineChartComponent implements OnInit{
   data :number[]=[];
   year = new Date().getFullYear()
 
-  public lineChartData: ChartConfiguration['data'] = {
-    datasets: [
-      {
-        data: this.data,
-        label: 'Monthly Revenue',
-        backgroundColor: 'rgba(148,159,177,0.2)',
-        borderColor: 'rgba(148,159,177,1)',
-        pointBackgroundColor: 'rgba(148,159,177,1)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
-        fill: 'origin',
-      },
-    ],
-    labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December' ]
-  };
-
   constructor(private orderService: OrderService) {
     Chart.register(Annotation)
   }
@@ -54,7 +37,22 @@ export class MyLineChartComponent implements OnInit{
     );
   }
 
-
+  public lineChartData: ChartConfiguration['data'] = {
+    datasets: [
+      {
+        data: this.data,
+        label: 'Monthly Revenue',
+        backgroundColor: 'rgba(148,159,177,0.2)',
+        borderColor: 'rgba(148,159,177,1)',
+        pointBackgroundColor: 'rgba(148,159,177,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+        fill: 'origin',
+      },
+    ],
+    labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December' ]
+  };
   
 
   public lineChartOptions: ChartConfiguration['options'] = {
