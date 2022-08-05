@@ -27,6 +27,7 @@ import { ManageAboutUsComponent } from './manage-about-us/manage-about-us.compon
 import { ManageContactUsComponent } from './manage-contact-us/manage-contact-us.component';
 import { ManageOrderComponent } from './manage-order/manage-order.component';
 import { MyLineChartComponent } from './my-line-chart/my-line-chart.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { MyLineChartComponent } from './my-line-chart/my-line-chart.component';
     ManageContactUsComponent,
     ManageOrderComponent,
     MyLineChartComponent,
+    PieChartComponent,
   ],
   imports: [
     CommonModule,
