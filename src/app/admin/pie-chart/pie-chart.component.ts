@@ -1,7 +1,10 @@
 import { Component, OnInit} from '@angular/core';
 import { ChartData, ChartEvent, ChartType } from 'chart.js';
-import { CategoryComponent } from 'src/app/category/category.component';
+import { Category } from 'src/app/Category';
 import { CategoryService } from 'src/app/services/category.service';
+import { OrderService } from 'src/app/services/order.service';
+import { Order } from 'src/app/Order';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-pie-chart',
@@ -10,27 +13,44 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 
 export class PieChartComponent implements OnInit{
-  constructor(private categoryService:CategoryService) { }
-  doughnutChartLabels: string[]=[]
+  constructor(private categoryService:CategoryService, private orderService:OrderService) { }
+  doughnutChartLabels: string[]=[];
   doughnutChartData!: ChartData<'doughnut'>
+  data:number[]=[];
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((categories) => {
-      for (var i = 0; i < categories.length; i++) {
-        if (categories[i].visibility == true)
-          this.doughnutChartLabels.push(categories[i].name);
-      }
-      console.log(this.doughnutChartLabels)
-    });
-
-    this.doughnutChartData = {
-      labels: this.doughnutChartLabels,
-      datasets: [
-        { data: [ 350, 450, 100,1123,212,323 ]
-        },
-      ]
-    };
-  }
+      this.orderService.getOrders().subscribe((orders) => {
+        for (var c = 0; c < categories.length; c++){
+          this.doughnutChartLabels.push(categories[c].name);
+          var categoryTotal = 0;
+          for (var o = 0; o < orders.length; o++) {
+            if(orders[o].status == 'Approved'){//6
+              for(var p = 0; p < orders[o].products.length; p++ ){
+                  if(orders[o].products[p].category == categories[c].name){
+                    var productTotal = 0
+                    if(orders[o].products[p].discountedPrice == 0){
+                      productTotal = orders[o].products[p].price * orders[o].products[p].quantity
+                    }else{
+                      productTotal = orders[o].products[p].discountedPrice * orders[o].products[p].quantity
+                    }
+                    categoryTotal = categoryTotal + productTotal
+                  }
+              }
+            }
+          }
+          this.data.push(categoryTotal);
+        }
+        
+        this.doughnutChartData = {
+          labels: this.doughnutChartLabels,
+          datasets: [
+            {data: this.data}
+          ]
+        };
+      });
+    })
+  };
 
 
   public doughnutChartType: ChartType = 'doughnut';

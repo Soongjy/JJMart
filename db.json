@@ -76,11 +76,11 @@
       "name": "Tomato",
       "category": "Vegetables & Fruits",
       "image": "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "price": "25",
+      "price": 25,
       "quantity": 1,
       "unit": "200g",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": "20",
+      "discountedPrice": 20,
       "visibility": true,
       "id": 1
     },
@@ -92,7 +92,7 @@
       "quantity": 1,
       "unit": "packet",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": "12",
+      "discountedPrice": 12,
       "visibility": true,
       "id": 2
     },
@@ -196,11 +196,11 @@
       "name": "Cactus",
       "category": "Home & Gardening",
       "image": "assets/cactus.jpg",
-      "price": "54",
+      "price": 54,
       "quantity": 1,
       "unit": "piece",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-      "discountedPrice": "34",
+      "discountedPrice": 34,
       "visibility": true,
       "id": 12
     },
@@ -208,7 +208,7 @@
       "name": "Shovel",
       "category": "Home & Gardening",
       "image": "assets/shovel.jpg",
-      "price": "15",
+      "price": 15,
       "quantity": 1,
       "unit": "piece",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo",
@@ -298,7 +298,7 @@
           "quantity": 1,
           "unit": "packet",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": "12",
+          "discountedPrice": 12,
           "visibility": true,
           "id": 2
         },
@@ -366,7 +366,7 @@
           "quantity": 1,
           "unit": "200g",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": "20",
+          "discountedPrice": 20,
           "visibility": true,
           "id": 1
         },
@@ -378,7 +378,7 @@
           "quantity": 1,
           "unit": "packet",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": "12",
+          "discountedPrice": 12,
           "visibility": true,
           "id": 2
         },
@@ -424,7 +424,7 @@
           "quantity": 1,
           "unit": "packet",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": "12",
+          "discountedPrice": 12,
           "visibility": true,
           "id": 2
         }
@@ -476,11 +476,11 @@
           "name": "Cactus",
           "category": "Home & Gardening",
           "image": "assets/cactus.jpg",
-          "price": "54",
+          "price": 54,
           "quantity": 1,
           "unit": "piece",
           "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
-          "discountedPrice": "34",
+          "discountedPrice": 34,
           "visibility": true,
           "id": 12
         },
@@ -488,7 +488,7 @@
           "name": "Shovel",
           "category": "Home & Gardening",
           "image": "assets/shovel.jpg",
-          "price": "15",
+          "price": 15,
           "quantity": 1,
           "unit": "piece",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo",
@@ -523,6 +523,52 @@
       "address": "12",
       "status": "Approved",
       "id": 9
+    },
+    {
+      "orderDate": "2022-08-05T08:33:26.124Z",
+      "totalPrice": 96,
+      "products": [
+        {
+          "id": 5,
+          "name": "Fish",
+          "price": 30,
+          "quantity": 3,
+          "image": "https://images.unsplash.com/photo-1498654200943-1088dd4438ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Meat",
+          "unit": "piece",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 22,
+          "visibility": true
+        },
+        {
+          "id": 6,
+          "name": "Crackers",
+          "price": 30,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1551584277-a31a25e08fc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Biscuits & Cakes",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 15,
+          "visibility": true
+        },
+        {
+          "id": 10,
+          "name": "Cookies",
+          "price": 30,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1621353354739-1420ff28ead9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+          "category": "Biscuits & Cakes",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 15,
+          "visibility": true
+        }
+      ],
+      "name": "Sooong",
+      "address": "12",
+      "status": "Approved",
+      "id": 10
     }
   ],
   "banners": [
