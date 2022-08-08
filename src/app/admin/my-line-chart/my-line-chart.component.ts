@@ -15,45 +15,16 @@ export class MyLineChartComponent implements OnInit{
   year = new Date().getFullYear()
   data:number[]=[]
   lineChartData!: ChartConfiguration['data']
+  label:string[]=[]
+  monthlydata:number[]=[]
 
   constructor(private orderService: OrderService) {
     Chart.register(Annotation);
   }
 
   ngOnInit(): void {
-    this.orderService.getOrders().subscribe(
-      (orders)=>{
-        for(let array=0; array<12; array++){
-          var monthlyRevenue = 0;
-          for(let i=0; i<orders.length; i++){
-            var date:Date = new Date(orders[i].orderDate)
-            var orderMonth =date.getMonth();
-            if(array == orderMonth){
-              monthlyRevenue = monthlyRevenue + orders[i].totalPrice
-            }
-          }
-          this.data.push(monthlyRevenue);
-        }
-        this.lineChartData= {
-          datasets: [
-            {
-              data: this.data,
-              label: 'Monthly Revenue',
-              backgroundColor: 'rgba(0, 255, 0, 0.3)',
-              borderColor: 'green',
-              pointBackgroundColor: 'rgba(148,159,177,1)',
-              pointBorderColor: '#fff',
-              pointHoverBackgroundColor: '#fff',
-              pointHoverBorderColor: 'rgba(148,159,177,0.8)',
-              fill: 'origin',
-            },
-          ],
-          labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December']
-        };
-      }
-    );
+    this.getDailyRevenue()
   }
-  // this.data[0],this.data[1],this.data[2],this.data[3],this.data[4],this.data[5],this.data[6],this.data[7],this.data[8],this.data[9],this.data[10],this.data[11],this.data[12]
   
 
   public lineChartOptions: ChartConfiguration['options'] = {
@@ -83,13 +54,91 @@ export class MyLineChartComponent implements OnInit{
       this.lineChartData.datasets[0].backgroundColor = `rgba(0, 255, 0, 0.3)`;
       this.chart?.update();
     }else{
-      this.lineChartData.datasets[0].borderColor = 'rgba(148,159,177,1)';
-      this.lineChartData.datasets[0].backgroundColor = `rgba(148,159,177,0.2)`;
+      this.lineChartData.datasets[0].borderColor = 'blue';
+      this.lineChartData.datasets[0].backgroundColor = `rgba(137,196,244,0.2)`;
       this.chart?.update();
     }
   }
 
   chartdropdowntoggle(){
     document.getElementById("line-chart-dropdown")!.classList.toggle('show');
+  }
+
+  getMonthlyRevenue(){
+    this.orderService.getOrders().subscribe(
+      (orders)=>{
+        var now:Date = new Date();
+        var thisYear = now.getFullYear();
+        for(let array=0; array<12; array++){
+          var monthlyRevenue = 0;
+          for(let i=0; i<orders.length; i++){
+            var date:Date = new Date(orders[i].orderDate)
+            var orderMonth =date.getMonth();
+            var orderYear = date.getFullYear();
+            if(array == orderMonth && thisYear == orderYear && orders[i].status == "Approved"){
+              monthlyRevenue = monthlyRevenue + orders[i].totalPrice
+            }
+          }
+          this.monthlydata.push(monthlyRevenue);
+        }
+        this.lineChartData= {
+          datasets: [
+            {
+              data: this.monthlydata,
+              label: 'Monthly Revenue',
+              backgroundColor: 'rgba(0, 255, 0, 0.3)',
+              borderColor: 'green',
+              pointBackgroundColor: 'rgba(148,159,177,1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+              fill: 'origin',
+            },
+          ],
+          labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December']
+        };
+      }
+    );
+  }
+
+  getDailyRevenue(){
+    this.orderService.getOrders().subscribe(
+      (orders)=>{
+        var now:Date = new Date();
+        var thisMonth = now.getMonth();
+        var today = now.getDate();
+        var thisYear = now.getFullYear();
+        for(let array=1; array<=today; array++){
+          var dailyRevenue = 0;
+          for(let i=0; i<orders.length; i++){
+            var date:Date = new Date(orders[i].orderDate)
+            var orderMonth =date.getMonth();
+            var orderDate =date.getDate();
+            var orderYear = date.getFullYear();
+            if(thisMonth == orderMonth && array == orderDate && thisYear == orderYear && orders[i].status == "Approved"){
+              dailyRevenue = dailyRevenue + orders[i].totalPrice
+            }
+          }
+          this.data.push(dailyRevenue);
+          this.label[array-1]=array.toString()
+        }
+        this.lineChartData= {
+          datasets: [
+            {
+              data: this.data,
+              label: 'This Month Revenue',
+              backgroundColor: 'rgba(137,196,244,0.2)',
+              borderColor: 'blue',
+              pointBackgroundColor: 'rgba(148,159,177,1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+              fill: 'origin',
+            },
+          ],
+          labels: this.label
+        };
+      }
+    );
   }
 }

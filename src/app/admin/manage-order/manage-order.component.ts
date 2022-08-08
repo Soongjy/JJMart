@@ -131,7 +131,7 @@ export class ManageOrderComponent implements OnInit {
 
     this.orderService.updateOrder(ApproveOrder).subscribe(() => {
       setTimeout(() => {
-        this._snackBar.open("OrderID "+ ApproveOrder.id + ' Approved!', 'Close', {
+        this._snackBar.open("Order ID "+ ApproveOrder.id + ' Approved!', 'Close', {
           duration: 2000,
         });
         if(this.pagestatus=="Approved"){
@@ -158,7 +158,7 @@ export class ManageOrderComponent implements OnInit {
 
     this.orderService.updateOrder(ApproveOrder).subscribe(() => {
       setTimeout(() => {
-        this._snackBar.open("OrderID"+ ApproveOrder.id + ' Rejected!', 'Close', {
+        this._snackBar.open("OrderID "+ ApproveOrder.id + ' Rejected!', 'Close', {
           duration: 2000,
         });
         if(this.pagestatus=="Approved"){
