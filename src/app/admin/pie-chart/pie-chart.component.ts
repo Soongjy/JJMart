@@ -24,7 +24,6 @@ export class PieChartComponent implements OnInit{
         for (var c = 0; c < categories.length; c++){
           this.doughnutChartLabels.push(categories[c].name);
           var categoryTotal = 0;
-          console.log(categoryTotal+1)
           for (var o = 0; o < orders.length; o++) {
             if(orders[o].status == 'Approved'){
               for(var p = 0; p < orders[o].products.length; p++ ){

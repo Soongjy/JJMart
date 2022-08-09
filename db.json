@@ -637,6 +637,40 @@
       "address": "12",
       "status": "Approved",
       "id": 12
+    },
+    {
+      "orderDate": "2022-08-09T09:01:48.543Z",
+      "totalPrice": 270,
+      "products": [
+        {
+          "id": 3,
+          "name": "Chocolate",
+          "price": 20,
+          "quantity": 1,
+          "image": "https://images.unsplash.com/photo-1565071559227-20ab25b7685e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "category": "Dairy",
+          "unit": "packet",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 10,
+          "visibility": true
+        },
+        {
+          "name": "Tomato",
+          "category": "Vegetables & Fruits",
+          "image": "https://images.unsplash.com/photo-1607305387299-a3d9611cd469?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+          "price": 25,
+          "quantity": 13,
+          "unit": "200g",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptate eius amet! Natus officia ut praesentium saepe debitis vitae animi porro corrupti error illum maxime voluptas vero asperiores, molestias doloribus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, eos? Tempora temporibus minima illo sed quo quidem aut eligendi quae explicabo, accusamus architecto recusandae. Fugiat dignissimos ex perferendis nobis totam.",
+          "discountedPrice": 20,
+          "visibility": true,
+          "id": 1
+        }
+      ],
+      "name": "Sooong",
+      "address": "12",
+      "status": "Approved",
+      "id": 13
     }
   ],
   "banners": [
@@ -783,7 +817,7 @@
     {
       "page": "Log in",
       "title": "Login Image",
-      "image": "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp",
+      "image": "https://images.unsplash.com/photo-1532980400857-e8d9d275d858?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZCUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&w=1000&q=80",
       "id": 8
     },
     {
@@ -809,7 +843,7 @@
   "contactus": [
     {
       "address": " 48, Jalan PJS 11/7, Bandar Sunway, 46150 Petaling Jaya, Selangor",
-      "contactNum": "023347374",
+      "contactNum": "012-3347374",
       "googleMaps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0951359269343!2d101.60991729999999!3d3.0692472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c86ab05fb35%3A0xbf1fa91e44859318!2sMenara%20Sunway%2C%20Bandar%20Sunway%2C%2047500%20Subang%20Jaya%2C%20Selangor!5e0!3m2!1sen!2smy!4v1658457686440!5m2!1sen!2smy",
       "email": "jj-mart@gmail.com",
       "businessHours": "Monday to Sunday: 8.00am to 10.00pm",
