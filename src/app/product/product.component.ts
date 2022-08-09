@@ -34,7 +34,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userdetails = JSON.parse(localStorage.getItem('userdetails')||"[]");
+    this.userdetails = JSON.parse(sessionStorage.getItem('userdetails')||"[]");
   
     if (this.userdetails == null) {
       console.log("Please sign in first")
