@@ -12,7 +12,7 @@ import {default as Annotation} from 'chartjs-plugin-annotation';
 })
 
 export class MyLineChartComponent implements OnInit{
-  year = new Date().getFullYear()
+  linecharttitle = "Daily Earning Overview"
   data:number[]=[]
   lineChartData!: ChartConfiguration['data']
   label:string[]=[]
@@ -97,6 +97,7 @@ export class MyLineChartComponent implements OnInit{
           ],
           labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December']
         };
+        this.linecharttitle = new Date().getFullYear() + " Monthly Earning Overview"
       }
     );
   }
@@ -126,7 +127,7 @@ export class MyLineChartComponent implements OnInit{
           datasets: [
             {
               data: this.data,
-              label: 'This Month Revenue',
+              label: 'Daily Revenue',
               backgroundColor: 'rgba(137,196,244,0.2)',
               borderColor: 'blue',
               pointBackgroundColor: 'rgba(148,159,177,1)',
@@ -138,6 +139,7 @@ export class MyLineChartComponent implements OnInit{
           ],
           labels: this.label
         };
+        this.linecharttitle = "This Month Daily Earning Overview"
       }
     );
   }
