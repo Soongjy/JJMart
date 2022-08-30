@@ -18,7 +18,6 @@ export class RegisterComponent implements OnInit {
 
   images:Image[]=[];
   users: User[] = [];
-  @Output() onAddUser: EventEmitter<User> =new EventEmitter();
   name!: string;
   username!: string;
   email!: string;
